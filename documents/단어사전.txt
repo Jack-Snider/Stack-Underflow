@@ -1,0 +1,211 @@
+파일 테이블
+
+파일 file
+번호 -> number -> num
+확장자 -> extend -> ext
+이름 -> name -> nm
+용량 size
+비고 etc
+
+--------------------------------------------------
+게시판 댓글_테이블
+
+댓글 -> comment -> cmnt
+번호 -> number -> num
+수정 -> update -> udt
+일(날짜)-> date -> date
+내용 -> content -> cont
+좋아요 -> like -> like
+게시글 -> post -> post
+싫어요 -> dislike -> dislike
+회원 -> member -> mem
+
+
+
+-영문판-
+게시판 테이블 : board_cmnt
+
+댓글_댓글번호 = cmnt_num
+댓글_수정일 = cmnt_udt_date
+댓글_내용 = cmnt_cont
+댓글_좋아요 = cmnt_like
+게시글_글번호 = post_num
+댓글_싫어요 = cmnt_dlike
+회원_ID = mem_id
+
+
+----------------------------------------------------
+게시판_게시글 테이블
+
+게시판 -> board -> brd
+게시글 -> post -> post
+제목 -> title -> title
+내용 -> content -> cont
+등록 -> commit -> cmit
+날짜 -> date -> date
+조회 -> lookup -> lkup
+수 -> count -> cnt
+좋아요 -> like -> like
+싫어요 -> dislike -> dlike
+수정 -> update -> udt
+날짜 -> date -> date
+파일 -> file -> file
+번호 -> number -> num
+회원 -> member -> mem
+유형 -> kind -> kind
+
+
+
+
+-영문판-
+게시판_게시글 테이블 = board_post
+
+게시글_글번호 = post_num
+게시글_제목 = post_title
+게시글_내용 = post_cmnt
+게시글_등록일 = post_reg_date
+게시글_조회수 = post_views
+게시글_좋아요 = post_like
+게시글_싫어요 = post_dlike
+게시글_수정일 = post_udt_date
+파일_파일번호 = file_file_num
+회원_ID = mem_id
+게시판_유형 = board_type
+
+
+
+--------------------------------------------------------
+회원 테이블 
+
+회원  -> member -> mem
+이름 -> name -> nm
+비밀번호 -> password -> pass or pw
+주민번호 -> regno -> regno
+닉네임 -> nick name -> nnm
+이메일 -> email -> em
+주소 -> address -> addr
+질문 -> question -> qstn
+가입일 -> member since -> since
+랭크 -> rank -> rank
+점수 -> score -> score
+상태 -> status -> stat
+답변 -> answer -> ans
+파일 -> file -> file
+번호 -> number -> num
+
+
+
+-영문판-
+회원 테이블 = member
+
+회원_이름 = mem_nm
+회원_비밀번호 = mem_pass or mem_pw
+회원_주민번호 = mem_idnum
+회원_닉네임 = mem_nknm
+회원_이메일 = mem_email
+회원_주소 = mem_addr
+회원_질문 = mem_qstn
+회원_가입일자 = mem_snu_date
+회원_랭크 = mem_rank
+회원_점수 = mem_score
+회원_상태 = mem_stat
+회원_답변 = mem_ans
+파일_파일번호 = file_file_num
+
+
+
+
+
+--------------------------------------------------------------
+관리자 테이블
+
+관리자 -> admin -> admin
+이름 -> name -> nm
+비밀번호 -> password -> pass or pw
+
+-영문판-
+관리자 = admin
+
+관리자 이름 = admin_nm
+관리자_비밀번호 = admin_pass or admin_pw
+
+
+--------------------------------------------------------------
+
+회원관리 테이블
+
+회원 -> member -> mem
+관리 -> manage -> mng
+코드 -> code -> cd
+관리자 -> manager -> mngr
+유형 -> kind -> kind
+코드 -> code -> cd
+일자 -> date -> date
+대상 -> target -> trg
+내용 -> content -> cont
+
+-영문판-
+회원관리 = manage
+
+회원_ID = mem_id
+관리자_ID =admin_id
+관리유형코드 = mng_type_cd
+관리일자 = mng_date
+관리대상 = mng_trg
+관리내용 = mng_cont
+
+
+--------------------------------------------------------------
+
+채팅 테이블
+
+방 room -> room
+이름 -> name -> nm
+생성 -> create -> crt
+날짜 -> date -> date
+회원 -> member -> mem
+
+-영문판-
+채팅 = chat
+
+방번호 = chat_room_num
+방생성날짜 = room_crt_date
+회원_ID1 = mem_id1
+회원_ID2 = mem_id2
+
+--------------------------------------------------------------
+
+채팅 내용
+
+방 -> room -> rm
+번호 -> number -> num
+일련 -> squence -> sqn
+번호 -> number -> num
+작성자 -> writer -> wrt
+내용 -> content -> cont
+현재 -> current -> crnt
+시각 -> time -> time
+
+-영문판-
+채팅 내용 = chat_cont
+
+방번호 = chat_room_num
+일련번호 = chat_srlnum
+작성자 = chat_wrt
+내용 = chat_cont_cont
+현재시각 = chat_cont_time
+
+--> 회의 후 결정
+--------------------------------------------------------------
+
+관리유형 manage_type
+
+관리 -> manage -> mng
+유형 -> kind -> kind
+코드 -> code -> code
+이름 -> name -> nm
+
+-영문판-
+관리유형 = manage_type
+관리유형코드 = mng_type_cd
+관리유형명 = mng_type_nm
