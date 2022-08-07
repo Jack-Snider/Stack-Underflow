@@ -1,5 +1,7 @@
 package ufo.member.dao;
 
+import java.sql.SQLException;
+
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import ufo.util.SqlMapClientFactory;
@@ -24,9 +26,8 @@ public class MemberDaoImpl implements IMemberDao{
 	public int insertMember(MemberVO memVo) {
 		int cnt = 0;
 		try {
-			if(smc.insert("member.insertMember", memVo) == null)
-			cnt = 1;
-		} catch (Exception e) {
+			if(smc.insert("member.insertMember", memVo) == null) cnt = 1;
+		} catch (SQLException e) {
 			cnt = 0;
 			e.printStackTrace();
 		}
