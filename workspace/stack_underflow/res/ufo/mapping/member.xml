@@ -6,10 +6,10 @@
 
 <sqlMap namespace="member">
 	  <insert id="insertMember" parameterClass="memberVo">
-	  	INSERT INTO MEMBER (MEM_ID, MEM_PASS, MEM_NM, MEM_REGNO, MEM_NKNM, MEM_EMAIL, MEM_ADDR1, MEM_ADDR2,
-							MEM_QSTN, MEM_ANS, MEM_SNU_DATE, MEM_SCORE, MEM_RANK, MEM_STAT, FILE_NUM)
-	  	VALUES(#MEM_ID#, #MEM_PASS#, #MEM_NM#, #MEM_REGNO#, #MEM_NKNM#, #MEM_EMAIL#, #MEM_ADDR1#, #MEM_ADDR2#,
-	  				#MEM_QSTN#, #MEM_ANS#, SYSDATE, #MEM_SCORE#, #MEM_RANK#, #MEM_STAT#, FILE_NUM_SEQ.NEXTVAL)
+	  	insert into member (mem_id, mem_pass, mem_nm, mem_regno, mem_nknm, mem_email, mem_addr1, mem_addr2,
+							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
+	  	values(#mem_id#, #mem_pass#, #mem_nm#, #mem_regno#, #mem_nknm#, #mem_email#, #mem_addr1#, #mem_addr2#,
+	  				#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#)
 	  </insert>
 </sqlMap>
 

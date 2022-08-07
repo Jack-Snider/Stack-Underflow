@@ -25,16 +25,18 @@
             
             형식) <typeAlias alias = "alias명"  type = "클래스의 전체 이름"/>
          <typeAlias alias = "fileVo" type ="kr.or.ddit.vo.FileinfoVO"/>
-         -->        
+         -->   
+         <!--  
          <typeAlias alias = "adminsVo" type ="ufo.vo.AdminsVO"/>
          <typeAlias alias = "chat_contentVo" type ="ufo.vo.Chat_ContentVO"/>
          <typeAlias alias = "chat" type ="ufo.vo.ChatVO"/>
          <typeAlias alias = "cmntVo" type ="ufo.vo.CmntVO"/>
          <typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
          <typeAlias alias = "manage_typeVo" type ="ufo.vo.Manage_TypeVO"/>
-         <typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
          <typeAlias alias = "mngVo" type ="ufo.vo.MngVO"/>
          <typeAlias alias = "postVo" type ="ufo.vo.PostVO"/>
+         -->     
+         <typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
          <!--
             DB와 연결하는 부분 설정하기
            -->
@@ -57,16 +59,17 @@
              <!--
              <sqlMap resource="kr/or/ddit/mapping/fileinfo.xml"/> 
               -->
-             
+             <!-- 
              <sqlMap resource="ufo/mapping/admins.xml"/>
              <sqlMap resource="ufo/mapping/chat_content.xml"/>
              <sqlMap resource="ufo/mapping/chat.xml"/>
              <sqlMap resource="ufo/mapping/cmnt.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
              <sqlMap resource="ufo/mapping/manage_type.xml"/>
-             <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/mng.xml"/>
              <sqlMap resource="ufo/mapping/post.xml"/>
+              -->
+             <sqlMap resource="ufo/mapping/member.xml"/>
                 
    </sqlMapConfig>
    

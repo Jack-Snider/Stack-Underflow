@@ -39,7 +39,7 @@ public class InsertMember extends HttpServlet {
 		memVo.setMem_stat(0);
 		IMemberService service = MemberServiceImpl.getInstance();
 		int cnt = service.insertMember(memVo);
-		if(cnt>0) {
+		if(cnt != 0) {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
