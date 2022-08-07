@@ -8,7 +8,8 @@ public class MemberVO {
 	private String mem_regno; // 사용자 주민번호
 	private String mem_nknm; // 사용자 닉네임
 	private String mem_email; // 사용자 이메일
-	private String mem_addr; // 사용자 주소
+	private String mem_addr1; // 사용자 주소
+	private String mem_addr2; // 사용자 상세 주소
 	private String mem_qstn; // 사용자 질문 ( 비번 찾기 위한 질문 )
 	private String mem_snu_date; // 사용자 가입일 ( DATE 타입 ) Since ...
 	private String mem_rank; // 사용자 티어
@@ -16,7 +17,6 @@ public class MemberVO {
 	private int mem_stat; // 사용자 상태 ( 로그인 상태 : 1, 로그아웃 상태 : 0 )
 	private String mem_ans; // 사용자 답변 ( 비번 찾기 위한 질문의 답변 )
 	private int file_num; // 파일 번호 ( 프로필 사진을 위한 파일 )
-	
 	
 	public String getMem_id() {
 		return mem_id;
@@ -66,14 +66,23 @@ public class MemberVO {
 		this.mem_email = mem_email;
 	}
 	
-	public String getMem_addr() {
-		return mem_addr;
+	public String getMem_addr1() {
+		return mem_addr1;
 	}
 	
-	public void setMem_addr(String mem_addr) {
-		this.mem_addr = mem_addr;
+	public void setMem_addr1(String mem_addr) {
+		this.mem_addr1 = mem_addr;
 	}
 	
+	
+	public String getMem_addr2() {
+		return mem_addr2;
+	}
+
+	public void setMem_addr2(String mem_addr2) {
+		this.mem_addr2 = mem_addr2;
+	}
+
 	public String getMem_qstn() {
 		return mem_qstn;
 	}
@@ -129,9 +138,5 @@ public class MemberVO {
 	public void setFile_num(int file_num) {
 		this.file_num = file_num;
 	}
-	
-	
-	
-	
 	
 }
