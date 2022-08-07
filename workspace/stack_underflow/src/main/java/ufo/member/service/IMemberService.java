@@ -1,5 +1,7 @@
 package ufo.member.service;
 
-public interface IMemberService {
+import ufo.vo.MemberVO;
 
+public interface IMemberService {
+	public int insertMember(MemberVO memVo);
 }

@@ -1,5 +1,7 @@
 package ufo.member.dao;
 
-public interface IMemberDao {
+import ufo.vo.MemberVO;
 
+public interface IMemberDao {
+	public int insertMember(MemberVO memVo);
 }
