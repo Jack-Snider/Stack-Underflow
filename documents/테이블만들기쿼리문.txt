@@ -1,4 +1,6 @@
 
+
+
 CREATE TABLE ADMINS
 (
 	ADMIN_ID              VARCHAR2(100)  NOT NULL ,
