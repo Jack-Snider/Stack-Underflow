@@ -25,6 +25,7 @@ public class InsertMember extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		/*
 	
 		 	프로세스 순서
