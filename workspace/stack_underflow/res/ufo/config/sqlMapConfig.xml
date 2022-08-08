@@ -31,12 +31,14 @@
          <typeAlias alias = "chat_contentVo" type ="ufo.vo.Chat_ContentVO"/>
          <typeAlias alias = "chat" type ="ufo.vo.ChatVO"/>
          <typeAlias alias = "cmntVo" type ="ufo.vo.CmntVO"/>
-         <typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
          <typeAlias alias = "manage_typeVo" type ="ufo.vo.Manage_TypeVO"/>
          <typeAlias alias = "mngVo" type ="ufo.vo.MngVO"/>
          <typeAlias alias = "postVo" type ="ufo.vo.PostVO"/>
          -->     
-         <typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
+         
+         	<typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
+       		<typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
+       		
          <!--
             DB와 연결하는 부분 설정하기
            -->
@@ -69,7 +71,9 @@
              <sqlMap resource="ufo/mapping/mng.xml"/>
              <sqlMap resource="ufo/mapping/post.xml"/>
               -->
+              
              <sqlMap resource="ufo/mapping/member.xml"/>
+             <sqlMap resource="ufo/mapping/files.xml"/>
                 
    </sqlMapConfig>
    

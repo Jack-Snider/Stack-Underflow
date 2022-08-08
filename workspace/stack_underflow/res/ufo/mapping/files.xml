@@ -1,1 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.or//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="files">
+	
+	  <!-- 파일 정보 DB에 저장 -->
+	  <insert id="insertFiles" parameterClass="filesVo">
+	  	insert into files(file_num, file_name, file_ext, file_size, file_etc) 
+	  	values(file_num_seq.nextval, #file_name#, #file_ext#, #file_size#, #file_etc#)
+	  </insert>	
+
+	  <!-- 회원 아이디랑 일치하는 파일 정보 가져오기 -->
+	  <select id="getFileNumByMemId" resultClass="int" parameterClass="String">
+	  	select file_num from files where file_etc like '%' || #mem_id# || '%'
+	  </select>
+
+</sqlMap>
