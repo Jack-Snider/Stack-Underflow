@@ -50,6 +50,7 @@ public class InsertMember extends HttpServlet {
 		memVo.setMem_score(0);
 		memVo.setMem_rank("Unranked");
 		memVo.setMem_stat(0);
+		//gson을 이용해보세요~~
 		
 		IMemberService service = MemberServiceImpl.getInstance();
 		int cnt = service.insertMember(memVo);
