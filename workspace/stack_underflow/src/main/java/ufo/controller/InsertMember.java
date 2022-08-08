@@ -42,25 +42,10 @@ public class InsertMember extends HttpServlet {
 		fvo.setFile_size("1Mb");
 		fvo.setFile_etc("기본 이미지"+request.getParameter("id"));
 		
-<<<<<<< HEAD
-		memVo.setMem_id(request.getParameter("id"));
-		memVo.setMem_pass(request.getParameter("pw"));
-		memVo.setMem_nm(request.getParameter("name"));
-		memVo.setMem_regno(request.getParameter("regno"));
-		memVo.setMem_nknm(request.getParameter("nknm"));
-		memVo.setMem_email(request.getParameter("email"));
-		memVo.setMem_addr1(request.getParameter("addr1"));
-		memVo.setMem_addr2(request.getParameter("addr2"));
-		memVo.setMem_qstn(request.getParameter("qstn"));
-		memVo.setMem_ans(request.getParameter("ans"));
-		memVo.setMem_score(0);
-		memVo.setMem_rank("Unranked");
-		memVo.setMem_stat(0);
-		//gson을 이용해보세요~~
-=======
+
 		IFilesService service1 = FilesServiceImpl.getInstance();
 		int cnt1 = service1.insertFiles(fvo);
->>>>>>> dfc6c0fb5a8d019d4265e749b1ad36c83bad39e9
+
 		
 		if(cnt1 != 0) {
 			MemberVO memVo = new MemberVO();
