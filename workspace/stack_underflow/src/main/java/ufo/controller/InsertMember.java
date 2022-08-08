@@ -22,8 +22,21 @@ public class InsertMember extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*
+		 
+		 	프로세스 순서
+		 	1. 사진 파일 DB에 저장 
+		 	2. files_etc = mem_id의 조건이 맞는 files_num을 가져온다.
+		 	3. 회원의 정보를 DB에 저장한다.
+		 
+		 
+		 */
+		
+		
 		request.setCharacterEncoding("utf-8");
+		
 		MemberVO memVo = new MemberVO();
+		
 		memVo.setMem_id(request.getParameter("id"));
 		memVo.setMem_pass(request.getParameter("pw"));
 		memVo.setMem_nm(request.getParameter("name"));
@@ -37,6 +50,7 @@ public class InsertMember extends HttpServlet {
 		memVo.setMem_score(0);
 		memVo.setMem_rank("Unranked");
 		memVo.setMem_stat(0);
+		
 		IMemberService service = MemberServiceImpl.getInstance();
 		int cnt = service.insertMember(memVo);
 		if(cnt != 0) {
