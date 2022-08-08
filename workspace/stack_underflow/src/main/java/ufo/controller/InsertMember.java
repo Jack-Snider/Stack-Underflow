@@ -42,8 +42,10 @@ public class InsertMember extends HttpServlet {
 		fvo.setFile_size("1Mb");
 		fvo.setFile_etc("기본 이미지"+request.getParameter("id"));
 		
+
 		IFilesService service1 = FilesServiceImpl.getInstance();
 		int cnt1 = service1.insertFiles(fvo);
+
 		
 		if(cnt1 != 0) {
 			MemberVO memVo = new MemberVO();
