@@ -1,4 +1,4 @@
-package ufo.controller;
+package ufo.member.controller;
 
 import java.io.IOException;
 
