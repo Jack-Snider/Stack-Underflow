@@ -26,6 +26,8 @@ public class InsertMember extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
+			
+			Underflow Fighting!
 	
 		 	프로세스 순서
 		 	1. 사진 파일 DB에 저장 
