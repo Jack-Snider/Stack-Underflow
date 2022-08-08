@@ -19,13 +19,9 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
+
 	<!-- 성공! ㅜㅜ --> 
-	<!-- 회원가입 폼 작성 --> !
-=======
-	<!-- 성공! ㅜㅜ --> @
 	<!-- 회원가입 폼 작성 -->
->>>>>>> 82f59b3212b1cd4f2ee82d83dff43dff18c92ea9
 	<div class="container">
 		<form class="needs-validation" method="post" action="<%=request.getContextPath() %>/insertMember.do">
 			<div class="form-group">
