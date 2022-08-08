@@ -12,7 +12,12 @@
 		<p>This is real test</p>
 		<p>집에서 하는 테스트 - 호겸</p>
 		<p>밖에서 하는 테스트 - JACK</p>
+<<<<<<< HEAD
 		<p> 현우꺼 잘되라 </p>
+		<p>명범이 테스트</p>
+=======
+		<p>강명범 테스트</p>
+>>>>>>> ca0a4ec5f71e86d169ea5b1f8f0a46531aba0de6
 	</body>
 </html>
 
