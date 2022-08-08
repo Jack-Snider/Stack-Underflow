@@ -5,28 +5,15 @@
 	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
 
 <sqlMap namespace="member">
-	
-	  <!-- 파일 정보 DB에 저장 -->
-	  <insert id="insertFiles" parameterClass="filesVo">
-	  	insert into files( file_num, file_name, file_ext, file_size, file_etc ) 
-	  	values( #file_num#, #file_name#, #file_ext#, #file_size#, #file_etc# )
-	  </insert>	
-
-
-	  <!-- 회원 아이디랑 일치하는 파일 정보 가져오기 -->
-	  <select id="getFileNum" resultClass="filesVo" parameterClass="String">
-	  	select * from files where file_etc = #mem_id#
-	  </select>
-
-	
 
 	  <!-- 회원 정보를 DB에 저장 -->	
 	  <insert id="insertMember" parameterClass="memberVo">
 	  	insert into member (mem_id, mem_pass, mem_nm, mem_regno, mem_nknm, mem_email, mem_addr1, mem_addr2,
-							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
+							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat, file_num)
 	  	values(#mem_id#, #mem_pass#, #mem_nm#, #mem_regno#, #mem_nknm#, #mem_email#, #mem_addr1#, #mem_addr2#,
-	  				#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#)
+	  				#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#, #file_num#)
 	  </insert>
+	  
 </sqlMap>
 
 

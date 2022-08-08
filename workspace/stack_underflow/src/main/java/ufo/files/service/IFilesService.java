@@ -1,5 +1,8 @@
 package ufo.files.service;
 
-public interface IFilesService {
+import ufo.vo.FilesVO;
 
+public interface IFilesService {
+	public int insertFiles(FilesVO fvo);
+	public int getFileNumByMemId (String memId);
 }
