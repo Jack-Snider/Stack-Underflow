@@ -25,7 +25,7 @@ public class FilesServiceImpl implements IFilesService{
 	}
 
 	@Override
-	public int getFileNumByMemId(String memId) {
+	public int getFileNumByMemId( String memId ) {
 		return dao.getFileNumByMemId(memId);
 	}
 	
