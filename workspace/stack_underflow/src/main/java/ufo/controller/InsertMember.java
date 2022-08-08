@@ -26,8 +26,6 @@ public class InsertMember extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
-			
-			Underflow Fighting!
 	
 		 	프로세스 순서
 		 	1. 사진 파일 DB에 저장 
@@ -48,7 +46,7 @@ public class InsertMember extends HttpServlet {
 		IFilesService service1 = FilesServiceImpl.getInstance();
 		int cnt1 = service1.insertFiles(fvo);
 
-		
+	
 		if(cnt1 != 0) {
 			MemberVO memVo = new MemberVO();
 			memVo.setMem_id(request.getParameter("id"));
