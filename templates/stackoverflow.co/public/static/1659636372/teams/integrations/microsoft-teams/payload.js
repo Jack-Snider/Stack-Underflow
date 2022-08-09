@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/teams/integrations/microsoft-teams", {data:[{}],fetch:{},mutations:void 0});

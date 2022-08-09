@@ -1,0 +1,1 @@
+window.__STACKEX__=(function(a,b){return {staticAssetsBase:"\u002Fpublic\u002Fcompany\u002Fstatic\u002F1659963454",layout:"company",error:b,serverRendered:true,routePath:a,config:{_app:{basePath:a,assetsPath:"\u002Fpublic\u002Fcompany\u002F",cdnURL:b},http:{browserBaseURL:a}}}}("\u002F",null));
