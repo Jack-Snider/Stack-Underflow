@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/teams/use-cases/data-analytics", {data:[{}],fetch:{},mutations:void 0});

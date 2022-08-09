@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/talent", {data:[{}],fetch:{},mutations:void 0});

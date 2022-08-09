@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/teams/integrations/okta", {data:[{}],fetch:{},mutations:void 0});
