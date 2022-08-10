@@ -14,6 +14,12 @@
 	  				#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#, #file_num#)
 	  </insert>
 	  
+	  
+	  <select id="mypageMember" >
+	  
+	   select 
+	  </select>
+	  
 </sqlMap>
 
 
