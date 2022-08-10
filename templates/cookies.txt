@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.6sc.co	TRUE	/	FALSE	1999999999	6suuid	77fc3b173d760000370af2624a020000d0e51700
+j.6sc.co	TRUE	/	FALSE	1999999999	SameSite	None
+

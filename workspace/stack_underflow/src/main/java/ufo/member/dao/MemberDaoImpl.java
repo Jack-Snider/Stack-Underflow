@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import ufo.util.SqlMapClientFactory;
-import ufo.vo.FilesVO;
 import ufo.vo.MemberVO;
 
 public class MemberDaoImpl implements IMemberDao{
@@ -34,47 +33,20 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
-
 	@Override
-	public int insertFile( FilesVO fileVo ) {
+	public MemberVO passcheck(String mem_id) {
 		// TODO Auto-generated method stub
+		MemberVO memVo=null;
 		
-		int cnt = 0;
 		try {
-			if( smc.insert( "member.insertFiles", fileVo ) == null ) cnt = 1;
-		} catch (SQLException e) {
-			// TODO: handle exception
-			cnt = 0;
+			memVo=(MemberVO) smc.queryForObject("login.passwordchk",mem_id);
+		} catch (Exception e) {
+			memVo=null;
 			e.printStackTrace();
 		}
 		
-		return cnt;
+		
+		return memVo;
 	}
-
-	/**
-	 * FileVO객체 반환
-	 */
-	@Override
-	public FilesVO selectFile(String mem_id) {
-		// TODO Auto-generated method stub
-		
-		FilesVO filesVo = null;
-		
-		try {
-			filesVo = (FilesVO)smc.queryForObject("member.getFileNum", mem_id);
-		} catch (SQLException e) {
-			// TODO: handle exception
-			filesVo = null;
-			e.printStackTrace();
-		}
-		
-		return filesVo;
-	}
-	
-	
-	
-	
-	
-	
 
 }
