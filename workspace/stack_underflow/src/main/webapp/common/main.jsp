@@ -2,16 +2,26 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+	<!-- 
+	
+		main 페이지
+		
+		수정자 : Jack Snider
+		
+		Jack Snider 01 ==> 우측 상단 로그인 버튼
+		JacK Snider 02 ==> 중앙 Container 텍스트 바뀌는거 애니메이션
+	
+	 -->
 
     <html class="html__responsive html__unpinned-leftnav" lang="en">
 
     <head>
 
-        <title>Stack Overflow - Where Developers Learn, Share, &amp; Build Careers</title>
+        <title>Stack Underflow - Where Developers Learn, Share, &amp; Build Careers</title>
         <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
         <link rel="apple-touch-icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
         <link rel="image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a"> 
-        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="/opensearch.xml">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Underflow" href="/opensearch.xml">
         <meta name="description" content="Stack Overflow is the largest, most trusted online community for developers to learn, share&#x200B; &#x200B;their programming &#x200B;knowledge, and build their careers."/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
         <meta property="og:type" content= "website" />
@@ -144,9 +154,9 @@
             <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
                 <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm md lg"></div>
             </div>
-                <a href="https://stackoverflow.com" class="s-topbar--logo js-gps-track"
+                <a href="main.jsp" class="s-topbar--logo js-gps-track"
                     data-gps-track="top_nav.click({is_current:true, location:1, destination:8})">
-                    <span class="-img _glyph">Stack Overflow</span>
+                    <span class="-img _glyph">Stack Underflow</span>
                 </a>
 
 
@@ -348,11 +358,17 @@ your communities            </h3>
     </li>
 
             <li><a href="#" class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger" role="button" aria-label="Search" aria-haspopup="true" aria-controls="search" title="Click to show search"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg></a></li>
+            		
+            		<!-- Jack Snider 01 begins -->
                     <li>
-                        <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" rel="nofollow"
-           data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Log in</a>
+                        <a href="login.jsp" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" rel="nofollow"
+           					data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Log in</a>
                     </li>
-                    <li><a href="https://stackoverflow.com/users/signup?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__primary ws-nowrap" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign up</a></li>
+                    <!-- Jack Snider 01 ends -->
+                    
+                    <!-- Jack Snider 02 begins -->
+                    <li><a href="signup.jsp" class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__primary ws-nowrap" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign up</a></li>
+                    <!-- Jack Snider 02 ends -->
 </ol>
 
 
@@ -663,7 +679,12 @@ your communities            </h3>
         </div>
 
         <h1 class="p-ff-roboto-slab-bold fs-display2 mb0 pt64 pb64 ps-relative z-active overflow-hidden">
+  			<!-- Jack Snider 02 begins -->
+  			<!-- 
             Every <span class="js-user-slider p-home-tagline va-bottom ps-relative ws-nowrap d-inline-flex fd-column ai-center fc-orange-500 lg:d-block mx-auto ta-center" data-words="developer, data scientist, system admin, mobile developer, game developer">developer</span> has a<br class="lg:d-none"> tab open to<br class="d-none lg:d-block"> Stack Overflow
+  			 -->
+            403 <span class="js-user-slider p-home-tagline va-bottom ps-relative ws-nowrap d-inline-flex fd-column ai-center fc-orange-500 lg:d-block mx-auto ta-center" data-words="Jack Snider, HO GYUM, KMB, Hyen, All Members"></span> <br class="lg:d-none"> THE BEST<br class="d-none lg:d-block"> OR NOTHING.
+            <!-- Jack Snider 02 ends -->
         </h1>
 
         <span class="w64 h8 bar-pill d-block bg-black-500 mx-auto"></span>
