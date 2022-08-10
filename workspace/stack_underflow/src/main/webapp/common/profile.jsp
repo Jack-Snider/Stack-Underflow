@@ -678,14 +678,17 @@
 
 <div class="d-flex ai-center fw-wrap gs16">
     <a class="flex--item" href="/users/12303203/jack-snider">
-        <div class="md:d-none js-usermini-avatar-container"><div class="bar-md bs-sm"><img src="https://lh3.googleusercontent.com/a-/AAuE7mDV9EkNPiLkBI1mveoj8K4hCCNYMQwVjk_f9jXr=k-s256" alt="user avatar" width="128" height="128" class="bar-sm bar-md d-block"></div></div>
+        <div class="md:d-none js-usermini-avatar-container"><div class="bar-md bs-sm">
+             <img src="https://lh3.googleusercontent.com/a-/AAuE7mDV9EkNPiLkBI1mveoj8K4hCCNYMQwVjk_f9jXr=k-s256" alt="user avatar" width="128" height="128" class="bar-sm bar-md d-block">
+        </div></div>
         <div class="d-none md:d-block sm:d-none js-usermini-avatar-container"><div class="bar-md bs-sm"><img src="https://lh3.googleusercontent.com/a-/AAuE7mDV9EkNPiLkBI1mveoj8K4hCCNYMQwVjk_f9jXr=k-s192" alt="user avatar" width="96" height="96" class="bar-sm bar-md d-block"></div></div>
-        <div class="d-none sm:d-block js-usermini-avatar-container"><div class="bar-md bs-sm"><img src="https://lh3.googleusercontent.com/a-/AAuE7mDV9EkNPiLkBI1mveoj8K4hCCNYMQwVjk_f9jXr=k-s128" alt="user avatar" width="64" height="64" class="bar-sm bar-md d-block"></div></div>
+        <div class="d-none sm:d-block js-usermini-avatar-container"><div class="bar-md bs-sm">
+        <img src="https://lh3.googleusercontent.com/a-/AAuE7mDV9EkNPiLkBI1mveoj8K4hCCNYMQwVjk_f9jXr=k-s128" alt="user avatar" width="64" height="64" class="bar-sm bar-md d-block"></div></div>
     </a>
     <div class="flex--item">
         <div class="d-flex ai-center fw-wrap gs8 wmx4">
-            <div class="flex--item mb12 fs-headline2 lh-xs">
-                Jack Snider
+            <div class="flex--item mb12 fs-headline2 lh-xs">    <!-- 마이페이지 -->
+                Jack 
             </div>
             <div class="flex--item">
                 <div class="d-flex ai-center fw-nowrap gs4">
@@ -808,29 +811,29 @@ this week                        </div>
     </div>
 
     <div class="d-flex mb48">
-        <nav class="flex--item fl-shrink0 mr32 wmn1 md:d-none js-settings-nav" role="navigation">
-            <ul class="ps-sticky t64 s-navigation s-navigation__muted s-navigation__vertical">
+        <nav class="flex--item fl-shrink0 mr32 wmn1 md:d-none js-settings-nav" role="navigation">  <!-- 마이페이지 목록 -->
+            <ul class="ps-sticky t64 s-navigation s-navigation__muted s-navigation__vertical">    
                     <li>
                         <a class="s-navigation--item is-selected pr48 ps-relative" href="/users/12303203/jack-snider?tab=summary" title="Your overall summary" data-shortcut="S">
-                            Summary
+                            회원정보
                         </a>
                     </li>
                     <li>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=answers" title="Answers you provided" data-shortcut="A">
-                            Answers
+                            활동목록
                         </a>
                     </li>
                     <li>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=questions" title="Questions you asked" data-shortcut="Q">
-                            Questions
+                            친구목록
                         </a>
                     </li>
                     <li>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=tags" title="Tags you have posts in" data-shortcut="T">
-                            Tags
+                            채팅목록
                         </a>
                     </li>
-                    <li>
+                  <!--   <li>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=articles" title="Articles you created" data-shortcut="I">
                             Articles
                         </a>
@@ -859,7 +862,7 @@ this week                        </div>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=reputation" title="Reputation you have earned" data-shortcut="R">
                             Reputation
                         </a>
-                    </li>
+                    </li> 
                     <li>
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=activity" title="Your recent actions" data-shortcut="L">
                             All actions
@@ -871,15 +874,27 @@ this week                        </div>
                         </a>
                     </li>
                     <li>
+                    
                         <a class="s-navigation--item pr48 ps-relative" href="/users/12303203/jack-snider?tab=votes" title="Votes you have cast" data-shortcut="V">
                             Votes
                         </a>
                     </li>
+                    -->
             </ul>
         </nav>
 
-        <section class="flex--item fl-grow1 wmx100">
-                <div id="user-tab-summary" class="js-user-tab">
+<style>
+#mypage member profile{
+   border : 3px solid silver;
+   
+
+}
+</style>
+        <section class="flex--item fl-grow1 wmx100">   <!-- 마이페이지 회원정보 화면 -->
+        <div id = "mypage member profile">
+        
+        </div>
+               <!--  <div id="user-tab-summary" class="js-user-tab">
     <div class="d-flex ai-end jc-space-between mb8 fw-wrap">
         <div class="flex--item fl-grow1">
             <div class="d-flex ai-end jc-space-between">
@@ -1598,11 +1613,11 @@ You have not cast any <a href="/help/why-vote">votes</a>            </p>
         
         <div class="js-user-tab-paging">
             
-        </div>
+        </div> -->
     </div>
 </div>
 
-        </section>
+        </section>    <!-- 마이페이지 목록 화면 끝 -->
     </div>
 </div>
 
