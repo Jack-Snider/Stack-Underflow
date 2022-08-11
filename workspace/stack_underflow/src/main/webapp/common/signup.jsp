@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+=======
 
 
 <html class="html__responsive html__unpinned-leftnav" lang="en">
@@ -967,3 +978,4 @@ Sign up with Facebook        </button>
 </body>
 </html>
     
+>>>>>>> e3ba8f089d066e9d06910c7eae165bb29cb4c003
