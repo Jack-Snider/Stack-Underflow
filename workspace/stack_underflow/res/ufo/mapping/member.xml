@@ -8,17 +8,18 @@
 
 	  <!-- 회원 정보를 DB에 저장 -->	
 	  <insert id="insertMember" parameterClass="memberVo">
-	  	insert into member (mem_id, mem_pass, mem_nm, mem_regno, mem_nknm, mem_email, mem_addr1, mem_addr2,
-							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat, file_num)
-	  	values(#mem_id#, #mem_pass#, #mem_nm#, #mem_regno#, #mem_nknm#, #mem_email#, #mem_addr1#, #mem_addr2#,
-	  				#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#, #file_num#)
+	  	insert into member (mem_id, mem_pass, mem_nknm, mem_nm, mem_regno, mem_email, mem_addr1, mem_addr2,
+							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
+	  	values(#mem_id#, #mem_pass#, #mem_nknm#, #mem_nm#, #mem_regno#, #mem_email#, #mem_addr1#, #mem_addr2#,
+							#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#)
 	  </insert>
 	  
-	  
+	  <!--  
 	  <select id="mypageMember" >
 	  
 	   select 
 	  </select>
+	  -->
 	  
 </sqlMap>
 

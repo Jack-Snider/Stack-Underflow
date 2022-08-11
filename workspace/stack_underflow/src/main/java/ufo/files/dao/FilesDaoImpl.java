@@ -34,16 +34,4 @@ public class FilesDaoImpl implements IFilesDao{
 		return cnt;
 	}
 
-	@Override
-	public int getFileNumByMemId(String memId) {
-		int res = 0;
-		try {
-			res = (int)smc.queryForObject("files.getFileNumByMemId", memId);
-		} catch (Exception e) {
-			res = 0;
-			e.printStackTrace();
-		}
-		return res;
-	}
-
 }

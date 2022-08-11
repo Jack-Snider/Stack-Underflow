@@ -24,9 +24,4 @@ public class FilesServiceImpl implements IFilesService{
 		return dao.insertFiles(fvo);
 	}
 
-	@Override
-	public int getFileNumByMemId( String memId ) {
-		return dao.getFileNumByMemId(memId);
-	}
-	
 }
