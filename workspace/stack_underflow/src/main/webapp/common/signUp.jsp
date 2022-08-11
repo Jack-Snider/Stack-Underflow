@@ -101,10 +101,10 @@
 			<div class="form-group">
   				<label for="mem_qstn">Password Question</label>
 				  <select class="form-control" id="mem_qstn" name="mem_qstn">
-				    <option value="opt1">What is Your Father Name ?</option>
-				    <option value="opt2">What is Your Mother Name ?</option>
-				    <option value="opt3">What is Your Favorite Color ?</option>
-				    <option value="opt4">What is Your Favorite Food ?</option>
+				    <option value="What is Your Father Name ?">What is Your Father Name ?</option>
+				    <option value="What is Your Mother Name ?">What is Your Mother Name ?</option>
+				    <option value="What is Your Favorite Color ?">What is Your Favorite Color ?</option>
+				    <option value="What is Your Favorite Food ?">What is Your Favorite Food ?</option>
 				  </select>
 			</div>
 
