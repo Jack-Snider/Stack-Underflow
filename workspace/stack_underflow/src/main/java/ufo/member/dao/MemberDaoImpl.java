@@ -33,6 +33,31 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+	
+	@Override
+	public int checkById(String mem_id) {
+		int cnt = 0;
+		try {
+			cnt = (Integer)smc.queryForObject("member.checkById", mem_id);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	
+	@Override
+	public int checkByNknm(String mem_nknm) {
+		int cnt = 0;
+		try {
+			cnt = (Integer)smc.queryForObject("member.checkByNknm", mem_nknm);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	
 	@Override
 	public MemberVO passcheck(String mem_id) {
 		// TODO Auto-generated method stub

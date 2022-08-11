@@ -10,6 +10,8 @@ public interface IMemberDao {
 	 * @return 1 : 저장성공, 0 : 저장실패
 	 */
 	public int insertMember(MemberVO memVo);
+	public int checkById(String mem_id);
+	public int checkByNknm(String mem_nknm);
 	public MemberVO passcheck(String mem_id);
 	
 }
