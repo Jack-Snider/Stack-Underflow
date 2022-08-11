@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+=======
 
 
 <html class="html__responsive html__unpinned-leftnav" lang="en">
@@ -73,6 +84,9 @@
         });
     </script>
     <noscript id="noscript-css"><style>body,.s-topbar{margin-top:1.9em}</style></noscript>
+    <style>
+  
+    </style>
     </head>
     <body class="universal-auth-page unified-theme floating-content">
     <div id="notify-container"></div>
@@ -291,7 +305,7 @@
     	<li><a href="#" class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger" role="button" aria-label="Search" aria-haspopup="true" aria-controls="search" title="Click to show search"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg></a></li>
     	
     	<!-- Jack Snider 03 beins -->
-        <li><a href="" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" rel="nofollow"
+        <li><a href="login.jsp" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" rel="nofollow"
            	data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Log in</a>
         </li>
         <!-- Jack Snider 03 ends -->
@@ -615,7 +629,7 @@ Create your Stack Overflow account. It&#x2019;s free and only takes a minute.</d
             
 
 
-
+<!--  
 <div id="openid-buttons" class="mx-auto d-flex flex__fl-grow1 fd-column gs8 gsy mb16 wmx3">
         <button class="flex--item s-btn s-btn__icon s-btn__google bar-md ba bc-black-100" data-provider='google' data-oauthserver='https://accounts.google.com/o/oauth2/auth' data-oauthversion='2.0'>
             <svg aria-hidden="true" class="native svg-icon iconGoogle" width="18" height="18" viewBox="0 0 18 18"><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18Z" fill="#4285F4"/><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17Z" fill="#34A853"/><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07Z" fill="#FBBC05"/><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3Z" fill="#EA4335"/></svg>
@@ -627,6 +641,7 @@ Sign up with GitHub        </button>
             <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3Zm6.55 16v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h-2.5Z" fill="#4167B2"/></svg>
 Sign up with Facebook        </button>
 </div>
+-->
 
 <div id="formContainer" class="mx-auto mb24 p24 wmx3 bg-white bar-lg bs-xl mb24 with-captcha">
     <form id="login-form" class="d-flex fd-column gs12 gsy with-captcha" action="/users/signup?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" method="POST">
@@ -637,87 +652,94 @@ Sign up with Facebook        </button>
                 	<!-- 회원가입 입력폼 -->
                 	<!-- Jack Snider 01 begins -->  
                 
-                	<!-- 프로필 사진 -->
-                	<!-- 프로필 사진 끝 -->
-                
-                	<!-- 이메일 -->
+                	<!-- 아이디 -->
                 	<div class="d-flex fd-column gs4 gsy js-auth-item ">
-                    	<label class="flex--item s-label" for="email">Email</label>
+                    	<label class="flex--item s-label" for="mem_id">ID</label>
                     	<div class="d-flex ps-relative">
-                        	<input class="s-input" id="email" type="email" size="30" maxlength="100" name="email" />
-                        	<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                        	<input class="s-input" id="mem_id" type="text" size="30" maxlength="100" name="mem_id" />
+                        	<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+                        		<path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/>
+                        	</svg>
                     	</div>
-                            <p class="flex--item s-input-message js-error-message d-none"> </p>
+                            <p class="flex--item s-input-message js-error-message d-none"></p>
                 	</div>
-                	<!-- 이메일 끝 -->
+                	<!-- 아이디 끝 -->
                 
                 	<!-- 비밀번호 -->
                 	<div class="d-flex fd-column-reverse gs4 gsy js-auth-item ">
+                		<!-- 비밀번호 규칙 명시하기  
                         <p class="fs-caption fc-light mt4 mb4">	
-                            Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
-                        
-                            <p class="flex--item s-input-message js-error-message d-none"></p>
-
+                            Passwords must contain at least eight characters, including at least 1 letter and 1 number.
+                        </p>
+                        -->
+                        <p class="flex--item s-input-message js-error-message d-none"></p>
 	                    <div class="d-flex ps-relative js-password">
-	                        <input class="flex--item s-input" type="password" autocomplete="off" name="password" id="password" />
-	                        <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+	                        <input class="flex--item s-input" type="password" autocomplete="off" name="mem_pass1" id="mem_pass1" />
+	                        <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+	                        	<path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/>
+	                        </svg>
 	                    </div>
 	                    <div class="d-flex ai-center ps-relative jc-space-between">
-	                        <label class="flex--item s-label" for="password">Password</label>
+	                        <label class="flex--item s-label" for="mem_pass1">Password</label>
 	                    </div>
                 	</div>
 					<!-- 비밀번호 끝 -->
 					
 					<!-- 비밀번호 확인 -->
                 	<div class="d-flex fd-column-reverse gs4 gsy js-auth-item ">
+                		<!--  
                         <p class="fs-caption fc-light mt4 mb4">	
-                            Make sure the password you have written is correct</p>
-                        
-                            <p class="flex--item s-input-message js-error-message d-none"></p>
-
+                            Make sure the password you have written is correct
+                        </p>
+                     	-->
+                        <p class="flex--item s-input-message js-error-message d-none"></p>
 	                    <div class="d-flex ps-relative js-password">
-	                        <input class="flex--item s-input" type="password" autocomplete="off" name="passwordCheck" id="password" />
-	                        <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+	                        <input class="flex--item s-input" type="password" autocomplete="off" name="mem_pass2" id="mem_pass2" />
+	                        <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+	                        	<path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/>
+	                        </svg>
 	                    </div>
 	                    <div class="d-flex ai-center ps-relative jc-space-between">
-	                        <label class="flex--item s-label" for="password">Password Check</label>
+	                        <label class="flex--item s-label" for="mem_pass2">Password Check</label>
 	                    </div>
                 	</div>
                 	<!-- 비밀번호 확인 끝 -->
                 
-                
                 	<!-- 닉네임 -->
                     <div class="d-flex fd-column gs4 gsy js-auth-item ">
-                        <label class="flex--item s-label" for="display-name">Display name</label>
+                        <label class="flex--item s-label" for="mem_nknm">Display name</label>
                         <div class="d-flex ps-relative">
-                            <input class="flex--item s-input" type="text" name="display-name" id="display-name" />
-                            <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                            <input class="flex--item s-input" type="text" name="mem_nknm" id="mem_nknm" />
+                            <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+                            	<path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/>
+                            </svg>
                         </div>
-                                <p class="flex--item s-input-message js-error-message d-none"></p>
+                        <p class="flex--item s-input-message js-error-message d-none"></p>
                     </div>
                     <!-- 닉네임 끝 -->
                     
-                    
-                    
-                    
 					<!-- 이름 -->            		      
                 	<div class="d-flex fd-column gs4 gsy js-auth-item ">
-                    	<label class="flex--item s-label" for="email">Name</label>
+                    	<label class="flex--item s-label" for="mem_nm">Name</label>
                     	<div class="d-flex ps-relative">
-                        	<input class="s-input" id="name" type="text" size="30" maxlength="100" name="name" />
-                        	<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                        	<input class="s-input" id="mem_nm" type="text" size="30" maxlength="100" name="mem_nm" />
+                        		<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+                        	</svg>
                     	</div>
                             <p class="flex--item s-input-message js-error-message d-none"> </p>
                 	</div>
                 	<!-- 이름 끝 -->
                 	
-                	
                 	<!-- 주민번호 -->
                 	<div class="d-flex fd-column gs4 gsy js-auth-item ">
-                    	<label class="flex--item s-label" for="email">Name</label>
+                    	<label class="flex--item s-label" for="mem_regno1">Registration Number</label>
                     	<div class="d-flex ps-relative">
-                        	<input class="s-input" id="name" type="text" size="30" maxlength="100" name="name" />
-                        	<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                        	<input class="s-input" id="mem_regno1" type="text" width="10px"size=" 30" maxlength="100" name="mem_regno1" />
+                        	-
+                        	<input class="s-input" id="mem_regno2" type="text" width="10px"size="30" maxlength="100" name="mem_regno2" />
+                        	<svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18" viewBox="0 0 18 18">
+                        		<path d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/>
+                        	</svg>
                     	</div>
                             <p class="flex--item s-input-message js-error-message d-none"> </p>
                 	</div>
@@ -765,14 +787,12 @@ Sign up with Facebook        </button>
                 	</div>
                 	<!-- 비밀번호 찾기 질문 답변 끝 -->
                 
+                	<!-- 프로필 사진 -->
+                	<!-- 프로필 사진 끝 -->
                 
-                	
-                
-                <!-- Jack Snider 01 ends -->
-                
-                <div class="d-flex flex__center bg-black-050 ba bc-black-075 bar-sm pt8 pb2">
-                    
-
+         			<!-- Jack Snider 01 ends -->
+<!--           
+<div class="d-flex flex__center bg-black-050 ba bc-black-075 bar-sm pt8 pb2">
 <script type="text/javascript">
     var onloadCallback = function () {
         grecaptcha.render('no-captcha-here', {
@@ -812,8 +832,9 @@ Sign up with Facebook        </button>
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=en" async defer></script>
-                </div>
-                <div class="flex--item">
+</div>
+
+<div class="flex--item">
                     
 <div class="d-flex">
     <div class="flex--item mr4">
@@ -854,12 +875,10 @@ Sign up with Facebook        </button>
 </script>
 
                 </div>
+--> 
             <div class="d-flex gs4 gsy fd-column js-auth-item ">
                 <button class="flex--item s-btn s-btn__primary" id="submit-button" name="submit-button">Sign up</button>
-                        <p class="flex--item s-input-message js-error-message d-none">
-            
-        </p>
-
+                        <p class="flex--item s-input-message js-error-message d-none"></p>
             </div>
 
         <input type="hidden" id="oauth_version" name="oauth_version" />
@@ -867,6 +886,8 @@ Sign up with Facebook        </button>
 
 
     </form>
+</div>
+<!--  
         <div class="js-terms fs-caption fc-light ta-left mt32">
             By clicking “Sign up”, you agree to our <a href='https://stackoverflow.com/legal/terms-of-service/public' name='tos' target='_blank' class='-link'>terms of service</a>, <a href='https://stackoverflow.com/legal/privacy-policy' name='privacy' target='_blank' class='-link'>privacy policy</a> and <a href='https://stackoverflow.com/legal/cookie-policy' name='cookie' target='_blank' class='-link'>cookie policy</a><input type="hidden" name="legalLinksShown" value="1" />
         </div>
@@ -953,7 +974,8 @@ Sign up with Facebook        </button>
     <div id="onetrust-style" class="d-none">&nbsp;</div>
     <div class="d-none js-consent-banner-version" data-consent-banner-version="baseline"></div>
 
+-->
+</body>
+</html>
     
-    </body>
-    </html>
-    
+>>>>>>> e3ba8f089d066e9d06910c7eae165bb29cb4c003

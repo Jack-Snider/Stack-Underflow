@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d641e188887e11b14388cc66db1297d64a96bf40
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -153,6 +156,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
+<<<<<<< HEAD
       </Host>
     </Engine>
   </Service>
@@ -314,4 +318,9 @@
     </Engine>
   </Service>
 >>>>>>> 57da6d8c1469c6531568eeabda86436232e7339d
+=======
+      <Context docBase="stack_underflow" path="/stack_underflow" reloadable="true" source="org.eclipse.jst.jee.server:stack_underflow"/></Host>
+    </Engine>
+  </Service>
+>>>>>>> d641e188887e11b14388cc66db1297d64a96bf40
 </Server>
