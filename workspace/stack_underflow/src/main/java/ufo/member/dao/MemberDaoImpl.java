@@ -33,5 +33,20 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+	@Override
+	public MemberVO passcheck(String mem_id) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		
+		try {
+			memVo=(MemberVO) smc.queryForObject("login.passwordchk",mem_id);
+		} catch (Exception e) {
+			memVo=null;
+			e.printStackTrace();
+		}
+		
+		
+		return memVo;
+	}
 
 }
