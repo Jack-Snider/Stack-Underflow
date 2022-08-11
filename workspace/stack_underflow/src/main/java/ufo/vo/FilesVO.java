@@ -7,6 +7,7 @@ public class FilesVO {
 	private String file_ext; // 파일 확장자명
 	private String file_size; // 파일 사이즈
 	private String file_etc; // 파일 비고
+	private String mem_id;
 	
 	public int getFile_num() {
 		return file_num;
@@ -37,6 +38,12 @@ public class FilesVO {
 	}
 	public void setFile_etc(String file_etc) {
 		this.file_etc = file_etc;
+	}
+	public String getMem_id() {
+		return mem_id;
+	}
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
 	
 }

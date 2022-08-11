@@ -74,8 +74,9 @@
               
              <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
-              <sqlMap resource="ufo/mapping/login.xml"/>
-                
+             <!--  
+             <sqlMap resource="ufo/mapping/login.xml"/>
+             -->
    </sqlMapConfig>
    
    
