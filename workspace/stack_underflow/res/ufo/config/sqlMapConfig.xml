@@ -38,6 +38,7 @@
          
          	<typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
        		<typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
+       		<typeAlias alias = "postVo" type ="ufo.vo.PostVO"/>
        		
          <!--
             DB와 연결하는 부분 설정하기
@@ -74,6 +75,8 @@
               
              <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
+             <sqlMap resource="ufo/mapping/post.xml"/>
+             
              <!--  
              <sqlMap resource="ufo/mapping/login.xml"/>
              -->
