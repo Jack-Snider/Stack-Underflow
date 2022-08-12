@@ -10,8 +10,11 @@ public interface IMemberService {
 	 * @return 1 : 저장성공, 0 : 저장실패
 	 */
 	public int insertMember(MemberVO memVo);
+	
 	public int checkById(String mem_id);
+	
 	public int checkByNknm(String mem_nknm);
+	
 	/**
 	 * 아이디를 입력받아 비밀번호 일치여부 확인
 	 * @param memVo
