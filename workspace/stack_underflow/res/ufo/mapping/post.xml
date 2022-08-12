@@ -36,8 +36,15 @@
 
 	  </insert>
 	  
-	  <!-- 특정 회원의 게시글 가져오기 -->
+	  
+	  <!-- 회원이 작성한 특정 게시글 1개 가져오기 -->
 	  <select id="getUserPost" resultClass="postVo" parameterClass="String">
+	  	select * from post where post_etc = #post_etc#
+	  </select>
+	  
+	  
+	  <!-- 회원이 작성한 모든 게시글 가져오기 -->
+	  <select id="getUserPostAll" resultClass="postVo" parameterClass="String">
 	  	select * from post where mem_id = #mem_id#
 	  </select>
 	  
