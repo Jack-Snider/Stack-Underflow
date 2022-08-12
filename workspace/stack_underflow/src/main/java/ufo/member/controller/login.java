@@ -67,7 +67,7 @@ public class login extends HttpServlet {
 				} else if (!pswd.equals(userPass)) {  //비밀번호가 일치하지 않을 경우 로그인화면으로 이동한다.
 					out.print("<html>");
 					out.print("<body>");
-					out.print("<script>alert('올바르지 않은 비밀번호 입니다.');location.href='./common/login.jsp';</script>");
+					out.print("<script>alert('올바르지 않은 비밀번호 입니다.');history.back();</script>");
 					out.print("</body>");
 					out.print("</html>");
 				}
@@ -76,7 +76,7 @@ public class login extends HttpServlet {
 				out.print("console.log()");
 				out.print("<html>");
 				out.print("<body>");
-				out.print("<script>alert('해당 아이디가 존재하지 않습니다.');location.href='./common/login.jsp';</script>");
+				out.print("<script>alert('해당 아이디가 존재하지 않습니다.');history.back();</script>");
 				out.print("</body>");
 				out.print("</html>");
 			}
@@ -84,7 +84,7 @@ public class login extends HttpServlet {
 		} else { // 아이디 또는 비밀번호를 공란으로 채웠을때
 			out.print("<html>");
 			out.print("<body>");
-			out.print("<script>alert('아이디 또는 비밀번호란이 비었습니다.');location.href='./common/login.jsp';</script>");
+			out.print("<script>alert('아이디 또는 비밀번호란이 비었습니다.');history.back();</script>");
 			out.print("</body>");
 			out.print("</html>");
 		}
