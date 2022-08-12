@@ -11,9 +11,15 @@ public interface IMemberService {
 	 */
 	public int insertMember(MemberVO memVo);
 	/**
-	 * 회원ID를 입력받아 비밀번호 일치여부 확인
-	 * @param String
-	 * @return 
+	 * 아이디를 입력받아 비밀번호 일치여부 확인
+	 * @param memVo
+	 * @return MemberVO mem_pass
 	 */
 	public MemberVO passcheck(String mem_id);
+	/**
+	 * 해당아이디의 존재여부확인
+	 * @param mem_id
+	 * @return int 1 : 아이디 존재, 0 :아이디 존재x
+	 */
+	public int logindenyId(String mem_id);
 }

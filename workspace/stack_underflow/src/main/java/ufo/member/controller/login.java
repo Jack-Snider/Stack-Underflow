@@ -28,16 +28,24 @@ public class login extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();
-		String userId = request.getParameter("userid");
+		
+		
+		String identi=request.getParameter("id");
 		String userPass = request.getParameter("pass");
+		PrintWriter out = response.getWriter();
+		
+		
+		int cnt=1;
+		IMemberService service = MemberServiceImpl.getInstance();
+		cnt = service.logindenyId(identi);
+		MemberVO memVo2 = service.passcheck(identi);
 
 		// 체크박스가 체크되었을 때 value값이 넘어온다.
 
 		String chkid = request.getParameter("chkid");
 
 		// userId를 값으로 저장하는 Cookie객체 생성
-		Cookie cookie = new Cookie("USERID", userId);
+		Cookie cookie = new Cookie("USERID", identi);
 
 		// 체크박스의 체크 여부를 확인하여 쿠키를 저장하거나 삭제한다.
 		if (chkid != null) { // 체크박스가 체크되었을 때...
@@ -47,15 +55,7 @@ public class login extends HttpServlet {
 			response.addCookie(cookie);
 		}
 
-		if (userId != "" && userPass != "") { // 아이디와 비밀번호를 모두 입력했을때
-			MemberVO memVo1 = new MemberVO();
-			memVo1.setMem_id(userId);
-			memVo1.setMem_pass(userPass);
-
-			IMemberService service = MemberServiceImpl.getInstance();
-			MemberVO memVo2 = service.passcheck(userId);
-			int cnt = service.logindenyId(userId);
-
+		if (identi != "" && userPass != "") { // 아이디와 비밀번호를 모두 입력했을때
 
 			if (cnt==1) {
 				String pswd = memVo2.getMem_pass();

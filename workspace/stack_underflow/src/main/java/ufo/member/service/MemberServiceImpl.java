@@ -29,4 +29,10 @@ public class MemberServiceImpl implements IMemberService{
 		return dao.passcheck(mem_id);
 	}
 
+	@Override
+	public int logindenyId(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.logindenyId(mem_id);
+	}
+
 }
