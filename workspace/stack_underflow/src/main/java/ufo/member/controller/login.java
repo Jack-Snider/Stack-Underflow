@@ -29,9 +29,10 @@ public class login extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		
-		String identi=request.getParameter("id");
+		//login.jsp에받은 id와 패스워드 값을 받는다
+		String identi=request.getParameter("id"); 
 		String userPass = request.getParameter("pass");
+		
 		PrintWriter out = response.getWriter();
 		
 		
@@ -57,11 +58,13 @@ public class login extends HttpServlet {
 
 		if (identi != "" && userPass != "") { // 아이디와 비밀번호를 모두 입력했을때
 
-			if (cnt==1) {
+			if (cnt==1) {  // 아이디가 존재했을때
+				
 				String pswd = memVo2.getMem_pass();
-				if (pswd.equals(userPass)) {
-					response.sendRedirect(request.getContextPath() + "/basic_frame/frame.jsp");
-				} else if (!pswd.equals(userPass)) {
+				if (pswd.equals(userPass)) {  // 입력한 비밀번호와 해당아이디의 비밀번호 비교해서 홈으로 이동한다.
+					response.sendRedirect(request.getContextPath() + "/basic_frame/frame.jsp");   
+				
+				} else if (!pswd.equals(userPass)) {  //비밀번호가 일치하지 않을 경우 로그인화면으로 이동한다.
 					out.print("<html>");
 					out.print("<body>");
 					out.print("<script>alert('올바르지 않은 비밀번호 입니다.');location.href='./common/login.jsp';</script>");
@@ -69,7 +72,7 @@ public class login extends HttpServlet {
 					out.print("</html>");
 				}
 
-			} else if(cnt==0){
+			} else if(cnt==0){ // 아이디가 존재하지 않았을때
 				out.print("console.log()");
 				out.print("<html>");
 				out.print("<body>");
