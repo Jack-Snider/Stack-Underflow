@@ -29,6 +29,17 @@
 	  </select>
 	  -->
 	  
+	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
+		select mem_pass from member where mem_id= #mem_id#
+	 </select>
+	 
+	  <select id="logindenyId" parameterClass="string" resultClass="int">
+		select count(*) from member where mem_id= #mem_id#
+	 </select>
+	 
+	
+	  
+	  
 </sqlMap>
 
 

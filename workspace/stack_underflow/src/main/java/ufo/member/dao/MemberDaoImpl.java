@@ -64,7 +64,7 @@ public class MemberDaoImpl implements IMemberDao{
 		MemberVO memVo=null;
 		
 		try {
-			memVo=(MemberVO) smc.queryForObject("login.passwordchk",mem_id);
+			memVo=(MemberVO) smc.queryForObject("member.passwordchk",mem_id);
 		} catch (Exception e) {
 			memVo=null;
 			e.printStackTrace();
@@ -72,6 +72,20 @@ public class MemberDaoImpl implements IMemberDao{
 		
 		
 		return memVo;
+	}
+
+	@Override
+	public int logindenyId(String mem_id) {
+		
+		int cnt=0;
+		
+		try {
+			cnt=(int) smc.queryForObject("member.logindenyId",mem_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+				
+		return cnt;
 	}
 
 }
