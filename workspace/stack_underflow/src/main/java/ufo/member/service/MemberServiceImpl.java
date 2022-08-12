@@ -23,6 +23,17 @@ public class MemberServiceImpl implements IMemberService{
 	public int insertMember(MemberVO memVo) {
 		return dao.insertMember(memVo);
 	}
+	
+	@Override
+	public int checkById(String mem_id) {
+		return dao.checkById(mem_id);
+	}
+	
+	@Override
+	public int checkByNknm(String mem_nknm) {
+		return dao.checkByNknm(mem_nknm);
+	}
+	
 	@Override
 	public MemberVO passcheck(String mem_id) {
 		// TODO Auto-generated method stub

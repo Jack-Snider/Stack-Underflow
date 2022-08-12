@@ -11,6 +11,45 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+
+	$(function(){
+		$('#idcheck, #dncheck').on('click', function(){
+			let id = $(this).attr('id');
+			let value = "";
+			if(id == 'idcheck'){
+				value = $('#mem_id').val().trim();
+				if(value.length<1) alert('Please Enter ID');
+			}else {
+				value = $('#mem_nknm').val().trim();
+				if(value.length<1) alert('Please Enter Disply Name');
+			}
+			$.ajax({
+				url : '/stack_underflow/DuplicationCheck.do',
+				data : {[id] : value},
+				type : 'post',
+				success : function(res){
+					if(res.hasOwnProperty('idres')){
+						if(res.idres == 1){
+							$('#idres').text('Duplicated').css('color', 'red');
+						}else{
+							$('#idres').text('valid').css('color', 'green');
+						}
+					}else if(res.hasOwnProperty('dnres')){
+						if(res.dnres == 1){
+							$('#dnres').text('Duplicated').css('color', 'red');
+						}else{
+							$('#dnres').text('valid').css('color', 'green');
+						}
+					}
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'json'
+			});
+		});
+	});
+
 </script>
 <style>
 	.container{
@@ -60,8 +99,8 @@
 			
 			<div class="form-group">
 				<label for="mem_nknm">Display Name</label> 
-				<input type="button" id="discheck" value="Duplication Check" class="btn btn-dark btn-sm">
-				<span id="disres"></span>
+				<input type="button" id="dncheck" value="Duplication Check" class="btn btn-dark btn-sm">
+				<span id="dnres"></span>
 				<input type="text" class="form-control" id="mem_nknm" placeholder="Enter Disply Name" name="mem_nknm" required>
 			</div>
 			

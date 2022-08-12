@@ -14,6 +14,14 @@
 							#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#)
 	  </insert>
 	  
+	  <select id="checkById" parameterClass="String" resultClass="int">
+	  	select count(*) from member where mem_id = #data#
+	  </select>
+	  
+	  <select id="checkByNknm" parameterClass="String" resultClass="int">
+	  	select count(*) from member where mem_nknm = #data#
+	  </select>
+	  
 	  <!--  
 	  <select id="mypageMember" >
 	  

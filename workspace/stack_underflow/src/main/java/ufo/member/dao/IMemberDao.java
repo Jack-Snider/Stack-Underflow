@@ -10,11 +10,16 @@ public interface IMemberDao {
 	 * @return 1 : 저장성공, 0 : 저장실패
 	 */
 	public int insertMember(MemberVO memVo);
+<<<<<<< HEAD
 	/**
 	 * 아이디를 입력받아 비밀번호 일치여부 확인
 	 * @param memVo
 	 * @return MemberVO mem_pass
 	 */
+=======
+	public int checkById(String mem_id);
+	public int checkByNknm(String mem_nknm);
+>>>>>>> af68663e1a8fd53b4626e0634a1b404bec57df87
 	public MemberVO passcheck(String mem_id);
 	/**
 	 * 해당아이디의 존재여부확인
