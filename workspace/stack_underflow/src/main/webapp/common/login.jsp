@@ -6,15 +6,12 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script><script type="text/javascript">
+
+//회원가입 버튼을 눌렀을때 이동하는 기능
 $(function(){
 $('#sgnupbtn').on('click', function(){
 	location.href="<%=request.getContextPath()%>/loginSignUp.do";
@@ -24,7 +21,7 @@ $('#sgnupbtn').on('click', function(){
 </head>
 
 <%
-// 이 JSP영역에서 쿠키는 서블릿에서와 같은 방법으로 사용하면 된다.
+// 아이디 체크값을 기억하는 기능
 
 String identify = ""; // 쿠키값이 저장될 변수
 String chk = ""; // 체크박스 체크용 변수
