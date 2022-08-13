@@ -8,6 +8,7 @@
 
 	  <!-- 게시글 저장 -->
 	  <insert id="insertPost" parameterClass="postVo">
+	  	<!-- post_num_seq.nextval -->
 	  	insert into post(	post_num,
 	  						post_title,
 	  						post_cont,

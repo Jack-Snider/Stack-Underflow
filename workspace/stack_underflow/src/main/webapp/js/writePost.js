@@ -1,11 +1,10 @@
 /**
- * 
+ *
+ 
+ js file for writePost.jsp
+  
  */
  
-function test(){
-	alert( "Hello world" );
-}
-
 function validateForm( form ){
 	
 	if( form.title.value == "" ){
