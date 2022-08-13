@@ -46,6 +46,7 @@ public class PostDaoImpl implements IPostDao {
 	 * 작성자 : Jack Snider
 	 * 사용자가 작성한 모든 게시글 반환
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<PostVO> getUserPostAll(String mem_id) {
 		// TODO Auto-generated method stub
