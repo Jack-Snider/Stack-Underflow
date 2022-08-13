@@ -45,6 +45,7 @@ public class postController extends HttpServlet {
 		String post_content = request.getParameter( "content" );
 		postVo.setPost_cont( post_content );
 		
+		
 	}
 
 	/**
