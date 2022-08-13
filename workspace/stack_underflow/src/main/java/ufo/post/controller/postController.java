@@ -25,7 +25,13 @@ public class postController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		request.setCharacterEncoding( "utf-8 ");
+		/*
+		 * 게시글 작성자를 저장하기 위해 로그인 페이지에서 로그인 하면 session에 집어넣고
+		 * 여기로 가져온다. 
+		 * 
+		 */
+		
+		request.setCharacterEncoding( "utf-8" );
 		
 		// Service객체 생성
 		IPostService service = PostServiceImpl.getInstance();
