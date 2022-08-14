@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 	<!-- 
 	
 		실행하기 전에 session.getAttribute("아이디")
@@ -10,6 +11,7 @@
 		로그인이 안되있으면 게시글을 작성할 수 없음.
 	
 	 -->
+	 
 	<head>
 		<meta charset="UTF-8">
 		<title>write Post</title>
@@ -35,6 +37,9 @@
 							<option>Free</option>
 							<option>Q&A</option>
 						</select>
+						
+						<input type = "file" name = "file">
+						
 					</td>
 					
 			
@@ -47,14 +52,19 @@
 					</td>
 				</tr>
 				<tr>
+					<!--
+						align = "center" -> 요소들 가운데 배치 
+					 -->
 					<td colspan = "2" align = "center">
 						<button type = "submit" class = "btn btn-primary">작성 완료</button>
 						<button type = "reset" class = "btn btn-primary">다시 입력</button>
-						<button type = "button" class = "btn btn-primary" onclick = "location.href = 목록 보여주는 jsp파일">목록 보기</button>
-						
-						
+						<button type = "button" class = "btn btn-primary" onclick = "location.href = 목록 보여주는 jsp파일">목록 보기</button>					
 					</td>
 				</tr>
+				
+				
+				
+				
 			</table>
 		
 		</form>
