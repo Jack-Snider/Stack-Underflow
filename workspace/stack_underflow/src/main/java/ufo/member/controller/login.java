@@ -30,7 +30,7 @@ public class login extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		//login.jsp에받은 id와 패스워드 값을 받는다
-		String identi=request.getParameter("id"); 
+		String identi = request.getParameter("id"); 
 		String userPass = request.getParameter("pass");
 		
 		PrintWriter out = response.getWriter();

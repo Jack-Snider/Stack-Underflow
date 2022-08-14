@@ -1,6 +1,7 @@
 package ufo.post.service;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.post.dao.IPostDao;
 import ufo.post.dao.PostDaoImpl;
@@ -37,5 +38,13 @@ public class PostServiceImpl implements IPostService {
 		// TODO Auto-generated method stub
 		return dao.getUserPostAll(mem_id);
 	}
+
+	@Override
+	public int selectCount() {
+		// TODO Auto-generated method stub
+		return dao.selectCount();
+	}
+
+	
 
 }

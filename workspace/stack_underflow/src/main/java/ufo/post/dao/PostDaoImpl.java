@@ -3,6 +3,7 @@ package ufo.post.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -16,6 +17,7 @@ public class PostDaoImpl implements IPostDao {
 	private static IPostDao dao;
 
 	private PostDaoImpl() {
+		//smc = SqlMapClientFactory.getSqlMapClient();
 		smc = SqlMapClientFactory.getSqlMapClient();
 	}
 
@@ -77,5 +79,13 @@ public class PostDaoImpl implements IPostDao {
 		
 		
 	}
+
+	@Override
+	public int selectCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
 
 }
