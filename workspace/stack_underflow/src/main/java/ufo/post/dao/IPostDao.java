@@ -45,4 +45,7 @@ public interface IPostDao {
 	 */
 	public int selectCount();
 	
+	public List<PostVO> getAllPost();
+	
+	
 }

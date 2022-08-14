@@ -45,6 +45,12 @@ public class PostServiceImpl implements IPostService {
 		return dao.selectCount();
 	}
 
+	@Override
+	public List<PostVO> getAllPost() {
+		// TODO Auto-generated method stub
+		return dao.getAllPost();
+	}
+
 	
 
 }

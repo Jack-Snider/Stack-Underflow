@@ -86,6 +86,24 @@ public class PostDaoImpl implements IPostDao {
 		return 0;
 	}
 
+	
+	@Override
+	public List<PostVO> getAllPost() {
+		
+		List<PostVO> list = null;
+		
+		try {
+			
+			list = smc.queryForList("post.getAllPost");				
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			list = null;
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 
 
 }
