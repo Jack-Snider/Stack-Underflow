@@ -47,9 +47,12 @@ public class postController extends HttpServlet {
 		// PostVO 객체 생성
 		PostVO postVo = new PostVO();
 
-		int post_num = 0;
+		// 
+		int post_num = 1;
+		
+		
 		String post_reg_date = "2022-08-14";
-		int post_view = 0;
+		int post_views = 0;
 		int post_like = 0;
 		int post_dislike = 0;
 		String post_udt_date = "2022-08-14";
@@ -65,7 +68,7 @@ public class postController extends HttpServlet {
 
 		postVo.setPost_num(post_num);
 		postVo.setPost_reg_date(post_reg_date);
-		postVo.setPost_view(post_view);
+		postVo.setPost_views(post_views);
 		postVo.setPost_like(post_like);
 		postVo.setPost_dislike(post_dislike);
 		postVo.setPost_udt_date(post_udt_date);
@@ -77,7 +80,7 @@ public class postController extends HttpServlet {
 		int cnt = service.insertPost(postVo);
 		
 		if(cnt == 1) {
-			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
+			response.sendRedirect(request.getContextPath() + "/pages/postList.jsp");
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
