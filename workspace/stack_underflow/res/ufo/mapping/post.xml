@@ -16,7 +16,7 @@
 	  						post_views,
 	  						post_like,
 	  						post_dislike,
-	  						post_udt_update,
+	  						post_udt_date,
 	  						file_num,
 	  						mem_id,
 	  						post_board_type
@@ -28,7 +28,7 @@
 	  						#post_views#,
 	  						#post_like#,
 	  						#post_dislike#,
-	  						#post_udt_update#,
+	  						#post_udt_date#,
 	  						#file_num#,
 	  						#mem_id#,
 	  						#post_board_type#
