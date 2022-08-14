@@ -27,7 +27,7 @@
 					<div id = "center"></div>
 					<div id = "right_side"></div>
 				</div>
-			</div>''
+			</div>
 			
 			
 			
