@@ -48,7 +48,7 @@ public class postController extends HttpServlet {
 		PostVO postVo = new PostVO();
 
 		// 
-		int post_num = 1;
+		int post_num = 4;
 		
 		
 		String post_reg_date = "2022-08-14";

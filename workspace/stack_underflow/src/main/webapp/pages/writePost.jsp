@@ -15,11 +15,7 @@
 	<form action="<%= request.getContextPath() %>/postController.do" method="post" enctype="multiple/form-data"
 		onsubmit="return validateForm(this)">
 		<table border="1" style="width: 90%;">
-			<tr>
-				<td>작성자</td>
-				<td><input type="text" name="name" style="width: 150px;">
-				</td>
-			</tr>
+		
 
 			<tr>
 				<td>제목</td>
@@ -39,7 +35,7 @@
 				<td colspan="2" align="center">
 					<button type="submit">submit</button>
 					<button type = "reset">reset</button>
-					<button type = "button" onclick = "목록 리스트로 이동">목록 바로가기</button>
+					<button type = "button" onclick = "toList()">목록 바로가기</button>
 					
 				</td>
 			</tr>

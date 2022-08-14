@@ -40,10 +40,16 @@ public interface IPostService {
 	
 	
 	/**
-	 * 모든 게시글 가져오기
+	 * 
 	 * @param map
 	 * @return
 	 */
 	public int selectCount();
+	
+	/**
+	 * 모든 게시글 가져오기
+	 * @return
+	 */
+	public List<PostVO> getAllPost();
 	
 }
