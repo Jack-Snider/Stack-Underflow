@@ -37,8 +37,7 @@
 						</select>
 					</td>
 					
-					
-					
+			
 				</tr>
 				<tr>
 					<td>내용</td>
