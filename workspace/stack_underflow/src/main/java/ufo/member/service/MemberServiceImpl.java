@@ -1,5 +1,7 @@
 package ufo.member.service;
 
+import java.util.List;
+
 import ufo.member.dao.IMemberDao;
 import ufo.member.dao.MemberDaoImpl;
 import ufo.vo.MemberVO;
@@ -44,6 +46,24 @@ public class MemberServiceImpl implements IMemberService{
 	public int logindenyId(String mem_id) {
 		// TODO Auto-generated method stub
 		return dao.logindenyId(mem_id);
+	}
+
+	@Override
+	public List<MemberVO> findIdName() {
+		// TODO Auto-generated method stub
+		return dao.findIdName();
+	}
+
+	@Override
+	public MemberVO findIdEmail(String mem_email) {
+		// TODO Auto-generated method stub
+		return dao.findIdEmail(mem_email);
+	}
+
+	@Override
+	public int findIdEmailCount(String mem_email) {
+		// TODO Auto-generated method stub
+		return dao.findIdEmailCount(mem_email);
 	}
 
 }

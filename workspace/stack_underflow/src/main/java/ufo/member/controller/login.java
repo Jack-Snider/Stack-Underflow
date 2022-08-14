@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ufo.member.service.IMemberService;
 import ufo.member.service.MemberServiceImpl;
@@ -18,11 +19,6 @@ import ufo.vo.MemberVO;
 @WebServlet("/login.do")
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,6 +30,8 @@ public class login extends HttpServlet {
 		String userPass = request.getParameter("pass");
 		
 		PrintWriter out = response.getWriter();
+		
+		HttpSession session=request.getSession();
 		
 		
 		int cnt=1;
@@ -62,7 +60,7 @@ public class login extends HttpServlet {
 				
 				String pswd = memVo2.getMem_pass();
 				if (pswd.equals(userPass)) {  // 입력한 비밀번호와 해당아이디의 비밀번호 비교해서 홈으로 이동한다.
-					response.sendRedirect(request.getContextPath() + "/basic_frame/frame.jsp");   
+				session.setAttribute("userPass", userPass);
 				
 				} else if (!pswd.equals(userPass)) {  //비밀번호가 일치하지 않을 경우 로그인화면으로 이동한다.
 					out.print("<html>");

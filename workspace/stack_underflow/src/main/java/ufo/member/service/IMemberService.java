@@ -1,5 +1,7 @@
 package ufo.member.service;
 
+import java.util.List;
+
 import ufo.vo.MemberVO;
 
 public interface IMemberService {
@@ -27,4 +29,22 @@ public interface IMemberService {
 	 * @return int 1 : 아이디 존재, 0 :아이디 존재x
 	 */
 	public int logindenyId(String mem_id);
+	/**
+	 * 리스트로 받아와 이름목록중에 찾는 이름이 있는지 찾음
+	 * @return List
+	 */
+	public List<MemberVO> findIdName();
+	/**
+	 * 이메일을 입력받아 일치하는 이름이 있는지 확인한다
+	 * @param mem_email
+	 * @return 
+	 */
+	public MemberVO findIdEmail(String mem_email);
+	/**
+	 * 이메일에 해당하는 이름의 존재여부를 확인함
+	 * @param mem_email
+	 * @return int 0: 존재하지않음 1: 존재 
+	 */
+	public int findIdEmailCount(String mem_email);
+	
 }

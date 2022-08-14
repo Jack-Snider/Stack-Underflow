@@ -1,6 +1,7 @@
 package ufo.member.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -15,7 +16,7 @@ public class MemberDaoImpl implements IMemberDao{
 	
 	private MemberDaoImpl() {
 		smc = SqlMapClientFactory.getSqlMapClient();
-		}
+		} 
 	
 	public static IMemberDao getInstance() {
 		if(dao == null) dao = new MemberDaoImpl();
@@ -85,6 +86,43 @@ public class MemberDaoImpl implements IMemberDao{
 			e.printStackTrace();
 		}
 				
+		return cnt;
+	}
+
+	@Override
+	public List<MemberVO> findIdName() {
+		List<MemberVO> list=null;
+		try {
+			list=smc.queryForList("member.findIdName");
+		} catch (Exception e) {
+			list=null;
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public MemberVO findIdEmail(String mem_email) {
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.findIdEmail",mem_email);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+
+	@Override
+	public int findIdEmailCount(String mem_email) {
+		int cnt=0;
+		try {
+			cnt=(int) smc.queryForObject("member.findIdEmailCount",mem_email);
+		} catch (Exception e) {
+			cnt=0;
+			e.printStackTrace();
+		}
 		return cnt;
 	}
 

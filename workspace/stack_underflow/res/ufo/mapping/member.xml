@@ -21,14 +21,8 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
-	  
-	  <!--  
-	  <select id="mypageMember" >
-	  
-	   select 
-	  </select>
-	  -->
-	  
+
+
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
 		select mem_pass from member where mem_id= #mem_id#
 	 </select>
@@ -37,9 +31,23 @@
 		select count(*) from member where mem_id= #mem_id#
 	 </select>
 	 
+	 <select id="findIdName" resultClass="memberVo">
+		select * from member
+	</select>
+
+	<select id="findIdEmail" resultClass="memberVo" parameterClass="string">
+		select *
+		from member
+		where mem_email=#mem_email#
+	</select>
 	
-	  
-	  
+	<select id="findIdEmailCount" resultClass="int" parameterClass="string">
+		select count(*)
+		from member
+		where mem_email=#mem_email#
+	</select>
+	
+
 </sqlMap>
 
 
