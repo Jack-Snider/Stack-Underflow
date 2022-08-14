@@ -6,14 +6,26 @@
 <meta charset="UTF-8">
 <title>StackUnderflow - SignUp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
 	$(function(){
+		// 유효성 검사
+		$('#mem_id').on('keyup', function(){
+			let idvalue = $(this).val().trim();
+			let idreg = /^[a-zA-Z0-9]{4,12}$/;
+			if(idreg.test(idvalue)){
+				$(this).css('border', '2px solid blue');
+			}else{
+				$(this).css('border', '2px solid red');
+			}
+		});
+		// 중복 검사
 		$('#idcheck, #dncheck').on('click', function(){
+			$(this).empty();
 			let id = $(this).attr('id');
 			let value = "";
 			if(id == 'idcheck'){
@@ -31,12 +43,14 @@
 					if(res.hasOwnProperty('idres')){
 						if(res.idres == 1){
 							$('#idres').text('Duplicated').css('color', 'red');
+							$('#mem_id').val('');
 						}else{
 							$('#idres').text('valid').css('color', 'green');
 						}
 					}else if(res.hasOwnProperty('dnres')){
 						if(res.dnres == 1){
 							$('#dnres').text('Duplicated').css('color', 'red');
+							$('#mem_nknm').val('');
 						}else{
 							$('#dnres').text('valid').css('color', 'green');
 						}
@@ -78,7 +92,7 @@
 <body>
 
 	<div class="container">
-		<form method="post" action="<%=request.getContextPath() %>/InsertMember.do">
+		<form method="post" enctype="multipart/form-data" action="<%=request.getContextPath() %>/InsertMember.do">
 		
 			<div class="form-group">
 				<label for="mem_id">ID</label> 
@@ -152,12 +166,10 @@
 				<input type="text" class="form-control" id="mem_ans" placeholder="Enter Answer" name="mem_ans" required>
 			</div>
 			
-			<!--  
-			<div class = "form-group">
-				<label for="picture">Profile Image</label>
-				<input type="file" id="file_name" name="file_name">
-			</div>
-			-->
+			<div class="form-group">
+				<label for="mem_ans">Profile Image</label> 
+      			<input type="file" class="form-control-file border" name="pfImg">
+    		</div>
 			
 			<button type="submit" class="btn btn-primary">Sign Up</button>
 			<span id="joinsub"></span>
