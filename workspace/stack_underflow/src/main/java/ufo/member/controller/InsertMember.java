@@ -56,6 +56,8 @@ public class InsertMember extends HttpServlet {
 		int cnt1 = service1.insertMember(memVo);
 		
 		if (cnt1 != 0) {
+			
+			
 			FilesVO fvo = new FilesVO();
 			fvo.setFile_name("프로필 사진");
 			fvo.setFile_ext("jpg");
