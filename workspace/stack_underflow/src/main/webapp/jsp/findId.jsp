@@ -17,9 +17,9 @@
 						placeholder="이름을 입력하세요."></td>
 				</tr>
 				<tr>
-					<td>이메일:</td>
-					<td><input type="text" name="InputEmailText"
-						placeholder="이메일을 입력하세요."></td>
+					<td>주민번호:</td>
+					<td><input type="text" name="InputregNoText"
+						placeholder="ex)123456-7891234."></td>
 				</tr>
 				<tr>
 					<td style="text-align: center;"><input type="submit"

@@ -37,33 +37,40 @@ public class MemberServiceImpl implements IMemberService{
 	}
 	
 	@Override
-	public MemberVO passcheck(String mem_id) {
-		// TODO Auto-generated method stub
-		return dao.passcheck(mem_id);
-	}
-
-	@Override
-	public int logindenyId(String mem_id) {
-		// TODO Auto-generated method stub
-		return dao.logindenyId(mem_id);
-	}
-
-	@Override
 	public List<MemberVO> findIdName() {
 		// TODO Auto-generated method stub
 		return dao.findIdName();
 	}
 
 	@Override
-	public MemberVO findIdEmail(String mem_email) {
+	public MemberVO findregNo(String mem_regno) {
 		// TODO Auto-generated method stub
-		return dao.findIdEmail(mem_email);
+		return dao.findregNo(mem_regno);
 	}
 
 	@Override
-	public int findIdEmailCount(String mem_email) {
+	public int findregNoCount(String mem_regno) {
 		// TODO Auto-generated method stub
-		return dao.findIdEmailCount(mem_email);
+		return dao.findregNoCount(mem_regno);
+	}
+
+
+	@Override
+	public int logindenyId(String mem_id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public MemberVO logincheck(MemberVO paramMemVo) {
+		// TODO Auto-generated method stub
+		return dao.logincheck(paramMemVo);
+	}
+
+	@Override
+	public int chngePass(String mem_email) {
+		// TODO Auto-generated method stub
+		return dao.chngePass(mem_email);
 	}
 
 }

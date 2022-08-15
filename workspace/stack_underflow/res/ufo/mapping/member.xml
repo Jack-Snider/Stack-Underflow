@@ -23,29 +23,29 @@
 	  </select>
 
 
-	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
-		select mem_pass from member where mem_id= #mem_id#
-	 </select>
-	 
-	  <select id="logindenyId" parameterClass="string" resultClass="int">
-		select count(*) from member where mem_id= #mem_id#
+	 <select id="logincheck" resultClass="memberVo" parameterClass="memberVo">
+	  select * from member where mem_id=#mem_id# and mem_pass=#mem_pass#
 	 </select>
 	 
 	 <select id="findIdName" resultClass="memberVo">
 		select * from member
 	</select>
 
-	<select id="findIdEmail" resultClass="memberVo" parameterClass="string">
+	<select id="findregNo" resultClass="memberVo" parameterClass="string">
 		select *
 		from member
-		where mem_email=#mem_email#
+		where mem_regno=#mem_regno#
 	</select>
 	
-	<select id="findIdEmailCount" resultClass="int" parameterClass="string">
+	<select id="findregNoCount" resultClass="int" parameterClass="string">
 		select count(*)
 		from member
-		where mem_email=#mem_email#
+		where mem_regno=#mem_regno#
 	</select>
+	
+	<update id="chngePass" parameterClass="string">
+	update member set mem_pass=#mem_pass# where mem_email=#mem_email#
+	</update>
 	
 
 </sqlMap>

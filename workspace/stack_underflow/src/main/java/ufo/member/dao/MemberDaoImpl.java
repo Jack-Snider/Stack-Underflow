@@ -59,35 +59,6 @@ public class MemberDaoImpl implements IMemberDao{
 		return cnt;
 	}
 	
-	@Override
-	public MemberVO passcheck(String mem_id) {
-		// TODO Auto-generated method stub
-		MemberVO memVo=null;
-		
-		try {
-			memVo=(MemberVO) smc.queryForObject("member.passwordchk",mem_id);
-		} catch (Exception e) {
-			memVo=null;
-			e.printStackTrace();
-		}
-		
-		
-		return memVo;
-	}
-
-	@Override
-	public int logindenyId(String mem_id) {
-		
-		int cnt=0;
-		
-		try {
-			cnt=(int) smc.queryForObject("member.logindenyId",mem_id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-				
-		return cnt;
-	}
 
 	@Override
 	public List<MemberVO> findIdName() {
@@ -102,10 +73,10 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public MemberVO findIdEmail(String mem_email) {
+	public MemberVO findregNo(String mem_regno) {
 		MemberVO memVo=null;
 		try {
-			memVo=(MemberVO) smc.queryForObject("member.findIdEmail",mem_email);
+			memVo=(MemberVO) smc.queryForObject("member.findregNo",mem_regno);
 		} catch (Exception e) {
 			// TODO: handle exception
 			memVo=null;
@@ -115,10 +86,10 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public int findIdEmailCount(String mem_email) {
+	public int findregNoCount(String mem_regno) {
 		int cnt=0;
 		try {
-			cnt=(int) smc.queryForObject("member.findIdEmailCount",mem_email);
+			cnt=(int) smc.queryForObject("member.findregNoCount",mem_regno);
 		} catch (Exception e) {
 			cnt=0;
 			e.printStackTrace();
@@ -126,4 +97,28 @@ public class MemberDaoImpl implements IMemberDao{
 		return cnt;
 	}
 
+	@Override
+	public MemberVO logincheck(MemberVO paramMemVo) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.logincheck",paramMemVo);
+		} catch (Exception e) {
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+
+	@Override
+	public int chngePass(String mem_email) {
+		// TODO Auto-generated method stub
+		int cnt=0;
+		try {
+			cnt=smc.update("member.chngePass",mem_email);
+		} catch (Exception e) {
+			cnt=0;
+		}
+		return cnt;
+	}
 }

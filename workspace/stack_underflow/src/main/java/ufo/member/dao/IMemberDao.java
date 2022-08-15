@@ -16,13 +16,12 @@ public interface IMemberDao {
 	public int checkById(String mem_id);
 	public int checkByNknm(String mem_nknm);
 
-	public MemberVO passcheck(String mem_id);
 	/**
-	 * 해당아이디의 존재여부확인
-	 * @param mem_id
-	 * @return int 1 : 아이디 존재, 0 :아이디 존재x
+	 * 아이디와 비밀번호값을 입력받아와 객체를 반환한다
+	 * @param paramMemVo
+	 * @return MemberVo
 	 */
-	public int logindenyId(String mem_id);
+	public MemberVO logincheck(MemberVO paramMemVo);
 	/**
 	 * 리스트로 받아와 이름목록중에 찾는 이름이 있는지 찾음
 	 * @return List
@@ -33,12 +32,18 @@ public interface IMemberDao {
 	 * @param mem_email
 	 * @return 
 	 */
-	public MemberVO findIdEmail(String mem_email);
+	public MemberVO findregNo(String mem_regno);
 	/**
 	 * 이메일에 해당하는 이름의 존재여부를 확인함
 	 * @param mem_email
 	 * @return int 0: 존재하지않음 1: 존재 
 	 */
-	public int findIdEmailCount(String mem_email);
+	public int findregNoCount(String mem_regno);
+	/**
+	 * 이메일을 입력받아 비밀번호를 수정한다
+	 * @param mem_email
+	 * @return 수정성공 1,수정실패 0
+	 */
+	public int chngePass(String mem_email);
 	
 }
