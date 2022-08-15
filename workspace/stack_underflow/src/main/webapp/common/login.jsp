@@ -77,8 +77,15 @@ if (cookies != null) {
 				</tr>
 				<tr>
 					<td colspan="2"><input type="checkbox" name="chkid" <%=chk%>
-						value="check">id 기억하기</td>
+						value="check"> id 기억하기</td>
 				</tr>
+				<tr>
+					<td style="text-align: center;">
+					<p><a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;"> 아이디 찾기 </a>|
+					<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=400, height=400'); return false;"> 비밀번호 찾기 </a></p>
+					</td>
+				</tr>
+				
 				<tr>
 					<td style="text-align: center;"><input type="submit"
 						value="로그인" id="lgnbtn"></td>

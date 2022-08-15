@@ -54,9 +54,10 @@
             
              <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
+
              <sqlMap resource="ufo/mapping/post.xml"/>
              
-             
+
    </sqlMapConfig>
    
    
