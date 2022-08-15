@@ -52,4 +52,11 @@ public interface IPostService {
 	 */
 	public List<PostVO> getAllPost();
 	
+	/**
+	 * 게시글 목록에서 특정 게시글 상세보기
+	 * @param postNum
+	 * @return PostVO
+	 */
+	public PostVO getDetailPost(int postNum);
+	
 }

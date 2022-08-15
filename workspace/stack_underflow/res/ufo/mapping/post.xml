@@ -52,6 +52,10 @@
 	  	select * from POST
 	  </select>
 	  
+	  <!-- 게시글 목록에서 특정 게시글 가져오기 -->
+	  <select id="getPostDetail" resultClass = "postVo" parameterClass="Integer">
+	  	select * from POST where post_num = #post_num#
+	  </select>
 	  
 </sqlMap>
 

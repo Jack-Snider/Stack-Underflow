@@ -38,7 +38,9 @@
 		<table border = "1" width = "90%">
 			<tr>
 				<th width = "10%">번호</th>
-				<th width = "*">제목</th>
+				<th width = "*">
+					제목
+				</th>
 				<th width = "15%">작성자</th>
 				<th width = "10%">조회수</th>
 				<th width = "15%">작성일</th>
@@ -47,16 +49,20 @@
 			
 			<%
 			
-				
-				
+
 				if( list != null ){
 				for( PostVO postVo : list ){
 					
 			%>
 			
 			<tr>
+				<!-- 호찡 말대로 여기다 네임값을 각 번호로 줌 -->
 				<td width = "10%"><%= postVo.getPost_num() %></td>
-				<td width = "*"><%= postVo.getPost_title() %></td>
+				<td width = "*">						
+					<a href = "<%=request.getContextPath()%>/postDetail.do?postNum=<%= postVo.getPost_num() %>">
+						<%= postVo.getPost_title() %>
+					</a>
+				</td>
 				<td width = "15%"><%= postVo.getMem_id() %></td>
 				<td width = "10%"><%= postVo.getPost_views() %></td>
 				<td width = "15%"><%= postVo.getPost_reg_date() %></td>
