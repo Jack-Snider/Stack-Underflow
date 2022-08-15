@@ -23,7 +23,7 @@
 					<option value="What is Your Favorite Food ?">What is Your
 						Favorite Food ?</option>
 				</select>
-			</div>
+			</div> 
 			<div class="form-group">
 				<label for="mem_ans">답변을 입력하세요</label> <br> <input type="text"
 					class="form-control" id="mem_ans" placeholder="Enter Answer"
