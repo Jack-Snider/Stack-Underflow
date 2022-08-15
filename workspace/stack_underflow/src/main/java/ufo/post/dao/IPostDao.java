@@ -1,6 +1,7 @@
 package ufo.post.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.vo.PostVO;
 
@@ -36,5 +37,15 @@ public interface IPostDao {
 	 * @return
 	 */
 	public List<PostVO> getUserPostAll(String mem_id);
+	
+	/**
+	 * 모든 게시글 가져오기
+	 * @param map
+	 * @return
+	 */
+	public int selectCount();
+	
+	public List<PostVO> getAllPost();
+	
 	
 }

@@ -5,6 +5,10 @@
   
  */
  
+function toList(){
+	document.location.href = "postList.jsp";
+}
+ 
 function validateForm( form ){
 	
 	if( form.title.value == "" ){

@@ -6,7 +6,7 @@ public class PostVO {
 	private String post_title; // 게시글 제목
 	private String post_cont; // 게시글 내용
 	private String post_reg_date; // 게시글 작성일 ( DATE 타입 )
-	private int post_view; // 게시글 조회수
+	private int post_views; // 게시글 조회수
 	private int post_like; // 게시글 좋아요 수
 	private int post_dislike; // 게시글 싫어요 수
 	private String post_udt_date; // 게시글 수정일 ( DATE 타입 )
@@ -46,13 +46,14 @@ public class PostVO {
 		this.post_reg_date = post_reg_date;
 	}
 	
-	public int getPost_view() {
-		return post_view;
+	public int getPost_views() {
+		return post_views;
+	}
+
+	public void setPost_views(int post_views) {
+		this.post_views = post_views;
 	}
 	
-	public void setPost_view(int post_view) {
-		this.post_view = post_view;
-	}
 	
 	public int getPost_like() {
 		return post_like;
