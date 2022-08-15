@@ -51,6 +51,12 @@ public class PostServiceImpl implements IPostService {
 		return dao.getAllPost();
 	}
 
+	@Override
+	public PostVO getDetailPost(int postNum) {
+		// TODO Auto-generated method stub
+		return dao.getDetailPost(postNum);
+	}
+
 	
 
 }

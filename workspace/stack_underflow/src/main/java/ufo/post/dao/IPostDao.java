@@ -48,4 +48,11 @@ public interface IPostDao {
 	public List<PostVO> getAllPost();
 	
 	
+	/**
+	 * 게시글 목록에서 특정 게시글 상세보기
+	 * @param postNum ==> 게시글 번호
+	 * @return PostVO
+	 */
+	public PostVO getDetailPost(int postNum);
+	
 }

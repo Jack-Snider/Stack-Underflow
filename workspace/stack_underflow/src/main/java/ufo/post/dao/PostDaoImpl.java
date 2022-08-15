@@ -1,9 +1,7 @@
 package ufo.post.dao;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -102,6 +100,27 @@ public class PostDaoImpl implements IPostDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	
+	/**
+	 * 게시글 목록에서 특정 게시글 상세보기
+	 */
+	@Override
+	public PostVO getDetailPost(int postNum) {
+		// TODO Auto-generated method stub
+		
+		
+		PostVO postVo = null;
+		
+		try {
+			postVo = (PostVO) smc.queryForObject("post.getPostDetail", postNum);
+		} catch (SQLException e) {
+			postVo = null;
+			e.printStackTrace();
+		}
+		return postVo;
+		
 	}
 
 
