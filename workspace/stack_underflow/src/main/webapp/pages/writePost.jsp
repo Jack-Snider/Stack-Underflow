@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<!-- Jack Snider 시작 -->
 <head>
 <meta charset="UTF-8">
 <title>write post</title>
@@ -45,4 +46,5 @@
 
 	<link href="../js/writePost">
 </body>
+<!-- Jack Snider 끝 -->
 </html>

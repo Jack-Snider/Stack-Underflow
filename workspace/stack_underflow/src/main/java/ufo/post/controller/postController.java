@@ -37,7 +37,7 @@ public class postController extends HttpServlet {
 		 * 
 		 */
 
-		
+		/* Jack Snider 시작 */
 
 		request.setCharacterEncoding("utf-8");
 
@@ -46,16 +46,14 @@ public class postController extends HttpServlet {
 
 		// PostVO 객체 생성
 		PostVO postVo = new PostVO();
-
-		// 
-		int post_num = 4;
+	
+		// 게시글번호, 날짜 2개 => 3개
 		
-		
-		String post_reg_date = "2022-08-14";
+		//String post_reg_date = "2022-08-14";
 		int post_views = 0;
 		int post_like = 0;
 		int post_dislike = 0;
-		String post_udt_date = "2022-08-14";
+		//String post_udt_date = "2022-08-14";
 		int file_num = 83;
 		String mem_id = "kmb";
 		String post_board_type = "A";
@@ -66,12 +64,9 @@ public class postController extends HttpServlet {
 		String post_content = request.getParameter("content");
 		postVo.setPost_cont(post_content);
 
-		postVo.setPost_num(post_num);
-		postVo.setPost_reg_date(post_reg_date);
 		postVo.setPost_views(post_views);
 		postVo.setPost_like(post_like);
 		postVo.setPost_dislike(post_dislike);
-		postVo.setPost_udt_date(post_udt_date);
 		postVo.setFile_num(file_num);
 		postVo.setPost_board_type(post_board_type);
 		postVo.setMem_id(mem_id);
@@ -85,7 +80,7 @@ public class postController extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
 
-
+		/* Jack Snider 끝 */
 	}
 
 	/**

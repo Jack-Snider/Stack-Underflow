@@ -10,6 +10,8 @@ import ufo.vo.PostVO;
 
 public class PostDaoImpl implements IPostDao {
 
+	/* Jack Snider 시작 */
+	
 	private SqlMapClient smc;
 
 	private static IPostDao dao;
@@ -59,30 +61,9 @@ public class PostDaoImpl implements IPostDao {
 			e.printStackTrace();
 		}
 		return list;
-		
-		
-		/*
-		List<ProdVO> list = null; // 변수선언
-
-		try {
-			list = smc.queryForList("prod.selectAll");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} // 실행
-
-		return list; // 리턴
-		*/
-		
-		
-		
+	
 	}
 
-	@Override
-	public int selectCount() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	
 	@Override
@@ -123,6 +104,51 @@ public class PostDaoImpl implements IPostDao {
 		
 	}
 
+	@Override
+	public int increaseLike( int postNum ) {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		try {
+			cnt = smc.update("post.increaseLike", postNum);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return cnt;
+	}
 
+	@Override
+	public int increaseDislike( int postNum ) {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		try {
+			cnt = smc.update("post.increaseDislike", postNum);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
+	@Override
+	public int increaseViews( int postNum ) {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		try {
+			cnt = smc.update("post.increaseLike", postNum);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
+	@Override
+	public int selectCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/* Jack Snider 시작 */
 
 }

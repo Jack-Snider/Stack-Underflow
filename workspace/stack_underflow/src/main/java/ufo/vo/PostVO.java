@@ -2,6 +2,8 @@ package ufo.vo;
 
 public class PostVO {
 	
+	/* Jack Snider 시작 */
+	
 	private int post_num; // 게시글 번호
 	private String post_title; // 게시글 제목
 	private String post_cont; // 게시글 내용
@@ -104,7 +106,7 @@ public class PostVO {
 	}
 	
 	
-	
+	/* Jack Snider 시작 */
 	
 	
 }

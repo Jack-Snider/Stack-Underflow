@@ -28,6 +28,8 @@ public class PostDetail extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		/* Jack Snider 시작 */
+		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
@@ -51,6 +53,8 @@ public class PostDetail extends HttpServlet {
 		request.setAttribute("detailPost", postVo);
 		request.getRequestDispatcher("/pages/postDetail.jsp").forward(request, response);
 
+		/* Jack Snider 끝 */
+		
 	}
 
 	/**

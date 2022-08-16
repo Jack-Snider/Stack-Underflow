@@ -7,11 +7,7 @@ import ufo.vo.PostVO;
 
 public interface IPostService {
 	
-	/*
-	 * 
-	 * 작성자 : Jack Snider
-	 * 
-	 */
+	/* Jack Snider 시작 */
 
 	/**
 	 * 
@@ -57,6 +53,12 @@ public interface IPostService {
 	 * @param postNum
 	 * @return PostVO
 	 */
-	public PostVO getDetailPost(int postNum);
+	public PostVO getDetailPost( int postNum );
+	
+	public int increaseLike( int postNum );
+	public int increaseDislike( int postNum );
+	public int increaseViews( int postNum );
+	
+	/* Jack Snider 시작 */
 	
 }
