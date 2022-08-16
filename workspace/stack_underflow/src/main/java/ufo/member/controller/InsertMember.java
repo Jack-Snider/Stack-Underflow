@@ -56,7 +56,7 @@ public class InsertMember extends HttpServlet {
 
 		if (cnt1 != 0) {
 
-			String filePath = "c:/MiddleProjectTest";
+			String filePath = "d:/MiddleProjectTest";
 
 			File f = new File(filePath);
 			if (!f.exists()) {
@@ -67,31 +67,56 @@ public class InsertMember extends HttpServlet {
 			
 			String mem_id = request.getParameter("mem_id");
 			String fileInfo = getFileInfo(part);
-			String fileName = fileInfo.substring(0, fileInfo.indexOf("."));
-			String fileExt = fileInfo.substring(fileInfo.indexOf(".") + 1);
-
-			FilesVO fvo = new FilesVO();
 			
-			fvo.setFile_name(fileName);
-			fvo.setMem_id(mem_id);
-			fvo.setFile_ext(fileExt);
-			fvo.setFile_size((long)(Math.ceil(part.getSize()/1024.0)));
-			String saveFileName = UUID.randomUUID().toString();
-			fvo.setFile_etc(saveFileName);
-
-			try {
-				part.write(filePath + File.separator + saveFileName); 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			IFilesService service = FilesServiceImpl.getInstance();
-			int cnt2 = service.insertFiles(fvo);
-			
-			if (cnt2 != 0) {
-				response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
+			if(fileInfo.equals("")) {
+				
+				FilesVO fvo = new FilesVO();
+				
+				fvo.setFile_name("프로필사진_기본이미지");
+				fvo.setFile_ext("프로필사진_기본이미지");
+				fvo.setFile_size(404);
+				fvo.setFile_save_name("프로필사진_기본이미지");
+				fvo.setFile_etc("프로필사진_기본이미지");
+				fvo.setMem_id(mem_id);
+				
+				IFilesService service = FilesServiceImpl.getInstance();
+				int cnt2 = service.insertFiles(fvo);
+				
+				if (cnt2 != 0) {
+					response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
+				}else {
+					response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
+				}
+				
 			}else {
-				response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
+				
+				String fileName = fileInfo.substring(0, fileInfo.indexOf("."));
+				String fileExt = fileInfo.substring(fileInfo.indexOf(".") + 1);
+
+				FilesVO fvo = new FilesVO();
+				
+				fvo.setFile_name(fileName);
+				fvo.setFile_ext(fileExt);
+				fvo.setFile_size((long)(Math.ceil(part.getSize()/1024.0)));
+				String saveFileName = UUID.randomUUID().toString();
+				fvo.setFile_save_name(saveFileName);
+				fvo.setFile_etc("프로필사진_회원업로드");
+				fvo.setMem_id(mem_id);
+
+				try {
+					part.write(filePath + File.separator + saveFileName); 
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				IFilesService service = FilesServiceImpl.getInstance();
+				int cnt2 = service.insertFiles(fvo);
+				
+				if (cnt2 != 0) {
+					response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
+				}else {
+					response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
+				}
 			}
 			
 		}else {
