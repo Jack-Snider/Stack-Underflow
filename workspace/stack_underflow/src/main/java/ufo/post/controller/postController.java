@@ -1,6 +1,7 @@
 package ufo.post.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,12 +50,15 @@ public class postController extends HttpServlet {
 	
 		// 게시글번호, 날짜 2개 => 3개
 		
+		
+		
 		//String post_reg_date = "2022-08-14";
 		int post_views = 0;
 		int post_like = 0;
 		int post_dislike = 0;
 		//String post_udt_date = "2022-08-14";
 		int file_num = 83;
+		//String mem_id = request.getParameter( "memVoServlet" );
 		String mem_id = "kmb";
 		String post_board_type = "A";
 
@@ -74,8 +78,15 @@ public class postController extends HttpServlet {
 		service = PostServiceImpl.getInstance();
 		int cnt = service.insertPost(postVo);
 		
+		// PostVO 객체 생성
+		// PostVO postVo = new PostVO();
+		List<PostVO> list = service.getAllPost();
+
+		// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
 		if(cnt == 1) {
-			response.sendRedirect(request.getContextPath() + "/pages/postList.jsp");
+			request.setAttribute("postList", list);
+			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);			
+			//response.sendRedirect(request.getContextPath() + "/pages/postList.jsp");
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
