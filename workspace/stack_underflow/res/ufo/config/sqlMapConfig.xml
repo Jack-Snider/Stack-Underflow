@@ -51,28 +51,14 @@
              -->
           
              
-            
+            <!-- 호겸 시작 -->
              <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
+			<!-- 호겸 끝 -->
 
-<<<<<<< HEAD
-             
+             <!-- 현우 시작 -->
              <sqlMap resource="ufo/mapping/post.xml"/>
-            
-=======
-             <!--  
-             <sqlMap resource="ufo/mapping/post.xml"/>
-            -->
->>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
-
-
-             <sqlMap resource="ufo/mapping/post.xml"/>
-             
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
+            <!-- 현우 끝 -->
    </sqlMapConfig>
    
    

@@ -22,20 +22,10 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
-<<<<<<< HEAD
-	  <!-- 호겸 끝 -->
-=======
 
-	  
-	  <!--  
-	  <select id="mypageMember" >
-	  
-	   select 
-	  </select>
-	  -->
->>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
-	  
-	  
+	  <!-- 호겸 끝 -->
+
+
 
 	  <!-- 명범 시작 -->
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
@@ -46,8 +36,6 @@
 		select count(*) from member where mem_id= #mem_id#
 	 </select>
 	  
-
-
 
 	 <select id="logincheck" resultClass="memberVo" parameterClass="memberVo">
 	  select * from member where mem_id=#mem_id# and mem_pass=#mem_pass#
@@ -76,10 +64,7 @@
 
 	
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
 </sqlMap>
 
 
