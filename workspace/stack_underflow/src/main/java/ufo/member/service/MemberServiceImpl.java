@@ -55,11 +55,7 @@ public class MemberServiceImpl implements IMemberService{
 	}
 
 
-	@Override
-	public int logindenyId(String mem_id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 	@Override
 	public MemberVO logincheck(MemberVO paramMemVo) {
