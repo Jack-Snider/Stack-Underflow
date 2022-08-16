@@ -22,7 +22,18 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
+<<<<<<< HEAD
 	  <!-- 호겸 끝 -->
+=======
+
+	  
+	  <!--  
+	  <select id="mypageMember" >
+	  
+	   select 
+	  </select>
+	  -->
+>>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
 	  
 	  
 
@@ -65,6 +76,10 @@
 
 	
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8dcbf7ded3a8f3e131bf1d5cea5382a801b3d947
 </sqlMap>
 
 
