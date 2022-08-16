@@ -19,7 +19,7 @@
 			<div id = "header"> 
 				
 			</div><!-- 헤더 영역 끝 -->
-			
+			 
 			
 			<div id = "middle">
 				<div id = "inner_container">

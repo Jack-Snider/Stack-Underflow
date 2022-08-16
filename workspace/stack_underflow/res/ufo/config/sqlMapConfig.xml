@@ -26,15 +26,7 @@
             형식) <typeAlias alias = "alias명"  type = "클래스의 전체 이름"/>
          <typeAlias alias = "fileVo" type ="kr.or.ddit.vo.FileinfoVO"/>
          -->   
-         <!--  
-         <typeAlias alias = "adminsVo" type ="ufo.vo.AdminsVO"/>
-         <typeAlias alias = "chat_contentVo" type ="ufo.vo.Chat_ContentVO"/>
-         <typeAlias alias = "chat" type ="ufo.vo.ChatVO"/>
-         <typeAlias alias = "cmntVo" type ="ufo.vo.CmntVO"/>
-         <typeAlias alias = "manage_typeVo" type ="ufo.vo.Manage_TypeVO"/>
-         <typeAlias alias = "mngVo" type ="ufo.vo.MngVO"/>
-         <typeAlias alias = "postVo" type ="ufo.vo.PostVO"/>
-         -->     
+        
          
          	<typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
        		<typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
@@ -57,27 +49,21 @@
                  => 실행할 SQL문은 xml문서로 따로 만든 후 그 xml문서를 등록해서 사용한다. 
                  형식) <sqlMap resource="경로명/파일.xml"/>
              -->
-             <!--<sqlMap resource="kr/or/ddit/mapping/lprodTest.xml"/>-->
-             <!-- <sqlMap resource="kr/or/ddit/mapping/jdbctoibatis.xml"/> -->
-             <!--
-             <sqlMap resource="kr/or/ddit/mapping/fileinfo.xml"/> 
-              -->
-             <!-- 
-             <sqlMap resource="ufo/mapping/admins.xml"/>
-             <sqlMap resource="ufo/mapping/chat_content.xml"/>
-             <sqlMap resource="ufo/mapping/chat.xml"/>
-             <sqlMap resource="ufo/mapping/cmnt.xml"/>
-             <sqlMap resource="ufo/mapping/files.xml"/>
-             <sqlMap resource="ufo/mapping/manage_type.xml"/>
-             <sqlMap resource="ufo/mapping/mng.xml"/>
-             <sqlMap resource="ufo/mapping/post.xml"/>
-              -->
-              
+          
+             
+            
              <sqlMap resource="ufo/mapping/member.xml"/>
              <sqlMap resource="ufo/mapping/files.xml"/>
+<<<<<<< HEAD
              <!--  
              <sqlMap resource="ufo/mapping/post.xml"/>
             -->
+=======
+
+             <sqlMap resource="ufo/mapping/post.xml"/>
+             
+
+>>>>>>> 7fe59a2cf9313618a51f9023ff800c44e5b1ae99
    </sqlMapConfig>
    
    

@@ -1,6 +1,7 @@
 package ufo.post.service;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.vo.PostVO;
 
@@ -36,4 +37,26 @@ public interface IPostService {
 	 * @return
 	 */
 	public List<PostVO> getUserPostAll(String mem_id);
+	
+	
+	/**
+	 * 
+	 * @param map
+	 * @return
+	 */
+	public int selectCount();
+	
+	/**
+	 * 모든 게시글 가져오기
+	 * @return
+	 */
+	public List<PostVO> getAllPost();
+	
+	/**
+	 * 게시글 목록에서 특정 게시글 상세보기
+	 * @param postNum
+	 * @return PostVO
+	 */
+	public PostVO getDetailPost(int postNum);
+	
 }

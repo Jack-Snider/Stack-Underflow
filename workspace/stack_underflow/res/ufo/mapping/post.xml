@@ -16,7 +16,7 @@
 	  						post_views,
 	  						post_like,
 	  						post_dislike,
-	  						post_udt_update,
+	  						post_udt_date,
 	  						file_num,
 	  						mem_id,
 	  						post_board_type
@@ -28,13 +28,11 @@
 	  						#post_views#,
 	  						#post_like#,
 	  						#post_dislike#,
-	  						#post_udt_update#,
+	  						#post_udt_date#,
 	  						#file_num#,
 	  						#mem_id#,
 	  						#post_board_type#
 	  					   )
-	  				)
-
 	  </insert>
 	  
 	  
@@ -44,11 +42,20 @@
 	  </select>
 	  
 	  
-	  <!-- 회원이 작성한 모든 게시글 가져오기 -->
+	  <!-- 특정 회원이 작성한 모든 게시글 가져오기 -->
 	  <select id="getUserPostAll" resultClass="postVo" parameterClass="String">
 	  	select * from post where mem_id = #mem_id#
 	  </select>
 	  
+	  <!-- 모든 게시글 가져오기 -->
+	  <select id="getAllPost" resultClass="postVo">
+	  	select * from POST
+	  </select>
+	  
+	  <!-- 게시글 목록에서 특정 게시글 가져오기 -->
+	  <select id="getPostDetail" resultClass = "postVo" parameterClass="Integer">
+	  	select * from POST where post_num = #post_num#
+	  </select>
 	  
 </sqlMap>
 

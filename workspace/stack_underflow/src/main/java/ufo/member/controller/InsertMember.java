@@ -55,6 +55,7 @@ public class InsertMember extends HttpServlet {
 		int cnt1 = service1.insertMember(memVo);
 
 		if (cnt1 != 0) {
+<<<<<<< HEAD
 
 			String filePath = "c:/MiddleProjectTest";
 
@@ -70,6 +71,10 @@ public class InsertMember extends HttpServlet {
 			String fileName = fileInfo.substring(0, fileInfo.indexOf("."));
 			String fileExt = fileInfo.substring(fileInfo.indexOf(".") + 1);
 
+=======
+			
+			
+>>>>>>> 7fe59a2cf9313618a51f9023ff800c44e5b1ae99
 			FilesVO fvo = new FilesVO();
 			
 			fvo.setFile_name(fileName);
