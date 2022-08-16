@@ -1,5 +1,6 @@
 package ufo.member.dao;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -100,16 +101,16 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public int logincheck(MemberVO paramMemVo) {
+	public MemberVO logincheck(MemberVO memberVo) {
 		// TODO Auto-generated method stub
-		int cnt=0;
+		MemberVO memVo=null;
 		try {
-			cnt=(int) smc.queryForObject("member.logincheck",paramMemVo);
+			memVo= (MemberVO) smc.queryForObject("member.logincheck",memberVo);
 		} catch (Exception e) {
-			cnt=0;
+			memVo=null;
 			e.printStackTrace();
 		}
-		return cnt;
+		return memVo;
 	}
 
 	@Override
@@ -123,5 +124,21 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+
+	@Override
+	public List<MemberVO> LogIdcheck() {
+		List<MemberVO> list=null;
+		try {
+			list=smc.queryForList("member.LogIdcheck");
+		} catch (Exception e) {
+			// TODO: handle exception
+			list=null;
+		}
+		return list;
+	}
 	/* 명범 끝 */
+
+	
+
+
 }

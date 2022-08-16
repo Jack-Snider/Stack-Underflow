@@ -65,14 +65,10 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.findregNoCount(mem_regno);
 	}
-
-
-
-
 	@Override
-	public int logincheck(MemberVO paramMemVo) {
+	public MemberVO logincheck(MemberVO memberVo) {
 		// TODO Auto-generated method stub
-		return dao.logincheck(paramMemVo);
+		return dao.logincheck(memberVo);
 	}
 
 	@Override
@@ -80,5 +76,16 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.chngePass(mem_email);
 	}
+
+
+	@Override
+	public List<MemberVO> LogIdcheck() {
+		// TODO Auto-generated method stub
+		return dao.LogIdcheck();
+	}
+
+
 	/* 명범 끝 */
+
+	
 }

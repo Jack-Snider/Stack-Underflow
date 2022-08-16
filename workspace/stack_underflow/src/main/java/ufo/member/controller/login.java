@@ -2,6 +2,8 @@ package ufo.member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,26 +25,26 @@ public class login extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out=response.getWriter();
+		PrintWriter out = response.getWriter();
 
 		// login.jsp에받은 id와 패스워드 값을 받는다
 		String userId = request.getParameter("idInput");
 		String userPass = request.getParameter("passInput");
-System.out.println("id-" + userId);
-System.out.println("pass=" + userPass);
-		
-		
-		// id와 pass를 VO에 저장한다.
-		MemberVO paramVo = new MemberVO();
-		paramVo.setMem_id(userId);
-		paramVo.setMem_pass(userPass);
-		
-		IMemberService service = MemberServiceImpl.getInstance();
-		int cnt= service.logincheck(paramVo);
 
+
+		MemberVO memberVo = new MemberVO();
 		
-		//체크박스 기능
+		memberVo.setMem_id(userId);
+		memberVo.setMem_pass(userPass);
+
+		IMemberService service = MemberServiceImpl.getInstance();
+		MemberVO chkNull = service.logincheck(memberVo);
+		
+
+		// 세션 생성
 		HttpSession session = request.getSession();
+
+		// 체크박스 기능
 		// 체크박스가 체크되었을 때 value값이 넘어온다.
 
 		String chkid = request.getParameter("chkid");
@@ -57,17 +59,19 @@ System.out.println("pass=" + userPass);
 			cookie.setMaxAge(0);
 			response.addCookie(cookie);
 		}
+		// 로그인기능
+		if (chkNull != null) {
+			session.setAttribute("Mem_vo",chkNull);
+			session.setAttribute("Mem_name", chkNull.getMem_nm());
+			response.sendRedirect("./basic_frame/frame.jsp");
 		
-		//로그인기능
+		} else {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<script>alert('올바른 아이디 또는 비밀번호를 입력하세요');location.href='./common/login.jsp';</script>");
+			out.print("</body>");
+			out.print("</html>");
+		}
 
-		if(cnt==1) { // 로그인 성공
-
-				session.setAttribute("MemberVo",paramVo);
-				session.setAttribute("UserName", paramVo.getMem_nm());
-				response.sendRedirect("./basic_frame/frame.jsp");
-			}else{
-				request.getRequestDispatcher("/common/login.jsp").forward(request, response);
-			}
-		}		
 	}
-
+}

@@ -21,26 +21,36 @@ public interface IMemberDao {
 	
 	
 	/* 명범 시작 */
+
 	/**
 	 * 아이디와 비밀번호값을 입력받아와 객체를 반환한다
 	 * @param paramMemVo
 	 * @return MemberVo
 	 */
-	public int logincheck(MemberVO paramMemVo);
+	public List<MemberVO> LogIdcheck();
 	/**
-	 * 리스트로 받아와 이름목록중에 찾는 이름이 있는지 찾음
+	 * 아이디와 비밀번호값을 입력받아와 객체를 반환한다
+	 * @param paramMemVo
+	 * @return MemberVo
+	 */
+	public MemberVO logincheck(MemberVO memberVo);
+	/**
+	 * 아이디 찾기 버튼에서 이름을 리스트로 받아와  
+	 * 이름목록중에 찾는 이름이 있는지 찾음
 	 * @return List
 	 */
 	public List<MemberVO> findIdName();
 	/**
-	 * 이메일을 입력받아 일치하는 이름이 있는지 확인한다
-	 * @param mem_email
+	 * 아이디찾기 버튼에서
+	 * 주민번호를 입력받아 일치하는 이름이 있는지 확인한다
+	 * @param mem_regno
 	 * @return 
 	 */
 	public MemberVO findregNo(String mem_regno);
 	/**
-	 * 이메일에 해당하는 이름의 존재여부를 확인함
-	 * @param mem_email
+	 * 아이디 찾게 버튼에서
+	 * 주민번호에 해당하는 이름의 존재여부를 확인함
+	 * @param mem_regno
 	 * @return int 0: 존재하지않음 1: 존재 
 	 */
 	public int findregNoCount(String mem_regno);
