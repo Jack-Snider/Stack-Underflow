@@ -70,7 +70,7 @@ public class MemberServiceImpl implements IMemberService{
 
 
 	@Override
-	public MemberVO logincheck(MemberVO paramMemVo) {
+	public int logincheck(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
 		return dao.logincheck(paramMemVo);
 	}

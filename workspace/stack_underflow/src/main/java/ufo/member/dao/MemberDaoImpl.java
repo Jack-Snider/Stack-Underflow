@@ -100,16 +100,16 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public MemberVO logincheck(MemberVO paramMemVo) {
+	public int logincheck(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
-		MemberVO memVo=null;
+		int cnt=0;
 		try {
-			memVo=(MemberVO) smc.queryForObject("member.logincheck",paramMemVo);
+			cnt=(int) smc.queryForObject("member.logincheck",paramMemVo);
 		} catch (Exception e) {
-			memVo=null;
+			cnt=0;
 			e.printStackTrace();
 		}
-		return memVo;
+		return cnt;
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public interface IMemberService {
 	 * @param paramMemVo
 	 * @return MemberVo
 	 */
-	public MemberVO logincheck(MemberVO paramMemVo);
+	public int logincheck(MemberVO paramMemVo);
 	/**
 	 * 리스트로 받아와 이름목록중에 찾는 이름이 있는지 찾음
 	 * @return List

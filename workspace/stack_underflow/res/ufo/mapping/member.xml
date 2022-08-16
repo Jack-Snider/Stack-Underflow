@@ -37,8 +37,8 @@
 	 </select>
 	  
 
-	 <select id="logincheck" resultClass="memberVo" parameterClass="memberVo">
-	  select * from member where mem_id=#mem_id# and mem_pass=#mem_pass#
+	 <select id="logincheck" resultClass="int" parameterClass="memberVo">
+	  select count(*) from member where mem_id=#mem_id# and mem_pass=#mem_pass#
 	 </select>
 	 
 	 <select id="findIdName" resultClass="memberVo">

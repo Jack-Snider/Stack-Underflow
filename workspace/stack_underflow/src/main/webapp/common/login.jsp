@@ -20,26 +20,32 @@
 </style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
-	
-	
-	
 	//회원가입 버튼을 눌렀을때 이동하는 기능
 	$(function(){
-	$('#sgnupbtn').on('click', function(){
-		location.href="<%=request.getContextPath()%>
-		/loginSignUp.do";
-			});
+		$('#sgnupbtn').on('click', function(){
+			location.href="<%=request.getContextPath()%>/loginSignUp.do";
 		});
-	</script>
+	});
+	
+	function validateForm(form){
+			if(!form.idInput.value){
+				alert("아이디를 입력하세요");
+				return false;
+			}
+			if(!form.passInput.value){
+				alert("패스워드를  입력하세요");
+				return false;
+			}
+		
+	}
+</script>
+	
+	
 </head>
 
 <%
@@ -61,40 +67,33 @@ if (cookies != null) {
 }
 %>
 <body>
-	<div class="container">
-		<form class="needs-validation" method="post"
-			action="<%=request.getContextPath()%>/login.do">
-			<table>
-				<tr>
-					<td>ID :</td>
-					<td><input type="text" name="id" value="<%=identify%>"
-						placeholder="ID 입력하세요."></td>
-				</tr>
-				<tr>
-					<td>PASS :</td>
-					<td><input type="password" name="pass"
-						placeholder="PassWord 입력하세요."></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="checkbox" name="chkid" <%=chk%>
-						value="check"> id 기억하기</td>
-				</tr>
-				<tr>
-					<td style="text-align: center;">
-					<p><a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;"> 아이디 찾기 </a>|
-					<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=400, height=400'); return false;"> 비밀번호 찾기 </a></p>
-					</td>
-				</tr>
-				
-				<tr>
-					<td style="text-align: center;"><input type="submit"
-						value="로그인" id="lgnbtn"></td>
-					<td style="text-align: center;"><input type="button"
-						value="회원가입" id="sgnupbtn"></td>
-				</tr>
-			</table>
+<%
+if(session.getAttribute("MemberVo")==null){
+%>
+
+
+		<form onsubmit="return validateForm(this)" method="post" name="loginform" action="<%=request.getContextPath()%>/login.do;">
+		
+		 ID : <input type="text" name="idInput" value="<%=identify%>" placeholder="ID 입력하세요."><br>
+		 PASSWORD : <input type="password" name="passInput" placeholder="PassWord 입력하세요."><br>
+		 
+		<input type="checkbox" name="chkid" <%=chk%> value="check"> id 기억하기
+		<p><a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;"> 아이디 찾기 </a>|
+		<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=400, height=400'); return false;"> 비밀번호 찾기 </a></p>
+		
+		<input type="submit" value="로그인" id="lgnbtn">
+		<input type="button" value="회원가입" id="sgnupbtn">
+		
 		</form>
-	</div>
+<%
+	  }else{
+%>
+		alert(<%=session.getAttribute("UserName") %>"님이 로그인 하셨습니다."
+	<%
+		} 
+	%>
+		
+
 
 	<!-- 네이버 로그인 api -->
 	<%
