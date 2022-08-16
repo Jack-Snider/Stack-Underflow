@@ -1,50 +1,53 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                                    
+    
+    
+    
+    
+    
+    
+    
+    <wb-module deploy-name="stack_underflow">
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <property name="context-root" value="stack_underflow"/>
+                                                                        
+        
+        
+        
+        
+        
+        
+        
+        <property name="java-output-path" value="/stack_underflow/build/classes"/>
+                                                                    
+    
+    
+    
+    
+    
+    
+    
+    </wb-module>
                                 
-    
-    
-    
-    
-    
-    
-    <wb-module deploy-name="stack_underflow">
-                                                                
-        
-        
-        
-        
-        
-        
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                        
-        
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
-                                                                
-        
-        
-        
-        
-        
-        
-        <property name="context-root" value="stack_underflow"/>
-                                                                
-        
-        
-        
-        
-        
-        
-        <property name="java-output-path" value="/stack_underflow/build/classes"/>
-                                                            
-    
-    
-    
-    
-    
-    
-    </wb-module>
-                            
+
 
 
 
@@ -52,57 +55,3 @@
 
 
 </project-modules>
-=======
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                            
-    
-    
-    
-    
-    
-    <wb-module deploy-name="stack_underflow">
-                                                        
-        
-        
-        
-        
-        
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                                                
-        
-        
-        
-        
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-                                                        
-        
-        
-        
-        
-        
-        <property name="context-root" value="stack_underflow"/>
-                                                        
-        
-        
-        
-        
-        
-        <property name="java-output-path" value="/stack_underflow/build/classes"/>
-                                                    
-    
-    
-    
-    
-    
-    </wb-module>
-                        
-
-
-
-
-
-</project-modules>
->>>>>>> 7fe59a2cf9313618a51f9023ff800c44e5b1ae99
