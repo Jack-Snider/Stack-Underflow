@@ -55,6 +55,11 @@ public class MemberServiceImpl implements IMemberService{
 	}
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7a67773c2351bfda84f24eff1b0f30adc246a058
 	@Override
 	public MemberVO logincheck(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
