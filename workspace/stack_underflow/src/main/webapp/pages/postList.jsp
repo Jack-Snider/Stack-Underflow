@@ -7,6 +7,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Post List</title>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+			}
+		
+		</script>
+		
 	</head>
 	<body>
 		
