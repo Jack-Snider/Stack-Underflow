@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-
+	
 	$(function(){
 		// 비밀번호 재확인 검사
 		let passChk = false;
@@ -29,6 +29,7 @@
 				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Password Check Fail</strong> This is not the Same Password</div>');
 			}
 		});
+		
 		// 유효성 검사
 		let ruleChk = false;
 		$('#mem_id').on('keyup', function(){

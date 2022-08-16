@@ -21,6 +21,9 @@ public class MemberServiceImpl implements IMemberService{
 		return service;
 	}
 	
+	
+	
+	/* 호겸 시작 */
 	@Override
 	public int insertMember(MemberVO memVo) {
 		return dao.insertMember(memVo);
@@ -35,7 +38,16 @@ public class MemberServiceImpl implements IMemberService{
 	public int checkByNknm(String mem_nknm) {
 		return dao.checkByNknm(mem_nknm);
 	}
+	/* 호겸 끝 */
 	
+	
+	
+	
+	
+	
+	
+	
+	/* 명범 시작 */
 	@Override
 	public List<MemberVO> findIdName() {
 		// TODO Auto-generated method stub
@@ -68,5 +80,5 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.chngePass(mem_email);
 	}
-
+	/* 명범 끝 */
 }

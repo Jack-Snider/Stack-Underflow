@@ -7,6 +7,7 @@
 <sqlMap namespace="member">
 
 	  <!-- 회원 정보를 DB에 저장 -->	
+	  <!-- 호겸 시작 -->
 	  <insert id="insertMember" parameterClass="memberVo">
 	  	insert into member (mem_id, mem_pass, mem_nknm, mem_nm, mem_regno, mem_email, mem_addr1, mem_addr2,
 							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
@@ -21,16 +22,11 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
-<<<<<<< HEAD
-	  
-	  <!--  
-	  <select id="mypageMember" >
-	  
-	   select 
-	  </select>
-	  -->
+	  <!-- 호겸 끝 -->
 	  
 	  
+
+	  <!-- 명범 시작 -->
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
 		select mem_pass from member where mem_id= #mem_id#
 	 </select>
@@ -39,7 +35,7 @@
 		select count(*) from member where mem_id= #mem_id#
 	 </select>
 	  
-=======
+
 
 
 	 <select id="logincheck" resultClass="memberVo" parameterClass="memberVo">
@@ -65,9 +61,10 @@
 	<update id="chngePass" parameterClass="string">
 	update member set mem_pass=#mem_pass# where mem_email=#mem_email#
 	</update>
+	<!-- 명범 끝 -->
+
 	
 
->>>>>>> 7fe59a2cf9313618a51f9023ff800c44e5b1ae99
 </sqlMap>
 
 

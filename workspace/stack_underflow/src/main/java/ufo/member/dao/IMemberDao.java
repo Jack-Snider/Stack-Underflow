@@ -6,6 +6,7 @@ import ufo.vo.MemberVO;
 
 public interface IMemberDao {
 	
+	/* 호겸 시작 */
 	/**
 	 * 회원정보를 회원테이블에 저장
 	 * @param memVo
@@ -14,8 +15,12 @@ public interface IMemberDao {
 	public int insertMember(MemberVO memVo);
 
 	public int checkById(String mem_id);
+	
 	public int checkByNknm(String mem_nknm);
-
+	/* 호겸 끝 */
+	
+	
+	/* 명범 시작 */
 	/**
 	 * 아이디와 비밀번호값을 입력받아와 객체를 반환한다
 	 * @param paramMemVo
@@ -45,5 +50,5 @@ public interface IMemberDao {
 	 * @return 수정성공 1,수정실패 0
 	 */
 	public int chngePass(String mem_email);
-	
+	/* 명범 끝 */
 }

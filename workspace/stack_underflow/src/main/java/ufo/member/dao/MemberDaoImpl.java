@@ -23,6 +23,7 @@ public class MemberDaoImpl implements IMemberDao{
 		return dao;
 	}
 	
+	/* 호겸 시작 */
 	@Override
 	public int insertMember(MemberVO memVo) {
 		int cnt = 0;
@@ -58,8 +59,9 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
-	
+	/* 호겸 끝 */
 
+	/* 명범 시작 */
 	@Override
 	public List<MemberVO> findIdName() {
 		List<MemberVO> list=null;
@@ -121,4 +123,5 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+	/* 명범 끝 */
 }
