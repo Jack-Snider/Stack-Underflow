@@ -57,6 +57,14 @@
 	  	select * from POST where post_num = #post_num#
 	  </select>
 	  
+	  
+	  <!-- 기술,자유,문의게시판별로 가져옴 -->
+	  <select id="getPostKind" resultClass = "postVo" parameterClass="String">
+	  	select * from POST where post_board_type = #post_board_type#
+	  </select>
+	  
+	  
+	  
 </sqlMap>
 
 

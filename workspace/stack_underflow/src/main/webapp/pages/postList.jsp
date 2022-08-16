@@ -7,15 +7,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Post List</title>
+		<link href = "../js/jquery-3.6.0.min.js">
+	
+		<script type="text/javascript">
+				
+			window.onload = function(){
+				location.href = "<%= request.getContextPath()%>/postList.do";
+			}
+		
+		</script>
+	
 	</head>
 	<body>
 		
 		<%
-		
-			List<PostVO> list = (List<PostVO>)request.getAttribute("postList");
-		
+			List<PostVO> list = (List<PostVO>)request.getAttribute( "postList" );
 		%>
 		
+
 		<h2>게시글 목록</h2>
 		<!-- 검색 폼 -->
 		<!-- 검색 버튼 따로 안누르면 그냥 자동으로 모든 게시글 나왔으면 좋겠다... -->
@@ -29,7 +38,7 @@
 							<option value = "writer">작성자</option>
 						</select>
 						<input type = "text" name = "">
-						<input type = "submit" name = "검색하기"> 
+						<input type = "submit" name = "search"> 
 					</td>
 				</tr>
 			</table>			
@@ -81,7 +90,7 @@
 				<td width = "10%">EMPTY</td>
 				<td width = "15%">EMPTY</td>
 				<td width = "8%">EMPTY</td>
-			</tr>
+				</tr>
 			
 			<%
 				}				
@@ -97,6 +106,12 @@
 				</td>
 			</tr>
 		</table>
+		
+		
+		<!-- 
+		
+		
+		 -->
 		
 	</body>
 </html>

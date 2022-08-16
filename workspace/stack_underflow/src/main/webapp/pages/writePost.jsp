@@ -20,6 +20,11 @@
 			<tr>
 				<td>제목</td>
 				<td><input type="text" name="title" style="width: 90%;">
+					<select>
+						<option>기술</option>
+						<option>자유</option>
+						<option>문의</option>
+					</select>
 				</td>
 			</tr>
 			<tr>
