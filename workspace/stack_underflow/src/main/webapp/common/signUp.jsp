@@ -12,9 +12,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 	
+	let passChk = false;
+	let ruleChk = false;
+	let dupChk = false;
+	
 	$(function(){
+		
 		// 비밀번호 재확인 검사
-		let passChk = false;
 		$('#mem_pass_check').on('keyup', function(){
 			let mem_pass = $('#mem_pass').val();
 			let mem_pass_check = $(this).val();
@@ -27,11 +31,12 @@
 				$(this).css('border', '2px solid red');
 				$('#passchkres')
 				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Password Check Fail</strong> This is not the Same Password</div>');
-			}
+				passChk = false;
+			}	
 		});
 		
 		// 유효성 검사
-		let ruleChk = false;
+		// 아이디 유효성
 		$('#mem_id').on('keyup', function(){
 			let idValue = $(this).val().trim();
 			let idReg = /^[A-Za-z][A-Za-z0-9]{3,11}$/;
@@ -47,6 +52,8 @@
 				ruleChk = false;
 			}
 		});
+		
+		// 비밀번호 유효성
 		$('#mem_pass').on('keyup', function(){
 			let passValue = $(this).val().trim();
 			let passReg = /^.*(?=^.{8,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/; 
@@ -62,6 +69,8 @@
 				ruleChk = false;
 			}
 		});
+		
+		// 닉네임 유효성
 		$('#mem_nknm').on('keyup', function(){
 			let nknmValue = $(this).val().trim();
 			let nknmReg = /^[A-Za-z][A-Za-z0-9]{3,7}$/; 
@@ -77,8 +86,8 @@
 				ruleChk = false;
 			}
 		});
+		
 		// 중복 검사
-		let dupChk = false;
 		$('#idcheck, #dncheck').on('click', function(){
 			$(this).empty();
 			let id = $(this).attr('id');
@@ -124,21 +133,22 @@
 				},
 				dataType : 'json'
 			});
+			
 		});
 		
-		// submit
-		function submitChk(){
-			if(passChk && ruleChk && dupChk){
-				alert("Sign Up Success");
-				return true;
-			}else{
-				alert("Sign Up Fail");
-				return false;
-			}
-		}
-		
 	});
-
+	
+	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
+	function submitChk(){
+		if(passChk && ruleChk && dupChk){
+			alert("Sign Up Success");
+			return true;
+		}else{
+			alert("Sign Up Fail");
+			return false;
+		}
+	}
+	
 </script>
 <style>
 	.container{
