@@ -59,7 +59,6 @@ public class DuplicationCheck extends HttpServlet {
 		}
 		
 		jsonData = gson.toJson(map);
-		System.out.println("jsonData => "+jsonData);
 		out.write(jsonData);	
 		response.flushBuffer();
 		

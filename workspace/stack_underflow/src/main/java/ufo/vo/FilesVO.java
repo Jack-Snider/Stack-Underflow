@@ -5,7 +5,7 @@ public class FilesVO {
 	private int file_num; // 파일번호
 	private String file_name; // 파일 이름
 	private String file_ext; // 파일 확장자명
-	private String file_size; // 파일 사이즈
+	private long file_size; // 파일 사이즈
 	private String file_etc; // 파일 비고
 	private String mem_id;
 	
@@ -27,10 +27,10 @@ public class FilesVO {
 	public void setFile_ext(String file_ext) {
 		this.file_ext = file_ext;
 	}
-	public String getFile_size() {
+	public long getFile_size() {
 		return file_size;
 	}
-	public void setFile_size(String file_size) {
+	public void setFile_size(long file_size) {
 		this.file_size = file_size;
 	}
 	public String getFile_etc() {
