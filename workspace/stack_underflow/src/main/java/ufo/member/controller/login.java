@@ -2,6 +2,8 @@ package ufo.member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,35 +25,26 @@ public class login extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out=response.getWriter();
+		PrintWriter out = response.getWriter();
 
 		// login.jsp에받은 id와 패스워드 값을 받는다
-		String userId = request.getParameter("id");
-		String userPass = request.getParameter("pass");
+		String userId = request.getParameter("idInput");
+		String userPass = request.getParameter("passInput");
 
-		// id와 pass를 VO에 저장한다.
-		MemberVO paramVo = new MemberVO();
-		paramVo.setMem_id(userId);
-		paramVo.setMem_pass(userPass);
+
+		MemberVO memberVo = new MemberVO();
 		
+		memberVo.setMem_id(userId);
+		memberVo.setMem_pass(userPass);
+
 		IMemberService service = MemberServiceImpl.getInstance();
-		MemberVO memVo= service.logincheck(paramVo);
-	
-		String id="";
-		String pass="";
-		
-		if(memVo==null) {
-			id="w";
-			pass="x";
-		}
-		else{
-			id=memVo.getMem_id();
-			pass=memVo.getMem_pass();
-					
-		}
+		MemberVO chkNull = service.logincheck(memberVo);
 		
 
+		// 세션 생성
 		HttpSession session = request.getSession();
+
+		// 체크박스 기능
 		// 체크박스가 체크되었을 때 value값이 넘어온다.
 
 		String chkid = request.getParameter("chkid");
@@ -66,27 +59,19 @@ public class login extends HttpServlet {
 			cookie.setMaxAge(0);
 			response.addCookie(cookie);
 		}
+		// 로그인기능
+		if (chkNull != null) {
+			session.setAttribute("Mem_vo",chkNull);
+			session.setAttribute("Mem_name", chkNull.getMem_nm());
+			response.sendRedirect("./basic_frame/frame.jsp");
 		
-		//로그인기능
-
-		if(id!=null||pass!=null) { // 로그인 성공
-			if(userId.equals(id)&&userPass.equals(pass)) {
-				
-				session.setAttribute("memVoServlet", memVo);
-				response.sendRedirect(request.getContextPath() 
-						+ "/jsp/loginAction.jsp");
-		
-			}else if(id=="w"||pass=="x"){
-				out.print("<html>");
-				out.print("<body>");
-				out.print("<script>alert('아이디 또는 비밀번호가 존재하지 않습니다.');history.back();</script>");
-				out.print("</body>");
-				out.print("</html>");
-
-			}
-			}
+		} else {
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<script>alert('올바른 아이디 또는 비밀번호를 입력하세요');location.href='./common/login.jsp';</script>");
+			out.print("</body>");
+			out.print("</html>");
 		}
-		
-		
-	}
 
+	}
+}
