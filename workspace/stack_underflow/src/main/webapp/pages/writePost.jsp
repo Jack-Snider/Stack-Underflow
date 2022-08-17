@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<!-- Jack Snider 시작 -->
 <head>
 <meta charset="UTF-8">
 <title>write post</title>
@@ -12,7 +13,7 @@
 <body>
 
 	<h2>게시판 글쓰기</h2>
-	<form action="<%= request.getContextPath() %>/postController.do" method="post" enctype="multiple/form-data"
+	<form action="<%= request.getContextPath() %>/postController.do?id=<%= session.getAttribute("memVoServlet") %>" method="post" enctype="multiple/form-data"
 		onsubmit="return validateForm(this)">
 		<table border="1" style="width: 90%;">
 		
@@ -45,4 +46,5 @@
 
 	<link href="../js/writePost">
 </body>
+<!-- Jack Snider 끝 -->
 </html>

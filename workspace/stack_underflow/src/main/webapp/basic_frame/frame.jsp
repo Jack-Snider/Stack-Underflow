@@ -25,7 +25,9 @@
 				<div id = "inner_container">
 					<div id = "left_side"></div>
 					<div id = "center"></div>
-					<div id = "right_side"></div>
+					<div id = "right_side">
+						<a href = "../pages/writePost.jsp">게시판 글쓰기</a>
+					</div>
 				</div>
 			</div>
 			

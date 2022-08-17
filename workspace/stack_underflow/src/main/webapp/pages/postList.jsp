@@ -4,18 +4,20 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<!-- Jack Snider 시작 -->
 	<head>
 		<meta charset="UTF-8">
 		<title>Post List</title>
-		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  		
 		<script type="text/javascript">
 			
-			window.onload = function(){
-				
-			}
-		
 		</script>
 		
+
 	</head>
 	<body>
 		
@@ -44,13 +46,16 @@
 			</table>			
 		</form>
 		
+		
+		
 		<table border = "1" width = "90%">
 			<tr>
 				<th width = "10%">번호</th>
 				<th width = "*">
 					제목
 				</th>
-				<th width = "15%">작성자</th>
+				
+				<th width = "15%">작성자</th> 
 				<th width = "10%">조회수</th>
 				<th width = "15%">작성일</th>
 				<th width = "8%">첨부</th>		
@@ -108,4 +113,5 @@
 		</table>
 		
 	</body>
+	<!-- Jack Snider 끝 -->
 </html>

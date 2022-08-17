@@ -29,6 +29,8 @@ public class PostList extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		/* Jack Snider 시작 */
+		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
@@ -45,6 +47,8 @@ public class PostList extends HttpServlet {
 		request.setAttribute("postList", list);
 		request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
 
+		/* Jack Snider 끝 */
+		
 	}
 
 	/**

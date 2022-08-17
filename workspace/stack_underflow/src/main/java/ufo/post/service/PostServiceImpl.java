@@ -9,9 +9,7 @@ import ufo.vo.PostVO;
 
 public class PostServiceImpl implements IPostService {
 
-	/*
-	 	작성자 : Jack Snider
-	 */
+	/* Jack Snider 시작 */
 	
 	private IPostDao dao;
 
@@ -57,6 +55,26 @@ public class PostServiceImpl implements IPostService {
 		return dao.getDetailPost(postNum);
 	}
 
+	@Override
+	public int increaseLike( int postNum ) {
+		// TODO Auto-generated method stub
+		return dao.increaseLike( postNum );
+	}
+
+	@Override
+	public int increaseDislike( int postNum ) {
+		// TODO Auto-generated method stub
+		return dao.increaseDislike( postNum );
+	}
+
+	@Override
+	public int increaseViews( int postNum ) {
+		// TODO Auto-generated method stub
+		return dao.increaseViews( postNum );
+	}
+
+	
+	/* Jack Snider 시작 */
 	
 
 }
