@@ -55,13 +55,17 @@ public class PostList extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		String column = request.getParameter("column");
+		String condition = request.getParameter("condition");
 
 		IPostService service = PostServiceImpl.getInstance();
 
-		PageVO vo = service.pageInfo(currentPage);
+		PageVO vo = service.pageInfo(currentPage, column, condition);
 
 		Map<String, Object> map = new HashMap<String, Object>();
-
+		
+		map.put("column", column);
+		map.put("condition", condition);
 		map.put("start", vo.getStart());
 		map.put("end", vo.getEnd());
 

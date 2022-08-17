@@ -184,10 +184,10 @@ public class PostDaoImpl implements IPostDao {
 	
 	/* 호겸 시작 */
 	@Override
-	public int totalCount() {
+	public int totalCount(Map<String, Object> map) {
 		int cnt = 0;
 		try {
-			cnt = (int)smc.queryForObject("post.totalCount");
+			cnt = (int)smc.queryForObject("post.totalCount", map);
 		} catch (SQLException e) {
 			cnt = 0;
 			e.printStackTrace();
