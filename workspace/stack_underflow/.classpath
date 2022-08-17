@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -13,6 +12,8 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/ibatis-2.3.4.726.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kangmB/Desktop/GITHUB/Stack-Underflow/workspace/stack_underflow/src/main/webapp/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kangmB/Desktop/GITHUB/Stack-Underflow/workspace/stack_underflow/src/main/webapp/WEB-INF/lib/commons-email-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kangmB/Desktop/GITHUB/Stack-Underflow/workspace/stack_underflow/src/main/webapp/WEB-INF/lib/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
-
