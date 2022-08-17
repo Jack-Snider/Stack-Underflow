@@ -8,8 +8,8 @@
 	
 	  <!-- 파일 정보 DB에 저장 -->
 	  <insert id="insertFiles" parameterClass="filesVo">
-	  	insert into files(file_num, file_name, file_ext, file_size, file_etc, mem_id) 
-	  	values(file_num_seq.nextval, #file_name#, #file_ext#, #file_size#, #file_etc#, #mem_id#)
+	  	insert into files(file_num, file_name, file_ext, file_size, file_save_name, file_etc, mem_id) 
+	  	values(file_num_seq.nextval, #file_name#, #file_ext#, #file_size#, #file_save_name#, #file_etc#, #mem_id#)
 	  </insert>	
 
 </sqlMap>

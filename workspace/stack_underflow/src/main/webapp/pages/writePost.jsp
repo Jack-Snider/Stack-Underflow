@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<!-- Jack Snider 시작 -->
 <head>
 <meta charset="UTF-8">
 <title>write post</title>
@@ -24,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea name="content" style="width: 90%; height: 100px"></textarea>
+				<td><textarea name="content" style="width: 90%; height: 100px" autofocus="autofocus"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -35,14 +36,17 @@
 				<td colspan="2" align="center">
 					<button type="submit">submit</button>
 					<button type = "reset">reset</button>
-					<button type = "button" onclick = "toList()">목록 바로가기</button>
+					<button type = "button" onclick = "toList()">
+					<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
+					</button>
 					
 				</td>
 			</tr>
 		</table>
 	</form>
 
-
 	<link href="../js/writePost">
+	
 </body>
+<!-- Jack Snider 끝 -->
 </html>

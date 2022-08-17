@@ -16,10 +16,10 @@ import ufo.vo.MemberVO;
 import ufo.vo.PostVO;
 
 /**
- * Servlet implementation class postController
+ * Servlet implementation class postUpdate
  */
-@WebServlet("/postController.do")
-public class postController extends HttpServlet {
+@WebServlet("/postUpdate.do")
+public class postUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/* Jack Snider 시작 */
@@ -45,11 +45,8 @@ public class postController extends HttpServlet {
 		// 현재 로그인 되어있는 아이디
 		MemberVO memVo = ( MemberVO ) session.getAttribute( "Mem_vo" );
 		
-		// PostVO 객체 생성
-		PostVO postVo = new PostVO();
-	
-		// 게시글번호, 날짜 2개 => 3개
-		
+		// Detail 페이지에서 가져온 PostVO객체
+		PostVO postVo = (PostVO)session.getAttribute( "postUpdate" );
 		
 		
 		//String post_reg_date = "2022-08-14";
@@ -63,27 +60,31 @@ public class postController extends HttpServlet {
 		String post_board_type = "A";
 
 		String post_title = request.getParameter("title");
+		System.out.println(post_title);
 		postVo.setPost_title(post_title);
 
 		String post_content = request.getParameter("content");
 		postVo.setPost_cont(post_content);
-
+		
 		postVo.setPost_views(post_views);
 		postVo.setPost_like(post_like);
 		postVo.setPost_dislike(post_dislike);
-		postVo.setFile_num(file_num);
-		postVo.setPost_board_type(post_board_type);
 		postVo.setMem_id(mem_id);
-
+		postVo.setPost_board_type(post_board_type);
+		postVo.setFile_num(file_num);
+		
 		service = PostServiceImpl.getInstance();
-		int cnt = service.insertPost(postVo);
+		
+		
+		int cnt = service.updatePost( postVo );
+		
 		
 		// PostVO 객체 생성
 		// PostVO postVo = new PostVO();
 		List<PostVO> list = service.getAllPost();
 
 		// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
-		if(cnt == 1) {
+		if(cnt > 0) {
 			request.setAttribute("postList", list);
 			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);			
 		}else {

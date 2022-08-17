@@ -14,7 +14,12 @@
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   		
 		<script type="text/javascript">
-			
+		<!-- 호겸 시작 -->
+			let currentPage = 1;
+			$(function(){
+				location.href="<%= request.getContextPath() %>/postList2.do?currentPage="+currentPage;
+			});
+		<!-- 호겸 끝 -->
 		</script>
 		
 
@@ -23,15 +28,14 @@
 		
 		<%
 		
-			List<PostVO> list = (List<PostVO>)request.getAttribute("postList");
+			List<PostVO> postList = (List<PostVO>)request.getAttribute("postList");
 		
-
 		%>
 		
 		<h2>게시글 목록</h2>
 		<!-- 검색 폼 -->
 		<!-- 검색 버튼 따로 안누르면 그냥 자동으로 모든 게시글 나왔으면 좋겠다... -->
-		<form action="<%= request.getContextPath() %>/postList.do" method = "get">
+		<form> <!-- action과 method 삭제 -호겸 -->
 			<table border = "1" width = "90%">
 				<tr>
 					<td align = "center">
@@ -65,8 +69,8 @@
 			<%
 			
 
-				if( list != null ){
-				for( PostVO postVo : list ){
+				if( postList != null ){
+				for( PostVO postVo : postList ){
 					
 			%>
 			
@@ -108,11 +112,27 @@
 			<tr align = "center">
 				<td></td>
 				<td width = "100">
-					<a href = "pages/writePost.jsp">글쓰기</a>
+					글쓰기
 				</td>
 			</tr>
 		</table>
 		
 	</body>
 	<!-- Jack Snider 끝 -->
+	<!-- 호겸 시작 -->
+	
+			<ul class="pagination">
+				<li class="page-item"><a  class="page-link prev" href="#">이전</a></li>
+			</ul>
+			
+			<ul class="pagination plist">
+				<li class="page-item active"><a class="page-link pnum" href="#"></a></li>
+				<li class="page-item"><a class="page-link pnum" href="#"></a></li>
+			</ul>
+			
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link next" href="#">다음</a></li>
+			</ul>
+			
+	<!-- 호겸 끝 -->
 </html>

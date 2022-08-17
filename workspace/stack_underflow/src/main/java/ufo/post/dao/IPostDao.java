@@ -7,12 +7,8 @@ import ufo.vo.PostVO;
 
 public interface IPostDao {
 
-	/*
-	 
-	 	작성자 : Jack Snider
-	 
-	 */
 	
+	/* Jack Snider 시작 */
 	/**
 	 * 
 	 * 매개변수 : PostVO 객체
@@ -54,5 +50,26 @@ public interface IPostDao {
 	 * @return PostVO
 	 */
 	public PostVO getDetailPost(int postNum);
+	
+	
+	// 좋아요, 싫어요, 조회수
+	public int increaseLike( int postNum );
+	public int increaseDislike( int postNum );
+	public int increaseViews( int postNum );
+	
+	// 게시글 수정
+	public int updatePost( PostVO postVo );
+
+	// 게시글 삭제
+	public int deletePost( PostVO postVo );
+	
+	/* Jack Snider 끝 */
+
+	/* 호겸 시작 */
+	// 게시글 전체 갯수 가져오기
+	public int totalCount();
+	// 페이지 별 게시글 가져오기
+	public List<PostVO> getPostPerPage(Map<String, Object> map);
+	/* 호겸 끝 */
 	
 }
