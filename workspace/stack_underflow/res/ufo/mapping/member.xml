@@ -57,9 +57,16 @@
 		where mem_regno=#mem_regno#
 	</select>
 	
-	<update id="chngePass" parameterClass="string">
-	update member set mem_pass=#mem_pass# where mem_email=#mem_email#
+	<select id="findpass1" resultClass="memberVo" parameterClass="memberVo">
+	select *
+	from member
+	where mem_id=#mem_id# and mem_qstn=#mem_qstn# and mem_ans=#mem_ans#
+	</select>
+	
+	<update id="chngePass" parameterClass="memberVo">
+	update member set mem_pass=#mem_pass# where mem_id=#mem_id#
 	</update>
+	
 	<!-- 명범 끝 -->
 
 	

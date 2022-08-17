@@ -113,15 +113,47 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 
 	@Override
-	public int chngePass(String mem_email) {
+	public int chngePass(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
 		int cnt=0;
 		try {
-			cnt=smc.update("member.chngePass",mem_email);
+			cnt=smc.update("member.chngePass",paramMemVo);
 		} catch (Exception e) {
 			cnt=0;
 		}
 		return cnt;
 	}
+	@Override
+	public MemberVO findpass1(MemberVO paramVo) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.findpass1",paramVo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+	@Override
+	public MemberVO passwordchk(String mem_id) {
+		// TODO Auto-generated method stub
+		
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.passwordchk",mem_id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+				
+		return memVo;
+	}
 	/* 명범 끝 */
+
+	
+
+	
 }

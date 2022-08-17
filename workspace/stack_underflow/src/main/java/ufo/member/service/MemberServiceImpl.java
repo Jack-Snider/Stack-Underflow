@@ -65,10 +65,6 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.findregNoCount(mem_regno);
 	}
-
-
-
-
 	@Override
 	public MemberVO logincheck(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
@@ -76,9 +72,23 @@ public class MemberServiceImpl implements IMemberService{
 	}
 
 	@Override
-	public int chngePass(String mem_email) {
+	public int chngePass(MemberVO paramMemVo) {
 		// TODO Auto-generated method stub
-		return dao.chngePass(mem_email);
+		return dao.chngePass(paramMemVo);
+	}
+	@Override
+	public MemberVO findpass1(MemberVO MemVo) {
+		// TODO Auto-generated method stub
+		return dao.findpass1(MemVo);
+	}
+	@Override
+	public MemberVO passwordchk(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.passwordchk(mem_id);
 	}
 	/* 명범 끝 */
+
+	
+
+	
 }

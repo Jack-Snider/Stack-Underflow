@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import ufo.member.service.IMemberService;
 import ufo.member.service.MemberServiceImpl;
 import ufo.vo.MemberVO;
-
+//강명범 시작====================================
 @WebServlet("/findId.do")
 public class findId extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,7 +46,7 @@ public class findId extends HttpServlet {
 		if (name == "" || regno == "") {
 			out.print("<html>");
 			out.print("<body>");
-			out.print("<script>alert('이름 또는 주민번호란이 비었습니다.');history.back();</script>");
+			out.print("<script>alert('이름 또는 주민번호란이 비었습니다.');</script>");
 			out.print("</body>");
 			out.print("</html>");
 
@@ -117,5 +117,5 @@ public class findId extends HttpServlet {
 		}
 
 	}
-
+	//강명범 끝====================================
 }

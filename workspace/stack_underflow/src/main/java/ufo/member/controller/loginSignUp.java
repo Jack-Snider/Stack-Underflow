@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+//강명범 시작====================================
 
 @WebServlet("/loginSignUp.do")
 public class loginSignUp extends HttpServlet {
@@ -24,5 +24,5 @@ public class loginSignUp extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+	//강명범 끝====================================
 }

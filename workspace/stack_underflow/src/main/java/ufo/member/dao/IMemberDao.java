@@ -54,6 +54,20 @@ public interface IMemberDao {
 	 * @param mem_email
 	 * @return 수정성공 1,수정실패 0
 	 */
-	public int chngePass(String mem_email);
+	public int chngePass(MemberVO paramMemVo);
+	/**
+	 * 아이디와 질문 답변을 통해 비밀번호를
+	 * 이메일로 보내준다
+	 * @param MemVo
+	 * @return MemberVO
+	 */
+	public MemberVO findpass1(MemberVO MemVo);
+	/**
+	 * 아이디값을 넣어 비밀번호를 얻는 메소드
+	 * 이전 비밀번호와의 중복여부를 확인한다.
+	 * @param mem_id
+	 * @return MemberVO
+	 */
+	public MemberVO passwordchk(String mem_id);
 	/* 명범 끝 */
 }
