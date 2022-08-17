@@ -81,4 +81,13 @@ public class MemberServiceImpl implements IMemberService{
 		return dao.chngePass(mem_email);
 	}
 	/* 명범 끝 */
+
+	
+	/* Jack Snider 시작 */
+	@Override
+	public MemberVO getMember(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.getMember(mem_id);
+	}
+	/* Jack Snider 끝 */
 }

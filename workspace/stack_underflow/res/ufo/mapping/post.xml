@@ -67,6 +67,11 @@
 	  </update>
 	  
 	  
+	  <!-- 게시글 수정 -->
+	  <update id="updatePost" parameterClass="postVo">
+	  	update POST set post_title = #post_title#, post_cont = #post_cont#, post_udt_date = sysdate 
+	  	where post_num = #post_num#
+	  </update>
 	  
 	  <!-- Jack Snider 끝 -->
 	  

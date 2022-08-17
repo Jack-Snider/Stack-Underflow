@@ -56,4 +56,10 @@ public interface IMemberDao {
 	 */
 	public int chngePass(String mem_email);
 	/* 명범 끝 */
+	
+	
+	/* Jack Snider 시작 */
+	public MemberVO getMember(String mem_id);
+	/* Jack Snider 끝 */
+	
 }

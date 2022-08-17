@@ -25,6 +25,7 @@
 		
 			List<PostVO> list = (List<PostVO>)request.getAttribute("postList");
 		
+
 		%>
 		
 		<h2>게시글 목록</h2>
