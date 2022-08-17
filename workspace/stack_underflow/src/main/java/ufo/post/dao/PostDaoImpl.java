@@ -2,6 +2,7 @@ package ufo.post.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -150,5 +151,29 @@ public class PostDaoImpl implements IPostDao {
 	}
 
 	/* Jack Snider 시작 */
-
+	
+	/* 호겸 시작 */
+	@Override
+	public int totalCount() {
+		int cnt = 0;
+		try {
+			cnt = (int)smc.queryForObject("post.totalCount");
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	@Override
+	public List<PostVO> getPostPerPage(Map<String, Object> map) {
+		List<PostVO> list = null;
+			try {
+				list = smc.queryForList("post.getPostPerPage", map);
+			} catch (SQLException e) {
+				list = null;
+				e.printStackTrace();
+			}
+		return list;
+	}
+	/* 호겸 끝 */
 }
