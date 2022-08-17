@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-  <meta charset="utf-8">
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -14,7 +14,7 @@
 
 <style>
 .navbar-inverse{
-background-color: lightslategray;
+background-color: floralwhite;
 border: 2px solid darkgray;
 
 }
@@ -37,6 +37,8 @@ border: 2px solid darkgray;
 </head>
 <body>
 
+
+<!-- nav(목록) -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -47,32 +49,36 @@ border: 2px solid darkgray;
       </button>
       <a class="navbar-brand" href="#">stack underflow</a>
     </div>
- <!--     <div class="collapse navbar-collapse" id="myNavbar">
+     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
+       <!-- <li class="active"><a href="#">커뮤니티</a></li>
+           <li class="dropdown">
 
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">page1<span class="caret"></span></a>
 
-        </li> 
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>-->
+        </li> -->
+        <li><a href="community_frame.jsp">커뮤니티</a></li>
+        <li><a href="#">랭킹보드</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 마이페이지 </a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 로그아웃 </a></li>
       </ul>
     </div>
-  
+  </div>
 </nav>
 
 
+<!-- main1 (그림) -->
   <div class="container-fluid bg-1 text-center">
     <h3>Who Am I?</h3>
     <img src="bird.jpg" alt="Bird">
     <h3>I'm an adventurer</h3>
   </div>
   
+  
+  
+  <!-- main2 (내용) -->
   <div class="container-fluid text-center">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
@@ -121,6 +127,8 @@ border: 2px solid darkgray;
 </div>
 
 
+
+<!-- footer  -->
 <footer class="container-fluid bg-4 text-center">
   <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
 </footer>
