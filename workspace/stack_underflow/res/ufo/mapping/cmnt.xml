@@ -1,1 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.or//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="cmnt">
+		
+	<!-- 댓글 달기 -->	
+	<insert id="insertCmnt" parameterClass="cmntVo">
+		insert into CMNT (
+					cmnt_num,
+					cmnt_date,
+					cmnt_udt_date,
+					cmnt_cont,
+					cmnt_like,
+					post_num,
+					cmnt_dislike,
+					mem_id 					
+		)
+		
+		values(
+					cmnt_num_seq.nextval,
+					sysdate,
+					sysdate,
+					#cmnt_cont#,
+					#cmnt_like#,
+					#post_num#,
+					#cmnt_dislike#,
+					#mem_id#			
+		)
+		
+	</insert>
+	  
+</sqlMap>
+
+

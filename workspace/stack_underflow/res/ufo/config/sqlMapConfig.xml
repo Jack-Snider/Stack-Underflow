@@ -31,6 +31,7 @@
          	<typeAlias alias = "memberVo" type ="ufo.vo.MemberVO"/>
        		<typeAlias alias = "filesVo" type ="ufo.vo.FilesVO"/>
        		<typeAlias alias = "postVo" type ="ufo.vo.PostVO"/>
+       		<typeAlias alias = "cmntVo" type ="ufo.vo.CmntVO"/>
        		
          <!--
             DB와 연결하는 부분 설정하기
@@ -58,6 +59,7 @@
 
              <!-- 현우 시작 -->
              <sqlMap resource="ufo/mapping/post.xml"/>
+             <sqlMap resource="ufo/mapping/cmnt.xml"/>
             <!-- 현우 끝 -->
    </sqlMapConfig>
    
