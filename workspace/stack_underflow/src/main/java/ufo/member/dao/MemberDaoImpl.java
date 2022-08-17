@@ -1,6 +1,7 @@
 package ufo.member.dao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -15,13 +16,14 @@ public class MemberDaoImpl implements IMemberDao{
 	
 	private MemberDaoImpl() {
 		smc = SqlMapClientFactory.getSqlMapClient();
-		}
+		} 
 	
 	public static IMemberDao getInstance() {
 		if(dao == null) dao = new MemberDaoImpl();
 		return dao;
 	}
 	
+	/* 호겸 시작 */
 	@Override
 	public int insertMember(MemberVO memVo) {
 		int cnt = 0;
@@ -57,35 +59,117 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
-	
+	/* 호겸 끝 */
+
+	/* 명범 시작 */
 	@Override
-	public MemberVO passcheck(String mem_id) {
-		// TODO Auto-generated method stub
-		MemberVO memVo=null;
-		
+	public List<MemberVO> findIdName() {
+		List<MemberVO> list=null;
 		try {
-			memVo=(MemberVO) smc.queryForObject("member.passwordchk",mem_id);
+			list=smc.queryForList("member.findIdName");
 		} catch (Exception e) {
+			list=null;
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public MemberVO findregNo(String mem_regno) {
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.findregNo",mem_regno);
+		} catch (Exception e) {
+			// TODO: handle exception
 			memVo=null;
 			e.printStackTrace();
 		}
-		
-		
 		return memVo;
 	}
 
 	@Override
-	public int logindenyId(String mem_id) {
-		
+	public int findregNoCount(String mem_regno) {
 		int cnt=0;
-		
 		try {
-			cnt=(int) smc.queryForObject("member.logindenyId",mem_id);
+			cnt=(int) smc.queryForObject("member.findregNoCount",mem_regno);
 		} catch (Exception e) {
+			cnt=0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
+	@Override
+	public MemberVO logincheck(MemberVO paramMemVo) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.logincheck",paramMemVo);
+		} catch (Exception e) {
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+
+	@Override
+	public int chngePass(MemberVO paramMemVo) {
+		// TODO Auto-generated method stub
+		int cnt=0;
+		try {
+			cnt=smc.update("member.chngePass",paramMemVo);
+		} catch (Exception e) {
+			cnt=0;
+		}
+		return cnt;
+	}
+	@Override
+	public MemberVO findpass1(MemberVO paramVo) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.findpass1",paramVo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+	@Override
+	public MemberVO passwordchk(String mem_id) {
+		// TODO Auto-generated method stub
+		
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.passwordchk",mem_id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
 			e.printStackTrace();
 		}
 				
-		return cnt;
+		return memVo;
 	}
+	/* 명범 끝 */
+
+
+	
+
+	
+
+	/* Jack Snider 시작 */
+	@Override
+	public MemberVO getMember(String mem_id) {
+		MemberVO memVo= null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.getMember", mem_id);
+		} catch (Exception e) {
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+	/* Jack Snider 끝 */
 
 }

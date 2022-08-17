@@ -1,16 +1,14 @@
 package ufo.post.service;
 
 import java.util.List;
+import java.util.Map;
 
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 public interface IPostService {
 	
-	/*
-	 * 
-	 * 작성자 : Jack Snider
-	 * 
-	 */
+	/* Jack Snider 시작 */
 
 	/**
 	 * 
@@ -36,4 +34,48 @@ public interface IPostService {
 	 * @return
 	 */
 	public List<PostVO> getUserPostAll(String mem_id);
+	
+	
+	/**
+	 * 
+	 * @param map
+	 * @return
+	 */
+	public int selectCount();
+	
+	/**
+	 * 모든 게시글 가져오기
+	 * @return
+	 */
+	public List<PostVO> getAllPost();
+	
+	/**
+	 * 게시글 목록에서 특정 게시글 상세보기
+	 * @param postNum
+	 * @return PostVO
+	 */
+	public PostVO getDetailPost( int postNum );
+	
+	public int increaseLike( int postNum );
+	public int increaseDislike( int postNum );
+	public int increaseViews( int postNum );
+	
+	// 게시글 수정
+	public int updatePost( PostVO postVo );
+	
+	// 게시글 삭제
+	public int deletePost( PostVO postVo );
+	
+	/* Jack Snider 끝 */
+	
+	/* 호겸 시작 */
+	// 게시글 전체 갯수 가져오기
+	public int totalCount();
+	// 전체 페이지 수 가져오기
+	public int totalPage();
+	// 페이지 정보 가져오기
+	public PageVO pageInfo(int cpage);
+	// 페이지 별 게시글 가져오기
+	public List<PostVO> getPostPerPage(Map<String, Object> map);
+	/* 호겸 끝 */
 }

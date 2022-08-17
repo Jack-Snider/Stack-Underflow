@@ -19,15 +19,19 @@
 			<div id = "header"> 
 				
 			</div><!-- 헤더 영역 끝 -->
-			
+			 
 			
 			<div id = "middle">
 				<div id = "inner_container">
 					<div id = "left_side"></div>
 					<div id = "center"></div>
-					<div id = "right_side"></div>
+					<div id = "right_side">
+						<!-- Jack Snider 시작 -->
+						<a href = "<%= request.getContextPath() %>/postList.do">게시판</a>
+						<!-- Jack Snider 끝 -->
+					</div>
 				</div>
-			</div>''
+			</div>
 			
 			
 			

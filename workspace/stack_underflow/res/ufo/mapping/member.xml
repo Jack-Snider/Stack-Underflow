@@ -7,6 +7,7 @@
 <sqlMap namespace="member">
 
 	  <!-- 회원 정보를 DB에 저장 -->	
+	  <!-- 호겸 시작 -->
 	  <insert id="insertMember" parameterClass="memberVo">
 	  	insert into member (mem_id, mem_pass, mem_nknm, mem_nm, mem_regno, mem_email, mem_addr1, mem_addr2,
 							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
@@ -21,14 +22,12 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
-	  
-	  <!--  
-	  <select id="mypageMember" >
-	  
-	   select 
-	  </select>
-	  -->
-	  
+
+	  <!-- 호겸 끝 -->
+
+
+
+	  <!-- 명범 시작 -->
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
 		select mem_pass from member where mem_id= #mem_id#
 	 </select>
@@ -36,10 +35,49 @@
 	  <select id="logindenyId" parameterClass="string" resultClass="int">
 		select count(*) from member where mem_id= #mem_id#
 	 </select>
+	  
+
+	 <select id="logincheck" resultClass="memberVo" parameterClass="memberVo">
+	  select * from member where mem_id=#mem_id# and mem_pass=#mem_pass#
+	 </select>
 	 
+	 <select id="findIdName" resultClass="memberVo">
+		select * from member
+	</select>
+
+	<select id="findregNo" resultClass="memberVo" parameterClass="string">
+		select *
+		from member
+		where mem_regno=#mem_regno#
+	</select>
 	
-	  
-	  
+	<select id="findregNoCount" resultClass="int" parameterClass="string">
+		select count(*)
+		from member
+		where mem_regno=#mem_regno#
+	</select>
+	
+	<select id="findpass1" resultClass="memberVo" parameterClass="memberVo">
+	select *
+	from member
+	where mem_id=#mem_id# and mem_qstn=#mem_qstn# and mem_ans=#mem_ans#
+	</select>
+	
+	<update id="chngePass" parameterClass="memberVo">
+	update member set mem_pass=#mem_pass# where mem_id=#mem_id#
+	</update>
+	
+	<!-- 명범 끝 -->
+
+	
+	<!-- Jack Snider 시작 -->
+	<select id="getMember" resultClass="memberVo" parameterClass="String">
+		select * from MEMBER where mem_id = #mem_id#
+	</select>
+	<!-- Jack Snider 끝 -->
+
+
+
 </sqlMap>
 
 

@@ -6,14 +6,90 @@
 <meta charset="UTF-8">
 <title>StackUnderflow - SignUp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-
+	
+	let passChk = false;
+	let ruleChk = false;
+	let dupChk = false;
+	
 	$(function(){
+		
+		// 비밀번호 재확인 검사
+		$('#mem_pass_check').on('keyup', function(){
+			let mem_pass = $('#mem_pass').val();
+			let mem_pass_check = $(this).val();
+			if(mem_pass == mem_pass_check){
+				$(this).css('border', '2px solid blue');
+				$('#passchkres')
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Password Check Success</strong> This is the Same Password</div>');
+				passChk = true;
+			}else{
+				$(this).css('border', '2px solid red');
+				$('#passchkres')
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Password Check Fail</strong> This is not the Same Password</div>');
+				passChk = false;
+			}	
+		});
+		
+		// 유효성 검사
+		// 아이디 유효성
+		$('#mem_id').on('keyup', function(){
+			let idValue = $(this).val().trim();
+			let idReg = /^[A-Za-z][A-Za-z0-9]{3,11}$/;
+			if(idReg.test(idValue)){
+				$(this).css('border', '2px solid blue');
+				$('#idres')
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Appropriate ID</strong> This is Keep the ID Rules</div>');
+				ruleChk = true;
+			}else{
+				$(this).css('border', '2px solid red');
+				$('#idres')
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Inappropriate ID</strong> Please Keep the ID Rules</div>');
+				ruleChk = false;
+			}
+		});
+		
+		// 비밀번호 유효성
+		$('#mem_pass').on('keyup', function(){
+			let passValue = $(this).val().trim();
+			let passReg = /^.*(?=^.{8,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/; 
+			if(passReg.test(passValue)){
+				$(this).css('border', '2px solid blue');
+				$('#passres')
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Appropriate Password</strong> This is Keep the Password Rules</div>');
+				ruleChk = true;
+			}else{
+				$(this).css('border', '2px solid red');
+				$('#passres')
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Inappropriate Password</strong> Please Keep the Password Rules</div>');
+				ruleChk = false;
+			}
+		});
+		
+		// 닉네임 유효성
+		$('#mem_nknm').on('keyup', function(){
+			let nknmValue = $(this).val().trim();
+			let nknmReg = /^[A-Za-z][A-Za-z0-9]{3,7}$/; 
+			if(nknmReg.test(nknmValue)){
+				$(this).css('border', '2px solid blue');
+				$('#dnres')
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Appropriate Display Name</strong> This is Keep the Display Name Rules</div>');
+				ruleChk = true;
+			}else{
+				$(this).css('border', '2px solid red');
+				$('#dnres')
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Inappropriate Display Name</strong> Please Keep the Display Name Rules</div>');
+				ruleChk = false;
+			}
+		});
+		
+		// 중복 검사
 		$('#idcheck, #dncheck').on('click', function(){
+			$(this).empty();
 			let id = $(this).attr('id');
 			let value = "";
 			if(id == 'idcheck'){
@@ -30,15 +106,25 @@
 				success : function(res){
 					if(res.hasOwnProperty('idres')){
 						if(res.idres == 1){
-							$('#idres').text('Duplicated').css('color', 'red');
+							$('#idres')
+							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Duplicated</strong> Please Enter the No-Duplicated ID</div>');
+							$('#mem_id').val('');
+							dupChk = false;
 						}else{
-							$('#idres').text('valid').css('color', 'green');
+							$('#idres')
+							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Valid</strong> This is No-Duplicated ID</div>');
+							dupChk = true;
 						}
 					}else if(res.hasOwnProperty('dnres')){
 						if(res.dnres == 1){
-							$('#dnres').text('Duplicated').css('color', 'red');
+							$('#dnres')
+							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Duplicated</strong> Please Enter the No-Duplicated Display Name</div>');
+							$('#mem_nknm').val('');
+							dupChk = false;
 						}else{
-							$('#dnres').text('valid').css('color', 'green');
+							$('#dnres')
+							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Valid</strong> This is No-Duplicated Display Name</div>');
+							dupChk = true;
 						}
 					}
 				},
@@ -47,9 +133,22 @@
 				},
 				dataType : 'json'
 			});
+			
 		});
+		
 	});
-
+	
+	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
+	function submitChk(){
+		if(passChk && ruleChk && dupChk){
+			alert("Sign Up Success");
+			return true;
+		}else{
+			alert("Sign Up Fail");
+			return false;
+		}
+	}
+	
 </script>
 <style>
 	.container{
@@ -58,50 +157,42 @@
 		border : 1px solid;
 		margin : 100px auto;
 	}
+	
 	label{
 		font-weight : bold;
 	}
-	#idcheck{
-		margin : auto 10px;
-	}
-	#idres{
-		margin : auto 10px;
-	}
-	#discheck{
-		margin : auto 10px;
-	}
-	#disres{
-		margin : auto 10px;
-	}
+
 </style>
 </head>
 <body>
 
 	<div class="container">
-		<form method="post" action="<%=request.getContextPath() %>/InsertMember.do">
+		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();" action="<%=request.getContextPath() %>/InsertMember.do">
 		
 			<div class="form-group">
 				<label for="mem_id">ID</label> 
 				<input type="button" id="idcheck" value="Duplication Check" class="btn btn-dark btn-sm">
-				<span id="idres"></span>
 				<input type="text" class="form-control" id="mem_id" placeholder="Enter ID" name="mem_id" required>
+				<div id="idres"></div>
 			</div>
 			
 			<div class="form-group">
 				<label for="mem_pass">Password</label> 
 				<input type="password" class="form-control" id="mem_pass" placeholder="Enter Password" name="mem_pass" required>
+				<div id="passres"></div>
 			</div>
 			
 			<div class="form-group">
 				<label for="mem_pass_check">Password Check</label> 
 				<input type="password" class="form-control" id="mem_pass_check" placeholder="Enter Password" name="mem_pass_check" required>
+				<div id="passchkres"></div>
 			</div>
 			
 			<div class="form-group">
 				<label for="mem_nknm">Display Name</label> 
 				<input type="button" id="dncheck" value="Duplication Check" class="btn btn-dark btn-sm">
-				<span id="dnres"></span>
 				<input type="text" class="form-control" id="mem_nknm" placeholder="Enter Disply Name" name="mem_nknm" required>
+				<div id="dnres"></div>
 			</div>
 			
 			<div class="form-group">
@@ -152,12 +243,10 @@
 				<input type="text" class="form-control" id="mem_ans" placeholder="Enter Answer" name="mem_ans" required>
 			</div>
 			
-			<!--  
-			<div class = "form-group">
-				<label for="picture">Profile Image</label>
-				<input type="file" id="file_name" name="file_name">
-			</div>
-			-->
+			<div class="form-group">
+				<label for="mem_ans">Profile Image</label> 
+      			<input type="file" class="form-control-file border" name="pfImg">
+    		</div>
 			
 			<button type="submit" class="btn btn-primary">Sign Up</button>
 			<span id="joinsub"></span>

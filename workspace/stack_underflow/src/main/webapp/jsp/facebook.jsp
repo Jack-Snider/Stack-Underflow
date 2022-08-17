@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
-<script>
+<script> 
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
