@@ -149,6 +149,21 @@ public class PostDaoImpl implements IPostDao {
 		return 0;
 	}
 
+	/**
+	 * 게시글 수정
+	 */
+	@Override
+	public int updatePost( PostVO postVo ) {
+		int cnt = 0;
+		try {
+			cnt = smc.update("post.updatePost", postVo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
 	/* Jack Snider 시작 */
 
 }
