@@ -61,4 +61,11 @@ public interface IPostDao {
 	public int updatePost( PostVO postVo );
 	
 	/* Jack Snider 끝 */
+
+	/* 호겸 시작 */
+	// 게시글 전체 갯수 가져오기
+	public int totalCount();
+	// 페이지 별 게시글 가져오기
+	public List<PostVO> getPostPerPage(Map<String, Object> map);
+	/* 호겸 끝 */
 }
