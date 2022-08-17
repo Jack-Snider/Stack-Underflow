@@ -84,8 +84,16 @@ public class PostServiceImpl implements IPostService {
 		return dao.updatePost( postVo );
 	}
 
+	/**
+	 * 게시글 삭제
+	 */
+	@Override
+	public int deletePost(PostVO postVo) {
+		// TODO Auto-generated method stub
+		return dao.deletePost(postVo);
+	}
 	
-	/* Jack Snider 시작 */
+	/* Jack Snider 끝 */
 	
 	/* 호겸 시작 */
 	
@@ -137,6 +145,8 @@ public class PostServiceImpl implements IPostService {
 	public List<PostVO> getPostPerPage(Map<String, Object> map) {
 		return dao.getPostPerPage(map);
 	}
+
+	
 	
 	/* 호겸 끝 */
 }

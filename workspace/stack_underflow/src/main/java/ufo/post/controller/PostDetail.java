@@ -52,8 +52,10 @@ public class PostDetail extends HttpServlet {
 		// 세션객체 생성
 		HttpSession session = request.getSession();
 		
-		
+		// Detail 페이지에서 가져온 postVo객체
 		PostVO postVo = service.getDetailPost( postNum );
+		
+		// 현재 로그인 되어있는 member객체
 		MemberVO memberVo = (MemberVO) session.getAttribute( "Mem_vo" );
 		
 		
