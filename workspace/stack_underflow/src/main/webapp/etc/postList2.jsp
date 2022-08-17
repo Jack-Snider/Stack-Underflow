@@ -1,3 +1,4 @@
+<%@page import="ufo.vo.PageVO"%>
 <%@page import="ufo.vo.PostVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -15,10 +16,35 @@
   		
 		<script type="text/javascript">
 		<!-- 호겸 시작 -->
-			let currentPage = 1;
-			$(function(){
-				location.href="<%= request.getContextPath() %>/postList2.do?currentPage="+currentPage;
-			});
+		let currentPage = 1;
+		
+		$(function() {
+		      
+		      //이전버튼 이벤트
+		      $(document).on('click', '.prev', function() {
+		         //alert($('.plist a').first().text());
+		         currentPage = parseInt($('.plist a').first().text().trim()) - 1;
+		         listPagerServer(currentPage);
+		      });
+		      
+		      //다음버튼 이벤트
+		      $(document).on('click', '.next', function() {
+		         //alert($('.plist a').last().text());
+		         currentPage = parseInt($('.plist a').last().text().trim()) + 1;
+		         listPagerServer(currentPage);
+		      });
+		      
+		      //페이지번호 이벤트
+		      $(document).on('click', '.plist a', function() {
+		         currentPage = $(this).text().trim();
+		         listPagerServer(currentPage);
+		      });
+		     
+		 });
+		
+		listPagerServer = function(currentPage) {
+			location.href="<%= request.getContextPath() %>/postList2.do?currentPage="+currentPage;
+		};
 		<!-- 호겸 끝 -->
 		</script>
 		
@@ -29,7 +55,10 @@
 		<%
 		
 			List<PostVO> postList = (List<PostVO>)request.getAttribute("postList");
-		
+			// 호겸 시작
+			PageVO pageVo = (PageVO)request.getAttribute("pageVo"); 
+			int currentPage = (int)request.getAttribute("currentPage");
+			// 호겸 끝
 		%>
 		
 		<h2>게시글 목록</h2>
@@ -121,18 +150,39 @@
 	<!-- Jack Snider 끝 -->
 	<!-- 호겸 시작 -->
 	
-			<ul class="pagination">
-				<li class="page-item"><a  class="page-link prev" href="#">이전</a></li>
-			</ul>
-			
-			<ul class="pagination plist">
-				<li class="page-item active"><a class="page-link pnum" href="#"></a></li>
-				<li class="page-item"><a class="page-link pnum" href="#"></a></li>
-			</ul>
-			
-			<ul class="pagination">
-				<li class="page-item"><a class="page-link next" href="#">다음</a></li>
-			</ul>
+			<%
+				if(pageVo.getStartPage()>1){
+			%>
+				<ul class="pagination">
+					<li class="page-item"><a  class="page-link prev" href="#">이전</a></li>
+				</ul>
+			<%	
+				}
+			%>
+				<ul class="pagination plist">
+			<%
+				for(int i=pageVo.getStartPage(); i<=pageVo.getEndPage(); i++){
+					if(currentPage == i){			
+			%>
+						<li class="page-item active"><a class="page-link pnum" href="#"><%= i %></a></li>
+			<%
+					}else{		
+			%>
+						<li class="page-item"><a class="page-link pnum" href="#"><%= i %></a></li>
+			<%	
+					} 
+				}
+			%>
+				</ul>
+			<%
+				if(pageVo.getTotalPage()>pageVo.getEndPage()){
+			%>
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link next" href="#">다음</a></li>
+				</ul>
+			<%	
+				}
+			%>
 			
 	<!-- 호겸 끝 -->
 </html>

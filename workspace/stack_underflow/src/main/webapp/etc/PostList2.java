@@ -31,11 +31,11 @@ public class PostList2 extends HttpServlet {
 		
 				request.setCharacterEncoding("utf-8");
 				
-				int cpage = Integer.parseInt(request.getParameter("currentPage"));
+				int currentPage = Integer.parseInt(request.getParameter("currentPage"));
 
 				IPostService service = PostServiceImpl.getInstance();
 
-				PageVO vo = service.pageInfo(cpage);
+				PageVO vo = service.pageInfo(currentPage);
 
 				Map<String, Object> map = new HashMap<String, Object>();
 
@@ -45,6 +45,9 @@ public class PostList2 extends HttpServlet {
 				List<PostVO> postList = service.getPostPerPage(map);
 				
 				request.setAttribute("postList", postList);
+				request.setAttribute("pageVo", vo);
+				request.setAttribute("currentPage", currentPage);
+				
 				request.getRequestDispatcher("/pages/postList2.jsp").forward(request, response);
 
 	}
