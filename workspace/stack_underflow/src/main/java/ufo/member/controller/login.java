@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import ufo.member.service.IMemberService;
 import ufo.member.service.MemberServiceImpl;
 import ufo.vo.MemberVO;
-
+//강명범 시작====================================
 @WebServlet("/login.do")
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -62,8 +62,9 @@ public class login extends HttpServlet {
 		// 로그인기능
 		if (chkNull != null) {
 			session.setAttribute("Mem_vo",chkNull);
+			session.setAttribute("Mem_id",chkNull.getMem_id());
 			session.setAttribute("Mem_name", chkNull.getMem_nm());
-			response.sendRedirect("./basic_frame/frame.jsp");
+			response.sendRedirect("./common/login.jsp");
 		
 		} else {
 			out.print("<html>");
@@ -74,4 +75,5 @@ public class login extends HttpServlet {
 		}
 
 	}
+	//강명범 끝====================================
 }
