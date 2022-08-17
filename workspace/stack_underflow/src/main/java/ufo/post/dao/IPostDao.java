@@ -57,6 +57,9 @@ public interface IPostDao {
 	public int increaseDislike( int postNum );
 	public int increaseViews( int postNum );
 	
+	// 게시글 수정
+	public int updatePost( PostVO postVo );
+	
 	/* Jack Snider 끝 */
 
 	/* 호겸 시작 */

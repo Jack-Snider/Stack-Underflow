@@ -60,6 +60,9 @@ public interface IPostService {
 	public int increaseDislike( int postNum );
 	public int increaseViews( int postNum );
 	
+	// 게시글 수정
+	public int updatePost( PostVO postVo );
+	
 	/* Jack Snider 시작 */
 	
 	/* 호겸 시작 */

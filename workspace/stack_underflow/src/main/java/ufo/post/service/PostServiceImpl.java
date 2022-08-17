@@ -75,6 +75,15 @@ public class PostServiceImpl implements IPostService {
 		return dao.increaseViews( postNum );
 	}
 
+	/**
+	 * 게시글 수정
+	 */
+	@Override
+	public int updatePost( PostVO postVo ) {
+		// TODO Auto-generated method stub
+		return dao.updatePost( postVo );
+	}
+
 	
 	/* Jack Snider 시작 */
 	
