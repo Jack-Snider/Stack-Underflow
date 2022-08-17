@@ -17,7 +17,7 @@ let currentPage = 1;
 
 $(function(){
 	$('#goPostList').on('click', function(){
-		location.href="<%= request.getContextPath() %>/postList.do?currentPage="+currentPage;
+		location.href="<%= request.getContextPath() %>/postList2.do?currentPage="+currentPage;
 	});
 });
 			
