@@ -63,7 +63,10 @@ public interface IPostService {
 	// 게시글 수정
 	public int updatePost( PostVO postVo );
 	
-	/* Jack Snider 시작 */
+	// 게시글 삭제
+	public int deletePost( PostVO postVo );
+	
+	/* Jack Snider 끝 */
 	
 	/* 호겸 시작 */
 	// 게시글 전체 갯수 가져오기

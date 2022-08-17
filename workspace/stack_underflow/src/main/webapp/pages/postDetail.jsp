@@ -91,8 +91,8 @@
 					%>
 					
 					<!-- 현재 접속해있는 아이디와 게시글 작성자의 아이디가 일치할 경우 -->
-					<button type = "button" onclick = "getToPostUpdate()" >Edit</button>
-					<button type = "button" onclick = "삭제하는 서블릿으로 보내나?...">삭제하기</button>
+					<button type = "button" onclick = "getToPostUpdate()">EDIT</button>
+					<button type = "button" onclick = "getToPostDelete()">DELETE</button>
 					<button type = "button" onclick = "toList()">
 					<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
 					</button>
@@ -124,7 +124,15 @@
 		<script type="text/javascript">
 		
 			function getToPostUpdate(){
+				
+				// 수정 페이지뷰로 이동한다.
 				location.href = "pages/postUpdate.jsp"
+			}
+			
+			function getToPostDelete(){
+				
+				//삭제는 뷰가 필요 없어서 바로 서블릿으로 넘어간다.
+				location.href = "<%= request.getContextPath() %>/postDelete.do"
 			}
 		
 		</script>			

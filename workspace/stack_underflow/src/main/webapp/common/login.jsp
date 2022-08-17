@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 명범   시작 -->
 <meta charset="utf-8">
 <title>Insert title here</title>
 
@@ -51,9 +52,7 @@ if (cookies != null) {
 <body>
 
 <!-- id 값이 null값일 때 처리하는기능 -->
-<%
-if (session.getAttribute("Mem_id") == null) {
-%>
+
 <script>
 //로그인이 널값이 경우 처리하는 기능
 function validateForm(form) {
@@ -67,7 +66,9 @@ function validateForm(form) {
 	}
 }
 </script>
-
+<%
+if (session.getAttribute("Mem_vo") == null) {
+%>
 
 	<form onsubmit="return validateForm(this)" method="post"
 		name="loginform" action="<%=request.getContextPath()%>/login.do;">
@@ -76,7 +77,7 @@ function validateForm(form) {
 		<input type="checkbox" name="chkid" <%=chk%> value="check"> id 기억하기
 		<p>
 			<a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">아이디 찾기 </a>|
-			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=400, height=400'); return false;">비밀번호 찾기 </a>
+			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">비밀번호 찾기 </a>
 		</p>
 
 		<input type="submit" value="로그인" id="lgnbtn"> 
@@ -84,10 +85,15 @@ function validateForm(form) {
 
 	</form>
 <%
-} 
+}else{
+%>
+<script>alert("<%=session.getAttribute("Mem_id")%>님 환영합니다.");
+location.href="../basic_frame/frame.jsp";
+</script>
+<%
+}
 %>
 
-	
-
+	<!-- 명범   끝 -->
 </body>
 </html>

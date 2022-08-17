@@ -60,6 +60,7 @@ public class postUpdate extends HttpServlet {
 		String post_board_type = "A";
 
 		String post_title = request.getParameter("title");
+		System.out.println(post_title);
 		postVo.setPost_title(post_title);
 
 		String post_content = request.getParameter("content");
