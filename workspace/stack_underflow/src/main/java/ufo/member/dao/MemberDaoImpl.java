@@ -153,7 +153,23 @@ public class MemberDaoImpl implements IMemberDao{
 	}
 	/* 명범 끝 */
 
+<<<<<<< HEAD
 	
 
 	
+=======
+	/* Jack Snider 시작 */
+	@Override
+	public MemberVO getMember(String mem_id) {
+		MemberVO memVo= null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.getMember", mem_id);
+		} catch (Exception e) {
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
+	/* Jack Snider 끝 */
+>>>>>>> b0a9c2ab04a88227e36141d8430e78d95a02ab46
 }

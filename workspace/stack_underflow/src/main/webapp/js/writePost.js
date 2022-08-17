@@ -6,7 +6,7 @@
  */
  
 function toList(){
-	document.location.href = "postList.jsp";
+	location.href = "pages/postList.jsp"
 }
  
 function validateForm( form ){
@@ -19,7 +19,7 @@ function validateForm( form ){
 	
 	if( form.content.value == "" ){
 		alert( "내용을 입력하세요." );
-		form.title.focus();
+		//form.title.focus();
 		return false;
 	}
 	

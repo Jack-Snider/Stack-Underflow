@@ -34,7 +34,7 @@
 			</div> 
 			<div class="form-group">
 				<label for="mem_ans">답변을 입력하세요</label> <br> 
-				<input type="text" class="form-control" id="find-pass_ans" placeholder="Enter Answer" name="find-pass_ans" required>
+				<input type="text" class="form-control" id="find-pass_ans" placeholder="Enter Answer" name="find-pass_ans">
 			</div>
 			<button type="submit" name="change-passBtn" id="change-passBtn">비밀번호 변경하기</button><br><br>
 			<label for="mem_passEmail">방법 2) 이메일을 입력하여 비밀번호 변경하기</label><br>

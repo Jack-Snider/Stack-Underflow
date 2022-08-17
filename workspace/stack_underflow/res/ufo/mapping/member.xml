@@ -70,6 +70,12 @@
 	<!-- 명범 끝 -->
 
 	
+	<!-- Jack Snider 시작 -->
+	<select id="getMember" resultClass="memberVo" parameterClass="String">
+		select * from MEMBER where mem_id = #mem_id#
+	</select>
+	<!-- Jack Snider 끝 -->
+
 
 
 </sqlMap>

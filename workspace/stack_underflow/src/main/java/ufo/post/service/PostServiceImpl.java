@@ -1,10 +1,12 @@
 package ufo.post.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import ufo.post.dao.IPostDao;
 import ufo.post.dao.PostDaoImpl;
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 public class PostServiceImpl implements IPostService {
@@ -73,8 +75,78 @@ public class PostServiceImpl implements IPostService {
 		return dao.increaseViews( postNum );
 	}
 
-	
-	/* Jack Snider 시작 */
-	
+	/**
+	 * 게시글 수정
+	 */
+	@Override
+	public int updatePost( PostVO postVo ) {
+		// TODO Auto-generated method stub
+		return dao.updatePost( postVo );
+	}
 
+	/**
+	 * 게시글 삭제
+	 */
+	@Override
+	public int deletePost(PostVO postVo) {
+		// TODO Auto-generated method stub
+		return dao.deletePost(postVo);
+	}
+	
+	/* Jack Snider 끝 */
+	
+	/* 호겸 시작 */
+	
+	private int count = 0;
+	
+	// 게시글 전체 갯수 가져오기
+	@Override
+	public int totalCount() {
+		return dao.totalCount();
+	}
+	
+	// 전체 페이지 수 가져오기
+	@Override
+	public int totalPage() {
+		// 전체 글 갯수 구하기
+		count = this.totalCount();
+		
+		// 전체 페이지 수 구하기
+		int totalPage = (int)Math.ceil((double)count / PageVO.getPerList());
+		return totalPage;
+	}
+	
+	// 페이지 정보 가져오기
+	@Override
+	public PageVO pageInfo(int cpage) {
+		// 전체 페이지 수 구하기
+		int totalPage = this.totalPage();
+		// 게시글 수 구하기
+		int start = (cpage-1) * PageVO.getPerList() + 1;
+		int end = start + PageVO.getPerList() - 1;
+		if(end > count) end = count; 
+		// 페이지 수 구하기
+		int startPage = ((cpage-1)/PageVO.getPerPage()*PageVO.getPerPage())+1;
+		int endPage = startPage + PageVO.getPerPage() - 1;
+		if(endPage > totalPage) endPage = totalPage; 
+		
+		PageVO vo = new PageVO();
+		vo.setStart(start);
+		vo.setEnd(end);
+		vo.setStartPage(startPage);
+		vo.setEndPage(endPage);
+		vo.setTotalPage(totalPage);
+		
+		return vo;
+	}
+	
+	// 페이지 별 게시글 가져오기
+	@Override
+	public List<PostVO> getPostPerPage(Map<String, Object> map) {
+		return dao.getPostPerPage(map);
+	}
+
+	
+	
+	/* 호겸 끝 */
 }

@@ -70,4 +70,10 @@ public interface IMemberDao {
 	 */
 	public MemberVO passwordchk(String mem_id);
 	/* 명범 끝 */
+	
+	
+	/* Jack Snider 시작 */
+	public MemberVO getMember(String mem_id);
+	/* Jack Snider 끝 */
+	
 }

@@ -19,6 +19,9 @@ public interface IMemberService {
 	public int checkByNknm(String mem_nknm);
 	/* 호겸 끝 */
 	
+	/* Jack Snider 시작 */
+	public MemberVO getMember(String mem_id);
+	/* Jack Snider 끝 */
 	
 	
 	
