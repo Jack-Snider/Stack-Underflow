@@ -88,11 +88,7 @@ public class MemberServiceImpl implements IMemberService{
 	}
 	/* 명범 끝 */
 
-	
-<<<<<<< HEAD
 
-	
-=======
 	/* Jack Snider 시작 */
 	@Override
 	public MemberVO getMember(String mem_id) {
@@ -100,5 +96,5 @@ public class MemberServiceImpl implements IMemberService{
 		return dao.getMember(mem_id);
 	}
 	/* Jack Snider 끝 */
->>>>>>> b0a9c2ab04a88227e36141d8430e78d95a02ab46
+
 }
