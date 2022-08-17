@@ -165,7 +165,22 @@ public class PostDaoImpl implements IPostDao {
 		return cnt;
 	}
 
-	/* Jack Snider 시작 */
+	/**
+	 * 게시글 삭제
+	 */
+	@Override
+	public int deletePost(PostVO postVo) {
+		int cnt = 0;
+		try {
+			cnt = smc.delete("post.deletePost", postVo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+	
+	/* Jack Snider 끝 */
 	
 	/* 호겸 시작 */
 	@Override
@@ -191,4 +206,6 @@ public class PostDaoImpl implements IPostDao {
 		return list;
 	}
 	/* 호겸 끝 */
+
+
 }

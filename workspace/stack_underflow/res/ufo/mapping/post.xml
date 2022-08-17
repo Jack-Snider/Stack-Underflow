@@ -73,6 +73,11 @@
 	  	where post_num = #post_num#
 	  </update>
 	  
+	  
+	  <update id="deletePost" parameterClass="postVo">
+	  	delete from POST where post_num = #post_num#
+	  </update>
+	  
 	  <!-- Jack Snider 끝 -->
 	  
 	  <!-- 호겸 시작 -->

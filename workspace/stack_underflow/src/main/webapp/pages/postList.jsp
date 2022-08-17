@@ -108,7 +108,7 @@
 			<tr align = "center">
 				<td></td>
 				<td width = "100">
-					글쓰기
+					<a href = "pages/writePost.jsp">글쓰기</a>
 				</td>
 			</tr>
 		</table>
