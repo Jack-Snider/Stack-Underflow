@@ -1,6 +1,7 @@
 package ufo.member.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.vo.MemberVO;
 
@@ -17,6 +18,10 @@ public interface IMemberDao {
 	public int checkById(String mem_id);
 	
 	public int checkByNknm(String mem_nknm);
+	
+	public List<MemberVO> getScoreMembers();
+	
+	public int insertScorePerMember(Map<String, MemberVO> scoresMap);
 	/* 호겸 끝 */
 	
 	

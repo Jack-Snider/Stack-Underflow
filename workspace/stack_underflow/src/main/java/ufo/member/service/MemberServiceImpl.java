@@ -1,6 +1,7 @@
 package ufo.member.service;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.member.dao.IMemberDao;
 import ufo.member.dao.MemberDaoImpl;
@@ -38,6 +39,16 @@ public class MemberServiceImpl implements IMemberService{
 	public int checkByNknm(String mem_nknm) {
 		return dao.checkByNknm(mem_nknm);
 	}
+	
+	@Override
+	public List<MemberVO> getScoreMembers(){
+		return dao.getScoreMembers();
+	};
+	
+	@Override
+	public int insertScorePerMember(Map<String, MemberVO> scoresMap) {
+		return dao.insertScorePerMember(scoresMap);
+	};
 	/* 호겸 끝 */
 	
 	

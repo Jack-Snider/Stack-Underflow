@@ -30,13 +30,11 @@
 			
 			List<CmntVO> cmntList = (List<CmntVO>)request.getAttribute( "detailCmnt" );
 			
-			
-		
 		%>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 
-  	<!-- 호겸 수정 -->
+  		<!-- 호겸 수정 -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
@@ -88,31 +86,30 @@
 		</script>
 		<!-- Jack Snider 끝 -->
 
-	
-
-		<script>
-			$(function(){
-				$('#likeClick, #dislikeClick').on('click', function(){
-					let value = $(this).attr('id');	
-					$.ajax({
-						url : '/stack_underflow/LikeDislike.do',
-						data : {"kind" : value, "postNum" : <%=postVo.getPost_num()%>},
-						type : 'post',
-						success : function(res){
-							let likeCount = res.likeCount;
-							let dislikeCount = res.dislikeCount;
-							$('#likeView').text(likeCount);
-							$('#dislikeView').text(dislikeCount);
-						},
-						error : function(xhr){
-							alert(xhr.status);
-						},
-						dataType : 'json'
-					});
-				});
+<!-- 호겸 시작 -->
+<script>
+	$(function(){
+		$('#likeClick, #dislikeClick').on('click', function(){
+			let value = $(this).attr('id');
+			$.ajax({
+				url : '/stack_underflow/LikeDislike.do',
+				data : {"kind" : value, "postNum" : <%=postVo.getPost_num()%>},
+				type : 'post',
+				success : function(res){
+					let likeCount = res.likeCount;
+					let dislikeCount = res.dislikeCount;
+					$('#likeView').text(likeCount);
+					$('#dislikeView').text(dislikeCount);
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'json'
 			});
-		</script>
-		
+		});
+	});
+</script>
+<!-- 호겸 끝 -->
 		<style type="text/css">
 			
 			.no_border{
