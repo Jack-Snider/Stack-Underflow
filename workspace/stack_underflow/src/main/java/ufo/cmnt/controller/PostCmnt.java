@@ -63,7 +63,7 @@ public class PostCmnt extends HttpServlet {
 		cmntVo.setPost_num( post.getPost_num() ); // 게시글번호 안불러와짐
 		cmntVo.setCmnt_dislike( 0 );
 		cmntVo.setCmnt_like( 0 );
-		cmntVo.setMem_id( "asd" ); // 아이디 안불러와짐.
+		cmntVo.setMem_id( (String)request.getAttribute( "member_id" ) ); // 아이디 안불러와짐.
 		
 		
 		if( cmntVo.getCmnt_cont() == null ) {
@@ -77,6 +77,8 @@ public class PostCmnt extends HttpServlet {
 		if( cmntVo.getMem_id() == null ) {
 			System.out.println( "cmntVo.getMem_id() =>  null " );
 		}
+		
+		
 		
 		
 		int cnt = (int) service.insertCmnt( cmntVo ); // 댓글객체 저장
