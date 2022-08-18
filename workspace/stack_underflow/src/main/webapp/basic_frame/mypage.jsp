@@ -12,7 +12,14 @@
   
    <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
   
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>  
+
   <style>
   .col-sm-9{
     display : flex;
@@ -24,7 +31,7 @@
   #profil{
   
      flex : 2;
-     border : 2px solid gray;
+     /* border : 2px solid gray; */
   }
   
   #profil-main{
@@ -40,7 +47,7 @@
   
   #mypage-category{
    flex : 1;
-   border : 2px solid gray;
+  /*  border : 2px solid gray; */
   
   }
   
@@ -50,29 +57,46 @@
   }
   
   img{
-  
- max-width: 100%;
-  max-height: 100%;
-  display : flex;
-  /* margin : 20px; */
-  border-radius : 30%;  
-  height: auto;
-  display: block;
+    max-width: 18%;
+    max-height: 264px;
+    border-radius: 49%;
+    height: auto;
+    display: block;
+    margin-top: 5%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    filter: drop-shadow(6px 3px 7px #c3c3c3);
+    display: block;
+    float: left;
   } 
+
+
   
-/*   #profil-image{
+  #profilnick{
   
-    width: 200px;
-    height: 200px;
-    /* border: 2px solid gray; */
-    display : flex;
-    border-radius: 30%;
-    background: whitesmoke;
-    margin-top: 65px;
-    margin-left: 38px;
-  } */
+    margin-left: 26px;
+    float: left;
+    margin-top: 59px;
+    font-size: 9em;
+  
+  
+  }
+  
+  #profil-box{
+   box-sizing : inherit;
+   display : wrap;
+  }
+  
+  .mypageli{
+  font-size : 1.5em;
+  
+  }
+
+	
+
   </style>
-  
+
   
 </head>
 <body>
@@ -121,14 +145,14 @@
   <div class="row">
    <!-- 왼쪽 div  -->
     <div class="col-sm-2" style="background-color:white; ">
-       <div id="category"  >
+    <!--   <div id="category"  >
        <i class="fa-solid fa-avocado"></i>
-<!--         <ul id="categoryul">
+         <ul id="categoryul">
           <li><a href="">기술 게시판</a></li>
           <li><a href="">자유 게시판</a></li>
           <li><a href="">문의 게시판</a></li> 
-        </ul> -->
-       </div>   
+        </ul> 
+       </div>  --> 
     
     </div>
     
@@ -139,14 +163,26 @@
 	          <!-- 중간 div -->
 	          <div class="col-sm-9" style="background-color:white;">
                   <div id="profil">
+                     
                      <!-- 프로필 사진  -->
+                        <img src="../images/기본프로필2.png">   
+                      
                     
-                        <img src="../images/기본프로필2.png">                 
-                         
+                           <!-- 닉네임 -->
+                          <div id="profilnick" >hyen <i class="fa-solid fa-trophy" style="color:gold; font-size : 0.5em;"></i></div>
+                          
+                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							  
+							  <button class="btn btn-primary" type="button">회원탈퇴</button>
+                         </div>
+                      
                   </div>
                   <div id="profil-main">
                      <div id="box">
-                       <div id="mypage-category"></div>
+                       <div id="mypage-category">
+                       
+                            <button type="button" class="btn btn-outline-success">Success</button>                      
+                       </div>
                        <div id="mypage-main"></div>
                      </div>
                   </div>

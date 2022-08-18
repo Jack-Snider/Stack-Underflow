@@ -1,89 +1,211 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Insert title here</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="../css/main.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/btn.css">
+
   <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  
+  
+  
 <style>
 
-</style>
+div.mypage-login-btn{
+	display: inline;
+    position: relative;
+    left: 61%;
+	
+}
 
+p{
+	margin: 0;
+}
+body{
+	margin:0; 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fffaf0;
+    color:#949392;
+    z-index: 1000;
+    height: 100px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+    line-height:39px;
+    height: 66px;
+    font-size : 18px;
+}
+
+.header h1
+{
+    font-size : 18px;
+    font-weight:normal;
+    line-height: 66px;
+
+}
+
+.header.shrink h1
+{
+    font-size:24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+a {
+  text-decoration: none;
+  float: left;
+  margin-left: 10px;
+}
+
+#community{
+ margin-left:28px;
+ font-size : 18px;
+ 
+}
+#rank{
+ margin-left:28px;
+ font-size : 18px;
+
+}
+#mypage{
+    margin-left: 28px;
+    font-size: 18px;
+   
+}
+#logout{
+    margin-left: 28px;
+    font-size: 18px;
+    
+}
+
+.home{
+     
+   font-size: 25px;
+}
+.header.shrink h1.fa-right-from-bracket{
+    margin-left: 4px;
+}
+
+.content
+{
+height:2000px;
+background : green;
+ /*just to get the page to scroll*/
+}
+
+
+
+/* 풋터 */
+footer{
+width : 100%;
+height : 100px;
+background : #adadad;
+
+
+}
+
+#container-div{
+ background : pink;
+ width : 100%;
+
+}
+
+#content-container{
+
+  width : 100%;
+  display : flex;
+  min-height : 900px;
+  backgroung : pink;
+  
+
+}
+
+#content-left{
+   flex : 1;
+ border : 2px solid black;
+ 
+}
+
+#content-center{
+   flex : 4;
+border : 2px solid black;
+}
+
+#content-right {
+    
+    border: 2px solid black;
+    flex: 1;
+}
+
+	
+    
+
+
+</style>
+<script>
+
+$(document).ready(function(){
+	$('.menu').each(function(index){
+		$(this).attr('menu-index', index);
+	}).click(function(){
+		var index = $(this).attr('menu-index');
+		$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
+		$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
+	});
+
+
+});
+</script>
 
 </head>
 <body>
+<div class="header">
+  <h1>
+  <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.2em; margin-bottom : 3px; float: left;  margin-left: 40px; margin-top: 13px;" ></i>
+  <a class="home" href="main.jsp">stack underflow</a>
+  <a id = "community" href="">커뮤니티</a>
+  <a id = "rank" href="">랭킹</a>
+  
+	  <div class="mypage-login-btn">
+		  <a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
+		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+	  </div>
+  </h1>    
+</div>
 
-<!-- nav -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-     
-      <a class="navbar-brand" href="main_frame.jsp">
-       <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2em; margin-bottom : 3px"></i>stack underflow</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-      <!--    <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
+<div id="content-container">
+   <div id="content-left">
+   <br><br><br><br><br>
+	<div class="menu">기술 게시판</div>
+	<div class="menu">자유 게시판</div>
+	<div class="menu">문의 게시판</div>	
+		
+<!-- <div class="btngroup">
+    <button class="menu">저장</button>
+    <button class="menu">취소</button>
+</div>
+ -->
+   </div>
+   <div id="content-center">
+   썬 마이크로시스템즈에서 1995년에 개발한 객체 지향 프로그래밍 언어. 창시자는 제임스 고슬링이다. 2010년에 오라클이 썬 마이크로시스템즈를 인수하면서 Java의 저작권을 소유하였다. 현재는 OpenJDK는 GPL2이나 오라클이 배포하는 Oracle JDK는 상업라이선스로 2019년 1월부터 유료화정책을 강화하고 있다. Java EE는 이클립스 재단의 소유이다. Java 언어는 J2SE 1.4부터는 Java Community Process (JCP)에서 개발을 주도하고 있다.
 
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">page1<span class="caret"></span></a>
-
-        </li> -->
-        <li><a href="#">커뮤니티</a></li>
-        <li><a href="#">랭킹</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 마이페이지</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
-      </ul>
-    </div>  
-    </div>
-</nav>
-
-
-
-
-
-<div class="container-fluid">
-
-  <div class="row">
-   <!-- 왼쪽 div  -->
-    <div class="col-sm-2" style="background-color:white; ">
-       <div id="category"  >
-       <i class="fa-solid fa-avocado"></i>
-        <ul id="categoryul">
-          <li>Home</li>
-          <li><a href="" style="font-size: 20px;">기술 게시판</a></li>
-          <li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
-          <li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
-        </ul>
-       </div>   
-    
-    </div>
-    
-    
-    <div class="col-sm-10" style="background-color:lavenderblush;">   
-          <div class="row" style=" overflow : auto">
-          
-	          <!-- 중간 div -->
-	          <div class="col-sm-9" style="background-color:white;">
-	         
-	썬 마이크로시스템즈에서 1995년에 개발한 객체 지향 프로그래밍 언어. 창시자는 제임스 고슬링이다. 2010년에 오라클이 썬 마이크로시스템즈를 인수하면서 Java의 저작권을 소유하였다. 현재는 OpenJDK는 GPL2이나 오라클이 배포하는 Oracle JDK는 상업라이선스로 2019년 1월부터 유료화정책을 강화하고 있다. Java EE는 이클립스 재단의 소유이다. Java 언어는 J2SE 1.4부터는 Java Community Process (JCP)에서 개발을 주도하고 있다.
-
-C#과 문법적 성향이 굉장히 비슷하며[2], 그에 비해 2019년 Q3에서 가장 많이 이용하는 언어로 뽑혔다.<br><br><br><br><br><br><br><br>
-2. 분류[편집]
+  C#과 문법적 성향이 굉장히 비슷하며[2], 그에 비해 2019년 Q3에서 가장 많이 이용하는 언어로 뽑혔다.<br><br><br><br><br><br><br><br>
+  2. 분류[편집]
 Java는 크게 다음과 같은 3가지 에디션으로 나뉜다.<br><br><br><br><br>
 Java SE(Java Standard Edition / J2SE)<br><br><br><br><br><br><br><br><br>
 대부분의 사람들이 가장 많이 접하는 표준 에디션. Java의 핵심 API와 기능들을 제공한다. JDK 항목도 참고.<br><br><br><br><br>
@@ -97,7 +219,7 @@ Java의 가장 큰 특징은 플랫폼에 독립적인 언어라는 점이다. �
 예를 들어 플랫폼에 종속된 경우 윈도우에서 빌드한 프로그램을 그대로 리눅스나 macOS에서 실행하려 하면 일반적으로 오류가 나지만 Jav<br><br><br><br><br>a로 작성 된 프로그램은 플랫폼에 맞는 Java Runtime Environment만 설치되어 있다면 문제 없이 동작한다. 이는 Java 코드 자체가 플랫폼이 아닌 가상머신에 종속적이라는 점, 그리고 프로그램 실행의 주체가 운영 체제가 아닌 Java Runtime Environment이라는 점 때문이며 이러한 점을 통틀어 Java는 플랫폼 종속성이 낮은 언어라고 표현한다.
 
 Java Runtime Environment 기반의 프로젝트에서는 하나의 언어만을 고집하지 않는다. 함수형 언어가 유리(최근 유행하는 빅데이터 등)한 부분은 Scala로 작업하며, 견고한 인터페이스와 대규모 통합이 필요한 곳은 Java로 작업한 뒤 이들을 서로 합쳐서 운영하는 게 가능하다. (Java에서 만든 객체를 Scala에서 그대로 사용할 수 있다.) 안드로이드 쪽에서는 크리티컬하지 않은 부분부터 Kotlin으로 코드를 교체하는 경우도 많아지고 있다.
-<br><br><br><br><br><br>
+<br><br><br><br><br><br>	
 실제 현업에서는 Java를 비롯한 여러가지 인기 언어가 자주 사용되므로 장단점을 잘 알아두는게 좋다. 다른 언어에 대해 맹목적으로 찬양/비판하는 태도보다는 환경이나 주어진 작업의 특성에 따라 적합한 언어를 선택할 수 있는 노하우가 필요하다.
 3.1. C, C++와의 비교[편집]<br><br><br><br><br>
 기존의 C에 객체지향 기능을 추가하다 보니 언어의 사용에 있어 저수준과 고수준의 개념이 충돌하는 부분이 많았던 C++과는 다르게 아예 처음부터 객체지향 언어로 개발되었다. 다만 많은 사람들이 착각하는 부분인데, Java는 엄밀히 말하면 완벽한 객체지향 언어가 아니다. 원시(Primitive) 타입은 객체로 취급하지 않기 때문. 모든 것을 객체로 취급하는 언어를 순수 객체지향(Pure object-oriented)이라 하며, 이를 지원하는 언어로는 Python, Ruby, Smalltalk등이 있다.
@@ -112,20 +234,36 @@ Java에 특정한 라이브러리를 가미해서 웹에서 돌릴 수 있게 �
 
 Java Development Kit(Java 개발 도구)을 설치하면 javac라는 컴파일러가 제공된다. 하지만 통합 개발 환경은 제공해 주지 않기 때문에, 반드시 별도의 개발용 프로그램을 써야 한다. 대표적으로 이클립스, 넷빈즈, IntelliJ IDEA 등이 있다. 만약 이것들을 안 쓰겠다고 한다면, 당신에게는 메모장과 javac.exe가 있을 뿐이다. 그리고 Java는 IDE 없이 타이핑만으로 짜기엔 굉장히 불편한 언어라는 것을 명심하자.[6] 실전 Java 개발을 할 때 프로젝트에 필요한 라이브러리 관리나 프로젝트 결과물 배포 등 프로젝트 빌드 관리를 위한 도구로는 아파치 소프트웨어 재단에서 만든 Ant와 Maven, 그 중에서도 Maven이 많이 사용되고 있다. 최근에는 이 두 가지의 단점을 보완한 Gradle이 각광을 받고 있으며 안드로이드 프로젝트에서는 기본으로 쓰인다.
 	
-	          </div>
-	          
-	          <!-- 오른쪽 -->
-	          <div class="col-sm-3" style="background-color:white;">.col-sm-3</div>
-          </div>
-    </div>
-    
-    <!-- <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div> -->
-  </div>
+   
+   </div>
+   <div id="content-right"></div>
 </div>
 
-<!--  footer  -->
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<!-- <div id="container-div">
+<div class="row">
+   왼쪽 div 
+    <div class="col-2" style="background-color:white; ">
+       <div id="category"  >
+       <i class="fa-solid fa-avocado"></i>
+        <ul id="categoryul">
+          <li>Home</li>
+          <li><a href="" style="font-size: 20px;">기술 게시판</a></li>
+          <li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
+          <li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
+        </ul>
+       </div>   
+    
+    </div>
+    
+    
+  
+    
+    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+  </div>
+</div> -->
+
+<footer>
+<p>404</p>
 </footer>
 
 
