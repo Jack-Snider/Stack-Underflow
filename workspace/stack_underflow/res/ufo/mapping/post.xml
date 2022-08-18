@@ -58,11 +58,11 @@
 	  	select * from POST where post_num = #post_num#
 	  </select>
 	  
-	  <update id="increaseLike" parameterClass="String">
+	  <update id="increaseLike" parameterClass="int"> <!-- 호겸 수정 -->
 	  	update POST set post_like = post_like + 1 where post_num = #post_num#
 	  </update>
 	  
-	  <update id="increaseDislike" parameterClass="String">
+	  <update id="increaseDislike" parameterClass="int"> <!-- 호겸 수정 -->
 	  	update POST set post_dislike = post_dislike + 1 where post_num = #post_num#
 	  </update>
 	  
@@ -109,6 +109,7 @@
    		<update id="increaseViews" parameterClass="int">
 	  		update POST set post_views = post_views + 1 where post_num = #post_num#
 	  	</update>
+	  	
 	  <!-- 호겸 끝 -->
 	  
 </sqlMap>
