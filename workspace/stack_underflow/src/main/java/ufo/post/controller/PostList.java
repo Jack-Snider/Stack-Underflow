@@ -2,7 +2,9 @@ package ufo.post.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ufo.cmnt.service.CmntServiceImpl;
+import ufo.cmnt.service.ICmntService;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 /**
@@ -30,7 +35,7 @@ public class PostList extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		/* Jack Snider 시작 */
-		
+		/*
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
@@ -46,8 +51,34 @@ public class PostList extends HttpServlet {
 		// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
 		request.setAttribute("postList", list);
 		request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
-
+		*/
 		/* Jack Snider 끝 */
+		/* 호겸 시작 */
+		request.setCharacterEncoding("utf-8");
+		
+		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		String column = request.getParameter("column");
+		String condition = request.getParameter("condition");
+
+		IPostService service = PostServiceImpl.getInstance();
+		
+		PageVO vo = service.pageInfo(currentPage, column, condition);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("column", column);
+		map.put("condition", condition);
+		map.put("start", vo.getStart());
+		map.put("end", vo.getEnd());
+
+		List<PostVO> postList = service.getPostPerPage(map);
+		
+		request.setAttribute("postList", postList);
+		request.setAttribute("pageVo", vo);
+		request.setAttribute("currentPage", currentPage);
+		
+		request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
+		/* 호겸 끝 */
 		
 	}
 

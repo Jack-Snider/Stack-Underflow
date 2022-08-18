@@ -22,7 +22,18 @@
 	  <select id="checkByNknm" parameterClass="String" resultClass="int">
 	  	select count(*) from member where mem_nknm = #data#
 	  </select>
-
+	  
+	  <select id="getScoreMembers" resultClass="memberVo">
+	  	select m.mem_id as mem_id, (sum(p.post_like) - sum(p.post_dislike)) as mem_score
+		from post p, member m
+		where p.mem_id = m.mem_id
+		group by m.mem_id
+		order by mem_score desc
+	  </select>
+	  
+	  <update id="updateScorePerMember" parameterClass="java.util.Map">
+	  	update member set mem_score = #mem_score# where mem_id = #mem_id#
+	  </update>
 	  <!-- 호겸 끝 -->
 
 
@@ -66,6 +77,10 @@
 	<update id="chngePass" parameterClass="memberVo">
 	update member set mem_pass=#mem_pass# where mem_id=#mem_id#
 	</update>
+	
+	<select id="passValidEmail" parameterClass="String" resultClass="memberVo">
+	select mem_email from member where mem_id=#mem_id#
+	</select>
 	
 	<!-- 명범 끝 -->
 

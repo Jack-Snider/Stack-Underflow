@@ -3,6 +3,7 @@ package ufo.post.dao;
 import java.util.List;
 import java.util.Map;
 
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 public interface IPostDao {
@@ -67,7 +68,7 @@ public interface IPostDao {
 
 	/* 호겸 시작 */
 	// 게시글 전체 갯수 가져오기
-	public int totalCount();
+	public int totalCount(Map<String, Object> map);
 	// 페이지 별 게시글 가져오기
 	public List<PostVO> getPostPerPage(Map<String, Object> map);
 	/* 호겸 끝 */

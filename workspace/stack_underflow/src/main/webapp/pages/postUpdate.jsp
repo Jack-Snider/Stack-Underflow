@@ -22,8 +22,8 @@
 	
 	%>
 	
-	<form action="<%= request.getContextPath() %>/postUpdate.do" method="post" enctype="multiple/form-data"
-		onsubmit="return validateForm(this)">
+	<form action="<%= request.getContextPath() %>/postUpdate.do?currentPage=1" method="post" enctype="multiple/form-data"
+		onsubmit="return validateForm(this)"> <!-- 호겸 수정 -->
 		<table border="1" style="width: 90%;">
 		
 

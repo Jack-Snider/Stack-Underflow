@@ -58,20 +58,17 @@ public class PostServiceImpl implements IPostService {
 	}
 
 	@Override
-	public int increaseLike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseLike( int postNum ) { // 호겸 수정
 		return dao.increaseLike( postNum );
 	}
 
 	@Override
-	public int increaseDislike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseDislike( int postNum ) { // 호겸 수정
 		return dao.increaseDislike( postNum );
 	}
 
 	@Override
-	public int increaseViews( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseViews( int postNum ) { // 호겸 수정
 		return dao.increaseViews( postNum );
 	}
 
@@ -101,15 +98,18 @@ public class PostServiceImpl implements IPostService {
 	
 	// 게시글 전체 갯수 가져오기
 	@Override
-	public int totalCount() {
-		return dao.totalCount();
+	public int totalCount(Map<String, Object> map) {
+		return dao.totalCount(map);
 	}
 	
 	// 전체 페이지 수 가져오기
 	@Override
-	public int totalPage() {
+	public int totalPage(String column, String condition) {
 		// 전체 글 갯수 구하기
-		count = this.totalCount();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("column", column);
+		map.put("condition", condition);
+		count = this.totalCount(map);
 		
 		// 전체 페이지 수 구하기
 		int totalPage = (int)Math.ceil((double)count / PageVO.getPerList());
@@ -118,9 +118,9 @@ public class PostServiceImpl implements IPostService {
 	
 	// 페이지 정보 가져오기
 	@Override
-	public PageVO pageInfo(int cpage) {
+	public PageVO pageInfo(int cpage, String column, String condition) {
 		// 전체 페이지 수 구하기
-		int totalPage = this.totalPage();
+		int totalPage = this.totalPage(column, condition);
 		// 게시글 수 구하기
 		int start = (cpage-1) * PageVO.getPerList() + 1;
 		int end = start + PageVO.getPerList() - 1;
@@ -146,7 +146,5 @@ public class PostServiceImpl implements IPostService {
 		return dao.getPostPerPage(map);
 	}
 
-	
-	
 	/* 호겸 끝 */
 }

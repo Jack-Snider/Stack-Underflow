@@ -17,6 +17,10 @@ public interface IMemberService {
 	public int checkById(String mem_id);
 	
 	public int checkByNknm(String mem_nknm);
+	
+	public void updateScorePerMember();
+	
+	public List<MemberVO> getScoreMembers();
 	/* 호겸 끝 */
 	
 	/* Jack Snider 시작 */
@@ -77,5 +81,11 @@ public interface IMemberService {
 	 * @return MemberVO
 	 */
 	public MemberVO passwordchk(String mem_id);
+	/**
+	 * mem_id를 입력받아 해당하는 mem_id를 출력한다 
+	 * @param mem_id
+	 * @return MemberVO mem_email
+	 */
+	public MemberVO passValidEmail(String mem_id);
 	/* 명범 끝 */
 }

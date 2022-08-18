@@ -2,6 +2,7 @@ package ufo.member.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -59,6 +60,30 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	}
+	
+	@Override
+	public List<MemberVO> getScoreMembers() {
+		List<MemberVO> scores = null;
+		try {
+			scores = (List<MemberVO>)smc.queryForList("member.getScoreMembers");
+		} catch (SQLException e) {
+			scores = null;
+			e.printStackTrace();
+		}
+		return scores;
+	};
+	
+	@Override
+	public int updateScorePerMember(Map<String, Object> scoresMap) {
+		int cnt = 0;
+		try {
+			cnt = smc.update("member.updateScorePerMember", scoresMap);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	};
 	/* 호겸 끝 */
 
 	/* 명범 시작 */
@@ -151,6 +176,19 @@ public class MemberDaoImpl implements IMemberDao{
 				
 		return memVo;
 	}
+	@Override
+	public MemberVO passValidEmail(String mem_id) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.passValidEmail",mem_id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
 	/* 명범 끝 */
 
 
@@ -171,5 +209,7 @@ public class MemberDaoImpl implements IMemberDao{
 		return memVo;
 	}
 	/* Jack Snider 끝 */
+
+	
 
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import ufo.util.SqlMapClientFactory;
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 public class PostDaoImpl implements IPostDao {
@@ -106,39 +107,36 @@ public class PostDaoImpl implements IPostDao {
 	}
 
 	@Override
-	public int increaseLike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseLike( int postNum ) { // 호겸 수정
 		int cnt = 0;
 		try {
 			cnt = smc.update("post.increaseLike", postNum);
 		} catch (Exception e) {
-			// TODO: handle exception
+			cnt = 0;
 			e.printStackTrace();
 		}
 		return cnt;
 	}
 
 	@Override
-	public int increaseDislike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseDislike( int postNum ) { // 호겸 수정
 		int cnt = 0;
 		try {
 			cnt = smc.update("post.increaseDislike", postNum);
 		} catch (Exception e) {
-			// TODO: handle exception
+			cnt = 0;
 			e.printStackTrace();
 		}
 		return cnt;
 	}
 
 	@Override
-	public int increaseViews( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseViews( int postNum ) { // 호겸 수정
 		int cnt = 0;
 		try {
-			cnt = smc.update("post.increaseLike", postNum);
-		} catch (Exception e) {
-			// TODO: handle exception
+			cnt = smc.update("post.increaseViews", postNum);
+		} catch (SQLException e) {
+			cnt = 0;
 			e.printStackTrace();
 		}
 		return cnt;
@@ -184,10 +182,10 @@ public class PostDaoImpl implements IPostDao {
 	
 	/* 호겸 시작 */
 	@Override
-	public int totalCount() {
+	public int totalCount(Map<String, Object> map) {
 		int cnt = 0;
 		try {
-			cnt = (int)smc.queryForObject("post.totalCount");
+			cnt = (int)smc.queryForObject("post.totalCount", map);
 		} catch (SQLException e) {
 			cnt = 0;
 			e.printStackTrace();

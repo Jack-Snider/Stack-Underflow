@@ -1,6 +1,8 @@
 package ufo.member.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ufo.member.dao.IMemberDao;
 import ufo.member.dao.MemberDaoImpl;
@@ -38,6 +40,29 @@ public class MemberServiceImpl implements IMemberService{
 	public int checkByNknm(String mem_nknm) {
 		return dao.checkByNknm(mem_nknm);
 	}
+	
+	@Override
+	public List<MemberVO> getScoreMembers(){
+		return dao.getScoreMembers();
+	};
+	
+	@Override
+	public void updateScorePerMember() {
+		
+		List<MemberVO> scorePerMembers = getScoreMembers();
+		
+		for(MemberVO mvo : scorePerMembers) {
+			Map<String, Object> scoresMap = new HashMap<String, Object>();
+			scoresMap.put("mem_id", mvo.getMem_id());
+			scoresMap.put("mem_score", mvo.getMem_score());
+			int cnt = dao.updateScorePerMember(scoresMap);
+			if(cnt==0) {
+				System.out.println("insertScorePerMember 실패");
+				break;
+			}
+		}
+		
+	};
 	/* 호겸 끝 */
 	
 	
@@ -86,6 +111,11 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.passwordchk(mem_id);
 	}
+	@Override
+	public MemberVO passValidEmail(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.passValidEmail(mem_id);
+	}
 	/* 명범 끝 */
 
 
@@ -96,5 +126,7 @@ public class MemberServiceImpl implements IMemberService{
 		return dao.getMember(mem_id);
 	}
 	/* Jack Snider 끝 */
+
+	
 
 }

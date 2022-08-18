@@ -27,7 +27,8 @@
 					<div id = "center"></div>
 					<div id = "right_side">
 						<!-- Jack Snider 시작 -->
-						<a href = "<%= request.getContextPath() %>/postList.do">게시판</a>
+						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">게시판</a> <!-- 호겸 수정 -->
+						<a href = "../ranking/rankingBoard.jsp">랭킹</a>
 						<!-- Jack Snider 끝 -->
 					</div>
 				</div>

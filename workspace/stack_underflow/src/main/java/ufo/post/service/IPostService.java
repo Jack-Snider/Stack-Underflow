@@ -70,11 +70,11 @@ public interface IPostService {
 	
 	/* 호겸 시작 */
 	// 게시글 전체 갯수 가져오기
-	public int totalCount();
+	public int totalCount(Map<String, Object> map);
 	// 전체 페이지 수 가져오기
-	public int totalPage();
+	public int totalPage(String column, String condition);
 	// 페이지 정보 가져오기
-	public PageVO pageInfo(int cpage);
+	public PageVO pageInfo(int cpage, String column, String condition);
 	// 페이지 별 게시글 가져오기
 	public List<PostVO> getPostPerPage(Map<String, Object> map);
 	/* 호겸 끝 */

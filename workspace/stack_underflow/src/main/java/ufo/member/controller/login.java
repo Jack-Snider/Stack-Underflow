@@ -27,7 +27,7 @@ public class login extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 
-		// login.jsp에받은 id와 패스워드 값을 받는다
+		// login.jsp에받은 id와 패스워드 값을 받는다 
 		String userId = request.getParameter("idInput");
 		String userPass = request.getParameter("passInput");
 
