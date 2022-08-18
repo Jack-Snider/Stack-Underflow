@@ -30,8 +30,11 @@
 						#mem_id#			
 					)
 	</insert>
-	 
 	
+	<!-- 게시글 번호가 n인 댓글 가져오기 --> 
+	<select id="getCmnts" parameterClass="String" resultClass="cmntVo">
+		select * from CMNT where post_num = #post_num#
+	</select>
 
 	
 	<!-- Jack Snider 끝 -->
