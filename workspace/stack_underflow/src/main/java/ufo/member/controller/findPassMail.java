@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 import ufo.member.service.IMemberService;
 import ufo.member.service.MemberServiceImpl;
 import ufo.vo.MemberVO;
-
+//명범시작======================================================================================
 /**
  * Servlet implementation class Mail
  */
@@ -125,10 +125,10 @@ public class findPassMail extends HttpServlet {
 		         System.out.println("message sent successfully...");
 		         
 		         httpsession.setAttribute("mem_id", userId);
-		         //response.sendRedirect("./common/login.jsp");
+
 		        request.setAttribute("randomstr", str);
 		         request.getRequestDispatcher("/jsp/findPswd.jsp").forward(request, response);
-		         //response.sendRedirect("./jsp/findPswd.jsp");
+
 		      } catch (MessagingException e) {
 		         e.printStackTrace();
 		      }
@@ -151,4 +151,4 @@ public class findPassMail extends HttpServlet {
 		
 	}
 }
-
+//명범끝======================================================================================

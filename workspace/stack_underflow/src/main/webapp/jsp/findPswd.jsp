@@ -10,11 +10,12 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-
+<!-- 서블릿에서 받아온 랜덤생성값 -->
 <%String random = (String)request.getAttribute("randomstr"); %>
 <script>
 $(function(){
 	$('#validateBtn').on('click', function(){
+		//인증번호 입력값이 받아온 랜덤생성값과 같으면 알러트와 함께 비밀번호 수정 링크로 넘어간다
 		if(document.getElementById("validateInput").value=='<%=random %>'){
 			alert("인증에 성공했습니다.");
 			location.href="<%=request.getContextPath()%>/jsp/updatePassword.jsp";
@@ -28,7 +29,6 @@ $(function(){
 <body>
 
 	<h1>비밀번호 찾기</h1>
-
 	<!--해당값이 아무것도 없을때 -->
 	<!--   <%
 	if (request.getAttribute("passVo1") == null) {
@@ -57,6 +57,7 @@ $(function(){
 		</div>
 	</form>
 	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
+	
 	<p>방법 2)</p>
 		<label for="findpass_EmailLabel">필수입력) ID를 입력하세요</label><br> 
 		<input type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
@@ -71,7 +72,7 @@ $(function(){
 	}
 	%>
 	<%
-	// 아이디 이메일이 입력됐을때 생기는 기능
+	// 아이디 이메일이 입력됐을때 나타나는 기능
 		if(random != null){
 	%>	
 		<label>인증번호 확인</label>
