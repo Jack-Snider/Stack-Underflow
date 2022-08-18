@@ -34,9 +34,6 @@ if (cookies != null) {
 	}
 }
 %>
-
-
-
 <!-- 회원가입 버튼을 눌렀을때 이동하는 기능 -->
 <script>
 	$(function(){
@@ -45,8 +42,6 @@ if (cookies != null) {
 		});
 	});
 </script>
-
-
 </head>
 
 <body>

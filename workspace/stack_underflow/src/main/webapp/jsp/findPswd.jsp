@@ -6,17 +6,34 @@
 <!-- 강명범 시작 -->
 <meta charset="utf-8">
 <title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<%String random = (String)request.getAttribute("randomstr"); %>
+<script>
+$(function(){
+	$('#validateBtn').on('click', function(){
+		if(document.getElementById("validateInput").value=='<%=random %>'){
+			alert("인증에 성공했습니다.");
+			location.href="<%=request.getContextPath()%>/jsp/updatePassword.jsp";
+		}else{
+			alert("인증에 실패했습니다.");
+		}
+	});
+});
+</script>
 </head>
 <body>
+
 	<h1>비밀번호 찾기</h1>
 
 	<!--해당값이 아무것도 없을때 -->
-	<%
+	<!--   <%
 	if (request.getAttribute("passVo1") == null) {
 	%>
-
-
-
+	-->
 
 	<form class="findPassQstn" method="post"
 		action="<%=request.getContextPath()%>/findPassQstn.do">
@@ -45,15 +62,26 @@
 		<input type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
 	    <label for="mem_passEmail">이메일을 입력하여 비밀번호 변경하기</label><br>
 		<input type="text" id="findpass_input_email" placeholder="Enter your email" name="findpass_input_email">
-		<button type="submit">인증메일 보내기</button><br>
+		<button id="submitbtn" type="submit">인증메일 보내기</button><br>
 
 	</form>
-
+	
+	
 	<%
-	// 아이디 질문 답변이 일치하면 해당 jsp로 이동한다.
 	}
 	%>
-
+	<%
+	// 아이디 이메일이 입력됐을때 생기는 기능
+		if(random != null){
+	%>	
+		<label>인증번호 확인</label>
+		<input type="text" placeholder="인증번호"  id="validateInput">
+		<button id="validateBtn" value="인증하기">버튼</button>
+		
+	<%	
+		}
+	
+	%>
 
 
 </body>

@@ -107,7 +107,15 @@ public class findPassMail extends HttpServlet {
 		         // 메일 내용
 		         // 랜덤인증 문자열 발생
 		     
-		         message.setText("http://localhost/stack_underflow/jsp/updatePassword.jsp");
+		         
+		         String str="";
+		         for (int i = 1; i <= 6; i++) {
+		             char ch = (char) ((Math.random() * 26) + 65);
+		             str+=String.valueOf(ch);
+		           }
+		         
+		         System.out.println(str);
+		         message.setText(str);
 
 		         // send the message
 		         // 메일 전송
@@ -117,8 +125,10 @@ public class findPassMail extends HttpServlet {
 		         System.out.println("message sent successfully...");
 		         
 		         httpsession.setAttribute("mem_id", userId);
-		         response.sendRedirect("./common/login.jsp");
-
+		         //response.sendRedirect("./common/login.jsp");
+		        request.setAttribute("randomstr", str);
+		         request.getRequestDispatcher("/jsp/findPswd.jsp").forward(request, response);
+		         //response.sendRedirect("./jsp/findPswd.jsp");
 		      } catch (MessagingException e) {
 		         e.printStackTrace();
 		      }
