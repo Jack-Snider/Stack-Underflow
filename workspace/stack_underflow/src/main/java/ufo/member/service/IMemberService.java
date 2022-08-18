@@ -1,7 +1,6 @@
 package ufo.member.service;
 
 import java.util.List;
-import java.util.Map;
 
 import ufo.vo.MemberVO;
 
@@ -19,7 +18,7 @@ public interface IMemberService {
 	
 	public int checkByNknm(String mem_nknm);
 	
-	public int insertScorePerMember(Map<String, MemberVO> scoresMap);
+	public void updateScorePerMember();
 	
 	public List<MemberVO> getScoreMembers();
 	/* 호겸 끝 */

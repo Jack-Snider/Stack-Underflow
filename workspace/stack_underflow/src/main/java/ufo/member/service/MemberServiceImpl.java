@@ -1,5 +1,6 @@
 package ufo.member.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,8 +47,21 @@ public class MemberServiceImpl implements IMemberService{
 	};
 	
 	@Override
-	public int insertScorePerMember(Map<String, MemberVO> scoresMap) {
-		return dao.insertScorePerMember(scoresMap);
+	public void updateScorePerMember() {
+		
+		List<MemberVO> scorePerMembers = getScoreMembers();
+		
+		for(MemberVO mvo : scorePerMembers) {
+			Map<String, Object> scoresMap = new HashMap<String, Object>();
+			scoresMap.put("mem_id", mvo.getMem_id());
+			scoresMap.put("mem_score", mvo.getMem_score());
+			int cnt = dao.updateScorePerMember(scoresMap);
+			if(cnt==0) {
+				System.out.println("insertScorePerMember 실패");
+				break;
+			}
+		}
+		
 	};
 	/* 호겸 끝 */
 	

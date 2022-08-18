@@ -21,7 +21,7 @@ public interface IMemberDao {
 	
 	public List<MemberVO> getScoreMembers();
 	
-	public int insertScorePerMember(Map<String, MemberVO> scoresMap);
+	public int updateScorePerMember(Map<String, Object> scoresMap);
 	/* 호겸 끝 */
 	
 	
