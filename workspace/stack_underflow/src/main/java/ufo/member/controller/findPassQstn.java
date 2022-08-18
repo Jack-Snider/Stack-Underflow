@@ -14,8 +14,8 @@ import ufo.member.service.IMemberService;
 import ufo.member.service.MemberServiceImpl;
 import ufo.vo.MemberVO;
 //강명범 시작====================================
-@WebServlet("/findPass.do")
-public class findPass extends HttpServlet {
+@WebServlet("/findPassQstn.do")
+public class findPassQstn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +45,7 @@ public class findPass extends HttpServlet {
 
 		// 세션객체 생성
 		HttpSession session = request.getSession();
-		
+		 
 		IMemberService service = MemberServiceImpl.getInstance();
 
 		// 입력받은 유저아이디를 통해 존재여부의 정수값을 받는다.

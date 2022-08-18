@@ -67,6 +67,10 @@
 	update member set mem_pass=#mem_pass# where mem_id=#mem_id#
 	</update>
 	
+	<select id="passValidEmail" parameterClass="String" resultClass="memberVo">
+	select mem_email from member where mem_id=#mem_id#
+	</select>
+	
 	<!-- 명범 끝 -->
 
 	
