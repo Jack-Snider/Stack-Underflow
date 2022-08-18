@@ -1,6 +1,7 @@
 package ufo.member.service;
 
 import java.util.List;
+import java.util.Map;
 
 import ufo.vo.MemberVO;
 
@@ -17,6 +18,10 @@ public interface IMemberService {
 	public int checkById(String mem_id);
 	
 	public int checkByNknm(String mem_nknm);
+	
+	public int insertScorePerMember(Map<String, MemberVO> scoresMap);
+	
+	public List<MemberVO> getScoreMembers();
 	/* 호겸 끝 */
 	
 	/* Jack Snider 시작 */

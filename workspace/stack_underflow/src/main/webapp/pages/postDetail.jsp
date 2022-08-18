@@ -29,12 +29,12 @@
 			
 			List<CmntVO> cmntList = (List<CmntVO>)request.getAttribute( "detailCmnt" );
 			
-		
+		      
 		%>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 
-  	<!-- 호겸 수정 -->
+  		<!-- 호겸 수정 -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
@@ -87,7 +87,7 @@
 		<!-- Jack Snider 끝 -->
 
 	
-
+<!-- 호겸 시작 -->
 <script>
 	$(function(){
 		$('#likeClick, #dislikeClick').on('click', function(){
@@ -110,7 +110,8 @@
 		});
 	});
 </script>
-		
+<!-- 호겸 끝 -->	
+
 		<style type="text/css">
 			
 			.no_border{
