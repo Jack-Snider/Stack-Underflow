@@ -69,8 +69,8 @@ public class PostDetail extends HttpServlet {
 			}
 			
 			// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
-			request.setAttribute("detailPost", postVo);
-			request.setAttribute("ismatch", isMatch);
+			request.setAttribute("detailPost", postVo); // 현재 게시글 객체
+			request.setAttribute("ismatch", isMatch); 
 			request.getRequestDispatcher("/pages/postDetail.jsp").forward(request, response);
 			
 		}else {

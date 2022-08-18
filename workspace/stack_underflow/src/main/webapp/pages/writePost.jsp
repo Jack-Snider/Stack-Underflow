@@ -27,7 +27,7 @@ $(function(){
 <body>
 
 	<h2>게시판 글쓰기</h2>
-	<form action="<%= request.getContextPath() %>/postController.do" method="post" enctype="multiple/form-data"
+	<form action="<%= request.getContextPath() %>/postController.do?currentPage=1" method="post" enctype="multiple/form-data"
 		onsubmit="return validateForm(this)">
 		<table border="1" style="width: 90%;">
 		

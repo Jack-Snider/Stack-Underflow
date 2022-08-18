@@ -115,6 +115,7 @@
 				<!-- 호찡 말대로 여기다 네임값을 각 번호로 줌 -->
 				<td width = "10%"><%= postVo.getPost_num() %></td>
 				<td width = "*">						
+					<!-- 상세페이지 넘어가기 -->
 					<a href = "<%=request.getContextPath()%>/postDetail.do?postNum=<%= postVo.getPost_num() %>">
 						<%= postVo.getPost_title() %>
 					</a>
