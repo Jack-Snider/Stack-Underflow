@@ -70,8 +70,7 @@ public class PostServiceImpl implements IPostService {
 	}
 
 	@Override
-	public int increaseViews( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseViews( int postNum ) { // 호겸 수정
 		return dao.increaseViews( postNum );
 	}
 

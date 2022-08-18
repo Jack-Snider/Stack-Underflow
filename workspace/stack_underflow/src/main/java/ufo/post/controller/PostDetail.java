@@ -1,7 +1,6 @@
 package ufo.post.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,22 +32,20 @@ public class PostDetail extends HttpServlet {
 		/* Jack Snider 시작 */
 		
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("application/json; charset=utf-8");
-		PrintWriter out = response.getWriter();
 		
-		/*
-		String strFileNo = request.getParameter( "fileno" );
-		int fileNo = Integer.parseInt( strFileNo );
-		*/
-		
+		/* 호겸 삭제 */
 		
 		// Service객체 생성
 		IPostService service = PostServiceImpl.getInstance();
 		
 		String num = request.getParameter( "postNum" );
 		int postNum = Integer.parseInt( num );
-			
+		
+		/* 호겸 시작 */
+		int cnt = service.increaseViews(postNum);
+		if (cnt == 0) System.out.println("조회수 증가 실패");
+		/* 호겸 끝 */
+		
 		// 세션객체 생성
 		HttpSession session = request.getSession();
 		
