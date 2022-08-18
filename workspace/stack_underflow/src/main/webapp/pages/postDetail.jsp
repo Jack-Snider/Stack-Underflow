@@ -27,18 +27,66 @@
 			boolean isMatch = ( boolean )request.getAttribute( "ismatch" );
 			
 			
-			List<CmntVO> cmnt = (List<CmntVO>)session.getAttribute( "cmntList" );
+			List<CmntVO> cmntList = (List<CmntVO>)request.getAttribute( "detailCmnt" );
 			
 		
 		%>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<!-- 호겸 수정 -->
+
+  	<!-- 호겸 수정 -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 		<!-- 호겸 수정 끝 -->
+		
+	
+		
+		<!-- Jack Snider 시작 -->
+		<script type="text/javascript">
+			
+			// cmntInsert
+			$(function(){
+				
+				let cmnt = '';
+				let post_num = 0;
+				let mem_id = '';
+				
+				$('#cmntInsert').on('click', function(){
+					
+					cmnt = $('#comment').val();
+					
+					alert('hello');
+					
+					$.ajax({
+						url : '/stack_underflow/postDetail.do',
+						data :	{"cmnt", cmnt},
+								{"post_num", post_num},
+								{"mem_id", mem_id},
+						type : 'post',
+						success : function( res ){
+							
+						},
+						error : function(xhr){
+							
+						},
+						dataType : 'json'
+					});
+					
+					
+					
+					
+				});
+			});
+	
+
+
+		
+		</script>
+		<!-- Jack Snider 끝 -->
+
+	
 
 <script>
 	$(function(){
@@ -77,6 +125,7 @@
 			
 			
 		</style>
+
 		
 	</head>
 	<body>
@@ -94,7 +143,7 @@
 			<!-- 게시글 정보 -->
 			<tr>
 				<td>번호</td> <td id = "postNum"><%= postVo.getPost_num() %></td>
-				<td>작성자</td> <td><%= postVo.getMem_id() %></td>
+				<td>작성자</td> <td id = "mem_id"><%= postVo.getMem_id() %></td>
 			</tr>
 			<tr>
 				<td>작성일</td> <td><%= postVo.getPost_reg_date() %></td> 
@@ -151,7 +200,7 @@
 					<br>
 					<%
 					
-						}else{
+						}else{ // 로그인 아이디와 게시글 작성자 아이디가 아니라면...
 					
 					%>
 				
@@ -163,11 +212,11 @@
 					
 					<%
 					
-						}
+						} // else 끝남
 					%>
 					
 					<!-- Jack Snider 시작 -->
-					<textarea name="comment" style="width: 90%; height: 100px" autofocus="autofocus">
+					<textarea id="comment" style="width: 90%; height: 100px" autofocus="autofocus">
 					</textarea>
 					
 					<!-- PostCmnt.java ( postCmnt.do ) 댓글등록 서블릿으로 이동 -->
@@ -176,30 +225,34 @@
 						 	2. 현재 접속한 계정의 아이디
 						 	 
 					-->
-					<button type = "button" onclick = "<%= request.getContextPath() %>/postCmnt.do">등록</button>
+					<button id = "cmntInsert" type = "button">등록</button>
 					<!-- Jack Snider 끝 -->
 					
 				</td>
 				
-				<%
-				
-					if( cmnt != null ){
-						
-					
-				
-				%>
-				
-					<p>hello</p>
-				
-				<% }else{ %>
-				
-					<p>bye bye</p>
-				
-				<% } %>
-				
 			</tr>
 			
+			<% 
+				if( cmntList != null ){
+					for( CmntVO cmnt : cmntList ){
+						
+			%>
+				<tr>
+					<td><%= cmnt.getMem_id() %></td>
+					<td><%= cmnt.getCmnt_cont() %></td>
+				</tr>
+			<%
 			
+					}
+				}else{
+			%>
+				<tr>
+					<td>현재 달려있는 댓글이 없습니다.</td>
+				</tr>
+				
+			<%
+				}
+			%>
 		</table>
 		
 		<script type="text/javascript">

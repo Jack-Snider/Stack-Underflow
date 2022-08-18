@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ufo.cmnt.service.CmntServiceImpl;
+import ufo.cmnt.service.ICmntService;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
 import ufo.vo.PageVO;
@@ -59,7 +61,7 @@ public class PostList extends HttpServlet {
 		String condition = request.getParameter("condition");
 
 		IPostService service = PostServiceImpl.getInstance();
-
+		
 		PageVO vo = service.pageInfo(currentPage, column, condition);
 
 		Map<String, Object> map = new HashMap<String, Object>();

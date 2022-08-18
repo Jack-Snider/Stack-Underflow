@@ -13,6 +13,7 @@
 		<p>집에서 하는 테스트 - 호겸</p>
 		<p>밖에서 하는 테스트 - JACK</p>
 
+		<a href = "<%= request.getContextPath() %>/cmntTest.do">댓글실험</a>
 
 		<p> 현우꺼 잘되라 </p>
 		<p>명범이 테스트</p>

@@ -52,7 +52,7 @@ public class PostCmnt extends HttpServlet {
 		
 		int cnt = service.insertCmnt( cmntVo ); // 댓글객체 저장
 		if( cnt > 0 ) {
-			List<CmntVO> cmntList = service.getCmnts( post.getPost_num() );
+			List<CmntVO> cmntList = service.getCmnts( post.getPost_num() + "" );
 			session.setAttribute( "cmntList" , cmntList );
 		}
 		

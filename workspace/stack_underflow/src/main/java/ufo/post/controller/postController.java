@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ufo.cmnt.service.CmntServiceImpl;
+import ufo.cmnt.service.ICmntService;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
 import ufo.vo.MemberVO;
@@ -41,7 +43,9 @@ public class postController extends HttpServlet {
 
 		// Service객체 생성
 		IPostService service = PostServiceImpl.getInstance();
-
+		
+		ICmntService serviceCmnt = CmntServiceImpl.getInstance();
+		
 		// session객체 생성
 		HttpSession session = request.getSession();
 		
@@ -103,6 +107,7 @@ public class postController extends HttpServlet {
 			map.put("end", vo.getEnd());
 
 			List<PostVO> postList = service.getPostPerPage(map);
+			
 			
 			request.setAttribute("postList", postList);
 			request.setAttribute("pageVo", vo);

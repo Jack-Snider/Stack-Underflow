@@ -50,7 +50,7 @@ public class CmntDaoImpl implements ICmntDao{
 	
 	
 	@Override
-	public List<CmntVO> getCmnts(int postNum) {
+	public List<CmntVO> getCmnts( String postNum ) {
 		// TODO Auto-generated method stub
 		List<CmntVO> list = null;
 		try {
@@ -62,6 +62,8 @@ public class CmntDaoImpl implements ICmntDao{
 		}
 		return list;
 	}
+
+	
 	
 	/* Jack Snider 끝 */
 
