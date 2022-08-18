@@ -1,7 +1,9 @@
 package ufo.post.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
 import ufo.vo.MemberVO;
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 /**
@@ -37,7 +40,7 @@ public class postUpdate extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		// Service객체 생성
-		IPostService service = PostServiceImpl.getInstance();
+		IPostService service1 = PostServiceImpl.getInstance(); /* 호겸 수정 */
 
 		// session객체 생성
 		HttpSession session = request.getSession();
@@ -73,12 +76,12 @@ public class postUpdate extends HttpServlet {
 		postVo.setPost_board_type(post_board_type);
 		postVo.setFile_num(file_num);
 		
-		service = PostServiceImpl.getInstance();
+		service1 = PostServiceImpl.getInstance(); /* 호겸 수정 */
 		
 		
-		int cnt = service.updatePost( postVo );
+		int cnt = service1.updatePost( postVo ); /* 호겸 수정 */
 		
-		
+		/*
 		// PostVO 객체 생성
 		// PostVO postVo = new PostVO();
 		List<PostVO> list = service.getAllPost();
@@ -90,7 +93,35 @@ public class postUpdate extends HttpServlet {
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
+		*/
+		
+		/* 호겸 수정 */
+		if(cnt > 0) {
+			int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+			String column = request.getParameter("column");
+			String condition = request.getParameter("condition");
 
+			IPostService service = PostServiceImpl.getInstance();
+
+			PageVO vo = service.pageInfo(currentPage, column, condition);
+
+			Map<String, Object> map = new HashMap<String, Object>();
+			
+			map.put("column", column);
+			map.put("condition", condition);
+			map.put("start", vo.getStart());
+			map.put("end", vo.getEnd());
+
+			List<PostVO> postList = service.getPostPerPage(map);
+			
+			request.setAttribute("postList", postList);
+			request.setAttribute("pageVo", vo);
+			request.setAttribute("currentPage", currentPage);
+			
+			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);			
+		}else {
+			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
+		}
 		
 	}
 
