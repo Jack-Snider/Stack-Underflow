@@ -1,3 +1,4 @@
+<%@page import="org.omg.PortableServer.LIFESPAN_POLICY_ID"%>
 <%@page import="ufo.vo.CmntVO"%>
 <%@page import="java.util.List"%>
 <%@page import="ufo.vo.PostVO"%>
@@ -29,6 +30,7 @@
 			
 			List<CmntVO> cmntList = (List<CmntVO>)request.getAttribute( "detailCmnt" );
 			
+			
 		
 		%>
 		<meta charset="UTF-8">
@@ -41,75 +43,75 @@
   		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 		<!-- 호겸 수정 끝 -->
 		
-	
+
 		
 		<!-- Jack Snider 시작 -->
 		<script type="text/javascript">
+		$(function(){
+			// 댓글 등록버튼 이벤트 comment
+			$('#cmntInsert').on('click', function(){
+				
+				let cmnt_cont = $('#comment').val(); // 새롭게 작성한 댓글 ( 여기까지 가져오기 성공 )
+				let mem_id = "<%= postVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
+				let post_num = <%= postVo.getPost_num() %>; // 게시글 번호 ( 여기까지 가져옴 )
 			
-			// cmntInsert
-			$(function(){
+				//alert( cmnt_cont );
+				//alert( mem_id );
+				//alert( post_num );
 				
-				let cmnt = '';
-				let post_num = 0;
-				let mem_id = '';
-				
-				$('#cmntInsert').on('click', function(){
+				$.ajax({
+					url : '/stack_underflow/postCmnt.do',
+					data : {"comment_content" : cmnt_cont, "member_id" : mem_id, "post_number" : post_num},
+					type : 'post',
+					success : function(res){
 					
-					cmnt = $('#comment').val();
-					
-					alert('hello');
-					
-					$.ajax({
-						url : '/stack_underflow/postDetail.do',
-						data :	{"cmnt", cmnt},
-								{"post_num", post_num},
-								{"mem_id", mem_id},
-						type : 'post',
-						success : function( res ){
-							
-						},
-						error : function(xhr){
-							
-						},
-						dataType : 'json'
-					});
-					
-					
-					
-					
+						let value = '';	
+						
+						$.each(res, function(i,v){
+							value += i + "번째 데이터 <br>";
+							value += "ID : " + v.mem_id + "<br>";
+							value += "내용 : " + v.cmnt_cont;
+							value += "<hr>";
+						});
+						
+						$('#commentList').html(value);
+						$('#comment').val('');
+						
+					},
+					error : function(xhr){
+						alert(xhr.status);
+					},
+					dataType : 'json'
 				});
 			});
-	
-
-
-		
+		});
 		</script>
 		<!-- Jack Snider 끝 -->
 
 	
 
-<script>
-	$(function(){
-		$('#likeClick, #dislikeClick').on('click', function(){
-			let value = $(this).attr('id');
-			$.ajax({
-				url : '/stack_underflow/LikeDislike.do',
-				data : {"kind" : value, "postNum" : <%=postVo.getPost_num()%>},
-				type : 'post',
-				success : function(res){
-					let likeCount = res.likeCount;
-					let dislikeCount = res.dislikeCount;
-					$('#likeView').text(likeCount);
-					$('#dislikeView').text(dislikeCount);
-				},
-				error : function(xhr){
-					alert(xhr.status);
-				},
-				dataType : 'json'
+		<script>
+			$(function(){
+				$('#likeClick, #dislikeClick').on('click', function(){
+					let value = $(this).attr('id');	
+					$.ajax({
+						url : '/stack_underflow/LikeDislike.do',
+						data : {"kind" : value, "postNum" : <%=postVo.getPost_num()%>},
+						type : 'post',
+						success : function(res){
+							let likeCount = res.likeCount;
+							let dislikeCount = res.dislikeCount;
+							$('#likeView').text(likeCount);
+							$('#dislikeView').text(dislikeCount);
+						},
+						error : function(xhr){
+							alert(xhr.status);
+						},
+						dataType : 'json'
+					});
+				});
 			});
-		});
-	});
-</script>
+		</script>
 		
 		<style type="text/css">
 			
@@ -129,8 +131,6 @@
 		
 	</head>
 	<body>
-		
-		
 		
 		<h2>게시글 - 상세보기</h2>
 		
@@ -232,28 +232,32 @@
 				
 			</tr>
 			
-			<% 
-				if( cmntList != null ){
-					for( CmntVO cmnt : cmntList ){
-						
-			%>
-				<tr>
-					<td><%= cmnt.getMem_id() %></td>
-					<td><%= cmnt.getCmnt_cont() %></td>
-				</tr>
-			<%
 			
-					}
-				}else{
-			%>
-				<tr>
-					<td>현재 달려있는 댓글이 없습니다.</td>
-				</tr>
-				
-			<%
-				}
-			%>
 		</table>
+		
+		
+		<div id = "commentList">
+	
+				<%
+					if( cmntList != null ){
+						for( CmntVO cmnt : cmntList ){
+							
+					
+				%>
+				
+					ID : <%= cmnt.getMem_id() %> <br>
+					내용 : <%= cmnt.getCmnt_cont() %> <br>
+					<hr>
+				
+				<%
+						}
+					}else{
+				%>
+					<p>등록된 댓글이 없습니다.</p>
+				<%
+					}
+				%>
+		</div>
 		
 		<script type="text/javascript">
 		

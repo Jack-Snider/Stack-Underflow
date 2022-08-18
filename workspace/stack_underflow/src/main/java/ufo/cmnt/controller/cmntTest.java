@@ -2,6 +2,7 @@ package ufo.cmnt.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import ufo.cmnt.service.CmntServiceImpl;
 import ufo.cmnt.service.ICmntService;
@@ -29,6 +32,12 @@ public class cmntTest extends HttpServlet {
 		response.setContentType("application/json; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
+		Gson gson = new Gson();
+		
+		String jsonData = null;
+		
+		HashMap<String, CmntVO> map = new HashMap<String, CmntVO>();
+		
 		CmntVO cmntVo = new CmntVO();
 		
 		cmntVo.setCmnt_cont( "이것은 테스트 댓글 1" );
@@ -38,6 +47,7 @@ public class cmntTest extends HttpServlet {
 		cmntVo.setMem_id( "asd" );
 		
 		ICmntService service = CmntServiceImpl.getInstance();
+		
 		
 		
 		List<CmntVO> list = (List<CmntVO>)service.getCmnts( "201" );
@@ -50,7 +60,9 @@ public class cmntTest extends HttpServlet {
 			}
 		}
 		
-		
+		jsonData = gson.toJson(cmntVo);
+		out.write(jsonData);	
+		response.flushBuffer();
 		
 		
 	}
