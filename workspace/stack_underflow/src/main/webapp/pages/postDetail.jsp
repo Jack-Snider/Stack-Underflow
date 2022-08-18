@@ -14,7 +14,7 @@
 	<head>
 		<%
 		
-			// 내가 현재 들어온 그 상세페이즈의 객체를 저장
+			// 내가 현재 들어온 그 상세페이지의 객체를 저장
 			PostVO postVo = (PostVO)request.getAttribute( "detailPost" );
 			
 			// 그 객체를 세션에 넣어놈
@@ -87,10 +87,9 @@
 				
 					<%
 					
+						// 현재 게시글 작성자 아이디와 접속해있는 아이디가 같을 경우
 						if( isMatch ){
 									
-						
-					
 					%>
 					
 					<!-- 현재 접속해있는 아이디와 게시글 작성자의 아이디가 일치할 경우 -->
@@ -100,7 +99,8 @@
 					<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
 				
-				
+					<hr>
+					<br>
 					<%
 					
 						}else{
@@ -111,12 +111,19 @@
 					<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
 					
+					<br>
+					
 					<%
 					
 						}
 					%>
 					
 					
+					<textarea name="content" style="width: 90%; height: 100px" autofocus="autofocus">
+					</textarea>
+					
+					<!-- PostCmnt.java ( postCmnt.do ) 댓글등록 서블릿으로 이동 -->
+					<button type = "button" onclick = "<%= request.getContextPath() %>/postCmnt.do">등록</button>
 
 				</td>
 			</tr>
