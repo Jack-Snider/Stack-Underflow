@@ -1,3 +1,5 @@
+<%@page import="ufo.vo.CmntVO"%>
+<%@page import="java.util.List"%>
 <%@page import="ufo.vo.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,10 +21,13 @@
 			
 			// 그 객체를 세션에 넣어놈
 			session.setAttribute( "postUpdate", postVo );
+			session.setAttribute( "detailPost" , postVo );
 		
 			// 현재 로그인 되있는 아이디와 게시글 아이디와 비교한 값 TRUE, FALSE
 			boolean isMatch = ( boolean )request.getAttribute( "ismatch" );
 			
+			
+			List<CmntVO> cmnt = (List<CmntVO>)session.getAttribute( "cmntList" );
 			
 		
 		%>
@@ -130,14 +135,37 @@
 						}
 					%>
 					
-					
-					<textarea name="content" style="width: 90%; height: 100px" autofocus="autofocus">
+					<!-- Jack Snider 시작 -->
+					<textarea name="comment" style="width: 90%; height: 100px" autofocus="autofocus">
 					</textarea>
 					
 					<!-- PostCmnt.java ( postCmnt.do ) 댓글등록 서블릿으로 이동 -->
+					<!--	서블릿으로 넘길때 필요한 정보
+						 	1. 상세페이지 게시글 번호
+						 	2. 현재 접속한 계정의 아이디
+						 	 
+					-->
 					<button type = "button" onclick = "<%= request.getContextPath() %>/postCmnt.do">등록</button>
-
+					<!-- Jack Snider 끝 -->
+					
 				</td>
+				
+				<%
+				
+					if( cmnt != null ){
+						
+					
+				
+				%>
+				
+					<p>hello</p>
+				
+				<% }else{ %>
+				
+					<p>bye bye</p>
+				
+				<% } %>
+				
 			</tr>
 			
 			

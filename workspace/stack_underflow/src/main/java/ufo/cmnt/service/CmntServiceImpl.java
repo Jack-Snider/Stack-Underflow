@@ -1,5 +1,7 @@
 package ufo.cmnt.service;
 
+import java.util.List;
+
 import ufo.cmnt.dao.CmntDaoImpl;
 import ufo.cmnt.dao.ICmntDao;
 import ufo.post.service.IPostService;
@@ -30,6 +32,15 @@ public class CmntServiceImpl implements ICmntService {
 		// TODO Auto-generated method stub
 		return dao.insertCmnt( cmntVo );
 	}
+
+	// 게시글 번호가 n인 댓글들 가져오기
+	@Override
+	public List<CmntVO> getCmnts(int postNum) {
+		// TODO Auto-generated method stub
+		return dao.getCmnts( postNum );
+	}
+	
+	
 	
 	/* Jack Snider 끝 */
 

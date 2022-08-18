@@ -1,11 +1,15 @@
 package ufo.cmnt.dao;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import ufo.post.dao.IPostDao;
 import ufo.post.dao.PostDaoImpl;
 import ufo.util.SqlMapClientFactory;
 import ufo.vo.CmntVO;
+import ufo.vo.PostVO;
 
 public class CmntDaoImpl implements ICmntDao{
 
@@ -42,7 +46,25 @@ public class CmntDaoImpl implements ICmntDao{
 		
 		return cnt;
 	
-	/* Jack Snider 끝 */
 	}
+	
+	
+	@Override
+	public List<CmntVO> getCmnts(int postNum) {
+		// TODO Auto-generated method stub
+		List<CmntVO> list = null;
+		try {
+			list = smc.queryForList("cmnt.getCmnts", postNum);
+		} catch (SQLException e) {
+			// TODO: handle exception
+			list = null;
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	/* Jack Snider 끝 */
+
+	
 }
 	
