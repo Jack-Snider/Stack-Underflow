@@ -75,7 +75,12 @@
 				<td>내용</td>
 				<td colspan = "3" height = "100"><%= postVo.getPost_cont() %></td>
 			</tr>
-
+			<!-- 호겸 시작 -->
+			<tr>
+				<td>좋아요<img src="../images/like.png" width="25" height="25"></td>
+				<td>싫어요<img src="../images/dislike.png" width="25" height="25"></td>
+			</tr>
+			<!-- 호겸 끝 -->
 			<!-- 첨부 파일 -->			
 			<tr>
 				<td>첨부 파일</td>
