@@ -9,8 +9,11 @@
 <body>
 	<table border = "1" width = "90%">
 		<tr>
-			<td><img src="../images/like.png" width="25" height="25"></td>
-			<td><img src="../images/dislike.png" width="25" height="25"></td>
+			<td>좋아요/싫어요</td>
+			<td>
+				<img src="../images/like.png" width="25" height="25">
+				<img src="../images/dislike.png" width="25" height="25">
+			</td>
 		</tr>
 	</table>
 </body>
