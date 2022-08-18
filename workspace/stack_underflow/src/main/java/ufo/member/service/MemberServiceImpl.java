@@ -97,6 +97,11 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return dao.passwordchk(mem_id);
 	}
+	@Override
+	public MemberVO passValidEmail(String mem_id) {
+		// TODO Auto-generated method stub
+		return dao.passValidEmail(mem_id);
+	}
 	/* 명범 끝 */
 
 
@@ -107,5 +112,7 @@ public class MemberServiceImpl implements IMemberService{
 		return dao.getMember(mem_id);
 	}
 	/* Jack Snider 끝 */
+
+	
 
 }

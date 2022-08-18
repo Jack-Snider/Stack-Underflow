@@ -176,6 +176,19 @@ public class MemberDaoImpl implements IMemberDao{
 				
 		return memVo;
 	}
+	@Override
+	public MemberVO passValidEmail(String mem_id) {
+		// TODO Auto-generated method stub
+		MemberVO memVo=null;
+		try {
+			memVo=(MemberVO) smc.queryForObject("member.passValidEmail",mem_id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			memVo=null;
+			e.printStackTrace();
+		}
+		return memVo;
+	}
 	/* 명범 끝 */
 
 
@@ -196,5 +209,7 @@ public class MemberDaoImpl implements IMemberDao{
 		return memVo;
 	}
 	/* Jack Snider 끝 */
+
+	
 
 }

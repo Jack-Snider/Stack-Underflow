@@ -34,9 +34,6 @@ if (cookies != null) {
 	}
 }
 %>
-
-
-
 <!-- 회원가입 버튼을 눌렀을때 이동하는 기능 -->
 <script>
 	$(function(){
@@ -45,8 +42,6 @@ if (cookies != null) {
 		});
 	});
 </script>
-
-
 </head>
 
 <body>
@@ -87,7 +82,7 @@ if (session.getAttribute("Mem_vo") == null) {
 <%
 }else{
 %>
-<script>alert("<%=session.getAttribute("Mem_id")%>님 환영합니다.");
+<script>alert("<%=session.getAttribute("Mem_name")%>님 환영합니다.");
 location.href="../basic_frame/frame.jsp";
 </script>
 <%
