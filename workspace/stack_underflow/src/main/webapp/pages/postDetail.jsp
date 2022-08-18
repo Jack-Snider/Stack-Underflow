@@ -1,3 +1,4 @@
+<%@page import="ufo.vo.MemberVO"%>
 <%@page import="org.omg.PortableServer.LIFESPAN_POLICY_ID"%>
 <%@page import="ufo.vo.CmntVO"%>
 <%@page import="java.util.List"%>
@@ -24,6 +25,9 @@
 			session.setAttribute( "postUpdate", postVo );
 			session.setAttribute( "detailPost" , postVo );
 		
+			// 현재 로그인 되어있는 계정의 정보
+			MemberVO memberVo = (MemberVO)session.getAttribute( "Mem_vo" );
+			
 			// 현재 로그인 되있는 아이디와 게시글 아이디와 비교한 값 TRUE, FALSE
 			boolean isMatch = ( boolean )request.getAttribute( "ismatch" );
 			
@@ -50,7 +54,7 @@
 			$('#cmntInsert').on('click', function(){
 				
 				let cmnt_cont = $('#comment').val(); // 새롭게 작성한 댓글 ( 여기까지 가져오기 성공 )
-				let mem_id = "<%= postVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
+				let mem_id = "<%= memberVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
 				let post_num = <%= postVo.getPost_num() %>; // 게시글 번호 ( 여기까지 가져옴 )
 			
 				//alert( cmnt_cont );
@@ -66,9 +70,9 @@
 						let value = '';	
 						
 						$.each(res, function(i,v){
-							value += i + "번째 데이터 <br>";
-							value += "ID : " + v.mem_id + "<br>";
-							value += "내용 : " + v.cmnt_cont;
+							value += "<hr>";
+							value += v.mem_id + " " + v.cmnt_date + "<br>";
+							value += v.cmnt_cont;
 							value += "<hr>";
 						});
 						
@@ -241,9 +245,9 @@
 							
 					
 				%>
-				
-					ID : <%= cmnt.getMem_id() %> <br>
-					내용 : <%= cmnt.getCmnt_cont() %> <br>
+					<hr>
+					<%= cmnt.getMem_id() %>  <%= cmnt.getCmnt_date() %> <br> 			
+					<%= cmnt.getCmnt_cont() %> <br>
 					<hr>
 				
 				<%
