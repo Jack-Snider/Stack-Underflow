@@ -3,6 +3,7 @@ package ufo.cmnt.service;
 import java.util.List;
 
 import ufo.vo.CmntVO;
+import ufo.vo.PostVO;
 
 public interface ICmntService {
 	
@@ -20,7 +21,7 @@ public interface ICmntService {
 	 * @param postNum
 	 * @return
 	 */
-	public List<CmntVO> getCmnts( int postNum );
+	public List<CmntVO> getCmnts( String postNum );
 	
 	/* Jack Snider 끝 */
 	

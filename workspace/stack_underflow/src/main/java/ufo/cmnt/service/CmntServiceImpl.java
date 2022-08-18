@@ -7,6 +7,7 @@ import ufo.cmnt.dao.ICmntDao;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
 import ufo.vo.CmntVO;
+import ufo.vo.PostVO;
 
 public class CmntServiceImpl implements ICmntService {
 
@@ -35,7 +36,7 @@ public class CmntServiceImpl implements ICmntService {
 
 	// 게시글 번호가 n인 댓글들 가져오기
 	@Override
-	public List<CmntVO> getCmnts(int postNum) {
+	public List<CmntVO> getCmnts(String postNum) {
 		// TODO Auto-generated method stub
 		return dao.getCmnts( postNum );
 	}
