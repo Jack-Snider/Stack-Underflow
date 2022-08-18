@@ -31,9 +31,9 @@
 		order by mem_score desc
 	  </select>
 	  
-	  <insert id="insertScorePerMember" parameterClass="java.util.Map">
-	  	
-	  </insert>
+	  <update id="updateScorePerMember" parameterClass="java.util.Map">
+	  	update member set mem_score = #mem_score# where mem_id = #mem_id#
+	  </update>
 	  <!-- 호겸 끝 -->
 
 

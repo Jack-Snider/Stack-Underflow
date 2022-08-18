@@ -74,10 +74,10 @@ public class MemberDaoImpl implements IMemberDao{
 	};
 	
 	@Override
-	public int insertScorePerMember(Map<String, MemberVO> scoresMap) {
+	public int updateScorePerMember(Map<String, Object> scoresMap) {
 		int cnt = 0;
 		try {
-			if(smc.insert("member.insertScorePerMember", scoresMap) == null) cnt = 1;
+			cnt = smc.update("member.updateScorePerMember", scoresMap);
 		} catch (SQLException e) {
 			cnt = 0;
 			e.printStackTrace();
