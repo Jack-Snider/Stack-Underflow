@@ -58,14 +58,12 @@ public class PostServiceImpl implements IPostService {
 	}
 
 	@Override
-	public int increaseLike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseLike( int postNum ) { // 호겸 수정
 		return dao.increaseLike( postNum );
 	}
 
 	@Override
-	public int increaseDislike( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseDislike( int postNum ) { // 호겸 수정
 		return dao.increaseDislike( postNum );
 	}
 
@@ -148,7 +146,5 @@ public class PostServiceImpl implements IPostService {
 		return dao.getPostPerPage(map);
 	}
 
-	
-	
 	/* 호겸 끝 */
 }

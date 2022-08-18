@@ -3,6 +3,7 @@ package ufo.post.dao;
 import java.util.List;
 import java.util.Map;
 
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 public interface IPostDao {
