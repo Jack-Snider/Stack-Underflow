@@ -14,10 +14,13 @@
 	<head>
 		<%
 		
+			// 내가 현재 들어온 그 상세페이즈의 객체를 저장
 			PostVO postVo = (PostVO)request.getAttribute( "detailPost" );
 			
+			// 그 객체를 세션에 넣어놈
 			session.setAttribute( "postUpdate", postVo );
 		
+			// 현재 로그인 되있는 아이디와 게시글 아이디와 비교한 값 TRUE, FALSE
 			boolean isMatch = ( boolean )request.getAttribute( "ismatch" );
 			
 			
@@ -94,7 +97,7 @@
 					<button type = "button" onclick = "getToPostUpdate()">EDIT</button>
 					<button type = "button" onclick = "getToPostDelete()">DELETE</button>
 					<button type = "button" onclick = "toList()">
-					<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
+					<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
 				
 				
@@ -105,7 +108,7 @@
 					%>
 				
 					<button type = "button" onclick = "toList()">
-					<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
+					<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
 					
 					<%
@@ -132,7 +135,7 @@
 			function getToPostDelete(){
 				
 				//삭제는 뷰가 필요 없어서 바로 서블릿으로 넘어간다.
-				location.href = "<%= request.getContextPath() %>/postDelete.do"
+				location.href = "<%= request.getContextPath() %>/postDelete.do?currentPage=1"
 			}
 		
 		</script>			
