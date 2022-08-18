@@ -6,14 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>write post</title>
+<!-- 호겸 시작 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	
+let currentPage = 1;
 
-
-
+$(function(){
+	$('#goPostList').on('click', function(){
+		location.href="<%= request.getContextPath() %>/postList.do?currentPage="+currentPage;
+	});
+});
+			
+</script>
+<!-- 호겸 끝 -->
 </head>
 <body>
 
 	<h2>게시판 글쓰기</h2>
-	<form action="<%= request.getContextPath() %>/postController.do" method="post" enctype="multiple/form-data"
+	<form action="<%= request.getContextPath() %>/postController.do?currentPage=1" method="post" enctype="multiple/form-data"
 		onsubmit="return validateForm(this)">
 		<table border="1" style="width: 90%;">
 		
@@ -36,10 +50,7 @@
 				<td colspan="2" align="center">
 					<button type="submit">submit</button>
 					<button type = "reset">reset</button>
-					<button type = "button" onclick = "toList()">
-					<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
-					</button>
-					
+					<button type = "button" id= "goPostList"> 목록 바로가기 </button> <!-- 호겸 수정 -->
 				</td>
 			</tr>
 		</table>

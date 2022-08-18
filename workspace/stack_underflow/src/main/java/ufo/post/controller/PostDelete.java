@@ -2,7 +2,9 @@ package ufo.post.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import ufo.post.service.IPostService;
 import ufo.post.service.PostServiceImpl;
 import ufo.vo.MemberVO;
+import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
 /**
@@ -48,9 +51,33 @@ public class PostDelete extends HttpServlet {
 
 		if( cnt > 0 ) {
 			// 삭제 성공 ( 쿼리문이 정상적으로 반영됨 )
-			List<PostVO> list = service.getAllPost();
-			request.setAttribute("postList", list);
-			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);		
+//			List<PostVO> list = service.getAllPost();
+//			request.setAttribute("postList", list);
+//			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);		
+			
+			int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+			String column = request.getParameter("column");
+			String condition = request.getParameter("condition");
+
+			//IPostService service = PostServiceImpl.getInstance();
+
+			PageVO vo = service.pageInfo(currentPage, column, condition);
+
+			Map<String, Object> map = new HashMap<String, Object>();
+			
+			map.put("column", column);
+			map.put("condition", condition);
+			map.put("start", vo.getStart());
+			map.put("end", vo.getEnd());
+
+			List<PostVO> postList = service.getPostPerPage(map);
+			
+			request.setAttribute("postList", postList);
+			request.setAttribute("pageVo", vo);
+			request.setAttribute("currentPage", currentPage);
+			
+			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
+			
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
