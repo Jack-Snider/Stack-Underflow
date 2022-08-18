@@ -105,6 +105,10 @@
       		select count(*) from post
       		<include refid="dynamicCondition"/>
    		</select>
+   		
+   		<update id="increaseViews" parameterClass="int">
+	  		update POST set post_views = post_views + 1 where post_num = #post_num#
+	  	</update>
 	  <!-- 호겸 끝 -->
 	  
 </sqlMap>

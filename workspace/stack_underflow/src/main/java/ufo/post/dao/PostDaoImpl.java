@@ -132,13 +132,12 @@ public class PostDaoImpl implements IPostDao {
 	}
 
 	@Override
-	public int increaseViews( int postNum ) {
-		// TODO Auto-generated method stub
+	public int increaseViews( int postNum ) { // 호겸 수정
 		int cnt = 0;
 		try {
-			cnt = smc.update("post.increaseLike", postNum);
-		} catch (Exception e) {
-			// TODO: handle exception
+			cnt = smc.update("post.increaseViews", postNum);
+		} catch (SQLException e) {
+			cnt = 0;
 			e.printStackTrace();
 		}
 		return cnt;

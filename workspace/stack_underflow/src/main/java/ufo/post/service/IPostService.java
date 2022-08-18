@@ -77,5 +77,6 @@ public interface IPostService {
 	public PageVO pageInfo(int cpage, String column, String condition);
 	// 페이지 별 게시글 가져오기
 	public List<PostVO> getPostPerPage(Map<String, Object> map);
+	// 조회수 증가하기
 	/* 호겸 끝 */
 }
