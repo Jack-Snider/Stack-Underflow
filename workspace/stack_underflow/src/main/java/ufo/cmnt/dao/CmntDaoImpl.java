@@ -97,6 +97,22 @@ public class CmntDaoImpl implements ICmntDao{
 		return cmntVo;
 	}
 
+	/**
+	 * 댓글 번호가 n인 댓글 지우기
+	 */
+	@Override
+	public int deleteCmnt(CmntVO cmntVo) {
+		
+		int cnt = 0;
+		try {
+			cnt = smc.delete( "cmnt.deleteCmnt", cmntVo );
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
 	
 	
 	/* Jack Snider 끝 */
