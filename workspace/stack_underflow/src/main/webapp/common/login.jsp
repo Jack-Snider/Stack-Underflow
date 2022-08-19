@@ -44,7 +44,7 @@ if (cookies != null) {
 <script>
 	$(function(){
 		$('#sgnupbtn').on('click', function(){
-			location.href="<%=request.getContextPath()%>/loginSignUp.do";
+			location.href="<%=request.getContextPath()%>/common/signUp2.jsp";
 		});
 	});
 </script>
@@ -80,26 +80,26 @@ if (session.getAttribute("Mem_vo") == null) {
 		<div>
 		
 		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>
-		Stack-Underflow</h1>
+		Stack Underflow</h1>
 		</div>
 		
 		
 		<div class="input_class">
-		<input type="text" name="idInput" id ="idInput"value="<%=identify%>"placeholder="ID를 입력하세요."><br>
-		<input type="password" name="passInput" id ="passInput" placeholder="비밀번호를 입력하세요."><br>
+		<input class="inputClass" type="text" name="idInput" id ="idInput"value="<%=identify%>"placeholder="ID를 입력하세요."><br>
+		<input type="password" class="inputClass" name="passInput" id ="passInput" placeholder="비밀번호를 입력하세요."><br>
 		</div>
 		<div class="checkId_div">
 		<input type="checkbox" name="chkid_input" id="chkid_input" <%=chk%> value="check"><label id="chkid_label">&nbsp;&nbsp;ID 기억하기</label> <br>
 		</div>
 		
-		<input type="submit" value="로그인" id="loginbtn"> 
+		<input type="submit" value="로그인" id="loginbtn" class="inputClass" > 
 		
 		<div class=findlink>
 			<a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">&nbsp;&nbsp;아이디 찾기&nbsp;&nbsp; </a>|
 			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">&nbsp;&nbsp;비밀번호 찾기 </a>
 		</div>
-		 <hr size="5" color="blue">
-		<input type="button" value="아직 회원이 아니신가요?" id="sgnupbtn" name="sgnupbtn">
+		 <hr size="5" color="green">
+		<input type="button" value="아직 회원이 아니신가요?" id="sgnupbtn" name="sgnupbtn" class="inputClass" >
 
 	</form>
 	</section>
