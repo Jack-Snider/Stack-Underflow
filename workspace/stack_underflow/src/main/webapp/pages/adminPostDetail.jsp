@@ -63,7 +63,6 @@
 				$(document).on('click', '.deleteCmnt', function(){
 					
 					cmntNum = $(this).val(); // 버튼을 누른 댓글의 댓글 번호
-					mem_id = "<%= memberVo.getMem_id() %>";
 					
 					$.ajax({
 						url : '/stack_underflow/deleteCmnt.do', // 댓글삭제 서블릿으로 이동
@@ -79,13 +78,9 @@
 								value += v.cmnt_cont;
 								
 								value += "<br>";
-								
-								// 여기서 조건 달기
-								if( v.mem_id == mem_id ){
-									value += "<br>";
-									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
-									value += "<hr>";									
-								}
+								value += "<br>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+								value += "<hr>";
 							});
 							
 							$('#commentList').html(value);
@@ -113,7 +108,8 @@
 				// 댓글 수정확인 버튼 누르기
 				// 댓글 수정 버튼 누르고 확인 버튼 눌렀을 때 ( 'cmntConfirm'은 동적으로 생성되는 애라서 다르게 불러야함. )
 				$(document).on('click','#cmntConfirm', function(){
-																
+											
+				
 					/*
 						textarea에서 수정할 내용 쓰고 확인 버튼 눌렀을 때임
 					*/
@@ -142,8 +138,7 @@
 								value += "<br>";
 								value += "<br>";
 								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
-								value += "<hr>";									
-								
+								value += "<hr>";
 							});
 							
 							$('#commentList').html(value);
@@ -169,7 +164,7 @@
 				$(document).on('click','.updateCmnt', function(){
 					
 					cmntNum = $(this).val(); // 클릭한 댓글 번호
-					mem_id = "<%= memberVo.getMem_id() %>"; // 현재 로그인 해있는 회원정보									
+									
 					
 					/*
 						여기는 그냥 단순히 내가 누른 댓글의 번호랑 현재 게시글에 달린 댓글 리스트 
@@ -248,14 +243,9 @@
 								value += v.cmnt_cont;
 								
 								value += "<br>";
-								
-								// 여기서 조건 달기
-								if( v.mem_id == mem_id ){
-									value += "<br>";
-									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
-									value += "<hr>";									
-								}
-								
+								value += "<br>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+								value += "<hr>";
 							});
 							
 							$('#commentList').html(value);
@@ -438,32 +428,9 @@
 					<br>
 					<br>
 					<% cmntNum = cmnt.getCmnt_num(); %>
-					
 					<!-- 여기서 계정별로 조건 달면 됨~ -->
-					<!--
-						
-						1. 게시글 작성자는 수정,삭제 가능
-						2. 게시글 작성자가 아니더라도 자신의 댓글에 한해서는 수정,삭제 가능
-						3. 
-						 
-					 -->
-					<%
-						if( cmnt.getMem_id().equals( memberVo.getMem_id() ) || memberVo.getMem_id().equals( "admin" ) ){
-							// 현재 로그인 해있는 아이디와 게시글의 댓글들 아이디가 일치할 경우 or 로그인 되어있는 아이디가 관리자일 경우
-						
-					%>
-					
 					<button class = "updateCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button class = "deleteCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>삭제</button>
 					<hr>
-
-					<%
-						}else{
-					%>
-						<!-- 아니면 뭐하징 -->
-					<%
-						}
-					%>
-
 
 				<%
 						}
