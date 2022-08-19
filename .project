@@ -3,6 +3,8 @@
 	<name>Stack-Underflow</name>
 	<comment></comment>
 	<projects>
+		<project>Servers</project>
+		<project>stack_underflow</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

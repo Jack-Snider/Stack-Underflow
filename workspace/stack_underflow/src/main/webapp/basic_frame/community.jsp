@@ -5,13 +5,13 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>  -->
 <!-- <link rel="stylesheet" type="text/css" href="../css/main.css"> -->
 <link rel="stylesheet" type="text/css" href="../css/btn.css">
-
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
   
   
@@ -37,7 +37,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    background: #fffaf0;
+    background: #fafafa;
     color:#949392;
     z-index: 1000;
     height: 100px;
@@ -49,6 +49,7 @@ body{
     line-height:39px;
     height: 66px;
     font-size : 18px;
+    box-shadow: 2px 1px 6px 0px;
 }
 
 .header h1
@@ -66,11 +67,30 @@ body{
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
+
 a {
   text-decoration: none;
   float: left;
   margin-left: 10px;
+    color: black;
 }
+
+a:hover{
+  color : green;
+
+}
+
+a::after{ 
+   display:block;/*a요소를 블록 요소라고 선언*/
+   content: '';
+   border-bottom: solid 2px green; /* 및줄 색  */
+   transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+   transition: transform 250ms ease-in-out;
+   } 
+   
+ a:hover:after {
+   transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}  
 
 #community{
  margin-left:28px;
@@ -137,23 +157,31 @@ background : #adadad;
 
 #content-left{
    flex : 1;
- border : 2px solid black;
- 
+
+ border-right: 2px solid lightgray;
 }
 
 #content-center{
    flex : 4;
-border : 2px solid black;
+
 }
 
 #content-right {
     
-    border: 2px solid black;
+    
     flex: 1;
 }
 
-	
+#content-left-category{
+
+    width: 16.5%;
+    position: fixed;
+    margin-top: 66px;
+    height: 300px;
+	    
     
+}    
+
 
 
 </style>
@@ -176,31 +204,33 @@ $(document).ready(function(){
 <body>
 <div class="header">
   <h1>
-  <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.2em; margin-bottom : 3px; float: left;  margin-left: 40px; margin-top: 13px;" ></i>
-  <a class="home" href="main.jsp">stack underflow</a>
-  <a id = "community" href="">커뮤니티</a>
+  <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
+<a class="home" href="main.jsp">stack underflow</a>
+  <a id = "community" href="community.jsp">커뮤니티</a>
   <a id = "rank" href="">랭킹</a>
   
 	  <div class="mypage-login-btn">
 		  <a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
 		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
 	  </div>
-  </h1>    
-</div>
+	  
+   </h1>
+  </div>
 
 <div id="content-container">
    <div id="content-left">
-   <br><br><br><br><br>
+   <div id="content-left-category">
 	<div class="menu">기술 게시판</div>
 	<div class="menu">자유 게시판</div>
 	<div class="menu">문의 게시판</div>	
-		
+   </div>	
 <!-- <div class="btngroup">
     <button class="menu">저장</button>
     <button class="menu">취소</button>
 </div>
  -->
    </div>
+
    <div id="content-center">
    썬 마이크로시스템즈에서 1995년에 개발한 객체 지향 프로그래밍 언어. 창시자는 제임스 고슬링이다. 2010년에 오라클이 썬 마이크로시스템즈를 인수하면서 Java의 저작권을 소유하였다. 현재는 OpenJDK는 GPL2이나 오라클이 배포하는 Oracle JDK는 상업라이선스로 2019년 1월부터 유료화정책을 강화하고 있다. Java EE는 이클립스 재단의 소유이다. Java 언어는 J2SE 1.4부터는 Java Community Process (JCP)에서 개발을 주도하고 있다.
 

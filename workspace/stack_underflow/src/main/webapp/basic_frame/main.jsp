@@ -47,7 +47,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    background: #fffaf0;
+    background: #fafafa;
     color:#949392;
     z-index: 1000;
     height: 100px;
@@ -84,8 +84,24 @@ a {
   text-decoration: none;
   float: left;
   margin-left: 10px;
+    color: black;
 }
 
+a:hover{
+  color : green;
+
+}
+ a::after{ 
+   display:block;/*a요소를 블록 요소라고 선언*/
+   content: '';
+   border-bottom: solid 2px green; /* 및줄 색  */
+   transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+   transition: transform 250ms ease-in-out;
+   }
+   
+   a:hover:after {
+   transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}
 #community{
  margin-left:28px;
  font-size : 18px;
@@ -141,18 +157,19 @@ background : #adadad;
 <div class="header">
   <h1>
   <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 1.7em; margin-bottom : 3px; float: left;  margin-left: 40px;" ></i>
-  <a class="home" href="#">stack underflow</a>
+<a class="home" href="main.jsp">stack underflow</a>
   <a id = "community" href="community.jsp">커뮤니티</a>
   <a id = "rank" href="">랭킹</a>
   
 	  <div class="mypage-login-btn">
-		  <a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
+		  <a id = "mypage" href="mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
 		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
 	  </div>
-  </h1>
-  
-</div>
+	  
+   </h1>
+  </div>
 <div class="content">
+
 </div>
 
 <footer>
