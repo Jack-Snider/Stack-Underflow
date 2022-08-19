@@ -15,6 +15,7 @@
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   		
 		<script type="text/javascript">
+		
 		<!-- 호겸 시작 -->
 		$(function() {
 		      
@@ -26,7 +27,11 @@
 		      $(document).on('click', '.prev', function() {
 		         //alert($('.plist a').first().text());
 		         currentPage = parseInt($('.plist a').first().text().trim()) - 1;
-		         listPagerServer(currentPage, column, condition);
+		         if(currentPage == 0){
+		        	 $(this).prop("disabled", true);
+		         }else{
+		        	 listPagerServer(currentPage, column, condition);
+		         }
 		      });
 		      
 		      //다음버튼 이벤트
@@ -53,10 +58,16 @@
 		listPagerServer = function(currentPage, column, condition) {
 			location.href="<%= request.getContextPath() %>/postList.do?currentPage="+currentPage+"&column="+column+"&condition="+condition;
 		};
-		<!-- 호겸 끝 -->
-		</script>
 		
-
+		</script>
+		<style>
+			#button-wrapper{
+				display: flex;
+				justify-content: space-between;
+				width: 200px;
+			}
+		</style>
+		<!-- 호겸 끝 -->
 	</head>
 	<body>
 		
@@ -158,16 +169,17 @@
 	</body>
 	<!-- Jack Snider 끝 -->
 	<!-- 호겸 시작 -->
-	
+	<div id="button-wrapper">  
 			<%
 				if(pageVo.getStartPage()>1){
 			%>
 				<ul class="pagination">
-					<li class="page-item"><a  class="page-link prev" href="#">이전</a></li>
+					<li class="page-item"><a class="page-link prev" href="#">이전</a></li>
 				</ul>
 			<%	
 				}
 			%>
+			
 				<ul class="pagination plist">
 			<%
 				for(int i=pageVo.getStartPage(); i<=pageVo.getEndPage(); i++){
@@ -193,5 +205,6 @@
 				}
 			%>
 			
+	</div>	
 	<!-- 호겸 끝 -->
 </html>

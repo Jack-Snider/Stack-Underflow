@@ -5,37 +5,38 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>   -->
-<!-- <link rel="stylesheet" type="text/css" href="../css/main.css"> -->
+<!--  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="../css/main.css"> 
+-->
 <link rel="stylesheet" type="text/css" href="../css/btn.css">
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cairo:wght@700&family=Fjalla+One&family=Oswald:wght@500&family=Russo+One&family=Staatliches&family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
-  
-  
+    
 <style>
 
 div.mypage-login-btn{
 	display: inline;
     position: relative;
     left: 61%;
-	
 }
 
 p{
 	margin: 0;
 }
+
 body{
 	margin:0; 
 }
 
-.header {
+.header{
     position: fixed;
     top: 0;
     left: 0;
@@ -55,144 +56,122 @@ body{
     box-shadow: 2px 1px 6px 0px;
 }
 
-.header h1
-{
+.header h1{
     font-size : 18px;
     font-weight:normal;
     line-height: 46px;
-
- font-family: 'Stick No Bills', sans-serif; 
-
+ 	font-family: 'Stick No Bills', sans-serif; 
 }
 
-.header.shrink h1
-{
+.header.shrink h1{
     font-size:24px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
 
-a {
-  text-decoration: none;
-  float: left;
-  margin-left: 10px;
+a{
+  	text-decoration: none;
+  	float: left;
+ 	margin-left: 10px;
     color: black;
 }
 
 a:hover{
-  color : green;
-
+  	color : green;
 }
 
 a::after{ 
-   display:block;/*a요소를 블록 요소라고 선언*/
-   content: '';
-   border-bottom: solid 2px green; /* 및줄 색  */
-   transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
-   transition: transform 250ms ease-in-out;
-   } 
+   	display:block;/*a요소를 블록 요소라고 선언*/
+   	content: '';
+   	border-bottom: solid 2px green; /* 및줄 색  */
+   	transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+   	transition: transform 250ms ease-in-out;
+} 
    
- a:hover:after {
-   transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+a:hover:after{
+   	transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
 }  
 
 #community{
- margin-left:28px;
- font-size : 18px;
- 
+ 	margin-left:28px;
+ 	font-size : 18px;
 }
-#rank{
- margin-left:28px;
- font-size : 18px;
 
+#rank{
+ 	margin-left:28px;
+	font-size : 18px;
 }
+
 #mypage{
     margin-left: 28px;
-    font-size: 18px;
-   
+    font-size: 18px;   
 }
+
 #logout{
     margin-left: 28px;
-    font-size: 18px;
-    
+    font-size: 18px;  
 }
 
 .home{
-     
-   font-size: 30px;
+   	font-size: 30px;
 }
+
 .header.shrink h1.fa-right-from-bracket{
     margin-left: 4px;
 }
 
-.content
-{
-height:2000px;
-background : green;
+.content{
+	height:2000px;
+	background : green;
  /*just to get the page to scroll*/
 }
 
-
-
 /* 풋터 */
 footer{
-width : 100%;
-height : 100px;
-background : #adadad;
-
-
+	width : 100%;
+	height : 100px;
+	background : #adadad;
 }
 
 #container-div{
- background : pink;
- width : 100%;
-
+ 	background : pink;
+ 	width : 100%;
 }
 
 #content-container{
-
-  width : 100%;
-  display : flex;
-  min-height : 900px;
-  backgroung : pink;
-  min-height: 935px;
-  
-
+  	width : 100%;
+ 	display : flex;
+  	min-height : 900px;
+  	backgroung : pink;
+ 	min-height: 935px;
 }
 
 #content-left{
-   flex : 1;
-
- border-right: 2px solid lightgray;
+   	flex : 1;
+ 	border-right: 2px solid lightgray;
 }
 
 #content-center{
-   flex : 4;
-
+   	flex : 4;
 }
 
-#content-right {
-    
-    
+#content-right{
     flex: 1;
 }
 
 #content-left-category{
-
     width: 16.5%;
     position: fixed;
     margin-top: 45px;
     height: 300px;
-	    
-    
 }    
 
 #content-center-frame{
-   width : 100%;
-   height : 100%;
-   display : flex;
-   flex-direction : column;
+   	width : 100%;
+   	height : 100%;
+   	display : flex;
+   	flex-direction : column;
     padding: 30px;
 }
 
@@ -203,46 +182,40 @@ background : #adadad;
     border-radius: 49px;
     border: 2px solid darkgreen;
     box-shadow: 11px -4px 13px darkgrey;
-
 }
 
 #content-center-profilmain{
-   /*  border: 2px solid black; */
+   	/*  border: 2px solid black; */
     flex: 6;
     margin-top: 30px;
 }
 
 
 #profil-frame{
-   width : 100%;
-   height : 100%;
-   display : flex;
-   
-  
+   	width : 100%;
+   	height : 100%;
+   	display : flex;
 } 
 
 #profil-category{
     flex: 1;
     margin-right: 35px;
-   
    /*  border: 2px solid darkgreen; */
-    
 }
 
 #profil-main{
- border: 2px solid darkgreen;
+ 	border: 2px solid darkgreen;
     flex: 4;
     border-radius: 49px;
     box-shadow: 14px -7px 12px -4px lightgrey;
     box-shadow: 11px -4px 13px darkgrey;
 }
 
- #profil-category-frame{
-  display : flex;
-  flex-direction : column;
-  width : 100%;
-  height : 100%;
-  
+#profil-category-frame{
+  	display : flex;
+  	flex-direction : column;
+  	width : 100%;
+  	height : 100%;
 } 
 
 /* 
@@ -255,14 +228,17 @@ border-radius: 49px;
 border: 2px solid darkgreen;
 flex : 1;
 border-radius: 49px;
-} */
+} 
+*/
 
-/* .profil-category123{
+/*
+.profil-category123{
 border: 2px solid darkgreen;
 width : 100%;
-    border-radius: 28px;
-    height: 87px;
-} */
+border-radius: 28px;
+height: 87px;
+} 
+*/
 
 </style>
 <script>
@@ -275,82 +251,78 @@ $(document).ready(function(){
 		$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
 		$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
 	});
-
-
 });
+
 </script>
 
 </head>
 <body>
+
 <div class="header">
-  <h1>
-  <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
-<a class="home" href="main.jsp">stack underflow</a>
-  <a id = "community" href="community.jsp">커뮤니티</a>
-  <a id = "rank" href="">랭킹</a>
-  
-	  <div class="mypage-login-btn">
-		  <a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
-		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
-	  </div>
-	  
-   </h1>
-  </div>
-
-<div id="content-container">
-   <div id="content-left"> <!--왼쪽 -->
-   <div id="content-left-category"></div>	
-   </div>
-   
-   
-<!--  -->
-   <div id="content-center">
-       <div id="content-center-frame">
-          <div id="content-center-profil"></div>
-          <div id="content-center-profilmain">
-             <div id="profil-frame">
-        
-                  <div id="profil-category">
-					<div class="container">
-
-					</div>
-					                   
-               </div>
-               <div id="profil-main"></div>
-             </div>
-          </div>
-       </div>
-   </div>
-   <div id="content-right"></div>
+	<h1>
+		<i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
+		<a class="home" href="main.jsp">stack underflow</a>
+		<a id = "community" href="community.jsp">커뮤니티</a>
+		<a id = "rank" href="">랭킹</a>
+		<div class="mypage-login-btn">
+			<a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
+			<a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+		</div> 
+	</h1>
 </div>
 
-<!-- <div id="container-div">
+<div id="content-container">
+   	
+   	<!-- 왼쪽 -->
+   	<div id="content-left"> 
+   		<div id="content-left-category"></div>	
+	</div>
+   
+	<!-- 가운데 -->
+	<div id="content-center">
+		<div id="content-center-frame">
+			<div id="content-center-profil"></div>
+			<div id="content-center-profilmain">
+				<div id="profil-frame">
+					<div id="profil-category">
+						<div class="container">
+						</div>	                   
+					</div>
+				<div id="profil-main"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 오른쪽 -->
+	<div id="content-right"></div>
+	
+</div>
+
+<!-- 
+<div id="container-div">
 <div class="row">
-   왼쪽 div 
-    <div class="col-2" style="background-color:white; ">
-       <div id="category"  >
-       <i class="fa-solid fa-avocado"></i>
-        <ul id="categoryul">
-          <li>Home</li>
-          <li><a href="" style="font-size: 20px;">기술 게시판</a></li>
-          <li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
-          <li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
-        </ul>
-       </div>   
-    
-    </div>
-    
-    
-  
-    
-    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
-  </div>
-</div> -->
+왼쪽 div 
+<div class="col-2" style="background-color:white;">
+<div id="category">
+<i class="fa-solid fa-avocado"></i>
+<ul id="categoryul">
+<li>Home</li>
+<li><a href="" style="font-size: 20px;">기술 게시판</a></li>
+<li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
+<li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
+</ul>
+</div>  
+</div>
+<div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+</div>
+</div> 
+-->
 
+<!-- 아래 -->
 <footer>
-<p>404</p>
+	<p>404</p>
 </footer>
-
 
 </body>
 </html>
