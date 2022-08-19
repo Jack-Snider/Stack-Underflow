@@ -1,6 +1,8 @@
 package ufo.vo;
 
-public class CmntVO {
+import java.io.Serializable;
+
+public class CmntVO  implements Serializable{
 
 	private int cmnt_num; // 댓글번호
 	private String cmnt_date; // 댓글작성일 ( DATE타입 )
