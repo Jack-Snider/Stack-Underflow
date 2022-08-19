@@ -52,6 +52,8 @@ public class MemberServiceImpl implements IMemberService{
 		
 		for(MemberVO mvo : scorePerMembers) {
 			String mem_id = mvo.getMem_id();
+			int mem_like_sum = mvo.getMem_like_sum();
+			int mem_dislike_sum = mvo.getMem_dislike_sum();
 			int score = mvo.getMem_score();
 			String rank = "";
 			
@@ -62,6 +64,8 @@ public class MemberServiceImpl implements IMemberService{
 			
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("mem_id", mem_id);
+			map.put("mem_like_sum", mem_like_sum);
+			map.put("mem_dislike_sum", mem_dislike_sum);
 			map.put("mem_score", score);
 			map.put("mem_rank", rank);
 			int cnt = dao.updateScoreRank(map);

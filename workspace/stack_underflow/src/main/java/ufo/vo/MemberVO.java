@@ -16,7 +16,10 @@ public class MemberVO {
 	private int mem_score; // 사용자 점수
 	private String mem_rank; // 사용자 티어
 	private int mem_stat; // 사용자 상태 ( 로그인 상태 : 1, 로그아웃 상태 : 0 )
-	
+	/* 호겸 수정 시작 */
+	private int mem_like_sum;
+	private int mem_dislike_sum;
+	/* 호겸 수정 끝 */
 	public String getMem_id() {
 		return mem_id;
 	}
@@ -101,5 +104,19 @@ public class MemberVO {
 	public void setMem_rank(String mem_rank) {
 		this.mem_rank = mem_rank;
 	}
+	/* 호겸 수정 시작 */
+	public int getMem_like_sum() {
+		return mem_like_sum;
+	}
+	public void setMem_like_sum(int mem_like_sum) {
+		this.mem_like_sum = mem_like_sum;
+	}
+	public int getMem_dislike_sum() {
+		return mem_dislike_sum;
+	}
+	public void setMem_dislike_sum(int mem_dislike_sum) {
+		this.mem_dislike_sum = mem_dislike_sum;
+	}
+	/* 호겸 수정 끝 */
 	
 }
