@@ -60,10 +60,10 @@ public class PostCmnt extends HttpServlet {
 		
 		CmntVO cmntVo = new CmntVO();
 		cmntVo.setCmnt_cont( request.getParameter( "comment_content" ) ); // 댓글내용 안불러와짐
-		cmntVo.setPost_num( 261 ); // 게시글번호 안불러와짐
+		cmntVo.setPost_num( Integer.parseInt( request.getParameter( "post_number" ) ) ); // 게시글번호 안불러와짐
 		cmntVo.setCmnt_dislike( 0 );
 		cmntVo.setCmnt_like( 0 );
-		cmntVo.setMem_id( memberVo.getMem_id() ); // 아이디 안불러와짐.
+		cmntVo.setMem_id( request.getParameter( "member_id" ) ); // 아이디 안불러와짐.
 		
 		
 		if( cmntVo.getCmnt_cont() == null ) {
