@@ -20,17 +20,17 @@ import ufo.vo.MemberVO;
 import ufo.vo.PostVO;
 
 /**
- * Servlet implementation class UpdateCmnt
+ * Servlet implementation class CmntShowAll
  */
-@WebServlet("/updateCmnt.do")
-public class UpdateCmnt extends HttpServlet {
+@WebServlet("/cmntShowAll.do")
+public class CmntShowAll extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/* Jack Snider 시작 */
+		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
 		PrintWriter out = response.getWriter();
@@ -42,40 +42,19 @@ public class UpdateCmnt extends HttpServlet {
 		
 		// 세션객체 생성
 		HttpSession session = request.getSession();
-				
+		
 		// 현재 상세페이지의 게시글 객체
 		PostVO post = (PostVO) session.getAttribute( "detailPost" );
-				
+		
 		// 현재 로그인 되어있는 계정 
 		MemberVO memberVo = (MemberVO) session.getAttribute( "Mem_vo" );
 		
+		List<CmntVO> cmntList = (List<CmntVO>)service.getCmnts( post.getPost_num() + "" );
+		session.setAttribute( "cmntList" , cmntList );
+		jsonData = gson.toJson(cmntList);
+		out.write(jsonData);	
+		response.flushBuffer();
 		
-		int cmntNumber = Integer.parseInt( request.getParameter( "comment_number" ) );
-			
-		System.out.println( "UpdateCmnt.java : jsp에서 ajax한테 넘겨받은 댓글 번호 ==> " + cmntNumber );
-		
-		// 가져온 댓글 번호로 해당되는 cmntVO 객체 가져옴 
-		CmntVO cmntVo = service.getSingleCmnt( cmntNumber );
-		
-		// 그 객체의 내용을 수정하고
-		cmntVo.setCmnt_cont( request.getParameter( "comment_content" ) );
-		
-		System.out.println( "UpdateCmnt.java : 내용 수정 전 : " + cmntVo.getCmnt_cont() );
-		
-		// 그 객체를 수정쿼리문에 날린다.
-		int cnt = (int) service.updateCmnt(  cmntVo );
-		
-		System.out.println( "UpdateCmnt.java : 내용 수정 후 : " + cmntVo.getCmnt_cont() );
-		
-		if( cnt > 0 ) {
-			List<CmntVO> cmntList = (List<CmntVO>)service.getCmnts( post.getPost_num() + "" );
-			session.setAttribute( "cmntList" , cmntList );
-			jsonData = gson.toJson(cmntList);
-			out.write(jsonData);	
-			response.flushBuffer();
-		}
-		
-		/* Jack Snider 끝 */
 	}
 
 	/**
