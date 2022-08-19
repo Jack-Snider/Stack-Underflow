@@ -74,15 +74,27 @@ public class MemberDaoImpl implements IMemberDao{
 	};
 	
 	@Override
-	public int updateScorePerMember(Map<String, Object> scoresMap) {
+	public int updateScoreRank(Map<String, Object> map) {
 		int cnt = 0;
 		try {
-			cnt = smc.update("member.updateScorePerMember", scoresMap);
+			cnt = smc.update("member.updateScoreRank", map);
 		} catch (SQLException e) {
 			cnt = 0;
 			e.printStackTrace();
 		}
 		return cnt;
+	};
+	
+	@Override
+	public List<MemberVO> getMembersBySorting(){
+		List<MemberVO> members = null;
+		try {
+			members = smc.queryForList("member.getMembersBySorting");
+		} catch (SQLException e) {
+			members = null;
+			e.printStackTrace();
+		}
+		return members;
 	};
 	/* 호겸 끝 */
 

@@ -20,19 +20,17 @@ import ufo.vo.MemberVO;
 import ufo.vo.PostVO;
 
 /**
- * Servlet implementation class PostCmnt
+ * Servlet implementation class UpdateCmnt
  */
-@WebServlet("/postCmnt.do")
-public class PostCmnt extends HttpServlet {
+@WebServlet("/updateCmnt.do")
+public class UpdateCmnt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		/* Jack Snider 시작 */
-		
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
 		PrintWriter out = response.getWriter();
@@ -42,46 +40,32 @@ public class PostCmnt extends HttpServlet {
 		
 		ICmntService service = CmntServiceImpl.getInstance();
 		
-		
-		
 		// 세션객체 생성
 		HttpSession session = request.getSession();
-		
+				
 		// 현재 상세페이지의 게시글 객체
 		PostVO post = (PostVO) session.getAttribute( "detailPost" );
-		
+				
 		// 현재 로그인 되어있는 계정 
 		MemberVO memberVo = (MemberVO) session.getAttribute( "Mem_vo" );
 		
-		// cmntVO 객체 생성
 		
-		//{"cmnt_cont" : cmnt_cont, "mem_id" : mem_id, "post_num" : post_num},
+		int cmntNumber = Integer.parseInt( request.getParameter( "comment_number" ) );
+			
+		System.out.println( "UpdateCmnt.java : jsp에서 ajax한테 넘겨받은 댓글 번호 ==> " + cmntNumber );
 		
+		// 가져온 댓글 번호로 해당되는 cmntVO 객체 가져옴 
+		CmntVO cmntVo = service.getSingleCmnt( cmntNumber );
 		
-		CmntVO cmntVo = new CmntVO();
-		cmntVo.setCmnt_cont( request.getParameter( "comment_content" ) ); // 댓글내용 안불러와짐
-		cmntVo.setPost_num( Integer.parseInt( request.getParameter( "post_number" ) ) ); // 게시글번호 안불러와짐
-		cmntVo.setCmnt_dislike( 0 );
-		cmntVo.setCmnt_like( 0 );
-		cmntVo.setMem_id( request.getParameter( "member_id" ) ); // 아이디 안불러와짐.
+		// 그 객체의 내용을 수정하고
+		cmntVo.setCmnt_cont( request.getParameter( "comment_content" ) );
 		
+		System.out.println( "UpdateCmnt.java : 내용 수정 전 : " + cmntVo.getCmnt_cont() );
 		
-		if( cmntVo.getCmnt_cont() == null ) {
-			System.out.println("cmntVo.getComnt_cont() => null");
-		}
+		// 그 객체를 수정쿼리문에 날린다.
+		int cnt = (int) service.updateCmnt(  cmntVo );
 		
-		if( cmntVo.getPost_num() <= 0 ) {
-			System.out.println( "cmntVo.getPost_num => 0 " );
-		}
-		
-		if( cmntVo.getMem_id() == null ) {
-			System.out.println( "cmntVo.getMem_id() =>  null " );
-		}
-		
-		
-		
-		
-		int cnt = (int) service.insertCmnt( cmntVo ); // 댓글객체 저장
+		System.out.println( "UpdateCmnt.java : 내용 수정 후 : " + cmntVo.getCmnt_cont() );
 		
 		if( cnt > 0 ) {
 			List<CmntVO> cmntList = (List<CmntVO>)service.getCmnts( post.getPost_num() + "" );
@@ -90,9 +74,6 @@ public class PostCmnt extends HttpServlet {
 			out.write(jsonData);	
 			response.flushBuffer();
 		}
-		
-		
-		
 		
 		/* Jack Snider 끝 */
 	}

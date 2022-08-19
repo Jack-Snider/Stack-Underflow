@@ -34,6 +34,8 @@
 			
 			List<CmntVO> cmntList = (List<CmntVO>)request.getAttribute( "detailCmnt" );
 			
+			int cmntNum = 0;
+			
 		%>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
@@ -48,45 +50,183 @@
 
 		
 		<!-- Jack Snider 시작 -->
+		
+		<!--  -->
+		
+		
+		<!--  -->
 		<script type="text/javascript">
-		$(function(){
-			// 댓글 등록버튼 이벤트 comment
-			$('#cmntInsert').on('click', function(){
+			$(function(){
 				
-				let cmnt_cont = $('#comment').val(); // 새롭게 작성한 댓글 ( 여기까지 가져오기 성공 )
-				let mem_id = "<%= memberVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
-				let post_num = <%= postVo.getPost_num() %>; // 게시글 번호 ( 여기까지 가져옴 )
-			
-				//alert( cmnt_cont );
-				//alert( mem_id );
-				//alert( post_num );
+				let cmntNum = ''; // <- 댓글번호.. 최상위 변수~
 				
-				$.ajax({
-					url : '/stack_underflow/postCmnt.do',
-					data : {"comment_content" : cmnt_cont, "member_id" : mem_id, "post_number" : post_num},
-					type : 'post',
-					success : function(res){
+				
+				// 댓글 수정확인 버튼 누르기
+				// 댓글 수정 버튼 누르고 확인 버튼 눌렀을 때 ( 'cmntConfirm'은 동적으로 생성되는 애라서 다르게 불러야함. )
+				$(document).on('click','#cmntConfirm', function(){
+											
+				
+					/*
+						textarea에서 수정할 내용 쓰고 확인 버튼 눌렀을 때임
+					*/
 					
-						let value = '';	
+					// 새롭게 작성된 댓글 내용
+					let newCmntCont = $('#updateComment').val();
+					let mem_id = "<%= memberVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
+					let post_num = <%= postVo.getPost_num() %>; // 게시글 번호 ( 여기까지 가져옴 )					
+					
 						
-						$.each(res, function(i,v){
-							value += "<hr>";
-							value += v.mem_id + " " + v.cmnt_date + "<br>";
-							value += v.cmnt_cont;
-							value += "<hr>";
-						});
+					// ajax 시작
+					$.ajax({
+						url : '/stack_underflow/updateCmnt.do',
+						data : {"comment_content" : newCmntCont, "member_id" : mem_id, "post_number" : post_num,
+								"comment_number" : cmntNum },
+						type : 'post',
+						success : function(res){
 						
-						$('#commentList').html(value);
-						$('#comment').val('');
-						
-					},
-					error : function(xhr){
-						alert(xhr.status);
-					},
-					dataType : 'json'
+							let value = '';
+							
+							$.each(res, function(i,v){
+								value += "<hr>";
+								value += v.mem_id + " " + v.cmnt_date + "<br>";
+								value += v.cmnt_cont;
+								
+								value += "<br>";
+								value += "<br>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button>삭제</button>";
+								value += "<hr>";
+							});
+							
+							$('#commentList').html(value);
+							$('#comment').val('');
+							
+						},
+						error : function(xhr){
+							alert(xhr.status);
+						},
+						dataType : 'json'
+					});
+					// ajax 끝
+					
 				});
+				// 댓글 수정 버튼 누르기
+				
+				
+				//===========================================================================
+				
+				
+				
+				// 댓글에서 수정버튼 눌렀을 때
+				$(document).on('click','.updateCmnt', function(){
+					
+					cmntNum = $(this).val(); // 클릭한 댓글 번호
+									
+					
+					/*
+						여기는 그냥 단순히 내가 누른 댓글의 번호랑 현재 게시글에 달린 댓글 리스트 
+						전부 불러와서 == 비교해서 댓글번호가 맞는 부분만 textarea로 바꿔주기 위함 
+						그래서 서블릿도 그냥 단순히 게시글에 달린 댓글 불러오는 용도임.
+						
+						서블릿으로 댓글 번호 넘길 필요도 없음 사실...
+					*/
+					
+					// ajax 시작
+					$.ajax({
+						url : '/stack_underflow/cmntShowAll.do',
+						data : {"comment_number" : cmntNum},
+						type : 'post',
+						success : function( res ){
+							// 반환값은 n번 게시글의 리스트... 
+							let value = '';
+							
+							$.each(res, function(i,v){
+								if( v.cmnt_num == cmntNum ){
+									value += "<hr>";
+									value += v.mem_id + " " + v.cmnt_date + "<br>";
+									//style="width: 90%; height: 100px" autofocus="autofocus"
+									value += "<textarea id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</textarea>"
+									value += "<br>";
+									value += "<br>";
+									value += "<button id = \"cmntConfirm\">확인</button> <button>삭제</button>";
+									value += "<hr>";
+								}else{
+									
+									value += "<hr>";
+									value += v.mem_id + " " + v.cmnt_date + "<br>";
+									value += v.cmnt_cont;
+									
+									value += "<br>";
+									value += "<br>";
+									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + " >수정</button> <button>삭제</button>";
+									value += "<hr>";
+																		
+								}
+							});
+							
+							$('#commentList').html(value);
+							$('#comment').val('');
+						},
+					});
+					// ajax 끝
+					
+				});
+				// 댓글에서 수정버튼 눌렀을 때
+				
+				//===========================================================================
+				
+				// 댓글 등록
+				$('#cmntInsert').on('click', function(){
+					
+					let cmnt_cont = $('#comment').val(); // 새롭게 작성한 댓글 ( 여기까지 가져오기 성공 )
+					let mem_id = "<%= memberVo.getMem_id() %>"; // 댓글 작성자 ( 여기까지 가져오기 성공 )
+					let post_num = <%= postVo.getPost_num() %>; // 게시글 번호 ( 여기까지 가져옴 )
+				
+					//alert( cmnt_cont );
+					//alert( mem_id );
+					//alert( post_num );
+					
+					$.ajax({
+						url : '/stack_underflow/postCmnt.do',
+						data : {"comment_content" : cmnt_cont, "member_id" : mem_id, "post_number" : post_num},
+						type : 'post',
+						success : function(res){
+						
+							let value = '';
+							
+							$.each(res, function(i,v){
+								value += "<hr>";
+								value += v.mem_id + " " + v.cmnt_date + "<br>";
+								value += v.cmnt_cont;
+								
+								value += "<br>";
+								value += "<br>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button>삭제</button>";
+								value += "<hr>";
+							});
+							
+							$('#commentList').html(value);
+							$('#comment').val('');
+							
+						},
+						error : function(xhr){
+							alert(xhr.status);
+						},
+						dataType : 'json'
+					});
+				});
+				
+				//===========================================================================
+				
+				
 			});
-		});
+		</script>
+		
+		<!-- 댓글 등록 -->
+		<script type="text/javascript">
+			$(function(){
+				// 댓글 등록버튼 이벤트 comment
+				
+			});
 		</script>
 		<!-- Jack Snider 끝 -->
 
@@ -119,8 +259,7 @@
 			.no_border{
 				border : 0;
 			}
-			
-			
+				
 			svg{
 				margin-left : 50px;
 				margin-right : 50px;
@@ -236,7 +375,7 @@
 			
 		</table>
 		
-		
+		 
 		<div id = "commentList">
 	
 				<%
@@ -247,9 +386,14 @@
 				%>
 					<hr>
 					<%= cmnt.getMem_id() %>  <%= cmnt.getCmnt_date() %> <br> 			
-					<%= cmnt.getCmnt_cont() %> <br>
+					<%= cmnt.getCmnt_cont() %>
+					<br>
+					<br>
+					<% cmntNum = cmnt.getCmnt_num(); %>
+					<!-- 여기서 계정별로 조건 달면 됨~ -->
+					<button class = "updateCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button id = "deleteCmnt" onclick = "">삭제</button>
 					<hr>
-				
+
 				<%
 						}
 					}else{

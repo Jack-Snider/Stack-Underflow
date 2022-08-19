@@ -37,7 +37,7 @@ public class CmntDaoImpl implements ICmntDao{
 		int cnt = 0;
 		
 		try {
-			cnt = smc.update( "cmnt.insertCmnt", cmntVo );
+			if( smc.insert( "cmnt.insertCmnt", cmntVo ) == null ) cnt = 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 			cnt = 0;
@@ -61,6 +61,40 @@ public class CmntDaoImpl implements ICmntDao{
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	/**
+	 * 댓글 번호가 n인 댓글을 수정
+	 */
+	@Override
+	public int updateCmnt(CmntVO cmntVo) {
+		
+		int cnt = 0;
+		try {
+			cnt = smc.update("cmnt.updateCmnt", cmntVo);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
+	/**
+	 * 댓글 번호가 n인 댓글 가져오기
+	 */
+	@Override
+	public CmntVO getSingleCmnt( int cmntNum ) {
+		
+		CmntVO cmntVo = null;
+		
+		try {
+			cmntVo = (CmntVO) smc.queryForObject( "cmnt.getSingleCmnt" , cmntNum);
+		} catch (Exception e) {
+			cmntVo = null;
+			e.printStackTrace();
+		}
+		
+		return cmntVo;
 	}
 
 	
