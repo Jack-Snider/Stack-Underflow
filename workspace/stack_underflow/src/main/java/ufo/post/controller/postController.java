@@ -67,7 +67,7 @@ public class postController extends HttpServlet {
 		int file_num = 83;
 		//String mem_id = request.getParameter( "memVoServlet" );
 		String mem_id = memVo.getMem_id();
-		String post_board_type = "A";
+		String post_board_type = request.getParameter( "boardKind" );
 
 		String post_title = request.getParameter("title");
 		postVo.setPost_title(post_title);
