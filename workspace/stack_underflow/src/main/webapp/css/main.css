@@ -48,33 +48,32 @@ border: 2px solid darkgray;
 }
 
 
-.col-sm-2 {
+.col-2 {
     width: 18.666667%;
     border : 2px solid lightgray;
     padding: 0px;
 }
 
 
-.col-sm-9 {
+.col-9 {
     width: 85%;
      border : 2px solid lightgray;
 }
 
 
-.col-sm-3 {
+.col-3 {
      width: 24%;
      border : 2px solid lightgray;
 }
 
 #category{
-
-    display: inline-block;
+	display: inline-block;
     position: sticky;
-    top: 80px; 
-    width: 268px;
+    top: 80px;
+    width: 60%;
     height: 200px;
     background: whitesmoke;
-    margin-left: 114px;
+    margin-left: 153px;
     margin-top: 78px;
 }
 

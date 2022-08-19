@@ -1,176 +1,356 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Insert title here</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>   -->
+<!-- <link rel="stylesheet" type="text/css" href="../css/main.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/btn.css">
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cairo:wght@700&family=Fjalla+One&family=Oswald:wght@500&family=Russo+One&family=Staatliches&family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
   
-   <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
   
-  <style>
-  .col-sm-9{
-    display : flex;
-    flex-direction : column;
-    padding: 0;
+<style>
+
+div.mypage-login-btn{
+	display: inline;
+    position: relative;
+    left: 61%;
+	
+}
+
+p{
+	margin: 0;
+}
+body{
+	margin:0; 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fafafa;
+    color:#949392;
+    z-index: 1000;
+    height: 100px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+    line-height:39px;
+    height: 66px;
+    font-size : 18px;
+    box-shadow: 2px 1px 6px 0px;
+}
+
+.header h1
+{
+    font-size : 18px;
+    font-weight:normal;
+    line-height: 46px;
+
+ font-family: 'Stick No Bills', sans-serif; 
+
+}
+
+.header.shrink h1
+{
+    font-size:24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a {
+  text-decoration: none;
+  float: left;
+  margin-left: 10px;
+    color: black;
+}
+
+a:hover{
+  color : green;
+
+}
+
+a::after{ 
+   display:block;/*a요소를 블록 요소라고 선언*/
+   content: '';
+   border-bottom: solid 2px green; /* 및줄 색  */
+   transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+   transition: transform 250ms ease-in-out;
+   } 
+   
+ a:hover:after {
+   transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}  
+
+#community{
+ margin-left:28px;
+ font-size : 18px;
+ 
+}
+#rank{
+ margin-left:28px;
+ font-size : 18px;
+
+}
+#mypage{
+    margin-left: 28px;
+    font-size: 18px;
+   
+}
+#logout{
+    margin-left: 28px;
+    font-size: 18px;
     
-  }
+}
+
+.home{
+     
+   font-size: 30px;
+}
+.header.shrink h1.fa-right-from-bracket{
+    margin-left: 4px;
+}
+
+.content
+{
+height:2000px;
+background : green;
+ /*just to get the page to scroll*/
+}
+
+
+
+/* 풋터 */
+footer{
+width : 100%;
+height : 100px;
+background : #adadad;
+
+
+}
+
+#container-div{
+ background : pink;
+ width : 100%;
+
+}
+
+#content-container{
+
+  width : 100%;
+  display : flex;
+  min-height : 900px;
+  backgroung : pink;
+  min-height: 935px;
   
-  #profil{
-  
-     flex : 2;
-     border : 2px solid gray;
-  }
-  
-  #profil-main{
-    flex : 5;
-    border : 2px solid gray;
-  }
-  
-  #box{
+
+}
+
+#content-left{
+   flex : 1;
+
+ border-right: 2px solid lightgray;
+}
+
+#content-center{
+   flex : 4;
+
+}
+
+#content-right {
+    
+    
+    flex: 1;
+}
+
+#content-left-category{
+
+    width: 16.5%;
+    position: fixed;
+    margin-top: 45px;
+    height: 300px;
+	    
+    
+}    
+
+#content-center-frame{
    width : 100%;
    height : 100%;
    display : flex;
-  }
+   flex-direction : column;
+    padding: 30px;
+}
+
+#content-center-profil{
+    flex: 3;
+    margin-top: 66px;
+    box-shadow: 14px -7px 12px -4px lightgrey;
+    border-radius: 49px;
+    border: 2px solid darkgreen;
+    box-shadow: 11px -4px 13px darkgrey;
+
+}
+
+#content-center-profilmain{
+   /*  border: 2px solid black; */
+    flex: 6;
+    margin-top: 30px;
+}
+
+
+#profil-frame{
+   width : 100%;
+   height : 100%;
+   display : flex;
+   
   
-  #mypage-category{
-   flex : 1;
-   border : 2px solid gray;
-  
-  }
-  
-  #mypage-main{
-   flex : 4;
-    border : 2px solid gray;
-  }
-  
-  img{
-  
- max-width: 100%;
-  max-height: 100%;
+} 
+
+#profil-category{
+    flex: 1;
+    margin-right: 35px;
+   
+   /*  border: 2px solid darkgreen; */
+    
+}
+
+#profil-main{
+ border: 2px solid darkgreen;
+    flex: 4;
+    border-radius: 49px;
+    box-shadow: 14px -7px 12px -4px lightgrey;
+    box-shadow: 11px -4px 13px darkgrey;
+}
+
+ #profil-category-frame{
   display : flex;
-  /* margin : 20px; */
-  border-radius : 30%;  
-  height: auto;
-  display: block;
-  } 
+  flex-direction : column;
+  width : 100%;
+  height : 100%;
   
-/*   #profil-image{
-  
-    width: 200px;
-    height: 200px;
-    /* border: 2px solid gray; */
-    display : flex;
-    border-radius: 30%;
-    background: whitesmoke;
-    margin-top: 65px;
-    margin-left: 38px;
-  } */
-  </style>
-  
-  
+} 
+
+/* 
+#profil-category1{
+border: 2px solid darkgreen;
+flex : 1;
+border-radius: 49px;
+}
+#profil-category2{
+border: 2px solid darkgreen;
+flex : 1;
+border-radius: 49px;
+} */
+
+/* .profil-category123{
+border: 2px solid darkgreen;
+width : 100%;
+    border-radius: 28px;
+    height: 87px;
+} */
+
+</style>
+<script>
+
+$(document).ready(function(){
+	$('.menu').each(function(index){
+		$(this).attr('menu-index', index);
+	}).click(function(){
+		var index = $(this).attr('menu-index');
+		$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
+		$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
+	});
+
+
+});
+</script>
+
 </head>
 <body>
+<div class="header">
+  <h1>
+  <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
+<a class="home" href="main.jsp">stack underflow</a>
+  <a id = "community" href="community.jsp">커뮤니티</a>
+  <a id = "rank" href="">랭킹</a>
+  
+	  <div class="mypage-login-btn">
+		  <a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
+		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+	  </div>
+	  
+   </h1>
+  </div>
 
-
-
-<!-- nav -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-     
-      <a class="navbar-brand" href="main_frame.jsp">
-       <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2em; margin-bottom : 3px"></i>stack underflow</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-      <!--    <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
-
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">page1<span class="caret"></span></a>
-
-        </li> -->
-        <li><a href="#">커뮤니티</a></li>
-        <li><a href="#">랭킹</a></li>
+<div id="content-container">
+   <div id="content-left"> <!--왼쪽 -->
+   <div id="content-left-category"></div>	
+   </div>
+   
+   
+<!--  -->
+   <div id="content-center">
+       <div id="content-center-frame">
+          <div id="content-center-profil"></div>
+          <div id="content-center-profilmain">
+             <div id="profil-frame">
         
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 마이페이지</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
-      </ul>
-    </div>  
-    </div>
-</nav>
+                  <div id="profil-category">
+					<div class="container">
 
+					</div>
+					                   
+               </div>
+               <div id="profil-main"></div>
+             </div>
+          </div>
+       </div>
+   </div>
+   <div id="content-right"></div>
+</div>
 
-
-
-
-<div class="container-fluid">
-
-  <div class="row">
-   <!-- 왼쪽 div  -->
-    <div class="col-sm-2" style="background-color:white; ">
+<!-- <div id="container-div">
+<div class="row">
+   왼쪽 div 
+    <div class="col-2" style="background-color:white; ">
        <div id="category"  >
        <i class="fa-solid fa-avocado"></i>
-<!--         <ul id="categoryul">
-          <li><a href="">기술 게시판</a></li>
-          <li><a href="">자유 게시판</a></li>
-          <li><a href="">문의 게시판</a></li> 
-        </ul> -->
+        <ul id="categoryul">
+          <li>Home</li>
+          <li><a href="" style="font-size: 20px;">기술 게시판</a></li>
+          <li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
+          <li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
+        </ul>
        </div>   
     
     </div>
     
     
-    <div class="col-sm-10" style="background-color:lavenderblush;">   
-          <div class="row" style=" overflow : auto">
-          
-	          <!-- 중간 div -->
-	          <div class="col-sm-9" style="background-color:white;">
-                  <div id="profil">
-                     <!-- 프로필 사진  -->
-                    
-                        <img src="../images/기본프로필2.png">                 
-                         
-                  </div>
-                  <div id="profil-main">
-                     <div id="box">
-                       <div id="mypage-category"></div>
-                       <div id="mypage-main"></div>
-                     </div>
-                  </div>
-	          </div>
-	          
-	          
-	          
-	          
-	          
-	          <!-- 오른쪽 -->
-	          <div class="col-sm-3" style="background-color:white;">.col-sm-3</div>
-          </div>
-    </div>
+  
     
-    <!-- <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div> -->
+    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
   </div>
-</div>
+</div> -->
 
-<!--  footer  -->
-   <footer class="container-fluid text-center">
-  <p>Footer Text</p>
-  </footer>
-  
-  
-  
+<footer>
+<p>404</p>
+</footer>
+
+
 </body>
 </html>
