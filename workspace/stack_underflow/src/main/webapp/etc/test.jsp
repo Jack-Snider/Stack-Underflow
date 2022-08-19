@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+</script>
 </head>
 <body>
 	<table border = "1" width = "90%">
@@ -16,5 +18,6 @@
 			</td>
 		</tr>
 	</table>
+	<button></button>
 </body>
 </html>
