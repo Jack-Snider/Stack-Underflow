@@ -31,6 +31,14 @@ public interface ICmntService {
 	public int updateCmnt( CmntVO cmntVo );
 	
 	/**
+	 * 댓글 번호가 n인 댓글을 지우기
+	 * @param cmntVo
+	 * @return
+	 */
+	public int deleteCmnt( CmntVO cmntVo );
+	
+	
+	/**
 	 * 댓글 번호가 n인 댓글 가져오기
 	 * @param cmntNum
 	 * @return

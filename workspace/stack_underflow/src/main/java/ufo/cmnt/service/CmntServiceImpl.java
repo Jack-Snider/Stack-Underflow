@@ -54,6 +54,12 @@ public class CmntServiceImpl implements ICmntService {
 		// TODO Auto-generated method stub
 		return dao.getSingleCmnt( cmntNum );
 	}
+
+	@Override
+	public int deleteCmnt(CmntVO cmntVo) {
+		// TODO Auto-generated method stub
+		return dao.deleteCmnt( cmntVo );
+	}
 	
 	
 	

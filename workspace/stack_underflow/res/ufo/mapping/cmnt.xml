@@ -47,7 +47,9 @@
 	</update>
 	
 	<!-- 게시글 번호가 n인 댓글 삭제하기 -->
-	<delete id="deleteCmnt"></delete>
+	<delete id="deleteCmnt" parameterClass="cmntVo">
+		delete from CMNT where cmnt_num = #cmnt_num#
+	</delete>
 	
 	<!-- Jack Snider 끝 -->
 	
