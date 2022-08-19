@@ -26,12 +26,12 @@
 			if(mem_pass == mem_pass_check){
 				$(this).css('border', '2px solid blue');
 				$('#passchkres')
-				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>Password Check Success</strong> This is the Same Password</div>');
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>비밀번호 검사 성공!</strong> 같은 비밀번호 입니다</div>');
 				passChk = true;
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#passchkres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Password Check Fail</strong> This is not the Same Password</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>비밀번호 검사 실패</strong> 같은 비밀번호가 아닙니다</div>');
 				passChk = false;
 			}	
 		});
@@ -49,7 +49,7 @@
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#idres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Inappropriate ID</strong> Please Keep the ID Rules</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>Inappropriate ID</strong> Please `Keep the ID Rules</div>');
 				ruleChk = false;
 			}
 		});
@@ -95,10 +95,10 @@
 			let value = "";
 			if(id == 'idcheck'){
 				value = $('#mem_id').val().trim();
-				if(value.length<1) alert('Please Enter ID');
+				if(value.length<1) alert('아이디를 입력해주세요');
 			}else {
 				value = $('#mem_nknm').val().trim();
-				if(value.length<1) alert('Please Enter Disply Name');
+				if(value.length<1) alert('닉네임을 입력해주세요');
 			}
 			$.ajax({
 				url : '/stack_underflow/DuplicationCheck.do',
@@ -204,12 +204,9 @@
 			<div class="form-group">
 				<label for="mem_regno1">주민등록번호</label> 
 				   <div class="form-row">
-				     <div class="col">
-				       <input type="text" class="form-control" id="mem_regno1" name="mem_regno1">
-				     </div>
-				    
-				     <div class="col">
-				       <input type="text" class="form-control" id="mem_regno2" name="mem_regno2">
+				     <div class="col" style="display:inline;">
+				       <input type="text" class="form-reg-control" id="mem_regno1" name="mem_regno1"> -
+				       <input type="text" class="form-reg-control" id="mem_regno2" name="mem_regno2">
 				     </div>
 				   </div>
 			</div>
@@ -249,7 +246,7 @@
       			<input type="file" class="form-control-file border" name="pfImg">
     		</div>
 			
-			<button type="submit" class="btn btn-primary">Sign Up</button>
+			<button type="submit" class="btn btn-primary">회원가입하기</button>
 			<span id="joinsub"></span>
 		
 		</form>

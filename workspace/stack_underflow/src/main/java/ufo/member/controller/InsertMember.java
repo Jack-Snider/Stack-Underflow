@@ -50,6 +50,23 @@ public class InsertMember extends HttpServlet {
 		memVo.setMem_score(0);
 		memVo.setMem_rank("Unranked");
 		memVo.setMem_stat(0);
+		
+		System.out.println(memVo.getMem_id());
+		System.out.println(memVo.getMem_pass());
+		System.out.println(memVo.getMem_nknm());
+		System.out.println(memVo.getMem_nm());
+		System.out.println(memVo.getMem_regno());
+		System.out.println(memVo.getMem_email());
+		System.out.println(memVo.getMem_addr1());
+		System.out.println(memVo.getMem_addr2());
+		System.out.println(memVo.getMem_qstn());
+		System.out.println(memVo.getMem_ans());
+		System.out.println(memVo.getMem_score());
+		System.out.println(memVo.getMem_rank());
+		System.out.println(memVo.getMem_stat());
+	
+		
+		
 
 		IMemberService service1 = MemberServiceImpl.getInstance();
 		int cnt1 = service1.insertMember(memVo);
