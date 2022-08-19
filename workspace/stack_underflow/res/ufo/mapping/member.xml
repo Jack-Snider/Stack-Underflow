@@ -24,19 +24,30 @@
 	  </select>
 	  
 	  <select id="getScoreMembers" resultClass="memberVo">
-	  	select m.mem_id as mem_id, (sum(p.post_like) - sum(p.post_dislike)) as mem_score
+	  	select m.mem_id as mem_id, 
+		sum(p.post_like) as mem_like_sum, 
+		sum(p.post_dislike) as mem_dislike_sum, 
+		(sum(p.post_like) - sum(p.post_dislike)) as mem_score
 		from post p, member m
 		where p.mem_id = m.mem_id
 		group by m.mem_id
 		order by mem_score desc
 	  </select>
 	  
-	  <update id="updateScorePerMember" parameterClass="java.util.Map">
-	  	update member set mem_score = #mem_score# where mem_id = #mem_id#
+	  <update id="updateScoreRank" parameterClass="java.util.Map">
+	  	update member set mem_score = #mem_score#, 
+	  	mem_like_sum = #mem_like_sum#, 
+	  	mem_dislike_sum = #mem_dislike_sum#, 
+	  	mem_rank = #mem_rank# 
+	  	where mem_id = #mem_id#
 	  </update>
+	  
+	  <select id="getMembersBySorting" resultClass="memberVo">
+	  	select * from member order by mem_score desc, mem_snu_date asc
+	  </select>
 	  <!-- 호겸 끝 -->
 
-
+	
 
 	  <!-- 명범 시작 -->
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">

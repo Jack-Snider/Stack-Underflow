@@ -47,21 +47,38 @@ public class MemberServiceImpl implements IMemberService{
 	};
 	
 	@Override
-	public void updateScorePerMember() {
-		
+	public void updateScoreRank() {
 		List<MemberVO> scorePerMembers = getScoreMembers();
 		
 		for(MemberVO mvo : scorePerMembers) {
-			Map<String, Object> scoresMap = new HashMap<String, Object>();
-			scoresMap.put("mem_id", mvo.getMem_id());
-			scoresMap.put("mem_score", mvo.getMem_score());
-			int cnt = dao.updateScorePerMember(scoresMap);
+			String mem_id = mvo.getMem_id();
+			int mem_like_sum = mvo.getMem_like_sum();
+			int mem_dislike_sum = mvo.getMem_dislike_sum();
+			int score = mvo.getMem_score();
+			String rank = "";
+			
+			if(score>=1000) rank = "골드";
+			else if(score>=100 && score<1000) rank = "실버";
+			else if(score>=10 && score<100) rank = "브론즈";
+			else rank = "Unranked";
+			
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("mem_id", mem_id);
+			map.put("mem_like_sum", mem_like_sum);
+			map.put("mem_dislike_sum", mem_dislike_sum);
+			map.put("mem_score", score);
+			map.put("mem_rank", rank);
+			int cnt = dao.updateScoreRank(map);
 			if(cnt==0) {
-				System.out.println("insertScorePerMember 실패");
 				break;
 			}
 		}
 		
+	};
+	
+	@Override
+	public List<MemberVO> getMembersBySorting(){
+		return dao.getMembersBySorting();
 	};
 	/* 호겸 끝 */
 	

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.btn,btn-dark,btn-sm{
+		height: 20px;
+	font-size: 10px;
+}
+.form-control-file,border{
+height: 25px;
+	font-size: 10px;
+	
+}
+.form-control{
+	height: 30px;
+	font-size: 13px;
+}
+.btn btn-primary{
+	height: 50px;
+	
+}

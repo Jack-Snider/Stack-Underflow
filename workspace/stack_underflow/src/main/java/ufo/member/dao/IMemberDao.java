@@ -21,7 +21,9 @@ public interface IMemberDao {
 	
 	public List<MemberVO> getScoreMembers();
 	
-	public int updateScorePerMember(Map<String, Object> scoresMap);
+	public int updateScoreRank(Map<String, Object> map);
+	
+	public List<MemberVO> getMembersBySorting();
 	/* 호겸 끝 */
 	
 	
