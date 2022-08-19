@@ -18,9 +18,11 @@ public interface IMemberService {
 	
 	public int checkByNknm(String mem_nknm);
 	
-	public void updateScorePerMember();
-	
 	public List<MemberVO> getScoreMembers();
+	
+	public void updateScoreRank();
+
+	public List<MemberVO> getMembersBySorting();
 	/* 호겸 끝 */
 	
 	/* Jack Snider 시작 */

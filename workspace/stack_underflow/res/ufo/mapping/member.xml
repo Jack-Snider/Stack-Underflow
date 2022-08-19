@@ -31,12 +31,16 @@
 		order by mem_score desc
 	  </select>
 	  
-	  <update id="updateScorePerMember" parameterClass="java.util.Map">
-	  	update member set mem_score = #mem_score# where mem_id = #mem_id#
+	  <update id="updateScoreRank" parameterClass="java.util.Map">
+	  	update member set mem_score = #mem_score#, mem_rank = #mem_rank# where mem_id = #mem_id#
 	  </update>
+	  
+	  <select id="getMembersBySorting" resultClass="memberVo">
+	  	select * from member order by mem_score desc, mem_snu_date asc
+	  </select>
 	  <!-- 호겸 끝 -->
 
-
+	
 
 	  <!-- 명범 시작 -->
 	  <select id="passwordchk" resultClass="memberVo" parameterClass="String">
