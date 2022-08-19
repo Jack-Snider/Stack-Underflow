@@ -51,14 +51,58 @@
 		
 		<!-- Jack Snider 시작 -->
 		
-		<!--  -->
-		
-		
-		<!--  -->
+
+		<!-- 댓글 관련 스크립트 by Jack Snider -->
 		<script type="text/javascript">
 			$(function(){
 				
 				let cmntNum = ''; // <- 댓글번호.. 최상위 변수~
+				
+				
+				// 삭제버튼 눌렀을때
+				$(document).on('click', '.deleteCmnt', function(){
+					
+					cmntNum = $(this).val(); // 버튼을 누른 댓글의 댓글 번호
+					
+					$.ajax({
+						url : '/stack_underflow/deleteCmnt.do', // 댓글삭제 서블릿으로 이동
+						data : {"comment_number" : cmntNum}, // 서블릿 호출하면서 댓글번호 데이터를 넘겨줌
+						type : 'post', // 전송방식
+						success : function( res ){ // 전송 성공시 ( 댓글 삭제가 반영된 게시글의 댓글 리스트를 리턴 받을거임 )
+							
+							let value = '';
+							
+							$.each(res, function(i,v){
+								value += "<hr>";
+								value += v.mem_id + " " + v.cmnt_date + "<br>";
+								value += v.cmnt_cont;
+								
+								value += "<br>";
+								value += "<br>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+								value += "<hr>";
+							});
+							
+							$('#commentList').html(value);
+							$('#comment').val('');
+							
+						},
+						error : function(xhr){
+							alert(xhr.status);
+						},
+						dataType : 'json'
+					});
+					
+				});
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				// 댓글 수정확인 버튼 누르기
@@ -93,7 +137,7 @@
 								
 								value += "<br>";
 								value += "<br>";
-								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button>삭제</button>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 								value += "<hr>";
 							});
 							
@@ -112,7 +156,7 @@
 				// 댓글 수정 버튼 누르기
 				
 				
-				//===========================================================================
+//========================================================================================================================
 				
 				
 				
@@ -157,7 +201,7 @@
 									
 									value += "<br>";
 									value += "<br>";
-									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + " >수정</button> <button>삭제</button>";
+									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 									value += "<hr>";
 																		
 								}
@@ -172,7 +216,7 @@
 				});
 				// 댓글에서 수정버튼 눌렀을 때
 				
-				//===========================================================================
+//========================================================================================================================
 				
 				// 댓글 등록
 				$('#cmntInsert').on('click', function(){
@@ -200,7 +244,7 @@
 								
 								value += "<br>";
 								value += "<br>";
-								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button>삭제</button>";
+								value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 								value += "<hr>";
 							});
 							
@@ -215,20 +259,14 @@
 					});
 				});
 				
-				//===========================================================================
+//========================================================================================================================
 				
 				
 			});
 		</script>
+		<!-- 댓글 관련 스크립트 by Jack Snider -->
 		
-		<!-- 댓글 등록 -->
-		<script type="text/javascript">
-			$(function(){
-				// 댓글 등록버튼 이벤트 comment
-				
-			});
-		</script>
-		<!-- Jack Snider 끝 -->
+		
 
 <!-- 호겸 시작 -->
 <script>
@@ -391,7 +429,7 @@
 					<br>
 					<% cmntNum = cmnt.getCmnt_num(); %>
 					<!-- 여기서 계정별로 조건 달면 됨~ -->
-					<button class = "updateCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button id = "deleteCmnt" onclick = "">삭제</button>
+					<button class = "updateCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button class = "deleteCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>삭제</button>
 					<hr>
 
 				<%
