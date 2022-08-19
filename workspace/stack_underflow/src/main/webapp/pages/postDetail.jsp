@@ -67,12 +67,15 @@
 					type : 'post',
 					success : function(res){
 					
-						let value = '';	
+						let value = '';
 						
 						$.each(res, function(i,v){
 							value += "<hr>";
 							value += v.mem_id + " " + v.cmnt_date + "<br>";
 							value += v.cmnt_cont;
+							
+							value += "<br>";
+							value += "<button>수정</button> <button>삭제</button>";
 							value += "<hr>";
 						});
 						
@@ -248,7 +251,11 @@
 					<hr>
 					<%= cmnt.getMem_id() %>  <%= cmnt.getCmnt_date() %> <br> 			
 					<%= cmnt.getCmnt_cont() %> <br>
+					<br>
+					<button id = "updateCmnt" onclick = "">수정</button> <button id = "deleteCmnt" onclick = "">삭제</button>
 					<hr>
+				
+					
 				
 				<%
 						}
