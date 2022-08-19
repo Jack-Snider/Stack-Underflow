@@ -23,6 +23,20 @@ public interface ICmntService {
 	 */
 	public List<CmntVO> getCmnts( String postNum );
 	
+	/**
+	 * 댓글 번호가 n인 댓글 수정하기
+	 * @param cmntVo
+	 * @return
+	 */
+	public int updateCmnt( CmntVO cmntVo );
+	
+	/**
+	 * 댓글 번호가 n인 댓글 가져오기
+	 * @param cmntNum
+	 * @return
+	 */
+	public CmntVO getSingleCmnt( int cmntNum );
+	
 	/* Jack Snider 끝 */
 	
 }

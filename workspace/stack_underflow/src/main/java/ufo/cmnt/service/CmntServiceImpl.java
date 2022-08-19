@@ -40,6 +40,20 @@ public class CmntServiceImpl implements ICmntService {
 		// TODO Auto-generated method stub
 		return dao.getCmnts( postNum );
 	}
+
+	// 댓글 번호가 n인 댓글 수정하기
+	@Override
+	public int updateCmnt(CmntVO cmntVo) {
+		// TODO Auto-generated method stub
+		return dao.updateCmnt( cmntVo );
+	}
+
+	// 댓글 번호가 n인 댓글 가져오기
+	@Override
+	public CmntVO getSingleCmnt( int cmntNum ) {
+		// TODO Auto-generated method stub
+		return dao.getSingleCmnt( cmntNum );
+	}
 	
 	
 	
