@@ -176,7 +176,7 @@
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_pass">비밀번호</label>
+			    <label for="mem_pass">비밀번호</label><br>
 			    <input type="password" class="inputPlace" id="mem_pass" placeholder="비밀번호를 입력하세요" name="mem_pass" required>
 			   <p class="instructor">※ 비밀번호는 8 ~20자 사이 영어 대,소문자 및 숫자 특수기호 필수 포함</p>
 			    <div id="passres"></div>
@@ -184,13 +184,13 @@
 			
 			
 			<div class="form-group">
-			    <label for="mem_pass_check">비밀번호 확인</label> 
+			    <label for="mem_pass_check">비밀번호 확인</label><br> 
 			    <input type="password" class="inputPlace" id="mem_pass_check" placeholder="동일한 비밀번호를 입력하세요" name="mem_pass_check" required>
 			    <div id="passchkres"></div>
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_nknm">닉네임&nbsp;&nbsp;</label> 
+			    <label for="mem_nknm">닉네임&nbsp;&nbsp;</label>
 				<input type="button" id="dncheck" value="닉네임 중복확인" class="btnCheck"><br>
 				<input type="text" class="inputPlace" id="mem_nknm" placeholder="닉네임을 입력하세요" name="mem_nknm" required>
 				<p class="instructor">※ 닉네임은 3 ~12자 사이 영어 대,소문자 및 숫자</p>
@@ -198,13 +198,12 @@
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_nm">이름</label> 
+			    <label for="mem_nm">이름</label> <br>
 			    <input type="text" class="inputPlace" id="mem_nm" placeholder="이름을 입력하세요" name="mem_nm" required>
 			</div>
 			
 			<div class="form-group">
-		     	<label for="mem_regno1" >주민등록번호</label>
-
+		     	<label for="mem_regno1" >주민등록번호</label><br>
 				<div class="regNo-input" style="display:inline;">
 				<input type="text" class="inputPlace" id="mem_regno1" name="mem_regno1"> -
 				<input type="text" class="inputPlace" id="mem_regno2" name="mem_regno2">
@@ -212,22 +211,22 @@
 		    </div>
 		    
 			<div class="form-group">
-		     	<label for="mem_email">이메일 주소</label> 
+		     	<label for="mem_email">이메일 주소</label> <br>
 				<input type="email" class="inputPlace" id="mem_email" placeholder="이메일 주소를 입력하세요 (ex:12345@abcde.com)" name="mem_email" required>
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_addr1">집 주소</label> 
+			    <label for="mem_addr1">집 주소</label> <br>
 				<input type="text" class="inputPlace" id="mem_addr1" placeholder="주소를 입력하세요" name="mem_addr1" required>
 			</div>
 			
 			<div class="form-group">
-		        <label for="mem_addr2">상세 주소</label> 
+		        <label for="mem_addr2">상세 주소</label> <br>
 				<input type="text" class="inputPlace" id="mem_addr2" placeholder="상세주소를 입력하세요" name="mem_addr2" required>
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_qstn">비밀번호 찾기 질문 힌트</label>
+			     <label for="mem_qstn">비밀번호 찾기 질문 힌트</label><br>
 				 <select class="inputPlace" id="mem_qstn" name="mem_qstn">
 				 <option value="What is Your Father Name ?">아버지의 성함은?</option>
 				 <option value="What is Your Mother Name ?">어머니의 성함은 ?</option>
@@ -237,12 +236,12 @@
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_ans">비밀번호 찾기 답변 힌트</label> 
+			     <label for="mem_ans">비밀번호 찾기 답변 힌트</label> <br>
 				 <input type="text" class="inputPlace" id="mem_ans" placeholder="답변을 입력하세요" name="mem_ans" required>
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_ans">프로필 사진</label> 
+			     <label for="mem_ans">프로필 사진</label> <br>
       		     <input type="file" class="fileInput" name="pfImg">
 			</div>
 			
