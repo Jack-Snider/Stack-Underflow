@@ -25,6 +25,9 @@ div.mypage-login-btn{
 	
 }
 
+
+
+
 p{
 	margin: 0;
 }
