@@ -10,6 +10,15 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+	$(function(){
+		$('#loginbackBtn').on('click', function(){
+			location.href="<%=request.getContextPath()%>/common/login.jsp";
+		});
+	});
+</script>
+
 <script>
 	
 	let passChk = false;
@@ -164,7 +173,11 @@
 </style>
 </head>
 <body>
-	<div class="container">
+
+	<div class="scene flex">
+	<button id="loginbackBtn" name="loginbackBtn">로그인 페이지로</button>
+	<section class="card">
+	
 		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();"action="<%=request.getContextPath()%>/InsertMember.do">
 		
 			<div class="form-group">
@@ -245,10 +258,10 @@
       		     <input type="file" class="fileInput" name="pfImg">
 			</div>
 			
-			<button type="submit" id="	submitBtn">회원가입하기</button>
+			<button type="submit" id="submitBtn">회원가입하기</button>
 
 		</form>
+		</section>
 	</div>
-
 </body>
 </html>
