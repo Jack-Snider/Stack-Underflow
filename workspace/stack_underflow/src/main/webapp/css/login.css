@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+<
+script src ="https: //kit.fontawesome.com /6ef361a288.js " crossorigin
+	="anonymous ">StACK </script>body {
+	color: #FEFEFE;
+	font: 100 100%/1.6 "Heebo", sans-serif;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+.flex {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.scene {
+	background: #362100
+		url("https://www.myfreewalls.com/public/uploads/preview/4k-cyberpunk-neon-city-game-wallpaper-11631300087d5okgsbd05.jpg")
+		center/cover;
+	height: 100vh;
+	position: relative;
+}
+
+.card {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background: rgba(254, 254, 254, 0.075);
+	border: 1px solid rgba(254, 254, 254, 0.18);
+	border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(54, 33, 0, 0.65);
+	color: white;
+	max-width: 300px;
+	overflow: hidden;
+	padding: 20px 30px 50px 30px;
+	opacity: 0.8;
+	position: relative;
+	text-align: left;
+	z-index: 1;
+}
+
+.common {
+	font-family: 'DynaPuff', cursive;
+	font-family: 'Silkscreen', cursive;
+	font-family: 'Stick No Bills', sans-serif;
+	font-size: 1.3rem;
+	font-weight: bolder;
+	margin-bottom: 5%;
+	color: black;
+	text-align: center;
+}
+
+#idInput {
+	margin-bottom: 5%;
+	width: 200;
+	height: 30;
+}
+
+#passInput {
+	margin-bottom: 4%;
+	width: 200;
+	height: 30;
+}
+
+.checkId_div {
+	position: relative;
+	left: 110px;
+}
+
+#chkid_input {
+	top: 5px;
+}
+
+#chkid_label {
+	color: black;
+	font-size: 0.8rem;
+	font-weight: normal;
+}
+
+#loginbtn {
+	width: 200px;
+	height: 30px;
+}
+
+#sgnupbtn {
+	width: 200px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-decoration: underline;
+	height: 30px;
+}
+
+#loginbtn:hover {
+	background-color: blue;
+	border-color: white;
+	color: white;
+}
+
+#sgnupbtn:hover {
+	background-color: blue;
+	border-color: white;
+	color: white;
+}
+
+.findlink {
+	font-size: 0.8rem;
+	text-align: center;
+	color: black;
+	margin-top: 5%;
+}
