@@ -135,10 +135,11 @@ background : green;
 
 /* 풋터 */
 footer{
+flex : 2;
 width : 100%;
 height : 100px;
 background : #adadad;
-
+ border : 1px solid black;
 
 }
 
@@ -153,7 +154,7 @@ background : #adadad;
   width : 100%;
   display : flex;
   min-height : 900px;
-  backgroung : pink;
+  background : pink;
   
 
 }
@@ -328,8 +329,76 @@ background : #adadad;
     top: 10px;
 }
 
+/* 게시글 목록 */
+#content-center-frame{
+
+width : 100%;
+height : 100%;
+display : flex;
+flex-direction : column;
+
+}
+
+#board-search{
+border : 1px solid black;
+ flex : 1;
+ 
+
+}
+
+#board-list-frame{
+border : 1px solid black;
+  flex : 4;
+}
 
 
+
+
+.pl{
+    width: 200px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 12px 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+        margin-top: 100px;
+    margin-left: 500px;
+}
+
+.pl:focus{
+    border: 1px solid ##1d5716;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: 1px solid #1d5716;
+    border-radius: 10px;
+}
+      body {
+        margin: 0;
+
+      }
+      .bodycontainer {
+
+     width: 100vw;
+    height: 100vh;
+    background : pink;
+    display : felx;
+    flex-direction : column;
+    
+      }
+.header{
+   flex : 1;
+    border : 1px solid black;
+}
+
+
+#layoutcenter{
+  flex : 4;
+   border : 1px solid black;
+}
 </style>
 <script>
 
@@ -363,6 +432,7 @@ function searchToggle(obj, evt){
 
 </head>
 <body>
+ <div class="bodycontainer">
 <div class="header">
   <h1>
   <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 2px;" ></i>
@@ -377,68 +447,65 @@ function searchToggle(obj, evt){
 	  
    </h1>
   </div>
-
+  
+  
+  
+  
+<div id="layoutcenter">
 <div id="content-container">
    <div id="content-left">
-   <div id="content-left-category">
-	<div class="menu">기술 게시판</div>
-	<div class="menu">자유 게시판</div>
-	<div class="menu">문의 게시판</div>	
-   </div>	
-<!-- <div class="btngroup">
-    <button class="menu">저장</button>
-    <button class="menu">취소</button>
-</div>
- -->
+	   <div id="content-left-category">
+			<div class="menu">기술 게시판</div>
+			<div class="menu">자유 게시판</div>
+			<div class="menu">문의 게시판</div>	
+	   </div>	
+
    </div>
 
    <div id="content-center">
-<!-- 검색창  -->
-	   <div class="search-wrapper">
-		    <div class="input-holder">
-		        <input type="text" class="search-input" placeholder="Type to search" />
-		        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-		    </div>
-		    <span class="close" onclick="searchToggle(this, event);"></span>
-	   </div>
-     <div>
-     
-     
-     
-     
+      <div id="content-center-frame">
+         <div id="board-search">
+           
 
-
+		           <select name="likeLanguage" id="" class="pl">
+            <option value="0" selected>최애 프로그래밍 언어</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="javascript">Javascript</option>
+            <option value="c#">C#</option>
+            <option value="c/c++">C/C++</option>
+        </select>
+            <!-- 검색창 -->
+		   <div class="search-wrapper">
+			    <div class="input-holder">
+			        <input type="text" class="search-input" placeholder="Type to search" />
+			        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+			    </div>
+			    <span class="close" onclick="searchToggle(this, event);"></span>
+		   </div>
+		   
+         </div>
+         <div id="board-list-frame">
+            <div>
+              
+            </div>
+         </div>
+      </div>
+   
    </div>
+   
+   
    <div id="content-right"></div>
 </div>
 
-<!-- <div id="container-div">
-<div class="row">
-   왼쪽 div 
-    <div class="col-2" style="background-color:white; ">
-       <div id="category"  >
-       <i class="fa-solid fa-avocado"></i>
-        <ul id="categoryul">
-          <li>Home</li>
-          <li><a href="" style="font-size: 20px;">기술 게시판</a></li>
-          <li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
-          <li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
-        </ul>
-       </div>   
-    
-    </div>
-    
-    
-  
-    
-    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
-  </div>
-</div> -->
+
+
+</div>
 
 <footer>
 <p>404</p>
 </footer>
-
+</div>
 
 </body>
 </html>
