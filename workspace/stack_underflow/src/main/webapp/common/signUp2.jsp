@@ -1,15 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300&amp;display=swap'>
+<link rel="stylesheet" type="text/css" href="../css/signup2.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>StackUnderflow - SignUp</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/signup2.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
 
 <script>
 	$(function(){
@@ -150,10 +158,10 @@
 	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
 	function submitChk(){
 		if(passChk && ruleChk && dupChk){
-			alert("Sign Up Success");
+			alert("회원가입성공");
 			return true;
 		}else{
-			alert("Sign Up Fail");
+			alert("회원가입 실패");
 			return false;
 		}
 	}
@@ -174,14 +182,16 @@
 </head>
 <body>
 
-	<div class="scene flex">
-	<button id="loginbackBtn" name="loginbackBtn">로그인 페이지로</button>
-	<section class="card">
-	
+<header>
+<h1 class ="h1css"><i class="fa-brands fa-stack-exchange"></i>
+		Stack Underflow 회원가입</h1>
+<button id="loginbackBtn" name="loginbackBtn">로그인 페이지로</button>
+</header>
+<section class="card">
 		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();"action="<%=request.getContextPath()%>/InsertMember.do">
 		
 			<div class="form-group">
-			   <label for="mem_id">ID&nbsp;&nbsp;</label> 
+			   <label class="inputlabel" for="mem_id">ID&nbsp;&nbsp;</label> 
 			   <input type="button" id="idcheck" value="아이디 중복체크" class="btnCheck"><br>
 			   <input type="text" class="inputPlace" id="mem_id" placeholder="아이디를 입력하세요" name="mem_id" required><br>
 			   <p class="instructor">※ ID는 3 ~12자 사이 영어 대,소문자 및 숫자</p>
@@ -189,7 +199,7 @@
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_pass">비밀번호</label><br>
+			    <label class="inputlabel" for="mem_pass">비밀번호</label><br>
 			    <input type="password" class="inputPlace" id="mem_pass" placeholder="비밀번호를 입력하세요" name="mem_pass" required>
 			   <p class="instructor">※ 비밀번호는 8 ~20자 사이 영어 대,소문자 및 숫자 특수기호 필수 포함</p>
 			    <div id="passres"></div>
@@ -197,13 +207,13 @@
 			
 			
 			<div class="form-group">
-			    <label for="mem_pass_check">비밀번호 확인</label><br> 
+			    <label class="inputlabel" for="mem_pass_check">비밀번호 확인</label><br> 
 			    <input type="password" class="inputPlace" id="mem_pass_check" placeholder="동일한 비밀번호를 입력하세요" name="mem_pass_check" required>
 			    <div id="passchkres"></div>
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_nknm">닉네임&nbsp;&nbsp;</label>
+			    <label class="inputlabel" for="mem_nknm">닉네임&nbsp;&nbsp;</label>
 				<input type="button" id="dncheck" value="닉네임 중복확인" class="btnCheck"><br>
 				<input type="text" class="inputPlace" id="mem_nknm" placeholder="닉네임을 입력하세요" name="mem_nknm" required>
 				<p class="instructor">※ 닉네임은 3 ~12자 사이 영어 대,소문자 및 숫자</p>
@@ -211,12 +221,12 @@
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_nm">이름</label> <br>
+			    <label class="inputlabel" for="mem_nm">이름</label> <br>
 			    <input type="text" class="inputPlace" id="mem_nm" placeholder="이름을 입력하세요" name="mem_nm" required>
 			</div>
 			
 			<div class="form-group">
-		     	<label for="mem_regno1" >주민등록번호</label><br>
+		     	<label  class="inputlabel" for="mem_regno1" >주민등록번호</label><br>
 				<div class="regNo-input" style="display:inline;">
 				<input type="text" class="inputPlace" id="mem_regno1" name="mem_regno1"> -
 				<input type="text" class="inputPlace" id="mem_regno2" name="mem_regno2">
@@ -224,22 +234,22 @@
 		    </div>
 		    
 			<div class="form-group">
-		     	<label for="mem_email">이메일 주소</label> <br>
+		     	<label class="inputlabel" for="mem_email">이메일 주소</label> <br>
 				<input type="email" class="inputPlace" id="mem_email" placeholder="이메일 주소를 입력하세요 (ex:12345@abcde.com)" name="mem_email" required>
 			</div>
 			
 			<div class="form-group">
-			    <label for="mem_addr1">집 주소</label> <br>
+			    <label class="inputlabel" for="mem_addr1">집 주소</label> <br>
 				<input type="text" class="inputPlace" id="mem_addr1" placeholder="주소를 입력하세요" name="mem_addr1" required>
 			</div>
 			
 			<div class="form-group">
-		        <label for="mem_addr2">상세 주소</label> <br>
+		        <label class="inputlabel" for="mem_addr2">상세 주소</label> <br>
 				<input type="text" class="inputPlace" id="mem_addr2" placeholder="상세주소를 입력하세요" name="mem_addr2" required>
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_qstn">비밀번호 찾기 질문 힌트</label><br>
+			     <label class="inputlabel" for="mem_qstn">비밀번호 찾기 질문 힌트</label><br>
 				 <select class="inputPlace" id="mem_qstn" name="mem_qstn">
 				 <option value="What is Your Father Name ?">아버지의 성함은?</option>
 				 <option value="What is Your Mother Name ?">어머니의 성함은 ?</option>
@@ -249,19 +259,20 @@
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_ans">비밀번호 찾기 답변 힌트</label> <br>
+			     <label class="inputlabel"  for="mem_ans">비밀번호 찾기 답변 힌트</label> <br>
 				 <input type="text" class="inputPlace" id="mem_ans" placeholder="답변을 입력하세요" name="mem_ans" required>
 			</div>
 			
 			<div class="form-group">
-			     <label for="mem_ans">프로필 사진</label> <br>
-      		     <input type="file" class="fileInput" name="pfImg">
+			     <label  class="inputlabel" for="mem_ans">프로필 사진</label> <br>
+      		     <input type="file" id="fileInput" name="pfImg">
 			</div>
 			
 			<button type="submit" id="submitBtn">회원가입하기</button>
 
 		</form>
 		</section>
-	</div>
+
+
 </body>
 </html>
