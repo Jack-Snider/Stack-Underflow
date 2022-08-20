@@ -108,6 +108,8 @@ div .mypage-logout-btn{
 	margin : 10px;
 	height : 66.5%;
 }
+
+
 /*
 #content-wrapper > #content-left{
 	display : inline-block;
@@ -143,7 +145,7 @@ div .mypage-logout-btn{
  
 <div id="content-wrapper">
 	<div id="content-upper">
-	사진 랭크
+	사진 랭크	
 	</div>
 	<!--  
 	<div id="content-left">
