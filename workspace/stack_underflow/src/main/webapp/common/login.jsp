@@ -118,6 +118,7 @@ if (session.getAttribute("Mem_vo") == null) {
 %>
 <script>alert("<%=session.getAttribute("Mem_name")%>님 환영합니다.");
 location.href="../basic_frame/main.jsp";
+
 </script>
 <%
 }
