@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* header style 시작 */
+#header{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fafafa;
+    color:#949392;
+    z-index: 1000;
+    height: 100px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+    line-height:39px;
+    height: 66px;
+    font-size : 18px;
+    box-shadow: 2px 1px 6px 0px;
+}
+
+#header h1{
+    font-size : 18px;
+    font-weight:normal;
+    line-height: 46px;
+    font-family: 'Stick No Bills', sans-serif; 
+}
+
+#header a{
+     text-decoration: none;
+     float: left;
+    margin-left: 10px;
+    color: black;
+    
+    margin-left:28px;
+    font-size : 18px;
+}
+
+#header a:hover{
+     color : green;
+}
+
+#header a:after{ 
+      display:block;/*a요소를 블록 요소라고 선언*/
+      content: '';
+      border-bottom: solid 2px green; /* 및줄 색  */
+      transform: scaleX(0);/*크기를 0으로 줌으로써 평상시엔 밑줄 없음*/
+      transition: transform 250ms ease-in-out;
+} 
+   
+#header a:hover:after{
+      transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
+}  
+
+#header #home{
+      font-size: 30px;
+}
+
+div .mypage-logout-btn{
+   clear: both;
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+}
+/* header style 끝 */

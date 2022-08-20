@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <link rel="stylesheet" type="text/css" href="../css/BasicStructor.css"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,22 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"> 
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cairo:wght@700&family=Fjalla+One&family=Oswald:wght@500&family=Russo+One&family=Staatliches&family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin: 65px;
+margin-top: 70px;
+}
+
+</style>
+
+
 <script>
 	$(function(){
 		$.ajax({
@@ -62,11 +79,27 @@
 </script>
 </head>
 <body>
+<div id="header">
+   <h1>
+      <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
+      <a id ="home" href = "../basic_frame/main.jsp">stack underflow</a>
+      <a id = "community" href = "../basic_frame/community.jsp">커뮤니티</a>
+      <a id = "rank" href = "../ranking/rankingBoard.jsp">랭킹</a>
+      <div class="mypage-logout-btn">
+         <a id = "mypage" href="../basic_frame/mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
+         <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+      </div> 
+   </h1>
+</div>
+<aside>
+</aside>
+<section id="ranking-header">
 <h1>랭킹보드</h1>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: gold;">gold</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: silver;">silver</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: brown;">brown</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: black;">Unranked</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: gold;">Gold&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: silver;">Silver&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: brown;">Bronze&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: black;">Unranked&nbsp;&nbsp;</i>
+</section>
 <div id="board-container">
 </div>
 </body>
