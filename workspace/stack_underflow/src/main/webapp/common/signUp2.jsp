@@ -185,21 +185,23 @@
 <div id="header">
    <h1>
       <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
-      <a id ="home" href = "signUp2.jsp">stack underflow</a>
+      <a id ="home" href = "../common/login.jsp">stack underflow</a>
       <div class="mypage-logout-btn">
       </div> 
    </h1>
 </div>
 
 
-<header>
-<h1 class ="h1css"><i class="fa-brands fa-stack-exchange"></i>
-		Stack Underflow 회원가입</h1>
-<button id="loginbackBtn" name="loginbackBtn">로그인 페이지로</button>
-</header>
+
+
+
 <section class="card">
 		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();"action="<%=request.getContextPath()%>/InsertMember.do">
-		
+		<div>
+		<h1 class ="h1css"><i class="fa-brands fa-stack-exchange"></i>
+		Stack Underflow - Sign Up</h1>
+        <button id="loginbackBtn" type="button" name="loginbackBtn">로그인 페이지로</button>
+		</div>		
 			<div class="form-group">
 			   <label class="inputlabel" for="mem_id">ID&nbsp;&nbsp;</label> 
 			   <input type="button" id="idcheck" value="아이디 중복체크" class="btnCheck"><br>

@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/BasicStructor.css"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +30,7 @@ String identify = ""; // 쿠키값이 저장될 변수
 String chk = ""; // 체크박스 체크용 변수
 
 Cookie[] cookies = request.getCookies(); // 쿠키정보 가져오기
+
 
 if (cookies != null) {
 	for (Cookie cookie : cookies) {
@@ -51,6 +53,13 @@ if (cookies != null) {
 </head>
 
 <body>
+<div id="header">
+   <h1>
+      <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
+      <a id ="home" href = "login.jsp">stack underflow</a>
+    
+   </h1>
+</div>
 
 <!-- id 값이 null값일 때 처리하는기능 -->
 
@@ -96,7 +105,7 @@ if (session.getAttribute("Mem_vo") == null) {
 		
 		<div class=findlink>
 			<a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=500, height=500'); return false;">&nbsp;&nbsp;아이디 찾기&nbsp;&nbsp; </a>|
-			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">&nbsp;&nbsp;비밀번호 찾기 </a>
+			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=500, height=500'); return false;">&nbsp;&nbsp;비밀번호 찾기 </a>
 		</div>
 		 <hr size="5" color="green">
 		<input type="button" value="아직 회원이 아니신가요?" id="sgnupbtn" name="sgnupbtn" class="inputClass" >
@@ -108,7 +117,8 @@ if (session.getAttribute("Mem_vo") == null) {
 }else{
 %>
 <script>alert("<%=session.getAttribute("Mem_name")%>님 환영합니다.");
-location.href="../basic_frame/frame.jsp";
+location.href="../basic_frame/main.jsp";
+//location.href="../basic_frame/frame.jsp";
 </script>
 <%
 }

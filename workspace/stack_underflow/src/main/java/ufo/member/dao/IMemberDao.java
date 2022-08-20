@@ -24,6 +24,10 @@ public interface IMemberDao {
 	public int updateScoreRank(Map<String, Object> map);
 	
 	public List<MemberVO> getMembersBySorting();
+	
+	public MemberVO getMemberInfo(String mem_id);
+	
+	public int updateMemberInfo(MemberVO memVo);
 	/* 호겸 끝 */
 	
 	

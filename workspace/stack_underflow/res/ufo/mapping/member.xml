@@ -45,6 +45,15 @@
 	  <select id="getMembersBySorting" resultClass="memberVo">
 	  	select * from member order by mem_score desc, mem_snu_date asc
 	  </select>
+	  
+	  <select id="getMemberInfo" parameterClass="String" resultClass="memberVo">
+	  	select * from member where mem_id = #mem_id#
+	  </select>
+	  
+	  <update id="updateMemberInfo" parameterClass="memberVo">
+	  	update member set mem_nknm = #mem_nknm#, mem_email = #mem_email#, mem_addr1 = #mem_addr1#, mem_addr2 = #mem_addr2#
+	  	where mem_id = #mem_id#
+	  </update>
 	  <!-- 호겸 끝 -->
 
 	

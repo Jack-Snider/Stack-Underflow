@@ -127,6 +127,10 @@ public class postController extends HttpServlet {
          'Part이름'은 <form>태그 안의 입력요소의 name속성값으로 구별한다.
 	     */
 	    
+	    // 파일저장명 ( 이거로 나중에 파일객체 가져올거임 )
+	    String saveFileName = "";
+	    
+	    
 	    // 전체 Part객체 개수만큼 반복처리
 	    for(Part part : request.getParts()) {
 	        fileName = getFileName(part);
@@ -140,7 +144,7 @@ public class postController extends HttpServlet {
 	            
 	           // 실제 저장되는 파일이름이 중복되는 것을 방지하기 위해서 UUID를 이용해서
 	           // 중복되지 않는 파일명을 만든다.
-	           String saveFileName = UUID.randomUUID().toString();
+	           saveFileName = UUID.randomUUID().toString();
 	            
 	           // 새로 만들어진 저장파일명을 VO에 셋팅한다.
 	           fvo.setFile_save_name( saveFileName );
@@ -176,9 +180,11 @@ public class postController extends HttpServlet {
 	         file_service.insertFiles(fileVo);
 	      }
 	      
+	      FilesVO file = file_service.getFileBySaveName( saveFileName );
+	      
 //==============================================================================		
 		
-	    postVo.setFile_num( 264 ); // 여기서 파일 번호만 불러오면 됨...
+	    postVo.setFile_num( file.getFile_num() ); // 여기서 파일 번호만 불러오면 됨...
 	    int cnt = service.insertPost(postVo);
 		// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
 		if(cnt == 1) {

@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/6ef361a288.js" crossorigin="anonymous"></script>
 <!-- 헤더 시작 -->
 <script>
+
 $(function(){
 	 var shrinkHeader = 30;
 	  $(window).scroll(function() {
@@ -163,7 +164,7 @@ background : darkgray;
   
 	  <div class="mypage-login-btn">
 		  <a id = "mypage" href="mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
-		  <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+		  <a href="../jsp/logout.jsp" id = "logout"><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px" ></i>로그아웃</a>
 	  </div>
 	  
    </h1>

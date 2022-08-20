@@ -108,6 +108,8 @@ div .mypage-logout-btn{
 	margin : 10px;
 	height : 66.5%;
 }
+
+
 /*
 #content-wrapper > #content-left{
 	display : inline-block;
@@ -125,6 +127,58 @@ div .mypage-logout-btn{
 /* content style 끝 */
 
 </style>
+<script>
+	$(function(){
+		$.ajax({
+			url : '/stack_underflow/getMemberInfo.do',
+			type : 'post',
+			success : function(res){
+				$('#mem_nm').attr("readonly", true).val(res.mem_nm);
+				$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
+				$('#mem_email').attr("readonly", true).val(res.mem_email);
+				$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
+				$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
+				$('#btn2').hide();
+			},
+			error : function(xhr){
+				alert(xhr.status);
+			},
+			dataType : 'json'
+		});
+		$('#btn1').on('click', function(){
+			//$('#mem_nm').attr("readonly", false); 
+			$('#mem_nknm').attr("readonly", false);
+			$('#mem_email').attr("readonly", false);
+			$('#mem_addr1').attr("readonly", false);
+			$('#mem_addr2').attr("readonly", false);
+			$('#btn2').show();
+		});
+		$('#btn2').on('click', function(){
+			let mem_nm = $('#mem_nm').val();
+			let mem_nknm = $('#mem_nknm').val();
+			let mem_email = $('#mem_email').val();
+			let mem_addr1 = $('#mem_addr1').val();
+			let mem_addr2 = $('#mem_addr2').val();
+			$.ajax({
+				url : '/stack_underflow/updateMemberInfo.do',
+				type : 'post',
+				data : {"mem_nknm" : mem_nknm, "mem_email" : mem_email, "mem_addr1" : mem_addr1, "mem_addr2" : mem_addr2},
+				success : function(res){
+					$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
+					$('#mem_email').attr("readonly", true).val(res.mem_email);
+					$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
+					$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
+					$('#btn2').hide();
+					alert("회원정보 수정이 완료됬습니다.");
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'json'
+			});
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -136,7 +190,7 @@ div .mypage-logout-btn{
 		<a id = "rank" href = "rankboard.jsp">랭킹</a>
 		<div class="mypage-logout-btn">
 			<a id = "mypage" href="mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
-			<a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+			<a href="../jsp/logout.jsp" id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
 		</div> 
 	</h1>
 </div>
@@ -144,6 +198,11 @@ div .mypage-logout-btn{
 <div id="content-wrapper">
 	<div id="content-upper">
 	사진 랭크
+	<!-- Jack Snider 시작 -->
+		
+		
+		
+	<!-- Jack Snider 끝 -->
 	</div>
 	<!--  
 	<div id="content-left">
@@ -156,7 +215,18 @@ div .mypage-logout-btn{
 	</div>
 	-->
 	<div id="content-bottom">
-	카테고리 정보
+		<label for="mem_nm">이름</label><br>
+		<input type="text" id="mem_nm" name="mem_nm"><br>
+		<label for="mem_nknm">닉네임</label><br>
+		<input type="text" id="mem_nknm" name="mem_nknm"><br>
+		<label for="mem_email">이메일</label><br>
+		<input type="text" id="mem_email" name="mem_email"><br>
+		<label for="mem_addr1">주소</label><br> 
+		<input type="text" id="mem_addr1" name="mem_addr1"><br>
+		<label for="mem_addr2">상세주소</label><br> 
+		<input type="text" id="mem_addr2" name="mem_addr2"><br>
+		<input type="button" id="btn1" value="수정">
+		<input type="button" id="btn2" value="완료">
 	</div>
 </div>
 
