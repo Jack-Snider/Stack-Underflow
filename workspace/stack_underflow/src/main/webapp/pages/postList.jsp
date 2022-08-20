@@ -134,9 +134,15 @@
 				<td width = "15%"><%= postVo.getMem_id() %></td>
 				<td width = "10%"><%= postVo.getPost_views() %></td>
 				<td width = "15%"><%= postVo.getPost_reg_date() %></td>
-				<td width = "8%"><%= postVo.getFile_num() %></td>
+				
+				<!-- 첨부 ( 다운로드 파일 ) -->
+				<td width = "8%">
+					<a href = "<%= request.getContextPath()%>/downloadFile.do?fileNo=<%= postVo.getFile_num() %>">
+						Download
+					</a>
+				</td>
+				
 			</tr>
-			
 			
 			<%		}
 				}else{		

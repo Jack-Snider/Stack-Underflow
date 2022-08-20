@@ -38,11 +38,11 @@ public class FilesDaoImpl implements IFilesDao{
 	
 	// 파일 가져오기
 	@Override
-	public FilesVO getFile( FilesVO fvo ) {
+	public FilesVO getFile( int fileNo ) {
 		
 		FilesVO file = null;
 		try {
-			file = (FilesVO) smc.queryForObject( "files.getFile" , fvo);
+			file = (FilesVO) smc.queryForObject( "files.getFile" , fileNo );
 		} catch (SQLException e) {
 			// TODO: handle exception
 			file = null;

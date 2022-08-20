@@ -28,9 +28,9 @@ public class FilesServiceImpl implements IFilesService{
 	/* Jack Snider 시작 */
 	// 파일 가져오기
 	@Override
-	public FilesVO getFile(FilesVO fvo) {
+	public FilesVO getFile( int fileNo ) {
 		// TODO Auto-generated method stub
-		return dao.getFile( fvo );
+		return dao.getFile( fileNo );
 	}
 	/* Jack Snider 끝 */
 
