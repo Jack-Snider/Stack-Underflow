@@ -164,7 +164,12 @@ div .mypage-logout-btn{
  
 <div id="content-wrapper">
 	<div id="content-upper">
-	사진 랭크	
+	사진 랭크
+	<!-- Jack Snider 시작 -->
+		
+		
+		
+	<!-- Jack Snider 끝 -->
 	</div>
 	<!--  
 	<div id="content-left">
