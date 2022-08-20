@@ -365,7 +365,11 @@
 			<!-- 첨부 파일 -->			
 			<tr>
 				<td>첨부 파일</td>
-				<td>다운로드</td>
+				<td>
+					<a href = "<%= request.getContextPath()%>/downloadFile.do?fileNo=<%= postVo.getFile_num() %>">
+						Download
+					</a>
+				</td>
 			</tr>
 			
 			<tr>
