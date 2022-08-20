@@ -34,7 +34,13 @@ $(function(){
 
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="title" style="width: 90%;">
+				<td><input type="text" name="title" style="width: 90%;"></td>
+				<td>
+					<select name = "boardKind">
+						<option>Tech</option>
+						<option>Free</option>
+						<option>Ask</option>
+					</select>
 				</td>
 			</tr>
 			<tr>

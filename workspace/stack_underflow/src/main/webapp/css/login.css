@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
-<
-script src ="https: //kit.fontawesome.com /6ef361a288.js " crossorigin
-	="anonymous ">StACK </script>body {
+body {
 	color: #FEFEFE;
 	font: 100 100%/1.6 "Heebo", sans-serif;
 	overflow-x: hidden;
@@ -31,7 +29,7 @@ script src ="https: //kit.fontawesome.com /6ef361a288.js " crossorigin
 	border-radius: 15px;
 	box-shadow: 0 10px 35px 0 rgba(54, 33, 0, 0.65);
 	color: white;
-	max-width: 300px;
+	max-width: 500px;
 	overflow: hidden;
 	padding: 20px 30px 50px 30px;
 	opacity: 0.8;
@@ -44,32 +42,15 @@ script src ="https: //kit.fontawesome.com /6ef361a288.js " crossorigin
 	font-family: 'DynaPuff', cursive;
 	font-family: 'Silkscreen', cursive;
 	font-family: 'Stick No Bills', sans-serif;
-	font-size: 1.3rem;
+	font-size: 3rem;
 	font-weight: bolder;
-	margin-bottom: 5%;
 	color: black;
 	text-align: center;
 }
 
-#idInput {
-	margin-bottom: 5%;
-	width: 200;
-	height: 30;
-}
-
-#passInput {
-	margin-bottom: 4%;
-	width: 200;
-	height: 30;
-}
-
 .checkId_div {
-	position: relative;
-	left: 110px;
-}
+	left: 210px;
 
-#chkid_input {
-	top: 5px;
 }
 
 #chkid_label {
@@ -78,34 +59,38 @@ script src ="https: //kit.fontawesome.com /6ef361a288.js " crossorigin
 	font-weight: normal;
 }
 
-#loginbtn {
-	width: 200px;
-	height: 30px;
-}
-
 #sgnupbtn {
-	width: 200px;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	font-weight: bold;
-	text-decoration: underline;
-	height: 30px;
+	
+	margin-top:5% 
 }
 
 #loginbtn:hover {
-	background-color: blue;
+	background-color: green;
 	border-color: white;
 	color: white;
+	text-decoration: underline;
 }
 
 #sgnupbtn:hover {
-	background-color: blue;
+	background-color: green;
 	border-color: white;
 	color: white;
+	text-decoration: underline;
+	
 }
-
+.inputClass{
+	margin-bottom: 5%;
+	width: 400px;
+	height: 30px;
+}
+#idInput{
+	margin-top: 2%;
+}
 .findlink {
 	font-size: 0.8rem;
 	text-align: center;
 	color: black;
-	margin-top: 5%;
+	
 }

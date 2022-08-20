@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+.inputPlace {
+	height: 35px;
+	width: 350px;
+	font-size: 13px;
+	border: 1px solid;
+	border-radius: 7px;
+	border-color: #D7D7D7;
+	background-color: #CCFFE5;
+}
+.instructor{
+	font-size:15px; 
+}
+.btnCheck{
+	color: white;
+	background-color:black; 
+	border: 1px solid;
+	border-radius: 7px;
+	font-size: 13px;
+}
+.btnCheck:hover{
+	background-color: white;
+	border-color: black;
+	color: black;
+}
+#submitBtn{
+	height: 40px;
+	color: white;
+	background-color:black; 
+	border: 1px solid;
+	border-radius: 7px;
+	font-size: 15px;
+}
+#loginbackBtn{
+	height: 40px;
+	color: white;
+	background-color:green; 
+	border: 1px solid;
+	border-radius: 7px;
+	font-size: 15px;
+	position:absolute;
+	right: 565px;
+    top: 57px;
+}
+.flex {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.scene {
+	background: #362100
+		url("https://img.gta5-mods.com/q95/images/korea-police-computer-background-71c0a003-22ca-4ad7-9984-94a4bc56741f/831529-lspd.jpg")
+		center/cover;
+	height: 120vh;
+	position: relative;
+	
+	
+}
+section{
+	top:250px;
+}
+.card {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background: rgba(254, 254, 254, 0.075);
+	border: 1px solid rgba(254, 254, 254, 0.18);
+	border-radius: 15px;
+	box-shadow: 0 10px 35px 0 rgba(54, 33, 0, 0.65);
+	color: white;
+	max-width: 800px;
+	max-height:2000px;
+	overflow: hidden;
+	padding: 20px 30px 50px 30px;
+	opacity: 0.8;
+	position: relative;
+	text-align: left;
+	z-index: 1;
+	
+}
