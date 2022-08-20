@@ -20,8 +20,6 @@
 
 #mypage-login-btn{
 	display: inline;
-    position: relative;
-    left: 61%;
 	
 }
 
@@ -143,21 +141,22 @@ background : #adadad;
 
 }
 
-#container-div{
+/* #container-div{
  background : pink;
  width : 100%;
 
-}
+} 
 
-#content-container{
+*/
+ #content-container{
 
   width : 100%;
   display : flex;
   min-height : 900px;
-  background : pink;
+
   
 
-}
+} 
 
 #content-left{
    flex : 1;
@@ -376,23 +375,22 @@ border : 1px solid black;
     outline: 1px solid #1d5716;
     border-radius: 10px;
 }
-      body {
+/*       body {
         margin: 0;
 
-      }
-      .bodycontainer {
+      } */
 
-     width: 100vw;
-    height: 100vh;
-    background : pink;
-    display : felx;
-    flex-direction : column;
-    
-      }
 .header{
    flex : 1;
-    border : 1px solid black;
+    border : 1px solid black;    
 }
+.personel-stat-btn{
+   	clear: both;
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+            	
+            }
 
 
 #layoutcenter{
@@ -432,7 +430,7 @@ function searchToggle(obj, evt){
 
 </head>
 <body>
- <div class="bodycontainer">
+
 <div class="header">
   <h1>
   <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 2px;" ></i>
@@ -440,7 +438,7 @@ function searchToggle(obj, evt){
   <a class="headera" id = "community" href="community.jsp">커뮤니티</a>
   <a class="headera" id = "rank" href="">랭킹</a>
   
-	  <div id="mypage-login-btn">
+	  <div id="mypage-login-btn" class="personel-stat-btn">
 		  <a class="headera" id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
 		  <a class="headera" id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
 	  </div>
@@ -451,7 +449,7 @@ function searchToggle(obj, evt){
   
   
   
-<div id="layoutcenter">
+
 <div id="content-container">
    <div id="content-left">
 	   <div id="content-left-category">
@@ -500,12 +498,12 @@ function searchToggle(obj, evt){
 
 
 
-</div>
+
 
 <footer>
 <p>404</p>
 </footer>
-</div>
+
 
 </body>
 </html>

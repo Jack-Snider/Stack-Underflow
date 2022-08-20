@@ -13,12 +13,23 @@
 }
 			 */
 
+html, body{
+
+  margin : 0px;
+  width : 100%;
+  height : 100%;
+  
+}
+
+
 .back{
 
-  width : 100vw;
-  height : 100vh;
-  overflow: hidden;
-  /* display :  */
+ position: relative;
+ height: auto;
+ width: 500px;
+ margin: auto; <!-- 레이아웃을 싸고 있는 box의 margin을 auto로 주면 중앙정렬 효과-->
+ background-color: #F90;
+출처: https://pbvk.tistory.com/entry/웹표준-div-코딩-전체-레이아웃-잡기 [지누의 생활~속 발견:티스토리]
 
 }
 
