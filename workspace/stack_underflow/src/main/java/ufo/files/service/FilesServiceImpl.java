@@ -25,7 +25,7 @@ public class FilesServiceImpl implements IFilesService{
 	}
 
 	
-	/* Jack Snider 시작 */
+	
 	// 파일 가져오기
 	@Override
 	public FilesVO getFile( int fileNo ) {
@@ -33,5 +33,12 @@ public class FilesServiceImpl implements IFilesService{
 		return dao.getFile( fileNo );
 	}
 	/* Jack Snider 끝 */
+
+	// 파일저장명으로 파일객체 가져오기
+	@Override
+	public FilesVO getFileBySaveName(String file_save_name) {
+		// TODO Auto-generated method stub
+		return dao.getFileBySaveName( file_save_name );
+	}
 
 }

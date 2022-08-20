@@ -137,6 +137,7 @@
 				
 				<!-- 첨부 ( 다운로드 파일 ) -->
 				<td width = "8%">
+					<!-- 여기서 조건문을 걸어볼까?... -->
 					<a href = "<%= request.getContextPath()%>/downloadFile.do?fileNo=<%= postVo.getFile_num() %>">
 						Download
 					</a>

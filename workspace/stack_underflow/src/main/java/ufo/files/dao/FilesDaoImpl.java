@@ -52,6 +52,21 @@ public class FilesDaoImpl implements IFilesDao{
 		return file;
 	}
 
+	// 파일저장명으로 파일객체 가져오기
+	@Override
+	public FilesVO getFileBySaveName(String file_save_name) {
+		FilesVO file = null;
+		try {
+			file = (FilesVO) smc.queryForObject( "files.getFileBySaveName" , file_save_name );
+		} catch (SQLException e) {
+			// TODO: handle exception
+			file = null;
+			e.printStackTrace();
+		}
+		
+		return file;
+	}
+
 	/* Jack Snider 끝 */
 	
 }

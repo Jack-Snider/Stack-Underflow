@@ -15,6 +15,10 @@
 		<!-- 파일번호로 파일객체 가져오기 -->	
 		<select id = "getFile" parameterClass = "int" resultClass = "filesVo">
 			select * from FILES where file_num = #file_num#
-		</select>				
-
+		</select>	
+		
+		<!-- 파일비고와 파일저장명으로 파일객체 가져오기 -->			
+		<select id="getFileBySaveName" parameterClass="String" resultClass="filesVo">
+			select * from FILES where file_save_name = #file_save_name#
+		</select>
 </sqlMap>
