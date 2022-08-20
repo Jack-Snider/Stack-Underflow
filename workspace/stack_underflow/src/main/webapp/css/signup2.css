@@ -10,10 +10,11 @@
 	background-color: #CCFFE5;
 }
 .instructor{
-	font-size:15px; 
+	font-size:15px;
+	color:black; 
 }
 .btnCheck{
-	color: white;
+	color: white;	
 	background-color:black; 
 	border: 1px solid;
 	border-radius: 7px;
@@ -40,28 +41,23 @@
 	border-radius: 7px;
 	font-size: 15px;
 	position:absolute;
-	right: 565px;
+	right: 530px;
     top: 57px;
 }
-.flex {
-	align-items: center;
-	display: flex;
-	justify-content: center;
+header{
+	position:relative;
+	margin: 20px;
+	
 }
 
-.scene {
-	background: #362100
-		url("https://img.gta5-mods.com/q95/images/korea-police-computer-background-71c0a003-22ca-4ad7-9984-94a4bc56741f/831529-lspd.jpg")
-		center/cover;
-	height: 120vh;
-	position: relative;
-	
-	
-}
 section{
-	top:250px;
+	position:relative;
+	margin-top:50px;
+	left:30%;
+	
 }
 .card {
+	
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	background: rgba(254, 254, 254, 0.075);
@@ -75,7 +71,32 @@ section{
 	padding: 20px 30px 50px 30px;
 	opacity: 0.8;
 	position: relative;
+	top:20px
 	text-align: left;
 	z-index: 1;
 	
+}
+#loginbackBtn:hover{
+	height: 40px;
+	color: green;
+	background-color:white; 
+}
+.h1css {
+	font-family: 'DynaPuff', cursive;
+	font-family: 'Silkscreen', cursive;
+	font-family: 'Stick No Bills', sans-serif;
+	font-size: 3rem;
+	font-weight: bolder;
+	color: green;
+	text-align: center;
+}
+body{
+		background: #362100
+		url("https://www.myfreewalls.com/public/uploads/preview/4k-cyberpunk-neon-city-game-wallpaper-11631300087d5okgsbd05.jpg")
+		center/cover;
+	height: 100vh;
+	position: relative;
+}
+.inputlabel{
+	color:black;
 }

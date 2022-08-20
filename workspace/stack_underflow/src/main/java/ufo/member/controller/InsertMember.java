@@ -2,6 +2,7 @@ package ufo.member.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
@@ -35,6 +36,9 @@ public class InsertMember extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
+
 
 		MemberVO memVo = new MemberVO();
 		memVo.setMem_id(request.getParameter("mem_id"));
@@ -100,9 +104,19 @@ public class InsertMember extends HttpServlet {
 				int cnt2 = service.insertFiles(fvo);
 				
 				if (cnt2 != 0) {
-					response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
+					out.print("<html>");
+					out.print("<body>");
+					out.print("<script>alert('로그인페이지로 돌아갑니다');location.href='./common/login.jsp';</script>");
+					out.print("</body>");
+					out.print("</html>");
+					//response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
 				}else {
-					response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
+					out.print("<html>");
+					out.print("<body>");
+					out.print("<script>alert('파일이 등록되지 않았습니다.');</script>");
+					out.print("</body>");
+					out.print("</html>");
+					//response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
 				}
 				
 			}else {
@@ -130,14 +144,29 @@ public class InsertMember extends HttpServlet {
 				int cnt2 = service.insertFiles(fvo);
 				
 				if (cnt2 != 0) {
-					response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
+					out.print("<html>");
+					out.print("<body>");
+					out.print("<script>alert('로그인페이지로 돌아갑니다');location.href='./common/login.jsp';</script>");
+					out.print("</body>");
+					out.print("</html>");
+					//response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
 				}else {
-					response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
+					out.print("<html>");
+					out.print("<body>");
+					out.print("<script>alert('파일이 등록되지 않았습니다.');</script>");
+					out.print("</body>");
+					out.print("</html>");
+					//response.sendRedirect(request.getContextPath() + "/jsp/filesInsertFail.jsp");
 				}
 			}
 			
 		}else {
-			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
+			out.print("<html>");
+			out.print("<body>");
+			out.print("<script>alert('회원가입에 실패하셨습니다.');</script>");
+			out.print("</body>");
+			out.print("</html>");
+			//response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
 
 	}
