@@ -59,7 +59,7 @@ body{
 {
     font-size : 18px;
     font-weight:normal;
-    line-height: 66px;
+    line-height: 48px;
 
 }
 
