@@ -100,3 +100,12 @@ body{
 .inputlabel{
 	color:black;
 }
+#fileInput{
+	height: 25px;
+	width: 350px;
+	font-size: 13px;
+	border: 1px solid;
+	border-radius: 7px;
+	border-color: #D7D7D7;
+	background-color: #CCFFE5;
+}

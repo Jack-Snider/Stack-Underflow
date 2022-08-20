@@ -265,7 +265,7 @@
 			
 			<div class="form-group">
 			     <label  class="inputlabel" for="mem_ans">프로필 사진</label> <br>
-      		     <input type="file" class="fileInput" name="pfImg">
+      		     <input type="file" id="fileInput" name="pfImg">
 			</div>
 			
 			<button type="submit" id="submitBtn">회원가입하기</button>
