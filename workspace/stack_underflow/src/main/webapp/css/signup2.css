@@ -47,6 +47,7 @@
 header{
 	position:relative;
 	margin: 20px;
+	margin-top: 120px;
 	
 }
 
@@ -69,7 +70,7 @@ section{
 	max-height:2000px;
 	overflow: hidden;
 	padding: 20px 30px 50px 30px;
-	opacity: 0.8;
+	opacity: 0.7;
 	position: relative;
 	top:20px
 	text-align: left;
@@ -87,12 +88,12 @@ section{
 	font-family: 'Stick No Bills', sans-serif;
 	font-size: 3rem;
 	font-weight: bolder;
-	color: black;
+	color: green;
 	text-align: center;
 }
 body{
 		background: #362100
-		url("https://www.myfreewalls.com/public/uploads/preview/4k-cyberpunk-neon-city-game-wallpaper-11631300087d5okgsbd05.jpg")
+		url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-1000.jpg")
 		center/cover;
 	height: 100vh;
 	position: relative;
