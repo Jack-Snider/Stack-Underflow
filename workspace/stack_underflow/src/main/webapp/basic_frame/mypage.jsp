@@ -22,22 +22,9 @@
     
 <style>
 
-div.mypage-login-btn{
-	display: inline;
-    position: relative;
-    left: 61%;
-}
-
-p{
-	margin: 0;
-}
-
-body{
-	margin:0; 
-}
-
-.header{
-    position: fixed;
+/* header style 시작 */
+#header{
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -56,32 +43,28 @@ body{
     box-shadow: 2px 1px 6px 0px;
 }
 
-.header h1{
+#header h1{
     font-size : 18px;
     font-weight:normal;
     line-height: 46px;
  	font-family: 'Stick No Bills', sans-serif; 
 }
 
-.header.shrink h1{
-    font-size:24px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-a{
+#header a{
   	text-decoration: none;
   	float: left;
  	margin-left: 10px;
     color: black;
+    
+    margin-left:28px;
+ 	font-size : 18px;
 }
 
-a:hover{
+#header a:hover{
   	color : green;
 }
 
-a::after{ 
+#header a:after{ 
    	display:block;/*a요소를 블록 요소라고 선언*/
    	content: '';
    	border-bottom: solid 2px green; /* 및줄 색  */
@@ -89,240 +72,93 @@ a::after{
    	transition: transform 250ms ease-in-out;
 } 
    
-a:hover:after{
+#header a:hover:after{
    	transform: scaleX(1);/*a 속성에 hover시 기존 크기로*/
 }  
 
-#community{
- 	margin-left:28px;
- 	font-size : 18px;
-}
-
-#rank{
- 	margin-left:28px;
-	font-size : 18px;
-}
-
-#mypage{
-    margin-left: 28px;
-    font-size: 18px;   
-}
-
-#logout{
-    margin-left: 28px;
-    font-size: 18px;  
-}
-
-.home{
+#header #home{
    	font-size: 30px;
 }
 
-.header.shrink h1.fa-right-from-bracket{
-    margin-left: 4px;
+div .mypage-logout-btn{
+	clear: both;
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+}
+/* header style 끝 */
+
+/* content style 시작 */
+
+#content-wrapper{
+	margin : 250px auto;
+	border : 1px solid;
+	width : 1500px;
+	height : 1000px;
 }
 
-.content{
-	height:2000px;
-	background : green;
- /*just to get the page to scroll*/
+#content-wrapper > #content-upper{
+	border : 1px solid;
+	margin : 10px;
+	height : 30%;
 }
 
-/* 풋터 */
-footer{
-	width : 100%;
-	height : 100px;
-	background : #adadad;
+#content-wrapper > #content-bottom{
+	border : 1px solid;
+	margin : 10px;
+	height : 66.5%;
 }
-
-#container-div{
- 	background : pink;
- 	width : 100%;
-}
-
-#content-container{
-  	width : 100%;
- 	display : flex;
-  	min-height : 900px;
-  	backgroung : pink;
- 	min-height: 935px;
-}
-
-#content-left{
-   	flex : 1;
- 	border-right: 2px solid lightgray;
-}
-
-#content-center{
-   	flex : 4;
-}
-
-#content-right{
-    flex: 1;
-}
-
-#content-left-category{
-    width: 16.5%;
-    position: fixed;
-    margin-top: 45px;
-    height: 300px;
-}    
-
-#content-center-frame{
-   	width : 100%;
-   	height : 100%;
-   	display : flex;
-   	flex-direction : column;
-    padding: 30px;
-}
-
-#content-center-profil{
-    flex: 3;
-    margin-top: 66px;
-    box-shadow: 14px -7px 12px -4px lightgrey;
-    border-radius: 49px;
-    border: 2px solid darkgreen;
-    box-shadow: 11px -4px 13px darkgrey;
-}
-
-#content-center-profilmain{
-   	/*  border: 2px solid black; */
-    flex: 6;
-    margin-top: 30px;
-}
-
-
-#profil-frame{
-   	width : 100%;
-   	height : 100%;
-   	display : flex;
-} 
-
-#profil-category{
-    flex: 1;
-    margin-right: 35px;
-   /*  border: 2px solid darkgreen; */
-}
-
-#profil-main{
- 	border: 2px solid darkgreen;
-    flex: 4;
-    border-radius: 49px;
-    box-shadow: 14px -7px 12px -4px lightgrey;
-    box-shadow: 11px -4px 13px darkgrey;
-}
-
-#profil-category-frame{
-  	display : flex;
-  	flex-direction : column;
-  	width : 100%;
-  	height : 100%;
-} 
-
-/* 
-#profil-category1{
-border: 2px solid darkgreen;
-flex : 1;
-border-radius: 49px;
-}
-#profil-category2{
-border: 2px solid darkgreen;
-flex : 1;
-border-radius: 49px;
-} 
-*/
-
 /*
-.profil-category123{
-border: 2px solid darkgreen;
-width : 100%;
-border-radius: 28px;
-height: 87px;
-} 
+#content-wrapper > #content-left{
+	display : inline-block;
+	border : 1px solid;
+	margin : 10px;
+	width : 30%;
+	height : 62%;
+}
+
+#content-wrapper #content-left-category{
+	border : 1px solid;
+	margin : 10px;
+}
 */
+/* content style 끝 */
 
 </style>
-<script>
-
-$(document).ready(function(){
-	$('.menu').each(function(index){
-		$(this).attr('menu-index', index);
-	}).click(function(){
-		var index = $(this).attr('menu-index');
-		$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
-		$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
-	});
-});
-
-</script>
-
 </head>
 <body>
 
-<div class="header">
+<div id="header">
 	<h1>
 		<i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
-		<a class="home" href="main.jsp">stack underflow</a>
-		<a id = "community" href="community.jsp">커뮤니티</a>
-		<a id = "rank" href="">랭킹</a>
-		<div class="mypage-login-btn">
-			<a id = "mypage" href=""><i class="fa-solid fa-user" ></i>마이페이지</a>
+		<a id ="home" href = "main.jsp">stack underflow</a>
+		<a id = "community" href = "community.jsp">커뮤니티</a>
+		<a id = "rank" href = "rankboard.jsp">랭킹</a>
+		<div class="mypage-logout-btn">
+			<a id = "mypage" href="mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
 			<a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
 		</div> 
 	</h1>
 </div>
-
-<div id="content-container">
-   	
-   	<!-- 왼쪽 -->
-   	<div id="content-left"> 
-   		<div id="content-left-category"></div>	
+ 
+<div id="content-wrapper">
+	<div id="content-upper">
+	사진 랭크
 	</div>
-   
-	<!-- 가운데 -->
-	<div id="content-center">
-		<div id="content-center-frame">
-			<div id="content-center-profil"></div>
-			<div id="content-center-profilmain">
-				<div id="profil-frame">
-					<div id="profil-category">
-						<div class="container">
-						</div>	                   
-					</div>
-				<div id="profil-main"></div>
-				</div>
-			</div>
+	<!--  
+	<div id="content-left">
+		<div id="content-left-category">
+			<ul>
+				<li>회원 정보</li>			
+				<li>활동 목록</li>			
+			</ul> 
 		</div>
 	</div>
-	
-	<!-- 오른쪽 -->
-	<div id="content-right"></div>
-	
+	-->
+	<div id="content-bottom">
+	카테고리 정보
+	</div>
 </div>
-
-<!-- 
-<div id="container-div">
-<div class="row">
-왼쪽 div 
-<div class="col-2" style="background-color:white;">
-<div id="category">
-<i class="fa-solid fa-avocado"></i>
-<ul id="categoryul">
-<li>Home</li>
-<li><a href="" style="font-size: 20px;">기술 게시판</a></li>
-<li><a href=""style=" font-size: 20px;">자유 게시판</a></li>
-<li><a href="" style="font-size: 20px;">문의 게시판</a></li> 
-</ul>
-</div>  
-</div>
-<div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
-</div>
-</div> 
--->
-
-<!-- 아래 -->
-<footer>
-	<p>404</p>
-</footer>
 
 </body>
 </html>
