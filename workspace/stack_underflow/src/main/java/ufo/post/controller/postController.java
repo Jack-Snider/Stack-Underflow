@@ -73,7 +73,8 @@ public class postController extends HttpServlet {
 		int post_like = 0;
 		int post_dislike = 0;
 		//String post_udt_date = "2022-08-14";
-		int file_num = 83;
+
+		System.out.println("파일번호 : " + request.getParameter( "fileNo" ));
 		//String mem_id = request.getParameter( "memVoServlet" );
 		String mem_id = memVo.getMem_id();
 		String post_board_type = request.getParameter( "boardKind" );
@@ -84,15 +85,17 @@ public class postController extends HttpServlet {
 		String post_content = request.getParameter("content");
 		postVo.setPost_cont(post_content);
 
+		
 		postVo.setPost_views(post_views);
 		postVo.setPost_like(post_like);
 		postVo.setPost_dislike(post_dislike);
-		postVo.setFile_num(file_num);
+		
 		postVo.setPost_board_type(post_board_type);
 		postVo.setMem_id(mem_id);
 
 		service = PostServiceImpl.getInstance();
-		int cnt = service.insertPost(postVo);
+		
+		
 		
 		// PostVO 객체 생성
 		// PostVO postVo = new PostVO();
@@ -158,8 +161,10 @@ public class postController extends HttpServlet {
 	              e.printStackTrace();
 	           }
 	           
-	           fileList.add(fvo);   // upload된 파일 정보를 List에 추가하기
 	           
+	           
+	           fileList.add(fvo);   // upload된 파일 정보를 List에 추가하기
+	       
 	           
 	           
 	         }   // if문 끝...
@@ -173,7 +178,8 @@ public class postController extends HttpServlet {
 	      
 //==============================================================================		
 		
-		
+	    postVo.setFile_num( 264 ); // 여기서 파일 번호만 불러오면 됨...
+	    int cnt = service.insertPost(postVo);
 		// 가져온 post 목록 정보를 포워딩으로 View페이지에 보내준다.
 		if(cnt == 1) {
 			int currentPage = Integer.parseInt(request.getParameter("currentPage"));

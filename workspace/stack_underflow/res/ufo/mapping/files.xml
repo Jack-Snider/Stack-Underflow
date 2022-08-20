@@ -12,9 +12,9 @@
 			values(file_num_seq.nextval, #file_name#, #file_ext#, #file_size#, #file_save_name#, #file_etc#, #mem_id#)
 		</insert>	
 			
-		<!-- 파일 정보 가져오기 -->	
-		<select id = "getFile" parameterClass = "filesVo" resultClass = "filesVo">
-			select * from FILES mem_id = #mem_id# and file_save_name = #file_save_name#
+		<!-- 파일번호로 파일객체 가져오기 -->	
+		<select id = "getFile" parameterClass = "int" resultClass = "filesVo">
+			select * from FILES where file_num = #file_num#
 		</select>				
 
 </sqlMap>
