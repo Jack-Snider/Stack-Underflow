@@ -400,30 +400,7 @@ border : 1px solid black;
 </style>
 <script>
 
-$(document).ready(function(){
-	$('.menu').each(function(index){
-		$(this).attr('menu-index', index);
-	}).click(function(){
-		var index = $(this).attr('menu-index');
-		$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
-		$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
-	});
 
-
-});
-
-
-function searchToggle(obj, evt){
-    var container = $(obj).closest('.search-wrapper');
-        if(!container.hasClass('active')){
-            container.addClass('active');
-            evt.preventDefault();
-        }
-        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
-            container.removeClass('active');
-            // clear input
-            container.find('.search-input').val('');
-        }
 }
 
 </script>
