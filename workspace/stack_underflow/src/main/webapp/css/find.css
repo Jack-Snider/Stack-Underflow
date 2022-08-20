@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+h1{
+margin-bottom: 3%;
+}
+.findIdinput{
+margin: auto;
+display: block;
+}
+.labelPlace{
+margin-bottom: 3%;
+}
+.inputPlace{
+height:25px;
+width:250px;
+margin-bottom: 3%;
+border: 1px solid;
+	border-radius: 7px;
+}
+.findIdbtn{
+height: 40px;
+	color: white;
+	background-color:black; 
+	border: 1px solid;
+	border-radius: 7px;
+	font-size: 15px;
+}
+.findIdbtn:hover{
+height: 40px;
+	color: black;
+	background-color:white; 
+}
+.h1css {
+	font-family: 'DynaPuff', cursive;
+	font-family: 'Silkscreen', cursive;
+	font-family: 'Stick No Bills', sans-serif;
+	font-size: 2rem;
+	font-weight: bolder;
+	color: black;
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.findpassbtn{
+height: 30px;
+	color: white;
+	background-color:black; 
+	border: 1px solid;
+	border-radius: 7px;
+	font-size: 15px;
+}
+.findpassbtn:hover{
+	color: black;
+	background-color:white; 
+}
+p{
+	font-weight: bold;
+}
