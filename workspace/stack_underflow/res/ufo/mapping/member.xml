@@ -45,6 +45,10 @@
 	  <select id="getMembersBySorting" resultClass="memberVo">
 	  	select * from member order by mem_score desc, mem_snu_date asc
 	  </select>
+	  
+	  <select id="getMemberInfo" parameterClass="String" resultClass="memberVo">
+	  	select * from member where mem_id = #mem_id#
+	  </select>
 	  <!-- 호겸 끝 -->
 
 	

@@ -28,7 +28,8 @@
 					<div id = "right_side">
 						<!-- Jack Snider 시작 -->
 						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">게시판</a> <!-- 호겸 수정 -->
-						<a href = "../ranking/rankingBoard.jsp">랭킹</a>
+						<a href = "../ranking/rankingBoard.jsp">랭킹</a> <!-- 호겸 수정 -->
+						<a href = "./mypage.jsp">마이페이지</a> <!-- 호겸 수정 -->
 						<!-- Jack Snider 끝 -->
 					</div>
 				</div>

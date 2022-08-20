@@ -23,6 +23,8 @@ public interface IMemberService {
 	public void updateScoreRank();
 
 	public List<MemberVO> getMembersBySorting();
+	
+	public MemberVO getMemberInfo(String mem_id);
 	/* 호겸 끝 */
 	
 	/* Jack Snider 시작 */
