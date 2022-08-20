@@ -13,8 +13,8 @@
 		</insert>	
 			
 		<!-- 파일 정보 가져오기 -->	
-		<select id = "getFile" parameterClass = "int" resultClass = "filesVo">
-			
+		<select id = "getFile" parameterClass = "fileVo" resultClass = "filesVo">
+			select * from FILES mem_id = #mem_id# and file_save_name = #file_save_name#
 		</select>				
 
 </sqlMap>

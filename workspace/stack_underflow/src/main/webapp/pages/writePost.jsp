@@ -49,8 +49,9 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
+				<!-- 파일 첨부하기 -->
 				<td>첨부 파일</td>
-				<td><input type="file" name="file"></td>
+				<td><input type="file" name="file" multiple></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

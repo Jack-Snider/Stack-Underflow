@@ -34,4 +34,24 @@ public class FilesDaoImpl implements IFilesDao{
 		return cnt;
 	}
 
+	/* Jack Snider 시작 */
+	
+	// 파일 가져오기
+	@Override
+	public FilesVO getFile( FilesVO fvo ) {
+		
+		FilesVO file = null;
+		try {
+			file = (FilesVO) smc.queryForObject( "files.getFile" , fvo);
+		} catch (SQLException e) {
+			// TODO: handle exception
+			file = null;
+			e.printStackTrace();
+		}
+		
+		return file;
+	}
+
+	/* Jack Snider 끝 */
+	
 }

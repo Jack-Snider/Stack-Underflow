@@ -24,4 +24,14 @@ public class FilesServiceImpl implements IFilesService{
 		return dao.insertFiles(fvo);
 	}
 
+	
+	/* Jack Snider 시작 */
+	// 파일 가져오기
+	@Override
+	public FilesVO getFile(FilesVO fvo) {
+		// TODO Auto-generated method stub
+		return dao.getFile( fvo );
+	}
+	/* Jack Snider 끝 */
+
 }
