@@ -80,6 +80,11 @@ public class MemberServiceImpl implements IMemberService{
 	public List<MemberVO> getMembersBySorting(){
 		return dao.getMembersBySorting();
 	};
+	
+	@Override
+	public MemberVO getMemberInfo(String mem_id) {
+		return dao.getMemberInfo(mem_id);
+	};
 	/* 호겸 끝 */
 	
 	

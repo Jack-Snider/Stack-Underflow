@@ -127,6 +127,25 @@ div .mypage-logout-btn{
 /* content style 끝 */
 
 </style>
+<script>
+	$(function(){
+		$.ajax({
+			url : '/stack_underflow/getMemberInfo.do',
+			type : 'post',
+			success : function(res){
+				$('#mem_nm').val(res.mem_nm);
+				$('#mem_nknm').val(res.mem_nknm);
+				$('#mem_email').val(res.mem_email);
+				$('#mem_addr1').val(res.mem_addr1);
+				$('#mem_addr2').val(res.mem_addr2);
+			},
+			error : function(xhr){
+				alert(xhr.status);
+			},
+			dataType : 'json'
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -158,7 +177,16 @@ div .mypage-logout-btn{
 	</div>
 	-->
 	<div id="content-bottom">
-	카테고리 정보
+	<label for="mem_nm">이름</label><br>
+	<input type="text" id="mem_nm" name="mem_nm" readonly><br>
+	<label for="mem_nknm">닉네임</label><br>
+	<input type="text" id="mem_nknm" name="mem_nknm" readonly><br>
+	<label for="mem_email">이메일</label><br>
+	<input type="text" id="mem_email" name="mem_email" readonly><br>
+	<label for="mem_addr1">주소</label><br> 
+	<input type="text" id="mem_addr1" name="mem_addr1" readonly><br>
+	<label for="mem_addr2">상세주소</label><br> 
+	<input type="text" id="mem_addr2" name="mem_addr2" readonly>
 	</div>
 </div>
 
