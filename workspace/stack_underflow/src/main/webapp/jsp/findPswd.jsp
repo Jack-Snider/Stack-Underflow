@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<link rel="stylesheet" type="text/css" href="../css/find.css"/>
 <!DOCTYPE html>
 <html>
 <head>
 <!-- 강명범 시작 -->
 <meta charset="utf-8">
-<title>Insert title here</title>
+<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+<title>비밀번호 찾기</title>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -28,7 +30,7 @@ $(function(){
 </head>
 <body>
 
-	<h1>비밀번호 찾기</h1>
+	<h1 class ="h1css"><i class="fa-brands fa-stack-exchange">Stack Underflow 비밀번호찾기</i></h1>
 	<!--해당값이 아무것도 없을때 -->
 	<!--   <%
 	if (request.getAttribute("passVo1") == null) {
@@ -39,9 +41,9 @@ $(function(){
 		action="<%=request.getContextPath()%>/findPassQstn.do">
 		<div class="form-group">
 		<p>방법 1)</p>
-			<label for="findpass_IDLabel">필수입력) ID를 입력하세요</label><br> 
-			<input type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
-			<label for="mem_qstn">회원가입시 입력했던 질문과 답변으로 찾기</label><br>
+			<label  class="labelPlace" for="findpass_IDLabel">필수입력) ID를 입력하세요</label><br> 
+			<input  class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
+			<label  class="labelPlace" for="mem_qstn">회원가입시 입력했던 질문과 답변으로 찾기</label><br>
 			<select class="form-control" id="find-pass_qstn" name="find-pass_qstn">
 			<option value="What is Your Father Name ?">What is Your Father Name ?</option>
 			<option value="What is Your Mother Name ?">What is Your Mother Name ?</option>
@@ -50,20 +52,20 @@ $(function(){
 			</select>
 		</div>
 		<div class="form-group">
-			<label for="mem_ans">답변을 입력하세요</label> <br> 
-			<input type="text" class="form-control" id="find-pass_ans" placeholder="Enter Answer" name="find-pass_ans">
-			<button type="submit" name="change-passBtn" id="change-passBtn">비밀번호 변경하기</button>
+			<label  class="labelPlace" for="mem_ans">답변을 입력하세요</label> <br> 
+			<input  class="inputPlace" type="text" class="form-control" id="find-pass_ans" placeholder="Enter Answer" name="find-pass_ans">
+			<button class="findpassbtn" type="submit" name="change-passBtn" id="change-passBtn">비밀번호 변경하기</button>
 			<br><br>
 		</div>
 	</form>
 	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
 	
 	<p>방법 2)</p>
-		<label for="findpass_EmailLabel">필수입력) ID를 입력하세요</label><br> 
-		<input type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
-	    <label for="mem_passEmail">이메일을 입력하여 비밀번호 변경하기</label><br>
-		<input type="text" id="findpass_input_email" placeholder="Enter your email" name="findpass_input_email">
-		<button id="submitbtn" type="submit">인증메일 보내기</button><br>
+		<label    class="labelPlace" class="labelPlace" for="findpass_EmailLabel">필수입력) ID를 입력하세요</label><br> 
+		<input   class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
+	    <label   class="labelPlace"  class="labelPlace" for="mem_passEmail">이메일을 입력하여 비밀번호 변경하기</label><br>
+		<input   class="inputPlace" type="text" id="findpass_input_email" placeholder="Enter your email" name="findpass_input_email">
+		<button class="findpassbtn" id="submitbtn" type="submit">인증메일 보내기</button><br>
 
 	</form>
 	
@@ -77,7 +79,7 @@ $(function(){
 	%>	
 		<label>인증번호 확인</label>
 		<input type="text" placeholder="인증번호"  id="validateInput">
-		<button id="validateBtn" value="인증하기">버튼</button>
+		<button class="findpassbtn" id="validateBtn" value="인증하기">버튼</button>
 		
 	<%	
 		}
