@@ -185,7 +185,7 @@
 <div id="header">
    <h1>
       <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
-      <a id ="home" href = "signUp2.jsp">stack underflow</a>
+      <a id ="home" href = "../common/login.jsp">stack underflow</a>
       <div class="mypage-logout-btn">
       </div> 
    </h1>
