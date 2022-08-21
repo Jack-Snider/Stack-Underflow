@@ -34,7 +34,7 @@
 					<input class="inputPlace" type="text" name="InputNameText" placeholder="이름을 입력하세요."><br>
 					<label class="labelPlace">주민번호</label><br>
 					<input class="inputPlace" type="text" name="InputregNoText" placeholder="ex)123456-7891234('-'포함)."><br>
-					<input  type="submit"value="아이디찾기" class="findBtn"></form>
+					<input  type="submit" value="아이디찾기" class="findBtn"></form>
 				</div>
 </body>
 <!-- 강명범 끝 --> 

@@ -1,59 +1,77 @@
 @charset "UTF-8";
 
-h1{
-margin-bottom: 3%;
+h1 {
+	margin-bottom: 3%;
 }
-.findIdinput{
-margin: auto;
-display: block;
+
+.findIdinput {
+	margin: auto;
+	display: block;
 }
-.labelPlace{
-margin-top:3%;
-margin-bottom: 3%;
+
+.form-control {
+	margin-bottom: 3%;
 }
-.form-control{
-margin-bottom: 3%;	
-}
-.inputPlace{
-height:35px;
-width:250px;
-margin-bottom: 3%;
-border: 1px solid;
-border-radius: 7px;
-border-color: lightgray;
-}
-.inputPlace:hover{
-border-color: lightgray;
-background-color: #E3F6CE;
-border-color:#E3F6CE;
-}
-.findBtn{
-height: 35px;
-	color: white;
-	background-color:green; 
+
+.inputPlace {
+	height: 35px;
+	width: 250px;
+	margin-bottom: 3%;
 	border: 1px solid;
 	border-radius: 7px;
-	font-size: 15px;
+	border-color: lightgray;
 }
-.findBtn:hover{
-	color: black;
-	background-color:#E3F6CE; 
+
+.inputPlace:hover {
+	border-color: lightgray;
+	background-color: #E3F6CE;
 	border-color: #E3F6CE;
 }
+
+.findBtn {
+	height: 35px;
+	font-size: 13px;
+	background-color: #7d4687;
+	border-color: white;
+	color: white;
+	border: 2px outset #9572a5;
+	border-radius: 7px;
+}
+
+.findBtn:hover {
+	color: black;
+	background-color: #E3F6CE;
+	border-color: #E3F6CE;
+}
+
 .common {
-	font-family: 'DynaPuff', cursive;
-	font-family: 'Silkscreen', cursive;
+	margin-top: 5%;
 	font-family: 'Stick No Bills', sans-serif;
 	font-size: 2rem;
-	font-weight: bolder;
-	color: green;
 	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
-p{
+	background: linear-gradient(45deg, #621b70, #c58ad1);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 	font-weight: bold;
 }
-.findpasCommon{
-	margin-left:5%;
+
+p {
+	font-weight: bold;
+	margin-bottom: 5%;
+}
+p1{
+	font-size: 1rem;
+	text-decoration: underline;
+}
+.change_pass{
+	font-weight: bolder;
+}
+
+
+.findpasCommon {
+	margin-left: 5%;
+}
+#checkValid{
+	background-color: #00ff80;
 }
