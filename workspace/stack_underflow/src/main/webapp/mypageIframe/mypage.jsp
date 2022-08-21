@@ -378,7 +378,7 @@
                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Notifications</a>
                   </li> -->
                 </ul>
-                <form>
+                <form action = "서블릿 이동">
                   <div class="row mt-5 align-items-center">
                     <div class="col-md-3 text-center mb-5">
                       <div class="avatar avatar-xl">
@@ -387,7 +387,12 @@
                       </div>
                     </div>
                     <div class="col">
+                      <!-- Jack Snider 시작 -->
+                      <!-- 
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진수정</button>
+                       -->
+                      <input id = "profilePhoto" type = "file" class = "btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;"> 
+                      <!-- Jack Snider 끝 -->
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%;">탈퇴하기</button>
                       <div class="row align-items-center">
                         <div class="col-md-7">
