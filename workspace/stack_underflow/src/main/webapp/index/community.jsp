@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
 </head>
 <body>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
@@ -32,8 +34,8 @@
           <!-- 
           <li class="nav-item"><a class="nav-link" href="../communityList/index.html">커뮤니티</a></li>
            -->
-          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
-          <!-- Jack Snider 끝 -->
+          <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
+          <!-- Jack Snider 끝 --><%-- <%=request.getContextPath()%>/postList.do?currentPage=1 --%>
           <li class="nav-item"><a class="nav-link" href="#testimonials">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">마이페이지</a></li>
           
@@ -49,6 +51,6 @@
   </nav>
   <!-- 메뉴끝 -->
   
-  <iframe src="../communityList/cummuindex.jsp" style="width: 2000px; height: 1000px; "></iframe>
+  <iframe src="<%=request.getContextPath()%>/postList.do?currentPage=1" style="width: 2000px; height: 1000px; "></iframe>
 </body>
 </html>
