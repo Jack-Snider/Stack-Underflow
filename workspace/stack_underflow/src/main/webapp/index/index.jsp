@@ -34,11 +34,11 @@
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
            -->
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
-<<<<<<< HEAD
+
           <!-- Jack Snider 끝 -->
-=======
+
           <!-- Jack Snider 끝 --><%-- <%= request.getContextPath() %>/postList.do?currentPage=1 --%>
->>>>>>> cac807c8a69576e0fbea6bc820d88108f8825987
+
           <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 
