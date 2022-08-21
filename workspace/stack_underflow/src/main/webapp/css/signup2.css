@@ -33,6 +33,10 @@
 	border-radius: 7px;
 	font-size: 15px;
 }
+#submitBtn:hover{
+	color: white;
+	background-color:blue; 
+}
 #loginbackBtn{
 	height: 40px;
 	color: white;
@@ -40,9 +44,9 @@
 	border: 1px solid;
 	border-radius: 7px;
 	font-size: 15px;
-	position:absolute;
-	right: 530px;
-    top: 57px;
+	position:relative;
+	left:600px;
+    top: 1px;
 }
 header{
 	position:relative;
@@ -72,15 +76,16 @@ section{
 	padding: 20px 30px 50px 30px;
 	opacity: 0.7;
 	position: relative;
-	top:20px
+	top:20px;
 	text-align: left;
 	z-index: 1;
 	
 }
 #loginbackBtn:hover{
 	height: 40px;
-	color: green;
-	background-color:white; 
+	color: black;
+	background-color:#E3F6CE; 
+	border-color: #E3F6CE;
 }
 .h1css {
 	font-family: 'DynaPuff', cursive;
