@@ -33,7 +33,7 @@
           <!-- 
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
            -->
-          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
+          <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
           <!-- Jack Snider 끝 -->
           <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>

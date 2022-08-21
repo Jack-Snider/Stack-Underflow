@@ -34,7 +34,10 @@
 <script type="text/javascript">
 	
 		$(function() {
-		      
+		    
+			
+			location.href = "<%= request.getContextPath() %>/postList.do?currentPage=1";
+			
 			let currentPage = 1;
 			let column = "";
 			let condition = "";
@@ -112,13 +115,12 @@
 							<thead class="thead-primary">
 								<!-- Jack Snider 시작 -->
 								<tr>
-									<td align="center">
-									<select id="column">
+									<td align="center"><select id="column">
 											<option value="post_title">제목</option>
 											<option value="post_cont">내용</option>
 											<option value="mem_id">작성자</option>
 									</select> <input type="text" id="condition">
-									<button type="button" id="sort">검색</button></td>
+										<button type="button" id="sort">검색</button></td>
 								</tr>
 								<!-- Jack Snider 끝 -->
 							</thead>
