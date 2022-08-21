@@ -7,7 +7,7 @@ public class PageVO {
 	private int endPage;
 	private int totalPage;
 	private int count;
-	private static int perList = 3;
+	private static int perList = 10;
 	private static int perPage = 2;
 	public int getStart() {
 		return start;
