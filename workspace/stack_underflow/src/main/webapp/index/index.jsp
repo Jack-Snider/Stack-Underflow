@@ -28,7 +28,12 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란? ?</a></li>
+          <!-- Jack Snider 시작 -->
+          <!-- 
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
+           -->
+          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
+          <!-- Jack Snider 끝 -->
           <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
           </li>
@@ -168,7 +173,7 @@
           <div class="icon d-block fas fa-paper-plane"></div>
           <h3 class="display-3--title mt-1">커뮤니티</h3>
           <p class="lh-lg">
-           커뮤니티 페이지는 ~~를하는 페이지 이다?
+           커뮤니티 페이지는 개발자들이 자유롭게 질문도 올리고 의사소통을 하는 곳입니다.
           </p>
           <button type="button" class="rounded-pill btn-rounded border-primary">바로가기
             <span><i class="fas fa-arrow-right"></i></span>
@@ -245,7 +250,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                이번 프로젝트 정말 힘들었습니다..
+                말 길게하지마... 죽는 수 있어
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -258,12 +263,12 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-1.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/최현우.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
               <h3>최현우</h3>
-              <p class="fw-light">조장</p>
+              <p class="fw-light">PL</p>
             </div>
           </div>     
           <!-- CAROUSEL ITEM 2 -->
@@ -272,7 +277,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                이번 프로젝트 정말 힘들었습니다..
+                코드란.. 극복하는 것이다
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>

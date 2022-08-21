@@ -10,8 +10,6 @@
 
 	작성자 : Jack Snider
 
-
- 
  -->
 <!-- Jack Snider 시작 -->
 <html>
