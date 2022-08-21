@@ -1,0 +1,24 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu {
+    @include gradient;
+    background: linear-gradient(to right, rgb(199 229 204 / 95%), rgb(237 243 237 / 95%));
+
+    li {
+      padding: 0 0.7rem;
+
+      a {
+        color: $white;
+        padding: 0 0.7rem;
+        text-transform: capitalize;
+        font-weight: 600;      
+
+      }
+      &:hover {
+        color: $white;
+      }
+  
+    }
+    
+}

@@ -29,8 +29,8 @@
         <ul class="navbar-nav" style="margin-right: 430px;">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란? ?</a></li>
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">랭킹보드</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">마이페이지</a></li>
+          <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
+          <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
           </li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
