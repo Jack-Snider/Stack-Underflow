@@ -135,7 +135,7 @@
                         <img id = "profilePhoto" src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
                       </div>
                     </div>
-<<<<<<< HEAD
+
                     <div  class="col">
                       <!-- 호겸 수정
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진변경</button>                      
@@ -149,16 +149,10 @@
                       >
                       <!-- Jack Snider 끝 -->
                       <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button> <!-- 호겸 수정 -->
-=======
-                    <div class="col">
-                      <!-- Jack Snider 시작 -->
-                      <!-- 
-                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진수정</button>
-                       -->
-                      <input id = "profilePhoto" type = "file" class = "btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;"> 
-                      <!-- Jack Snider 끝 -->
-                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%;">탈퇴하기</button>
->>>>>>> f85ba466d4df8161479a0d10de4555eed8260a95
+
+                    
+                      
+
                       <div class="row align-items-center">
                         <div class="col-md-7">
                           <h4 class="mb-1">닉네임</h4>
