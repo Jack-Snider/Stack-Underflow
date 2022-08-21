@@ -14,9 +14,9 @@ body {
 }
 
 .scene {
-	background: #362100
-		url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-1000.jpg")
-		center/cover;
+	background: #362100;
+/* 		url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-1000.jpg")
+		center/cover; */
 	height: 100vh;
 	position: relative;
 }
@@ -39,14 +39,20 @@ body {
 }
 
 .common {
-	font-family: 'DynaPuff', cursive;
-	font-family: 'Silkscreen', cursive;
-	font-family: 'Stick No Bills', sans-serif;
-	font-size: 3rem;
-	font-weight: bolder;
-	color: green;
-	text-align: center;
+ 
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 3rem;
+
+    text-align: center;
+    background: linear-gradient(45deg, #621b70, #c58ad1);
+  
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
 }
+
 
 .checkId_div {
 	left: 210px;
@@ -60,30 +66,32 @@ body {
 }
 
 #loginbtn {
-	background-color: green;
+	background-color: #7d4687;
 	border-color: white;
 	color: white;
+	border: 2px outset #9572a5;
 }
 
 #sgnupbtn {
 	font-size: 1rem;
 	font-weight: bold;
-	background-color: green;
+	background-color: #7d4687;
 	border-color: white;
 	margin-top:5%; 
 	color:white;
+	border: 2px outset #9572a5;
 }
 
 #loginbtn:hover {
-	background-color:#E3F6CE;
-	border-color:#E3F6CE;
+	background-color:#f5aeea;
+	border-color:#f5aeea;
 	color: black;
 	text-decoration: underline;
 }
 
 #sgnupbtn:hover {
-	background-color:#E3F6CE;
-	border-color:#E3F6CE;
+	background-color:#f5aeea;
+	border-color:#f5aeea;
 	color: black;
 	text-decoration: underline;
 	
@@ -97,7 +105,7 @@ body {
 	border-color: lightgray;
 }
 .inputClass:hover{
-	background-color: #E3F6CE;
+	background-color: #f5aeea;
 }
 #idInput{
 	margin-top: 2%;
@@ -108,3 +116,10 @@ body {
 	color: black;
 	
 }
+
+a.hover{
+	
+	    color: darkviolet;
+    text-decoration: underline;
+}
+	
