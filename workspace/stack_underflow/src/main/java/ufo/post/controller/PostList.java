@@ -62,7 +62,7 @@ public class PostList extends HttpServlet {
 		//request.getRequestDispatcher("/communityList/cummuindex.jsp").forward(request, response);
 
 		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
-		request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
+		//request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
 
 
 		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
