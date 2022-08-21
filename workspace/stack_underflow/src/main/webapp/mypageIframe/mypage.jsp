@@ -131,10 +131,17 @@
                       </div>
                     </div>
                     <div class="col">
-                    <!-- 호겸 수정 시작 -->
-                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진변경</button>
-                      <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button>
-                    <!-- 호겸 수정 끝 --> 
+                      <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
+                      <!-- 호겸 수정
+                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진변경</button>                      
+                       -->
+                      <input	id = "editPhoto" type = "file" 
+                      			class = "btn btn-outline-success"
+                      			style="float: right;   margin-top: -9%; margin-right: 14%;"
+                      			accept="image/*"
+                      >
+                      <!-- Jack Snider 끝 -->
+                      <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button> <!-- 호겸 수정 -->
                       <div class="row align-items-center">
                         <div class="col-md-7">
                           <h4 class="mb-1">닉네임</h4>
