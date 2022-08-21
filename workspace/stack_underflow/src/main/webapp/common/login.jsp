@@ -86,6 +86,9 @@ if (session.getAttribute("Mem_vo") == null) {
 	<form onsubmit="return validateForm(this)" method="post" id="loginForm"
 		name="loginForm" action="<%=request.getContextPath()%>/login.do;">
 		
+		
+		
+		
 		<div>
 		
 		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>
