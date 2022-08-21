@@ -24,32 +24,56 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
-<!-- 아이디 체크값을 기억하는 기능  -->
-<%
-String identify = ""; // 쿠키값이 저장될 변수
-String chk = ""; // 체크박스 체크용 변수
-
-Cookie[] cookies = request.getCookies(); // 쿠키정보 가져오기
-
-
-if (cookies != null) {
-	for (Cookie cookie : cookies) {
-		String name = cookie.getName();
-		if ("USERID".equals(name)) { // 내가 원하는 쿠키가 있으면...
-	identify = cookie.getValue();
-	chk = "checked";
+	<!-- 아이디 체크값을 기억하는 기능  -->
+	<%
+		String identify = ""; // 쿠키값이 저장될 변수
+		String chk = ""; // 체크박스 체크용 변수
+		
+		Cookie[] cookies = request.getCookies(); // 쿠키정보 가져오기
+	
+	
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				String name = cookie.getName();
+				if ("USERID".equals(name)) { // 내가 원하는 쿠키가 있으면...
+			identify = cookie.getValue();
+			chk = "checked";
+				}
+			}
 		}
-	}
-}
-%>
-<!-- 회원가입 버튼을 눌렀을때 이동하는 기능 -->
-<script>
-	$(function(){
-		$('#sgnupbtn').on('click', function(){
-			location.href="<%=request.getContextPath()%>/common/signUp2.jsp";
+	%>
+	<!-- 회원가입 버튼을 눌렀을때 이동하는 기능 -->
+	<script>
+		$(function(){
+			$('#sgnupbtn').on('click', function(){
+				location.href="<%=request.getContextPath()%>/common/signUp2.jsp";
+			});
 		});
-	});
-</script>
+	</script>
+
+	<!-- <Jack Snider> -->
+	<script type="text/javascript">
+		// 파일 선택해서 이미지 업로드 하면 바로 프로필 사진란에 띄우기
+		
+		$('#profilePhoto').on('change', function(){
+			
+				let ext = $(this).val().split('.').pop().toLowerCase(); // 확장자
+				// 배열에 추출한 확장자가 존재하는지 체크
+				if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1){
+					resetFormElement($(this)); //폼 초기화
+                    window.alert('이미지 파일이 아닙니다! (gif, png, jpg, jpeg 만 업로드 가능)');
+				}else{
+					let file = $('#profilePhoto').pop('files')[0];
+					let blobURL = window.URL.createObjectURL(file);
+					 $('#image_preview img').attr('src', blobURL);
+                     $('#image_preview').slideDown(); //업로드한 이미지 미리보기 
+                     $(this).slideUp(); //파일 양식 감춤
+				}
+		});
+		
+	</script>
+	<!-- </Jack Snider> -->
+
 </head>
 
 <body>
@@ -86,9 +110,7 @@ if (session.getAttribute("Mem_vo") == null) {
 	<form onsubmit="return validateForm(this)" method="post" id="loginForm"
 		name="loginForm" action="<%=request.getContextPath()%>/login.do;">
 		
-		
-		
-		
+
 		<div>
 		
 		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>

@@ -100,6 +100,10 @@
 	});
 	// 호겸 끝
 	</script>
+	
+	
+	
+	
 	<!-- 호겸 시작 -->
 	<style>
 	#modal_mem_pass{
@@ -122,26 +126,39 @@
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">회원정보</a>
                   </li>
                 </ul>
-                <form>
+                <form action = "서블릿 이동">
                   <div class="row mt-5 align-items-center">
                     <div class="col-md-3 text-center mb-5">
-                      <div class="avatar avatar-xl">
-                      <!-- 프사 -->
-                        <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                      <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
+                      <div id = "image_preview" class="avatar avatar-xl">
+                      	<!-- 프사 -->
+                        <img id = "profilePhoto" src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
                       </div>
                     </div>
-                    <div class="col">
-                      <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
+<<<<<<< HEAD
+                    <div  class="col">
                       <!-- 호겸 수정
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진변경</button>                      
                        -->
+                      <label for="editPhoto">사진첨부</label> 
                       <input	id = "editPhoto" type = "file" 
+                      			name = "bf_file[]"
                       			class = "btn btn-outline-success"
                       			style="float: right;   margin-top: -9%; margin-right: 14%;"
                       			accept="image/*"
                       >
                       <!-- Jack Snider 끝 -->
                       <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button> <!-- 호겸 수정 -->
+=======
+                    <div class="col">
+                      <!-- Jack Snider 시작 -->
+                      <!-- 
+                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진수정</button>
+                       -->
+                      <input id = "profilePhoto" type = "file" class = "btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;"> 
+                      <!-- Jack Snider 끝 -->
+                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%;">탈퇴하기</button>
+>>>>>>> f85ba466d4df8161479a0d10de4555eed8260a95
                       <div class="row align-items-center">
                         <div class="col-md-7">
                           <h4 class="mb-1">닉네임</h4>
@@ -209,5 +226,31 @@
 		    </div>
 		  </div>
 		</div>
+		
+		
+		<!-- <Jack Snider> -->
+	<script>
+		
+		// 파일 선택해서 이미지 업로드 하면 바로 프로필 사진란에 띄우기
+		$('#editPhoto').on('change', function(){
+			
+				let ext = $(this).val().split('.').pop().toLowerCase(); // 확장자
+				// 배열에 추출한 확장자가 존재하는지 체크
+				if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1){
+					resetFormElement($(this)); //폼 초기화
+                    window.alert('이미지 파일이 아닙니다! (gif, png, jpg, jpeg 만 업로드 가능)');
+				}else{
+					let file = $('#editPhoto').prop('files')[0];
+					let blobURL = window.URL.createObjectURL(file);
+					$('#image_preview img').attr('src', blobURL);
+                    $('#image_preview').slideDown(); //업로드한 이미지 미리보기 
+                    $(this).slideUp(); //파일 양식 감춤
+				}
+		});
+		
+	</script>
+	<!-- </Jack Snider> -->
+		
+		
   </body>
 </html>
