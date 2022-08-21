@@ -167,7 +167,25 @@ div .mypage-logout-btn{
 	사진 랭크
 	<!-- Jack Snider 시작 -->
 		
+		<!--
 		
+			1.	회원이 기본 사진일 경우 -> 
+				회원이 회원가입때 등록했던 사진이 있을 경우 ->
+				
+			2.	사진편집 버튼을 누르고 사진을 저장하면 프로플사진에 즉시 업로드.
+			
+			
+		 
+		 -->
+		
+		 <div id = "profileBox">
+		 	<img alt="" src="../images/기본프로필.png" width = "100px" height = "100px">
+		 	
+		 	<form action="">
+		 		<input id = "editPhoto" type = "file" value = "사진편집">
+		 	</form>
+		 	
+		 </div>
 		
 	<!-- Jack Snider 끝 -->
 	</div>

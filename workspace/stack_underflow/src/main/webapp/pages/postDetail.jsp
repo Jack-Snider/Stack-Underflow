@@ -55,6 +55,33 @@
 		<!-- 댓글 관련 스크립트 by Jack Snider -->
 		<script type="text/javascript">
 		
+			/*
+			
+			
+				*이식하는 사람 필독*
+				
+				Ctrl + f 눌러서 '베이스 댓글' 검색하면 거기로 이동하는데
+				거기가 여기 postDetail.jsp 파일이 처음 호출 되면 
+				바로 보여지는 댓글 리스트임 근데 댓글에서 이벤트( 수정, 삭제, 등록 )가
+				일어나면 ajax로 실시간으로 반영되는데 여기서 중요하는거는
+				
+				베이스 댓글 부분의 태그들이랑 ajax에서 success부분의 태그가 같아야함.
+				이거 다 일일히 맞춰야함...
+				
+				그리고 주석에 권한 조건문이라고 써져있는 경우는 
+				댓글 작성자한테만 수정,삭제 버튼이 보이게 하는 조건이 있어서
+				이식할때 유심히 봐서 해야함.
+				
+				
+				-주의-
+				태그나 ajax안에 있는 태그들 같은 경우에도 태그안에 속성 입히는
+				것만 추가하면 되지 그 외의 경로나 그런것들은 건드릴 필요 없음.
+				
+
+				- Jack Snider -
+				
+			*/
+		
 			$(function(){
 				
 				let cmntNum = ''; // <- 댓글번호.. 최상위 변수~
@@ -190,10 +217,18 @@
 							let value = '';
 							
 							$.each(res, function(i,v){
+								
+								/*
+									v.cmnt_num은 반복문 돌면서 모든 댓글 리스트를 불러오는거고
+									cmntNum은 내가 누른 댓글에 대한 번호임
+									
+									그래서 두개가 같으면 내가 수정버튼을 누른 댓글의 창을 textarea로 바꿔줌
+									
+									else구문에선 그냥 댓글폼 쭉 출력해주면 됨...
+								*/
 								if( v.cmnt_num == cmntNum ){
 									value += "<hr>";
 									value += v.mem_id + " " + v.cmnt_date + "<br>";
-									//style="width: 90%; height: 100px" autofocus="autofocus"
 									value += "<textarea id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</textarea>"
 									value += "<br>";
 									value += "<br>";
@@ -250,7 +285,8 @@
 								
 								value += "<br>";
 								
-								// 여기서 조건 달기
+								// 댓글의 작성자와 현재 접속해있는 아이디가 같다면
+								// 수정, 삭제 버튼을 보여줌
 								if( v.mem_id == mem_id ){
 									value += "<br>";
 									value += "<button class = \"updateCmnt\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
@@ -430,6 +466,7 @@
 		
 		 
 		<!-- 여기가 댓글들 리스트 보여주는 곳 --> 
+		<!-- 베이스 댓글 -->
 		<div id = "commentList">
 	
 				<%
@@ -480,7 +517,9 @@
 					}
 				%>
 		</div>
-		<!-- 여기가 댓글들 리스트 보여주는 곳 -->
+		<!-- 여기가 댓글들 리스트 보여주는 곳 끝 -->
+		
+		
 		
 		<script type="text/javascript">
 		
