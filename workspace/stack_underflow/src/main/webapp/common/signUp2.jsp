@@ -182,23 +182,10 @@
 </style>
 </head>
 <body>
-<div id="header">
-   <h1>
-      <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
-      <a id ="home" href = "../common/login.jsp">stack underflow</a>
-      <div class="mypage-logout-btn">
-      </div> 
-   </h1>
-</div>
-
-
-
-
-
 <section class="card">
 		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();"action="<%=request.getContextPath()%>/InsertMember.do">
 		<div>
-		<h1 class ="h1css"><i class="fa-brands fa-stack-exchange"></i>
+		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>
 		Stack Underflow - Sign Up</h1>
         <button id="loginbackBtn" type="button" name="loginbackBtn">로그인 페이지로</button>
 		</div>		

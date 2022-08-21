@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Patrix, Bootstrap 5 Landing Page</title>
+    <title>Stack Underflow Page</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +28,7 @@
   		color: white;
 	}
 	</style>
+
 </head>
 <body>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
@@ -32,6 +37,7 @@
 <<!-- 메뉴 시작 -->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
+
       <div>
       	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
       </div>
