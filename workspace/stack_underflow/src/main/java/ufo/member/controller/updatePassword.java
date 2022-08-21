@@ -32,8 +32,8 @@ public class updatePassword extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8"); 
 		PrintWriter out = response.getWriter();
 
-		String pass = request.getParameter("change-passInput");
-		String passValidate = request.getParameter("change-passInput-validate");
+		String pass = request.getParameter("mem_pass");
+		String passValidate = request.getParameter("mem_pass_check");
 	
 		// 세션객체 생성
 				HttpSession session = request.getSession();

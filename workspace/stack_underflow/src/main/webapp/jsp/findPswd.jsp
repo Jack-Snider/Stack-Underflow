@@ -48,9 +48,9 @@ $(function(){
 	<form class="findPassQstn" method="post" action="<%=request.getContextPath()%>/findPassQstn.do">
 		<div class="form-group">
 		<p>방법 1)</p>
-			<label  class="labelPlace">필수입력) ID를 입력하세요</label><br><br>
+			<label  class="labelPlace"> - 필수입력) ID를 입력하세요</label><br><br>
 			<input  class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
-			<label  class="labelPlace" for="mem_qstn">회원가입시 입력했던 질문과 답변으로 찾기</label><br><br>
+			<label  class="labelPlace" for="mem_qstn"> - 회원가입시 입력했던 질문과 답변으로 찾기</label><br><br>
 			<select class="form-control" id="find-pass_qstn" name="find-pass_qstn">
 			<option value="What is Your Father Name ?">What is Your Father Name ?</option>
 			<option value="What is Your Mother Name ?">What is Your Mother Name ?</option>
@@ -68,9 +68,9 @@ $(function(){
 	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
 	
 	<p>방법 2)</p>
-		<label    class="labelPlace" class="labelPlace" for="findpass_EmailLabel">필수입력) ID를 입력하세요</label><br><br> 
+		<label    class="labelPlace" class="labelPlace" for="findpass_EmailLabel"> - 필수입력) ID를 입력하세요</label><br><br> 
 		<input   class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
-	    <label   class="labelPlace"  class="labelPlace" for="mem_passEmail">이메일을 입력하여 비밀번호 변경하기</label><br><br>
+	    <label   class="labelPlace"  class="labelPlace" for="mem_passEmail"> - 이메일을 입력하여 비밀번호 변경하기</label><br><br>
 		<input   class="inputPlace" type="text" id="findpass_input_email" placeholder="Enter your email" name="findpass_input_email">
 		<button class="findBtn" id="submitbtn" type="submit">인증메일 보내기</button><br>
 

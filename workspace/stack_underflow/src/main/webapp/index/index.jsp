@@ -479,7 +479,7 @@ animation: slide-mob 5s infinite;
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/최현우.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/profile1.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">

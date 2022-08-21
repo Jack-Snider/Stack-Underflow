@@ -14,28 +14,36 @@
 	color:black; 
 }
 .btnCheck{
-	color: white;	
-	background-color:black; 
-	border: 1px solid;
-	border-radius: 7px;
 	font-size: 13px;
+	background-color: #7d4687;
+	border-color: white;
+	color: white;
+	border: 2px outset #9572a5;
+	border-radius: 7px;
 }
-.btnCheck:hover{
-	background-color: white;
-	border-color: black;
+.btnCheck:hover{	
+	background-color:#f5aeea;
+	border-color:#f5aeea;
 	color: black;
+	text-decoration: underline;
+	font-weight: bold;
 }
 #submitBtn{
 	height: 40px;
-	color: white;
-	background-color:black; 
-	border: 1px solid;
-	border-radius: 7px;
 	font-size: 15px;
-}
-#submitBtn:hover{
+	background-color: #7d4687;
+	border-color: white;
 	color: white;
-	background-color:blue; 
+	border: 2px outset #9572a5;
+	border-radius: 7px;
+
+}
+#submitBtn:hover{	
+	background-color:#f5aeea;
+	border-color:#f5aeea;
+	color: black;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 header{
@@ -90,24 +98,22 @@ background-color:#f5aeea;
 .common {
  font-family: 'Stick No Bills', sans-serif;
     font-size: 3rem;
-
     text-align: center;
     background: linear-gradient(45deg, #621b70, #c58ad1);
-  
-
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: bold;
 }
 body{
-		/*background: #362100
-		url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-1000.jpg")
+		background: #362100;
+		/*url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-1000.jpg")
 		center/cover;*/
 	height: 100vh;
 	position: relative;
 	background-color: #362100;
 }
+
 .inputlabel{
 	color:black;
 }
