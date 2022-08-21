@@ -65,13 +65,13 @@ public class PostList extends HttpServlet {
 		request.setAttribute("pageVo", vo);
 		request.setAttribute("currentPage", currentPage);
 		
-<<<<<<< HEAD
-		request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
+
+		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
 		//request.getRequestDispatcher("/communityList/cummuindex.jsp").forward(request, response);
-=======
+
 		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
 		request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
->>>>>>> cac807c8a69576e0fbea6bc820d88108f8825987
+
 		/* 호겸 끝 */
 		
 	}
