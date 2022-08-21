@@ -14,9 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- ////////////////////////////////////////////////////////////////////////////////////////
-                               메뉴 
-/////////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- 메뉴 시작 -->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
       <a class="navbar-brand" href="../index/index.jsp">
@@ -42,7 +40,7 @@
       </div>
     </div>
   </nav>
-  <!-- 메뉴끝 -->
+<!-- 메뉴 끝 -->
   
     <iframe src="../mypageIframe/mypage.jsp" style="width: 1903px; height: 1000px; margin-top: 4%;"></iframe>
 </body>

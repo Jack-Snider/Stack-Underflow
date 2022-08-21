@@ -28,6 +28,8 @@ public interface IMemberDao {
 	public MemberVO getMemberInfo(String mem_id);
 	
 	public int updateMemberInfo(MemberVO memVo);
+	
+	public int deleteMember(String mem_id);
 	/* 호겸 끝 */
 	
 	

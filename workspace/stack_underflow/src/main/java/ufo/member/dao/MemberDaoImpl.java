@@ -120,6 +120,18 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return cnt;
 	};
+	
+	@Override
+	public int deleteMember(String mem_id) {
+		int cnt = 0;
+		try {
+			cnt = smc.delete("member.deleteMember", mem_id);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	};
 	/* 호겸 끝 */
 
 	/* 명범 시작 */
