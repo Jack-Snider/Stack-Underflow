@@ -94,7 +94,7 @@ public class PostDetail extends HttpServlet {
 			request.setAttribute("detailPost", postVo); // 현재 게시글 객체
 			request.setAttribute("ismatch", isMatch); 
 			request.setAttribute( "detailCmnt" , cmntList );
-			request.getRequestDispatcher("/pages/postDetail.jsp").forward(request, response);
+			request.getRequestDispatcher("/rank/assets/postDetail.jsp").forward(request, response);
 			
 //			jsonData = gson.toJson(map);
 //			out.write(jsonData);	

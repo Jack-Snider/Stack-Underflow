@@ -28,10 +28,15 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란? ?</a></li>
+          <!-- Jack Snider 시작 -->
+          <!-- 
           <li class="nav-item"><a class="nav-link" href="../communityList/index.html">커뮤니티</a></li>
+           -->
+          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
+          <!-- Jack Snider 끝 -->
           <li class="nav-item"><a class="nav-link" href="#testimonials">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">마이페이지</a></li>
-          </li>
+          
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
           Logout

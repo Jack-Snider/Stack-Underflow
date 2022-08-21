@@ -28,9 +28,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란? ?</a></li>
-          <li class="nav-item"><a class="nav-link" href="./community.jsp">커뮤니티</a></li>
-          <li class="nav-item"><a class="nav-link" href="./rank.jsp">랭킹보드</a></li>
-          <li class="nav-item"><a class="nav-link" href="./mypage.jsp">마이페이지</a></li>
+
+          <!-- Jack Snider 시작 -->
+          <!-- 
+          <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
+           -->
+          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
+          <!-- Jack Snider 끝 -->
+          <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
+          <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
+
           </li>
         </ul>
         <button  onclick="location.href='../jsp/logout.jsp'" type="button" class="rounded-pill btn-rounded">
@@ -168,6 +175,7 @@
           <div class="icon d-block fas fa-paper-plane"></div>
           <h3 class="display-3--title mt-1">커뮤니티</h3>
           <p class="lh-lg">
+
            코드문제인가요? 여기서 해결하세요!
           </p>
           <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./community.jsp'">바로가기
@@ -245,7 +253,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                개발로 어려웠던 자들이여 스택언더플로우로 모여라
+                말 길게하지마... 죽는 수 있어
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -258,12 +266,12 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/profile1.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/최현우.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
               <h3>최현우</h3>
-              <p class="fw-light">조장</p>
+              <p class="fw-light">PL</p>
             </div>
           </div>     
           <!-- CAROUSEL ITEM 2 -->
