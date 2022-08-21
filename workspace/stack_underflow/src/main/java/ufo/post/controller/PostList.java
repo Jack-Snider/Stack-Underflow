@@ -19,20 +19,15 @@ import ufo.post.service.PostServiceImpl;
 import ufo.vo.PageVO;
 import ufo.vo.PostVO;
 
-/**
- * Servlet implementation class PostList
- */
+
 @WebServlet("/postList.do")
 public class PostList extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		System.out.println("이게 보이면 서블릿이 호출된겁니다.");
 		/* 호겸 시작 */
 		request.setCharacterEncoding("utf-8");
@@ -57,17 +52,18 @@ public class PostList extends HttpServlet {
 
 		List<PostVO> postList = service.getPostPerPage(map);
 		
-		if(postList==null) {
-			System.out.println("postList = null");
-		}
-		
 		request.setAttribute("postList", postList);
 		request.setAttribute("pageVo", vo);
 		request.setAttribute("currentPage", currentPage);
 		
 
+
 		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
 		//request.getRequestDispatcher("/communityList/cummuindex.jsp").forward(request, response);
+
+		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
+		request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
+
 
 		//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
 		request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
@@ -76,13 +72,8 @@ public class PostList extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
