@@ -9,10 +9,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Post List</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<!--  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+ 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
   		
 		<script type="text/javascript">
 		
@@ -66,10 +66,15 @@
 				justify-content: space-between;
 				width: 200px;
 			}
+			.h2, h2 {
+			    font-size: 2rem;
+			    margin-top: 6%;
+			}
+						
 		</style>
 		<!-- 호겸 끝 -->
 	</head>
-	<body>
+	<body style=" text-align: center;">
 		
 		<%
 		
@@ -81,27 +86,23 @@
 
 		%>
 		
-		<h2>게시글 목록</h2>
+		<h2 style="margin-top: 6%;">게시글 목록</h2>
 		<!-- 검색 폼 -->
 		<!-- 검색 버튼 따로 안누르면 그냥 자동으로 모든 게시글 나왔으면 좋겠다... -->
 		<!-- 호겸 수정 시작 -->
-			<table border = "1" width = "90%">
-				<tr>
-					<td align = "center">
-						<select id = "column">
+
+						<select id = "sel">
 							<option value = "post_title">제목</option>
 							<option value = "post_cont">내용</option>
 							<option value = "mem_id">작성자</option>
 						</select>
-						<input type = "text" id = "condition">
-						<button type = "button" id = "sort">검색</button>
-					</td>
-				</tr>
-			</table>			
+						<input type = "text" id = "">
+						<button type = "button" id = >검색</button>
+	
 		<!-- 호겸 수정 끝 --> 
 		
 		
-		<table border = "1" width = "90%">
+		<table border = "1" width = "60%" style="  text-align: center;">
 			<tr>
 				<th width = "10%">번호</th>
 				<th width = "*">
