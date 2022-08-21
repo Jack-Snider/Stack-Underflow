@@ -49,7 +49,7 @@
 		         listPagerServer(currentPage, column, condition);
 		      });
 		      
-		      // 이벤트 
+		      // 검색 이벤트 
 		     $('#sort').on('click', function(){
 		    	 column = $('#column').val();
 		    	 condition = $('#condition').val();
@@ -202,7 +202,7 @@ a:hover {
 				            <option value="post_cont">내용</option>
 				            <option value="mem_id">작성자</option>
 				        </select>
-					     	<input type = "text" id = "" style="    width: 18%;
+					     	<input type = "text" id = "condition" style="    width: 18%;
 							    height: 37px;
 							    border-radius: 11px;
 							    border: 1px solid li;
@@ -211,7 +211,7 @@ a:hover {
 							<button type = "button" style="
 							    border-radius: 5px;
 							    background: ghostwhite;" 
-							    id = >검색</button></p>
+							    id = "sort">검색</button></p>
                       <table class="table table-hover">
                         <thead>
                           <tr>

@@ -49,7 +49,7 @@
 			$('#mem_email').attr("readonly", false);
 			$('#mem_addr1').attr("readonly", false);
 			$('#mem_addr2').attr("readonly", false);
-			$('#btn2').show();
+			$('#main-btn2').show();
 		});
 		$('#main-btn2').on('click', function(){
 			let mem_nm = $('#mem_nm').val();
@@ -66,7 +66,7 @@
 					$('#mem_email').attr("readonly", true).val(res.mem_email);
 					$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
 					$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
-					$('#btn2').hide();
+					$('#main-btn2').hide();
 					alert("회원정보 수정이 완료됬습니다.");
 				},
 				error : function(xhr){

@@ -45,7 +45,7 @@
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
-          <a href="../jsp/logout.jsp">Logout</a>
+          <a href="../jsp/logout.jsp" style="text-decoration : none;">Logout</a>
           <span>
           </span>
         </button>
