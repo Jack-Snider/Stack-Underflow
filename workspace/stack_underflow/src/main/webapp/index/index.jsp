@@ -28,12 +28,19 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란? ?</a></li>
+
+          <!-- Jack Snider 시작 -->
+          <!-- 
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
+           -->
+          <li class="nav-item"><a class="nav-link" href="<%= request.getContextPath() %>/postList.do?currentPage=1">커뮤니티</a></li>
+          <!-- Jack Snider 끝 -->
           <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
+
           </li>
         </ul>
-        <button type="button" class="rounded-pill btn-rounded">
+        <button  onclick="location.href='../jsp/logout.jsp'" type="button" class="rounded-pill btn-rounded">
           Logout
           <span>
            
@@ -168,9 +175,10 @@
           <div class="icon d-block fas fa-paper-plane"></div>
           <h3 class="display-3--title mt-1">커뮤니티</h3>
           <p class="lh-lg">
-           커뮤니티 페이지는 ~~를하는 페이지 이다?
+
+           코드문제인가요? 여기서 해결하세요!
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">바로가기
+          <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./community.jsp'">바로가기
             <span><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
@@ -193,9 +201,9 @@
           <div class="icon d-block fas fa-code"></div>
           <h3 class="display-3--title mt-1">랭킹보드</h3>
           <p class="lh-lg">
-            오쪼구저쪼구
+            누가 가장 이 분야의 전문가 일까요
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">바로가기
+          <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./rank.jsp'">바로가기
             <span><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
@@ -208,9 +216,9 @@
           <div class="icon d-block fas fa-cloud-upload-alt"></div>
           <h3 class="display-3--title mt-1">마이페이지</h3>
           <p class="lh-lg">
-            오쪼구조쪼구
+            나의 정보를 확인해보세요
           </p>
-          <button type="button" class="rounded-pill btn-rounded border-primary">바로가기
+          <button type="button" class="rounded-pill btn-rounded border-primary" onclick="location.href='./mypage.jsp'" >바로가기
             <span><i class="fas fa-arrow-right"></i></span>
           </button>
         </div>
@@ -231,7 +239,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
   <div class="container">
     <div class="row text-center text-white">
-      <h1 class="display-3 fw-bold">Stack-underflow Team</h1>
+      <h1 class="display-3 fw-bold">Stack-Underflow Team</h1>
       <hr style="width: 100px; height: 3px; " class="mx-auto">
     </div>
 
@@ -245,7 +253,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                이번 프로젝트 정말 힘들었습니다..
+                말 길게하지마... 죽는 수 있어
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -258,12 +266,12 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-1.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/최현우.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
               <h3>최현우</h3>
-              <p class="fw-light">조장</p>
+              <p class="fw-light">PL</p>
             </div>
           </div>     
           <!-- CAROUSEL ITEM 2 -->
@@ -272,7 +280,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                이번 프로젝트 정말 힘들었습니다..
+                여기로 오면 이제 당신도 스티브 잡스,빌게이츠
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -285,7 +293,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-2.jpg" alt="client-2 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/profile2.jpg" alt="client-2 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -299,7 +307,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-                이번 프로젝트 정말 힘들었습니다..
+                야 너두 할 수 있어 고급개발자! 
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -312,7 +320,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-3.jpg" alt="client-3 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/profile3.jpg" alt="client-3 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
@@ -326,7 +334,7 @@
             <div class="testimonials__card">
               <p class="lh-lg">
                 <i class="fas fa-quote-left"></i>
-               이번 프로젝트 정말 힘들었습니다..
+               지식IN? 구글? No No 스택언더플로우~!!
                 <i class="fas fa-quote-right"></i>
                 <div class="ratings p-1">
                   <i class="fas fa-star"></i>
@@ -339,7 +347,7 @@
             </div>
             <!-- client picture  -->
             <div class="testimonials__picture">
-              <img src="images/testimonials/client-4.jpg" alt="client-4 picture" class="rounded-circle img-fluid">
+              <img src="images/testimonials/profile4.jpg" alt="client-4 picture" class="rounded-circle img-fluid">
             </div>
             <!-- client name & role  -->
             <div class="testimonials__name">
