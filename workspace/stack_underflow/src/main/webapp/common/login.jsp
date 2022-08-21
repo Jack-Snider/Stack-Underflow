@@ -53,13 +53,13 @@ if (cookies != null) {
 </head>
 
 <body>
-<div id="header">
+<!-- <div id="header">
    <h1>
       <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 2.3em;  float: left;  margin-left: 40px; margin-top: 11px;" ></i>
       <a id ="home" href = "login.jsp">stack underflow</a>
     
    </h1>
-</div>
+</div> -->
 
 <!-- id 값이 null값일 때 처리하는기능 -->
 
