@@ -108,6 +108,18 @@ public class MemberDaoImpl implements IMemberDao{
 		}
 		return memberInfo;
 	};
+	
+	@Override
+	public int updateMemberInfo(MemberVO memVo) {
+		int cnt = 0;
+		try {
+			cnt = smc.update("member.updateMemberInfo", memVo);
+		} catch (SQLException e) {
+			cnt = 0;
+			e.printStackTrace();
+		}
+		return cnt;
+	};
 	/* 호겸 끝 */
 
 	/* 명범 시작 */

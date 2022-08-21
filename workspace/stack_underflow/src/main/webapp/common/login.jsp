@@ -105,7 +105,7 @@ if (session.getAttribute("Mem_vo") == null) {
 		
 		<div class=findlink>
 			<a href="../jsp/findId.jsp" onclick="window.open(this.href, '_blank', 'width=500, height=500'); return false;">&nbsp;&nbsp;아이디 찾기&nbsp;&nbsp; </a>|
-			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=500, height=500'); return false;">&nbsp;&nbsp;비밀번호 찾기 </a>
+			<a href="../jsp/findPswd.jsp" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">&nbsp;&nbsp;비밀번호 찾기 </a>
 		</div>
 		 <hr size="5" color="green">
 		<input type="button" value="아직 회원이 아니신가요?" id="sgnupbtn" name="sgnupbtn" class="inputClass" >
@@ -117,7 +117,7 @@ if (session.getAttribute("Mem_vo") == null) {
 }else{
 %>
 <script>alert("<%=session.getAttribute("Mem_name")%>님 환영합니다.");
-location.href="../basic_frame/main.jsp";
+location.href="../index/index.jsp";
 //location.href="../basic_frame/frame.jsp";
 </script>
 <%

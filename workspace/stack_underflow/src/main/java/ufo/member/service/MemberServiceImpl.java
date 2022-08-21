@@ -85,6 +85,11 @@ public class MemberServiceImpl implements IMemberService{
 	public MemberVO getMemberInfo(String mem_id) {
 		return dao.getMemberInfo(mem_id);
 	};
+	
+	@Override
+	public int updateMemberInfo(MemberVO memVo) {
+		return dao.updateMemberInfo(memVo);
+	};
 	/* 호겸 끝 */
 	
 	

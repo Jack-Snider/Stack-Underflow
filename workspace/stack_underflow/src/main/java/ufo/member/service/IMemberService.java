@@ -25,6 +25,8 @@ public interface IMemberService {
 	public List<MemberVO> getMembersBySorting();
 	
 	public MemberVO getMemberInfo(String mem_id);
+	
+	public int updateMemberInfo(MemberVO memVo);
 	/* 호겸 끝 */
 	
 	/* Jack Snider 시작 */

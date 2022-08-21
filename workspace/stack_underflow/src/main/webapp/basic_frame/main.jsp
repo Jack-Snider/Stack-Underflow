@@ -147,7 +147,7 @@ background : green;
 footer{
 width : 100%;
 height : 100px;
-background : #adadad;
+background : darkgray;
 
 
 }
@@ -158,8 +158,8 @@ background : #adadad;
 <div class="header">
   <h1>
   <i class="fa-brands fa-stack-exchange" style="color : green; font-size : 1.7em; margin-bottom : 3px; float: left;  margin-left: 40px;" ></i>
-<a class="home" href="main.jsp">stack underflow</a>
-  <a id = "community" href="community.jsp">커뮤니티</a>
+<a class="home" href="main.jsp" style="font-size: 2.2em;  color: darkslategray;">stack underflow</a>
+  <a id = "community" href="freeboard.jsp">커뮤니티</a>
   <a id = "rank" href="">랭킹</a>
   
 	  <div class="mypage-login-btn">

@@ -133,16 +133,49 @@ div .mypage-logout-btn{
 			url : '/stack_underflow/getMemberInfo.do',
 			type : 'post',
 			success : function(res){
-				$('#mem_nm').val(res.mem_nm);
-				$('#mem_nknm').val(res.mem_nknm);
-				$('#mem_email').val(res.mem_email);
-				$('#mem_addr1').val(res.mem_addr1);
-				$('#mem_addr2').val(res.mem_addr2);
+				$('#mem_nm').attr("readonly", true).val(res.mem_nm);
+				$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
+				$('#mem_email').attr("readonly", true).val(res.mem_email);
+				$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
+				$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
+				$('#btn2').hide();
 			},
 			error : function(xhr){
 				alert(xhr.status);
 			},
 			dataType : 'json'
+		});
+		$('#btn1').on('click', function(){
+			//$('#mem_nm').attr("readonly", false); 
+			$('#mem_nknm').attr("readonly", false);
+			$('#mem_email').attr("readonly", false);
+			$('#mem_addr1').attr("readonly", false);
+			$('#mem_addr2').attr("readonly", false);
+			$('#btn2').show();
+		});
+		$('#btn2').on('click', function(){
+			let mem_nm = $('#mem_nm').val();
+			let mem_nknm = $('#mem_nknm').val();
+			let mem_email = $('#mem_email').val();
+			let mem_addr1 = $('#mem_addr1').val();
+			let mem_addr2 = $('#mem_addr2').val();
+			$.ajax({
+				url : '/stack_underflow/updateMemberInfo.do',
+				type : 'post',
+				data : {"mem_nknm" : mem_nknm, "mem_email" : mem_email, "mem_addr1" : mem_addr1, "mem_addr2" : mem_addr2},
+				success : function(res){
+					$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
+					$('#mem_email').attr("readonly", true).val(res.mem_email);
+					$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
+					$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
+					$('#btn2').hide();
+					alert("회원정보 수정이 완료됬습니다.");
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'json'
+			});
 		});
 	});
 </script>
@@ -200,16 +233,18 @@ div .mypage-logout-btn{
 	</div>
 	-->
 	<div id="content-bottom">
-	<label for="mem_nm">이름</label><br>
-	<input type="text" id="mem_nm" name="mem_nm" readonly><br>
-	<label for="mem_nknm">닉네임</label><br>
-	<input type="text" id="mem_nknm" name="mem_nknm" readonly><br>
-	<label for="mem_email">이메일</label><br>
-	<input type="text" id="mem_email" name="mem_email" readonly><br>
-	<label for="mem_addr1">주소</label><br> 
-	<input type="text" id="mem_addr1" name="mem_addr1" readonly><br>
-	<label for="mem_addr2">상세주소</label><br> 
-	<input type="text" id="mem_addr2" name="mem_addr2" readonly>
+		<label for="mem_nm">이름</label><br>
+		<input type="text" id="mem_nm" name="mem_nm"><br>
+		<label for="mem_nknm">닉네임</label><br>
+		<input type="text" id="mem_nknm" name="mem_nknm"><br>
+		<label for="mem_email">이메일</label><br>
+		<input type="text" id="mem_email" name="mem_email"><br>
+		<label for="mem_addr1">주소</label><br> 
+		<input type="text" id="mem_addr1" name="mem_addr1"><br>
+		<label for="mem_addr2">상세주소</label><br> 
+		<input type="text" id="mem_addr2" name="mem_addr2"><br>
+		<input type="button" id="btn1" value="수정">
+		<input type="button" id="btn2" value="완료">
 	</div>
 </div>
 
