@@ -511,7 +511,7 @@ margin-top: 70px;
       <a id = "rank" href = "../ranking/rankingBoard.jsp">랭킹</a>
       <div class="mypage-logout-btn">
          <a id = "mypage" href="../basic_frame/mypage.jsp"><i class="fa-solid fa-user" ></i>마이페이지</a>
-         <a id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
+         <a href="../jsp/logout.jsp" id = "logout" href=""><i class="fa-solid fa-right-from-bracket" style="margin-left : 4px"></i>로그아웃</a>
       </div> 
    </h1>
 </div>

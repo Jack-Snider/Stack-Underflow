@@ -75,15 +75,15 @@ body {
 }
 
 #loginbtn:hover {
-	background-color: white;
-	border-color: green;
+	background-color:#E3F6CE;
+	border-color:#E3F6CE;
 	color: black;
 	text-decoration: underline;
 }
 
 #sgnupbtn:hover {
-	background-color: white;
-	border-color: green;
+	background-color:#E3F6CE;
+	border-color:#E3F6CE;
 	color: black;
 	text-decoration: underline;
 	
@@ -91,7 +91,13 @@ body {
 .inputClass{
 	margin-bottom: 5%;
 	width: 400px;
-	height: 30px;
+	height: 40px;
+	border: 1px solid;
+	border-radius: 9px;
+	border-color: lightgray;
+}
+.inputClass:hover{
+	background-color: #E3F6CE;
 }
 #idInput{
 	margin-top: 2%;
