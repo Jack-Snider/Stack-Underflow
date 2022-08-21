@@ -37,21 +37,9 @@
 
 </head>
 <body>
-<<!-- 메뉴 시작 -->
+<!-- 메뉴 시작 -->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
-
-   
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav" style="margin-right: 430px;">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Stack-underflow란?</a></li>
-          <!-- Jack Snider 시작 -->
-          <!-- 
-
-           -->
 
       <div>
       	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
