@@ -387,7 +387,16 @@
                       </div>
                     </div>
                     <div class="col">
-                      <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진수정</button>
+                      <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
+                      <!-- 
+                      <button type="file" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진수정</button>                      
+                       -->
+                      <input	id = "editPhoto" type = "file" 
+                      			class = "btn btn-outline-success"
+                      			style="float: right;   margin-top: -9%; margin-right: 14%;"
+                      			accept="image/*"
+                      >
+                      <!-- Jack Snider 끝 -->
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%;">탈퇴하기</button>
                       <div class="row align-items-center">
                         <div class="col-md-7">

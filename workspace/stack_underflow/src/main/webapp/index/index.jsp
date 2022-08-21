@@ -19,7 +19,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="">    
         <img src="images/logo.png" alt="logo image">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,11 @@
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
            -->
           <li class="nav-item"><a class="nav-link" href="community.jsp">커뮤니티</a></li>
+
+          <!-- Jack Snider 끝 -->
+
           <!-- Jack Snider 끝 --><%-- <%= request.getContextPath() %>/postList.do?currentPage=1 --%>
+
           <li class="nav-item"><a class="nav-link" href="rank.jsp">랭킹보드</a></li>
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 
