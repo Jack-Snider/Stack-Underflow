@@ -90,6 +90,11 @@ public class MemberServiceImpl implements IMemberService{
 	public int updateMemberInfo(MemberVO memVo) {
 		return dao.updateMemberInfo(memVo);
 	};
+	
+	@Override
+	public int deleteMember(String mem_id) {
+		return dao.deleteMember(mem_id);
+	};
 	/* 호겸 끝 */
 	
 	
