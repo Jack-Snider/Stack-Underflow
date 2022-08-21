@@ -27,6 +27,177 @@
   		font-size: 1.3em;
   		color: white;
 	}
+	 
+  
+  /* 로고 위아래 움직임  */
+        .box{
+width: 100px;
+  animation: up-down 1.4s infinite ease-in-out alternate;
+}
+
+@keyframes up-down{
+  from{
+    transform: translatey(0px);
+  }
+  to{
+    transform: translatey(-20px);
+  }
+}
+
+.intro-section {
+    background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 글자 롤링  */
+.roller{
+    height: 5.3rem;
+    line-height: 6rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1D3557;
+}
+
+#spare-time{
+  	font-size: 1rem;
+  	font-style: italic;
+  	letter-spacing: 1rem;
+  	margin-top: 0;
+  	color: #A8DADC;
+  
+}
+
+.roller #rolltext {
+	position: absolute;
+    top: 0px;
+    animation: slide 20s infinite;
+    font-weight: 900;
+    color: navajowhite;
+    font-size: 1.5em;
+}
+
+@keyframes slide {
+	  0%{
+	    top:0rem;
+	  }
+	  10%{
+	    top: -7.1rem;    
+	  }
+	  20%{
+	    top: -13.2rem;
+	  }
+	  30%{
+	    top: -19.2rem;
+	  }
+	  
+	  40%{
+	    top : -25.2rem;
+	  }
+	  
+	  50%{
+	   top : -31.3rem;
+	  }
+	  
+	  60%{
+	   top : -37rem;
+	  }
+	  
+	  70%{
+	   top : -43.2rem;
+	  }
+	  
+	  80%{
+	   top : -49.1rem;
+	  
+	  }
+	  
+	  90%{
+	   top : -55.1rem;
+	  }
+}
+
+@media screen and (max-width: 600px){
+.rollh1{
+text-align:center;
+text-transform: uppercase;
+color: #F1FAEE; 
+font-size: 2.125rem;
+}
+  
+.roller{
+height: 3.6rem; 
+line-height: 2.125rem;  
+}
+  
+#spare-time {
+font-size: 1rem;
+letter-spacing: 0.1rem;
+}
+  
+.roller #rolltext {  
+animation: slide-mob 5s infinite;  
+}
+  
+  @keyframes slide-mob {
+  0%{
+    top:0rem;
+  }
+  10%{
+    top: -7.1rem;    
+  }
+  20%{
+    top: -13.1rem;
+  }
+  30%{
+    top: -19.1rem;
+  }
+  
+  40%{
+    top : -25.1rem;
+  }
+  
+  50%{
+   top : -31.1rem;
+  }
+  
+  60%{
+   top : -37.1rem;
+  }
+  
+  70%{
+   top : -46.1rem;
+  }
+  
+  80%{
+   top : -52.1rem;
+  
+  }
+  
+  90%{
+   top : -58.1rem;
+  }
+  
+}
+}
+
+
+.rollh1{
+	text-align: center;
+    text-transform: uppercase;
+    color: #F1FAEE;
+    font-size: 4rem;
+    font-weight: 600;
+    width: 134%;
+    margin-left: -165px;
+}
+}
+
 	</style>
 
 </head>
@@ -48,7 +219,7 @@
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
-          <a href="../jsp/logout.jsp">Logout</a>
+          <a href="../jsp/logout.jsp" style="text-decoration : none;">Logout</a>
           <span>
           </span>
         </button>
@@ -61,34 +232,69 @@
                             START SECTION 2 - THE INTRO SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-<section id="home" class="intro-section">
+<section id="home" class="intro-section" >
   <div class="container">
     <div class="row align-items-center text-white">
       <!-- START THE CONTENT FOR THE INTRO  -->
       <div class="col-md-6 intros text-start">
-        <h1 class="display-2">
-          <span class="display-2--intro">Stack-underflow에 오신것을 환영합니다.</span>
-          <span class="display-2--description lh-base">
-            this is a multi-purpose responsive layout created with bootstrap v5. 
-            (here your can place your description text)
-          </span>
+        <h1 class="display-2" >
+<!--         
+         <img src="../images/java.png" alt="mysql.png" class="z-idx"/>     
+          <img src="../images/css.png" alt="css.png" >
+           <img src="../images/api.png" alt="api.png" > -->
+         
+         
+     <h1 class="rollh1"> <div class="roller">
+    <span id="rolltext">
+    JAVA<br/>
+    CSS<br/>
+    ECLIPS<br/>
+    C#<br/>
+    C++<br/>
+    SQL<br/>
+    ORACLE<br/>
+    HTML<br/>
+    JS<br/>
+    PYTHON<br/> 
+    </div>
+    궁금할 땐 
+    지금 당장 <br/>
+    Stack underflow!!
+    </h1>
+ <!-- 
+          <span class="display-2--intro" >
+
+
+          Stack-underflow에 오신것을 환영합니다.</span>
+           -->
+          
+          
+          
+         <!--  <span class="display-2--description lh-base"> 작은글씨 </span> -->
         </h1>
         <!-- <button type="button" class="rounded-pill btn-rounded">Get in Touch
           <span><i class="fas fa-arrow-right"></i></span>
         </button> -->
-      </div>
+       </div> 
       <!-- START THE CONTENT FOR THE VIDEO -->
-      <div class="col-md-6 intros text-end">
-        <div class="video-box">
-          <img src="images/arts/intro-section-illustration.png" alt="video illutration" class="img-fluid">
-          <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">
-            <span>
-              <i class="fas fa-play-circle"></i>
-            </span>
-            <span class="border-animation border-animation--border-1"></span>
-            <span class="border-animation border-animation--border-2"></span>
-          </a>
-        </div>
+       <div class="col-md-6 intros text-end"> 
+   
+        <img src="../images/mysql.png" alt="mysql.png" class="box" id="sql">
+    <!--     <img src="../images/c#.png" alt="c#.png" class="box" id="sql"> -->
+        <img src="../images/css.png" alt="css.png" class="box" id="css">
+        <img src="../images/java.png" alt="mysql.png" class="box" id="java">
+        <img src="../images/js.png" alt="js.png" class="box" id="js">
+        <img src="../images/api.png" alt="api.png" class="box" id="api">
+        <img src="../images/c언어.png" alt="c언어.png" class="box" id="c언어">
+        <img src="../images/html.png" alt="html.png" class="box" id="html">
+        <img src="../images/spring.png" alt="spring.png" class="box" id="spring">
+        <img src="../images/오라클문자.png" alt="오라클문자.png" class="box" id="oracle">
+        <img src="../images/웹.png" alt="웹.png" class="box" id="web">
+        <img src="../images/이클립스.png" alt="이클립스.png" class="box" id="eclips">
+        <img src="../images/c.png" alt="c.png" class="box" id="eclips">
+        <!-- <img src="../images/배경3.png" alt="이클립스.png" id="mainImages"> -->
+
+
       </div>
     </div>
   </div>
@@ -149,7 +355,7 @@
 <section id="services" class="services">
   <div class="container">
     <div class="row text-center">
-      <h1 class="display-3 fw-bold">오버플로우의 기능들</h1>
+      <h1 class="display-3 fw-bold">언더플로우의 기능들</h1>
       <div class="heading-line mb-1"></div>
     </div>
   <!-- START THE DESCRIPTION CONTENT  -->
