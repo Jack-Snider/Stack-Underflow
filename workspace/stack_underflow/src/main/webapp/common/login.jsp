@@ -96,6 +96,7 @@ if (session.getAttribute("Mem_vo") == null) {
 		</div>
 		
 		
+		
 		<div class="input_class">
 		<input class="inputClass" type="text" name="idInput" id ="idInput"value="<%=identify%>"placeholder="ID를 입력하세요."><br>
 		<input type="password" class="inputClass" name="passInput" id ="passInput" placeholder="비밀번호를 입력하세요."><br>
