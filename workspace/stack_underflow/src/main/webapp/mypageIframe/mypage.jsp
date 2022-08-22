@@ -22,21 +22,39 @@
   	<% 
 		MemberVO memVo = (MemberVO)session.getAttribute("Mem_vo"); 
 		String mem_pass = memVo.getMem_pass();
-	%>
+	%> 
 	<!-- 호겸 끝 -->
   	<script>
   	// 호겸 시작
 	$(function(){
+		
+		var form = $('#uploadForm')[0];
+		var formData = new FormData(form);
+		
+		
+		$.ajax({
+			url : '/stack_underflow/profileUpload.do',
+			type : 'post',
+			data : formData,
+			        contentType : false,
+			        processData : false,   
+			success : function( res ){
+				
+			}
+		});
+		
+			
 		$.ajax({
 			url : '/stack_underflow/getMemberInfo.do',
 			type : 'post',
 			success : function(res){
+				alert($('#mem_nm'));
 				$('#mem_nm').attr("readonly", true).val(res.mem_nm);
 				$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
 				$('#mem_email').attr("readonly", true).val(res.mem_email);
 				$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
 				$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
-				$('#btn2').hide();
+				$('#main-btn2').hide();
 			},
 			error : function(xhr){
 				alert(xhr.status);
@@ -77,7 +95,8 @@
 		});
 		$('#mem-delete-btn').hide();
 		$('#modal_passchk_btn').on('click', function(){
-			let session_mem_pass = <%=mem_pass%>;
+			//여기가 문제다.
+			let session_mem_pass = $('#hidden_mem_pass').val()+"";
 			let input_mem_pass = $('#modal_mem_pass').val().trim();
 			if(input_mem_pass.length<1){
 				$('#modal-footer-alert').html('<div class="alert alert-danger" id="alert" style="margin : 10px 10px;"><strong>비밀번호를 입력하세요.</strong></div>');
@@ -191,6 +210,7 @@
                   <hr class="my-4">
                   <button type="button" class="btn btn-outline-success" id="main-btn1">수정</button>
                   <button type="button" class="btn btn-outline-success" id="main-btn2">저장</button>
+                  <input type="text" id="hidden_mem_pass" value="<%= mem_pass %>" style="display:none;">
                 <!-- 호겸 끝 -->
                 </form>  
               </div> <!-- /.card-body -->
@@ -208,7 +228,7 @@
 		      <div class="modal-body">
 		      	<h5>아래에 비밀번호를 입력해주세요</h5>
 		      	<h6><label for="modal_mem_pass">비밀번호</label></h6>
-	                <input type="text" class="form-control" id="modal_mem_pass" name="modal_mem_pass">
+	                <input type="password" class="form-control" id="modal_mem_pass" name="modal_mem_pass">
 	                <button type="button" class="btn btn-outline-success" id="modal_passchk_btn">확인</button>
 		      </div>
 		      <div class="modal-footer">

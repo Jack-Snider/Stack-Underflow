@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
-	<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-	<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	<style>
-	.common {
- 	 	font-family: 'Stick No Bills', sans-serif;
-  		font-size: 1.3em;
-  		color: white;
-	}
-	 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
+   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+   <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+   <style>
+   .common {
+        font-family: 'Stick No Bills', sans-serif;
+        font-size: 1.3em;
+        color: white;
+   }
+    
   
   /* 로고 위아래 움직임  */
         .box{
@@ -44,11 +44,13 @@ width: 100px;
   }
 }
 
-.intro-section {
-    background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+.aa {
+    background: linear-gradient(to right, rgb(90 229 107 / 95%), rgba(209, 34, 227, 0.95));
     padding: 10rem 0 0 0;
     width: 100%;
-    height: 100%;
+}
+.hy{
+    background: linear-gradient(to right, rgb(38 240 63 / 95%), rgba(209, 34, 227, 0.95));
 }
 
 /* 글자 롤링  */
@@ -65,16 +67,16 @@ width: 100px;
 }
 
 #spare-time{
-  	font-size: 1rem;
-  	font-style: italic;
-  	letter-spacing: 1rem;
-  	margin-top: 0;
-  	color: #A8DADC;
+     font-size: 1rem;
+     font-style: italic;
+     letter-spacing: 1rem;
+     margin-top: 0;
+     color: #A8DADC;
   
 }
 
 .roller #rolltext {
-	position: absolute;
+   position: absolute;
     top: 0px;
     animation: slide 20s infinite;
     font-weight: 900;
@@ -83,43 +85,43 @@ width: 100px;
 }
 
 @keyframes slide {
-	  0%{
-	    top:0rem;
-	  }
-	  10%{
-	    top: -7.1rem;    
-	  }
-	  20%{
-	    top: -13.2rem;
-	  }
-	  30%{
-	    top: -19.2rem;
-	  }
-	  
-	  40%{
-	    top : -25.2rem;
-	  }
-	  
-	  50%{
-	   top : -31.3rem;
-	  }
-	  
-	  60%{
-	   top : -37rem;
-	  }
-	  
-	  70%{
-	   top : -43.2rem;
-	  }
-	  
-	  80%{
-	   top : -49.1rem;
-	  
-	  }
-	  
-	  90%{
-	   top : -55.1rem;
-	  }
+     0%{
+       top:0rem;
+     }
+     10%{
+       top: -7.1rem;    
+     }
+     20%{
+       top: -13.2rem;
+     }
+     30%{
+       top: -19.2rem;
+     }
+     
+     40%{
+       top : -25.2rem;
+     }
+     
+     50%{
+      top : -31.3rem;
+     }
+     
+     60%{
+      top : -37rem;
+     }
+     
+     70%{
+      top : -43.2rem;
+     }
+     
+     80%{
+      top : -49.1rem;
+     
+     }
+     
+     90%{
+      top : -55.1rem;
+     }
 }
 
 @media screen and (max-width: 600px){
@@ -188,7 +190,7 @@ animation: slide-mob 5s infinite;
 
 
 .rollh1{
-	text-align: center;
+   text-align: center;
     text-transform: uppercase;
     color: #F1FAEE;
     font-size: 4rem;
@@ -198,7 +200,7 @@ animation: slide-mob 5s infinite;
 }
 }
 
-	</style>
+   </style>
 
 </head>
 <body>
@@ -206,11 +208,11 @@ animation: slide-mob 5s infinite;
                                START SECTION 1 - THE NAVBAR SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <<!-- 메뉴 시작 -->
-<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top hy">
     <div class="container">
 
       <div>
-      	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
+         <a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
@@ -231,8 +233,7 @@ animation: slide-mob 5s infinite;
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
                             START SECTION 2 - THE INTRO SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-<section id="home" class="intro-section" >
+<section id="home" class="aa" >
   <div class="container">
     <div class="row align-items-center text-white">
       <!-- START THE CONTENT FOR THE INTRO  -->
@@ -298,7 +299,7 @@ animation: slide-mob 5s infinite;
       </div>
     </div>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="height: 567px;"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////

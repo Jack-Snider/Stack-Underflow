@@ -89,7 +89,7 @@ if (session.getAttribute("Mem_vo") == null) {
 <section class="card">
 
 	<form onsubmit="return validateForm(this)" method="post" id="loginForm"
-		name="loginForm" action="<%=request.getContextPath()%>/login.do;">
+		name="loginForm" action="<%=request.getContextPath()%>/login.do">
 		
 
 		<div>
