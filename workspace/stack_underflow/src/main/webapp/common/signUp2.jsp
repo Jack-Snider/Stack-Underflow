@@ -43,12 +43,12 @@
 			if(mem_pass == mem_pass_check){
 				$(this).css('border', '2px solid blue');
 				$('#passchkres')
-				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>비밀번호 검사 성공!</strong> 같은 비밀번호 입니다</div>');
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong> 비밀번호 재확인에 성공했습니다. </strong></div>');
 				passChk = true;
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#passchkres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>비밀번호 검사 실패</strong> 같은 비밀번호가 아닙니다</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 비밀번호 재확인에 실패했습니다. </strong></div>');
 				passChk = false;
 			}	
 		});
@@ -61,12 +61,12 @@
 			if(idReg.test(idValue)){
 				$(this).css('border', '2px solid blue');
 				$('#idres')
-				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong> 올바른 ID형식입니다. </strong> ID형식에 적합합니다.</div>');
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong> 적합한 ID 형식입니다. </strong></div>');
 				ruleChk = true;
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#idres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 부적합한 ID형식입니다.</strong> 제발 ID 생성규칙 좀 지켜주세요</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 부적합한 ID 형식입니다. </strong></div>');
 				ruleChk = false;
 			}
 		});
@@ -78,12 +78,12 @@
 			if(passReg.test(passValue)){
 				$(this).css('border', '2px solid blue');
 				$('#passres')
-				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>적합한 비밀번호입니다. </strong> 비밀번호 생성 형식에 적합합니다.</div>');
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong> 적합한 비밀번호 형식입니다. </strong></div>');
 				ruleChk = true;
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#passres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 부적합한 비밀번호이군요.</strong> 제발 비밀번호 생성 형식 좀 지켜주세요.</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 부적합한 비밀번호 형식입니다. </strong></div>');
 				ruleChk = false;
 			}
 		});
@@ -95,12 +95,12 @@
 			if(nknmReg.test(nknmValue)){
 				$(this).css('border', '2px solid blue');
 				$('#dnres')
-				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>멋있는 닉네임이군요!</strong> 사용하셔도 좋습니다.</div>');
+				.html('<div class="alert alert-success" style="margin-top : 5px;"><strong> 적합한 닉네임 형식입니다. </strong></div>');
 				ruleChk = true;
 			}else{
 				$(this).css('border', '2px solid red');
 				$('#dnres')
-				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>부적합한 닉네임이군요</strong> 제발 닉네임 형식 좀 지켜주세요</div>');
+				.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong> 부적합한 닉네임 형식입니다. </strong></div>');
 				ruleChk = false;
 			}
 		});
@@ -159,10 +159,10 @@
 	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
 	function submitChk(){
 		if(passChk && ruleChk && dupChk){
-			alert("회원가입 성공 - ");
+			alert("환영합니다. 회원가입에 성공했습니다.");
 			return true;
 		}else{
-			alert("회원가입 실패");
+			alert("회원가입에 실패했습니다. 중복 검사와 올바른 형식을 지켜주세요.");
 			return false;
 		}
 	}

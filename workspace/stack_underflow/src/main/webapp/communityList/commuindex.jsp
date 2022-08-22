@@ -14,8 +14,8 @@
   		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   		<!-- JavaScript Bundle with Popper -->
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 		<script type="text/javascript">
 		
 		<!-- 호겸 시작 -->
@@ -234,8 +234,8 @@ a:hover {
 								    background: white;
 								    height: 32px;
 								    border: 1px solid darkviolet;
-								    color: darkviolet;
-							    id = "sort">검색</button></p>
+								    color: darkviolet;"
+							    id ="sort">검색</button></p>
                       <table class="table table-hover">
                         <thead>
                           <tr>
