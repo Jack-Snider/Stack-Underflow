@@ -363,16 +363,16 @@ animation: slide-mob 5s infinite;
       <div class="col-md-6 border-right">
         <div class="bg-white p-3">
           <h2 class="fw-bold text-capitalize text-center">
-            Our Services Range From Initial Design To Deployment Anywhere Anytime
+            대덕인재 개발원 학우분들의 프로그래밍 개발 궁금중을 여기서 해소하세요!
           </h2>
         </div>
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 text-start">
           <p class="fw-light">
-            Lorem ipsum dolor sit amet consectetur architecto magni, 
-            dicta maxime laborum temporibus dolorem esse doloremque illo quas nisi enim molestias. 
-            Tempore ducimus molestiae in dolore enim.
+            오류가 나는 코드가 있나요? 당신의 전문지식을 공유 하고 싶으신가요?  
+            바로 여기 Stack -  Underflow에서 해결 하시고  당신의 지식을 자랑해주세요. 
+            당신의 활동으로 쌓인 점수로 랭킹에 도전해보세요!  
           </p>
         </div>
       </div>
