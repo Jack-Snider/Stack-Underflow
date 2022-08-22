@@ -1,4 +1,4 @@
-<%@page import="ufo.vo.MemberVO"%>
+ㄷ<%@page import="ufo.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ page import="java.net.URLEncoder"%>

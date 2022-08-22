@@ -84,8 +84,8 @@ body {
 </head>
 <body>
 
-							<form
-		action="<%=request.getContextPath()%>/postController.do?currentPage=1"
+							
+	<form action="<%=request.getContextPath()%>/postController.do?currentPage=1"
 		method="post" enctype="multipart/form-data"
 		onsubmit="return validateForm(this)">
 		 <div class="row"> 
@@ -114,7 +114,7 @@ body {
 						</div>
 						<div class="form-group mb-3">
 							<div class="form-group mb-3">
-								<label for="example-fileinput">Default file input</label> 
+								<label for="example-fileinput">파일정보</label> 
 								<input type="file" name="file" id="example-fileinput"
 									class="form-control-file">
 							</div>

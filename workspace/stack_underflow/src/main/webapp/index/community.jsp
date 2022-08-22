@@ -64,7 +64,7 @@
 </nav>
 <!-- 메뉴 끝 -->
   
-<iframe src="<%=request.getContextPath()%>/postList.do?currentPage=1" style="height: 2000px; width: 100%;"></iframe>
+<iframe scrolling="no" src="<%=request.getContextPath()%>/postList.do?currentPage=1" style="height: 5000px; width: 100%;"></iframe>
 
 </body>
 </html>
