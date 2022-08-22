@@ -256,7 +256,7 @@ animation: slide-mob 5s infinite;
     <span id="rolltext">
     JAVA<br/>
     CSS<br/>
-    ECLIPS<br/>
+    ECLIPSE<br/>
     C#<br/>
     C++<br/>
     SQL<br/>
