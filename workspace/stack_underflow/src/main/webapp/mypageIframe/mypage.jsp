@@ -159,15 +159,19 @@
                       <!-- 호겸 수정
                       <button type="button" class="btn btn-outline-success" style="float: right;   margin-top: -9%; margin-right: 14%;">사진변경</button>                      
                        -->
-                      <label for="editPhoto">사진첨부</label> 
+  <!--                     <label for="editPhoto">사진첨부</label> 
                       <input	id = "editPhoto" type = "file" 
                       			name = "bf_file[]"
                       			class = "btn btn-outline-success"
                       			style="float: right;   margin-top: -9%; margin-right: 14%;"
-                      			accept="image/*"
-                      >
+                      			accept="image/*"  >
+                       -->
+                     <label for="editPhoto">프로필 사진 수정</label>
+                     <input type="file" id="editPhoto" class="form-control-file" style="float: right;   margin-top: -9%; margin-right: -52%;"
+                      			accept="image/*" >
+                         
                       <!-- Jack Snider 끝 -->
-                      <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button> <!-- 호겸 수정 -->
+                      <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;  color: darkviolet;   border-color: darkviolet;">회원탈퇴</button> <!-- 호겸 수정 -->
 
                     
                       
