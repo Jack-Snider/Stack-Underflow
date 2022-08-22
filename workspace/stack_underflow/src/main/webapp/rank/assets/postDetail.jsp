@@ -371,7 +371,7 @@
 			
 			<tr>
 				<td>내용</td>
-				<td colspan = "3" height = "100" style="text-align: left;"><%= postVo.getPost_cont() %></td>
+				<td colspan = "3" height = "100" style="text-align: left;"><div style="margin-left:30px;"><%= postVo.getPost_cont() %></div></td>
 			</tr>
 			<!-- 호겸 시작 -->
 			<tr>
@@ -445,7 +445,7 @@
 						 	2. 현재 접속한 계정의 아이디
 						 	 
 					-->
-					<button id = "cmntInsert" type = "button">등록</button>
+					<button id = "cmntInsert" type = "button" class="btn btn-success" style="margin-bottom:50px;">등록</button>
 					<!-- Jack Snider 끝 -->
 					
 				</td>
