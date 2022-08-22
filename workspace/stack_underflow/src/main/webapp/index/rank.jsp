@@ -48,7 +48,9 @@
 </nav>
 <!-- 메뉴 끝 -->
 
-<iframe src="../rank/rankingBoard.jsp" style="width: 1903px; height: 1000px; margin-top: 4%;"></iframe>
+<iframe src="../rank/rankingBoard.jsp" style="height: 2000px;
+    margin-top: 4%;
+    width: 100%;"></iframe>
 
 </body>
 </html>

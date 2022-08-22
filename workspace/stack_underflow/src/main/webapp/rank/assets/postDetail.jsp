@@ -349,7 +349,7 @@
 	<!-- border = "1" width = "90%" --> 
 		
 		<!-- 게시글 시작 -->
-		<table border = "1" width = "90%" style="margin-top: 90px; margin-left: 30px;">  
+		<table border = "1" width = "60%" style="margin-top: 90px; margin-left: 30px; box-shadow: 0px 0px 7px;">  
 			<colgroup>
 				<col width = "15%"/> <col width = "35%"/>
 				<col width = "15%"/> <col width = "*"/>
@@ -457,7 +457,7 @@
 		<!-- /게시글 끝 -->
 		 
 		<!-- 여기가 기존 댓글들 리스트 보여주는 곳 --> 
-		<div id = "commentList">
+		<div id = "commentList" style=" margin-left: 1.5%;  margin-rigt: 39.5%;  width: 1800px;	">
 	
 				<%
 					if( cmntList != null ){
@@ -486,7 +486,7 @@
 						
 					%>
 					
-					<button class = "updateCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button class = "deleteCmnt" type = "button" value = <%= cmnt.getCmnt_num() %>>삭제</button>
+					<button class = "updateCmnt btn btn-outline-success" type = "button" value = <%= cmnt.getCmnt_num() %>>수정</button> <button class = "deleteCmnt btn btn-outline-success" type = "button" value = <%= cmnt.getCmnt_num() %>>삭제</button>
 					<hr>
 
 					<%

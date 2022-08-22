@@ -44,11 +44,13 @@ width: 100px;
   }
 }
 
-.intro-section {
-    background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+.aa {
+    background: linear-gradient(to right, rgb(90 229 107 / 95%), rgba(209, 34, 227, 0.95));
     padding: 10rem 0 0 0;
     width: 100%;
-    height: 100%;
+}
+.hy{
+    background: linear-gradient(to right, rgb(38 240 63 / 95%), rgba(209, 34, 227, 0.95));
 }
 
 /* 글자 롤링  */
@@ -206,7 +208,7 @@ animation: slide-mob 5s infinite;
                                START SECTION 1 - THE NAVBAR SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
 <<!-- 메뉴 시작 -->
-<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top hy">
     <div class="container">
 
       <div>
@@ -231,8 +233,7 @@ animation: slide-mob 5s infinite;
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////
                             START SECTION 2 - THE INTRO SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-<section id="home" class="intro-section" >
+<section id="home" class="aa" >
   <div class="container">
     <div class="row align-items-center text-white">
       <!-- START THE CONTENT FOR THE INTRO  -->
@@ -298,7 +299,7 @@ animation: slide-mob 5s infinite;
       </div>
     </div>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="height: 567px;"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////

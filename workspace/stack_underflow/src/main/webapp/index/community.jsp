@@ -33,12 +33,16 @@
   		font-size: 1.3em;
   		color: white;
 	}
+	
+	.commu{
+	      background: linear-gradient(to right, rgb(38 240 175 / 95%), rgba(209, 34, 227, 0.95));
+	}
 	</style>
 
 </head>
 <body>
 <!-- 메뉴 시작 -->
-<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top commu">
     <div class="container">
 
       <div>
@@ -60,7 +64,7 @@
 </nav>
 <!-- 메뉴 끝 -->
   
-<iframe src="<%=request.getContextPath()%>/postList.do?currentPage=1" style="width: 2000px; height: 1000px; "></iframe>
+<iframe src="<%=request.getContextPath()%>/postList.do?currentPage=1" style="height: 2000px; width: 100%;"></iframe>
 
 </body>
 </html>
