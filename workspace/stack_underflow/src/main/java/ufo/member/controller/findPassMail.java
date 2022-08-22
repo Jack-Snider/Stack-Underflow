@@ -127,7 +127,7 @@ public class findPassMail extends HttpServlet {
 		         httpsession.setAttribute("mem_id", userId);
 
 		        request.setAttribute("randomstr", str);
-		         request.getRequestDispatcher("./jsp/findPswd.jsp").forward(request, response);
+		         request.getRequestDispatcher("./jsp/ValidMail.jsp").forward(request, response);
 
 		      } catch (MessagingException e) {
 		         e.printStackTrace();

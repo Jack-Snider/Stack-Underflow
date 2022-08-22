@@ -63,7 +63,7 @@ section{
 	
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	background: #362100;
+	background:white; 
 	border: 1px solid rgba(254, 254, 254, 0.18);
 	border-radius: 15px;
 	box-shadow: 0 10px 35px 0 rgba(54, 33, 0, 0.65);
