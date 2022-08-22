@@ -76,7 +76,7 @@ public class PostDelete extends HttpServlet {
 			request.setAttribute("pageVo", vo);
 			request.setAttribute("currentPage", currentPage);
 			
-			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);
+			request.getRequestDispatcher("/index/community.jsp").forward(request, response);
 			
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
