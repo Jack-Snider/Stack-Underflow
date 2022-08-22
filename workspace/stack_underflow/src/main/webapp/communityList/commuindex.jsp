@@ -95,11 +95,10 @@
 }
 
 /* @media (min-width: 768px) */
-.col-md-6 {
-    -ms-flex: 0 0 50%;
-      flex: 0 0 50%;
+.col-mm-6 {
+    flex: 0 0 50%;
     max-width: 76%;
-    margin-left: 10%;
+    margin-left: 12.5%;
     }
     
     .mt-4, .my-4 {
@@ -145,6 +144,9 @@
     background-color: #fff;
     border: 1px solid darkviolet;
 }
+
+
+
 a:hover {
     color: darkviolet;
     text-decoration: underline;
@@ -154,6 +156,28 @@ a:hover {
     color: darkviolet;
     background-color: white;
     border-color: darkviolet;
+}
+
+.page-link next{
+   width : 71%;
+   
+
+}
+.page-link next{
+   width : 71%;
+   
+
+}
+
+.page-link prev{
+   width : 71%;
+
+}
+
+.page-item:first-child .page-link click {
+    margin-left: 43px;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 }
 		</style>
 		<!-- 호겸 끝 -->
@@ -192,10 +216,10 @@ a:hover {
 	
 		
 		<!-- 호겸 수정 끝 --> 
-		<div class="col-md-6 my-4">
+		<div class="col-mm-6 my-4">
                   <div class="card shadow">
                     <div class="card-body">
-                      <h5 class="card-title">기술 게시판</h5>
+                      <h5 class="card-title">게시판</h5>
                       <p class="card-text">	     
 				        <select name="likeLanguage" id="column" class="pl">
 				            <option value="post_title" selected>제목</option>
@@ -209,8 +233,11 @@ a:hover {
 							    border: 1px solid lightgray;">
 		
 							<button type = "button" style="
-							    border-radius: 5px;
-							    background: ghostwhite;" 
+							        border-radius: 5px;
+								    background: white;
+								    height: 32px;
+								    border: 1px solid darkviolet;
+								    color: darkviolet;
 							    id = "sort">검색</button></p>
                       <table class="table table-hover">
                         <thead>
@@ -262,9 +289,9 @@ a:hover {
 				  </table>			
                          
 		
-				<button type="button" class="btn mb-2 btn-outline-dark" style=" width: 7%;  height: 39px; float: right;">
+				<button type="button" class="btn mb-2 btn-outline-dark" style=" width: 7%;  height: 39px; float: right; border : 1px solid darkviolet;">
 				<!-- <a href = "pages/writePost.jsp">글쓰기</a> -->
-				<a href = "write/writePost.jsp">글쓰기</a>
+				<a href = "write/writePost.jsp" style=" color:darkviolet">글쓰기</a>
 				</button>
 									
 		
@@ -274,12 +301,17 @@ a:hover {
 	
 	<!-- Jack Snider 끝 -->
 	<!-- 호겸 시작 -->
-	<div id="button-wrapper">  
+	<div id="button-wrapper" style=" display: flex;
+								    justify-content: space-between;
+								    width: 212px;
+								    float: right;
+								    margin-right: 34%;">  
+								  
 			<%
 				if(pageVo.getStartPage()>1){
 			%>
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link prev" href="#">이전</a></li>
+					<li class="page-item"><a class="page-link prev" href="#" style=" width: 141%; margin-left: -44%;" >이전</a></li>
 				</ul>
 			<%	
 				}
@@ -304,7 +336,7 @@ a:hover {
 				if(pageVo.getTotalPage()>pageVo.getEndPage()){
 			%>
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link next" href="#" style="width: 67%;">다음</a></li>
+					<li class="page-item"><a class="page-link next click" href="#" style=" width: 70%;">다음</a></li>
 				</ul>
 			<%	
 				}
