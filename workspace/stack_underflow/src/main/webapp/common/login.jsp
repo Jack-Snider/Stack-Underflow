@@ -66,6 +66,8 @@
 
 <!-- id 값이 null값일 때 처리하는기능 -->
 
+
+
 <script>
 //로그인이 널값이 경우 처리하는 기능
 function validateForm(form) {

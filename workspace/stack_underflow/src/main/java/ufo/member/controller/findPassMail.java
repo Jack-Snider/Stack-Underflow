@@ -67,7 +67,7 @@ public class findPassMail extends HttpServlet {
 		if(userEmail.equals(findEmail)) {
 			  String host = "smtp.naver.com";               // SMTP 서비스를 해주는 메일 사이트
 		      final String user = "zhwz092525@naver.com";      // 송신 계정 이메일
-		      final String password = "stackunderflow";                 // 송신 계정 비밀번호
+		      final String password = "stackunderflow1";                 // 송신 계정 비밀번호
 
 		      String to = findEmail;            // 수신 계정 이메일
 
@@ -127,7 +127,7 @@ public class findPassMail extends HttpServlet {
 		         httpsession.setAttribute("mem_id", userId);
 
 		        request.setAttribute("randomstr", str);
-		         request.getRequestDispatcher("/jsp/findPswd.jsp").forward(request, response);
+		         request.getRequestDispatcher("./jsp/findPswd.jsp").forward(request, response);
 
 		      } catch (MessagingException e) {
 		         e.printStackTrace();
