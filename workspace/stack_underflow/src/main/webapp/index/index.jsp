@@ -15,28 +15,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
-	<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-	<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	<style>
-	.common {
- 	 	font-family: 'Stick No Bills', sans-serif;
-  		font-size: 1.3em;
-  		color: white;
-	}
-	 
-	 
-	 .testy{
-	 position: relative;
-    padding: 0;
-    background: linear-gradient(to right, rgb(38 240 175 / 95%), rgba(209, 34, 227, 0.95));
-}
-	 
-	 }
-	 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
+   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+   <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+   <style>
+   .common {
+        font-family: 'Stick No Bills', sans-serif;
+        font-size: 1.3em;
+        color: white;
+   }
+    
   
   /* 로고 위아래 움직임  */
         .box{
@@ -54,12 +45,17 @@ width: 100px;
 }
 
 .aa {
-     background: linear-gradient(to right, rgb(38 240 175 / 95%), rgba(209, 34, 227, 0.95));
+    background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
     padding: 10rem 0 0 0;
     width: 100%;
 }
 .hy{
-       background: linear-gradient(to right, rgb(38 240 175 / 95%), rgba(209, 34, 227, 0.95));
+     background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
+}
+
+.bb{
+
+     background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
 }
 
 /* 글자 롤링  */
@@ -76,16 +72,16 @@ width: 100px;
 }
 
 #spare-time{
-  	font-size: 1rem;
-  	font-style: italic;
-  	letter-spacing: 1rem;
-  	margin-top: 0;
-  	color: #A8DADC;
+     font-size: 1rem;
+     font-style: italic;
+     letter-spacing: 1rem;
+     margin-top: 0;
+     color: #A8DADC;
   
 }
 
 .roller #rolltext {
-	position: absolute;
+   position: absolute;
     top: 0px;
     animation: slide 20s infinite;
     font-weight: 900;
@@ -94,43 +90,43 @@ width: 100px;
 }
 
 @keyframes slide {
-	  0%{
-	    top:0rem;
-	  }
-	  10%{
-	    top: -7.1rem;    
-	  }
-	  20%{
-	    top: -13.2rem;
-	  }
-	  30%{
-	    top: -19.2rem;
-	  }
-	  
-	  40%{
-	    top : -25.2rem;
-	  }
-	  
-	  50%{
-	   top : -31.3rem;
-	  }
-	  
-	  60%{
-	   top : -37rem;
-	  }
-	  
-	  70%{
-	   top : -43.2rem;
-	  }
-	  
-	  80%{
-	   top : -49.1rem;
-	  
-	  }
-	  
-	  90%{
-	   top : -55.1rem;
-	  }
+     0%{
+       top:0rem;
+     }
+     10%{
+       top: -7.1rem;    
+     }
+     20%{
+       top: -13.2rem;
+     }
+     30%{
+       top: -19.2rem;
+     }
+     
+     40%{
+       top : -25.2rem;
+     }
+     
+     50%{
+      top : -31.3rem;
+     }
+     
+     60%{
+      top : -37rem;
+     }
+     
+     70%{
+      top : -43.2rem;
+     }
+     
+     80%{
+      top : -49.1rem;
+     
+     }
+     
+     90%{
+      top : -55.1rem;
+     }
 }
 
 @media screen and (max-width: 600px){
@@ -199,7 +195,7 @@ animation: slide-mob 5s infinite;
 
 
 .rollh1{
-	text-align: center;
+   text-align: center;
     text-transform: uppercase;
     color: #F1FAEE;
     font-size: 4rem;
@@ -209,7 +205,7 @@ animation: slide-mob 5s infinite;
 }
 }
 
-	</style>
+   </style>
 
 </head>
 <body>
@@ -221,7 +217,7 @@ animation: slide-mob 5s infinite;
     <div class="container">
 
       <div>
-      	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
+         <a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
@@ -458,7 +454,7 @@ animation: slide-mob 5s infinite;
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 5 - THE TESTIMONIALS  
 /////////////////////////////////////////////////////////////////////////////////////////////////////-->
-<section id="testimonials" class="testimonials testy">
+<section id="testimonials" class="testimonials bb ">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
   <div class="container">
     <div class="row text-center text-white">

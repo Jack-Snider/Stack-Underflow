@@ -35,7 +35,7 @@
 	}
 	
 	.commu{
-	      background: linear-gradient(to right, rgb(38 240 175 / 95%), rgba(209, 34, 227, 0.95));
+	      background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
 	}
 	</style>
 
