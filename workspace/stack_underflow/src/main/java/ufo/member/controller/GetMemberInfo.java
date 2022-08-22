@@ -22,6 +22,7 @@ public class GetMemberInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Gson gson = new Gson();
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json; charset=utf-8");
@@ -29,10 +30,12 @@ public class GetMemberInfo extends HttpServlet {
 		IMemberService service = MemberServiceImpl.getInstance();
 		HttpSession session = request.getSession();
 		MemberVO vo = (MemberVO)session.getAttribute("Mem_vo");
+		
 		String jsonData = null;
 		jsonData = gson.toJson(vo);
 		out.write(jsonData);
 		response.flushBuffer();
+		
 	}
 
 }

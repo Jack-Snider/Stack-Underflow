@@ -150,9 +150,6 @@
                       <!-- Jack Snider 끝 -->
                       <button type="button" class="btn btn-outline-success" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float: right;   margin-top: -9%;">회원탈퇴</button> <!-- 호겸 수정 -->
 
-                    
-                      
-
                       <div class="row align-items-center">
                         <div class="col-md-7">
                           <h4 class="mb-1">닉네임</h4>
@@ -167,6 +164,7 @@
                     </div>
                   </div>
                 <hr class="my-4">
+                
           		<!-- 호겸 시작 -->
                   <div class="form-group col-md-6">
                       	<label for="mem_nm">이름</label>
@@ -192,7 +190,10 @@
                   <button type="button" class="btn btn-outline-success" id="main-btn1">수정</button>
                   <button type="button" class="btn btn-outline-success" id="main-btn2">저장</button>
                 <!-- 호겸 끝 -->
-                </form>  
+                
+                </form> <!-- form 테그 끝 -->  
+                
+                
               </div> <!-- /.card-body -->
             </div> <!-- /.col-12 -->
           </div> <!-- .row -->
