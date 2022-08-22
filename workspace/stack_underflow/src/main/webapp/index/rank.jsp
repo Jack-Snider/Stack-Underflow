@@ -23,11 +23,17 @@
   		font-size: 1.3em;
   		color: white;
 	}
+	
+	.aa{
+	 background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
+	
+	}
+	
 	</style>
 </head>
 <body>
 <!-- 메뉴 시작 -->
-<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top aa">
     <div class="container">
       <div>
       	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
