@@ -28,7 +28,20 @@
   	// 호겸 시작
 	$(function(){
 		
+		var form = $('#uploadForm')[0];
+		var formData = new FormData(form);
 		
+		
+		$.ajax({
+			url : '/stack_underflow/profileUpload.do',
+			type : 'post',
+			data : formData,
+			        contentType : false,
+			        processData : false,   
+			success : function( res ){
+				
+			}
+		});
 		
 			
 		$.ajax({
