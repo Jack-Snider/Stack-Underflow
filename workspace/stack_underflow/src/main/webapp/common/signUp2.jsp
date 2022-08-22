@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300&amp;display=swap'>
-<link rel="stylesheet" type="text/css" href="../css/signup2.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../css/BasicStructor.css"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StackUnderflow - SignUp</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300&amp;display=swap'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&family=Stick+No+Bills:wght@700&display=swap">
+<link rel="stylesheet" type="text/css" href="../css/signup2.css"/>
+<link rel="stylesheet" type="text/css" href="../css/BasicStructor.css"/>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/ded2fba49a.js"></script>
 
 <script>
 	$(function(){
@@ -27,7 +27,7 @@
 		});
 	});
 </script>
-
+<!-- 호겸 시작 -->
 <script>
 	
 	let passChk = false;
@@ -91,7 +91,7 @@
 		// 닉네임 유효성
 		$('#mem_nknm').on('keyup', function(){
 			let nknmValue = $(this).val().trim();
-			let nknmReg = /^[A-Za-z][A-Za-z0-9]{3,7}$/; 
+			let nknmReg = /^[A-Za-z가-힣][A-Za-z가-힣0-9]{3,7}$/; 
 			if(nknmReg.test(nknmValue)){
 				$(this).css('border', '2px solid blue');
 				$('#dnres')
@@ -159,7 +159,7 @@
 	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
 	function submitChk(){
 		if(passChk && ruleChk && dupChk){
-			alert("회원가입성공");
+			alert("회원가입 성공 - ");
 			return true;
 		}else{
 			alert("회원가입 실패");
@@ -168,6 +168,7 @@
 	}
 	
 </script>
+
 <style type="text/css">
 .container{
 		padding : 50px;
@@ -180,6 +181,7 @@
 		font-weight : bold;
 	}
 </style>
+
 </head>
 <body>
 <section class="card">
@@ -193,14 +195,14 @@
 			   <label class="inputlabel" for="mem_id">ID&nbsp;&nbsp;</label> 
 			   <input type="button" id="idcheck" value="아이디 중복체크" class="btnCheck"><br>
 			   <input type="text" class="inputPlace" id="mem_id" placeholder="아이디를 입력하세요" name="mem_id" required><br>
-			   <p class="instructor">※ ID는 3 ~12자 사이 영어 대,소문자 및 숫자</p>
+			   <p class="instructor">※ ID는 3 ~12자 사이 영어 대,소문자 및 숫자</p><!-- 고쳐야됨 -->
 			   <div id="idres"></div>
 			</div>
 			
 			<div class="form-group">
 			    <label class="inputlabel" for="mem_pass">비밀번호</label><br>
 			    <input type="password" class="inputPlace" id="mem_pass" placeholder="비밀번호를 입력하세요" name="mem_pass" required>
-			   <p class="instructor">※ 비밀번호는 8 ~20자 사이 영어 대,소문자 및 숫자 특수기호 필수 포함</p>
+			   <p class="instructor">※ 8~20자 사이의 영어, 숫자, 특수 기호를 1개 이상 포함해주세요.</p>
 			    <div id="passres"></div>
 			</div>
 			
@@ -215,7 +217,7 @@
 			    <label class="inputlabel" for="mem_nknm">닉네임&nbsp;&nbsp;</label>
 				<input type="button" id="dncheck" value="닉네임 중복확인" class="btnCheck"><br>
 				<input type="text" class="inputPlace" id="mem_nknm" placeholder="닉네임을 입력하세요" name="mem_nknm" required>
-				<p class="instructor">※ 닉네임은 3 ~12자 사이 영어 대,소문자 및 숫자</p>
+				<p class="instructor">※ 4~8자 사이의 한글, 영어, 숫자를 입력하세요.</p>
 				<div id="dnres"></div>
 			</div>
 			
@@ -272,6 +274,6 @@
 		</form>
 		</section>
 
-
 </body>
+<!-- 호겸 끝 -->
 </html>
