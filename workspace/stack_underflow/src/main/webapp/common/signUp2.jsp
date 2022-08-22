@@ -195,7 +195,7 @@
 			   <label class="inputlabel" for="mem_id">ID&nbsp;&nbsp;</label> 
 			   <input type="button" id="idcheck" value="아이디 중복체크" class="btnCheck"><br>
 			   <input type="text" class="inputPlace" id="mem_id" placeholder="아이디를 입력하세요" name="mem_id" required><br>
-			   <p class="instructor">※ ID는 3 ~12자 사이 영어 대,소문자 및 숫자</p><!-- 고쳐야됨 -->
+			   <p class="instructor">※ ID는 영어로 시작하고 영문 또는 숫자를 4~12자 사이로 입력하세요.</p><!-- 고쳐야됨 -->
 			   <div id="idres"></div>
 			</div>
 			
@@ -217,7 +217,7 @@
 			    <label class="inputlabel" for="mem_nknm">닉네임&nbsp;&nbsp;</label>
 				<input type="button" id="dncheck" value="닉네임 중복확인" class="btnCheck"><br>
 				<input type="text" class="inputPlace" id="mem_nknm" placeholder="닉네임을 입력하세요" name="mem_nknm" required>
-				<p class="instructor">※ 4~8자 사이의 한글, 영어, 숫자를 입력하세요.</p>
+				<p class="instructor">※ 영어 또는 한글로 시작하고 영어, 한글, 숫자를 4~8자 사이로 입력하세요.</p>
 				<div id="dnres"></div>
 			</div>
 			
