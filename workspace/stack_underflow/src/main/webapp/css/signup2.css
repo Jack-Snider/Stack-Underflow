@@ -107,9 +107,9 @@ background-color:#f5aeea;
 }
 body{
 
-		background: #362100;
-		/*url("https://wonderfulengineering.com/wp-content/uploads/2014/06/Wonderful-wallpapers-2-610x381.jpg")
-		center/cover;*/
+		background: #362100
+		url("https://wonderfulengineering.com/wp-content/uploads/2014/06/Wonderful-wallpapers-2-610x381.jpg")
+		center/cover;
 
 	height: 100vh;
 	position: relative;
