@@ -219,7 +219,6 @@ public class postController extends HttpServlet {
 
          List<PostVO> postList = service.getPostPerPage(map);
          
-         
          request.setAttribute("postList", postList);
          request.setAttribute("pageVo", vo);
          request.setAttribute("currentPage", currentPage);
