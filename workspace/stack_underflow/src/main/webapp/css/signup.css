@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 .btn,btn-dark,btn-sm{
-		height: 20px;
+	height: 20px;
 	font-size: 10px;
 }
 .form-control-file,border{
-height: 25px;
+	height: 25px;
 	font-size: 10px;
 	
 }
