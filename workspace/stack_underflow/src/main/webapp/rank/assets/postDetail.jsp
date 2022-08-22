@@ -6,6 +6,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+
+
+
+
 <!--
 
 	작성자 : Jack Snider
@@ -17,8 +22,7 @@
 
 <html>
 	<head>
-	
-	
+
 	
 	
 		<%
@@ -51,6 +55,9 @@
   		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 		<!-- 호겸 수정 끝 -->
+		
+
+		
 		
 
 		
@@ -318,8 +325,11 @@
 				margin-left : 50px;
 				margin-right : 50px;
 			}
-			
-			
+			td{
+				border:1px solid;
+				text-align: center;
+			}			
+
 			
 			
 		</style>
@@ -328,10 +338,18 @@
 	</head>
 	<body>
 		
-		<h2>게시글 - 상세보기</h2>
+		
+		
+		
+				
+		
+		
+
+              
+	<!-- border = "1" width = "90%" --> 
 		
 		<!-- 게시글 시작 -->
-		<table border = "1" width = "90%">
+		<table border = "1" width = "90%" style="margin-top: 90px; margin-left: 30px;">  
 			<colgroup>
 				<col width = "15%"/> <col width = "35%"/>
 				<col width = "15%"/> <col width = "*"/>
@@ -353,7 +371,7 @@
 			
 			<tr>
 				<td>내용</td>
-				<td colspan = "3" height = "100"><%= postVo.getPost_cont() %></td>
+				<td colspan = "3" height = "100" style="text-align: left;"><%= postVo.getPost_cont() %></td>
 			</tr>
 			<!-- 호겸 시작 -->
 			<tr>
@@ -391,12 +409,13 @@
 					%>
 					
 					<!-- 현재 접속해있는 아이디와 게시글 작성자의 아이디가 일치할 경우 -->
-					<button type = "button" onclick = "getToPostUpdate()">EDIT</button>
-					<button type = "button" onclick = "getToPostDelete()">DELETE</button>
-					<button type = "button" onclick = "toList()">
-					<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
+					<div style="margin-left: 1380px;margin-top: 8px;margin-bottom: -8px;">
+						<button type = "button" onclick = "getToPostUpdate()" class="btn btn-warning">EDIT</button>
+						<button type = "button" onclick = "getToPostDelete()" class="btn btn-success">DELETE</button>
+						<button type = "button" onclick = "toList()" class="btn btn-info">
+						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
-				
+					</div>
 					<hr>
 					<br>
 					<%
