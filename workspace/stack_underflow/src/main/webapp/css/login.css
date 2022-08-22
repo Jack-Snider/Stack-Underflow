@@ -15,8 +15,8 @@ body {
 
 .scene {
 	background: #362100
-	url("https://wonderfulengineering.com/wp-content/uploads/2014/06/Wonderful-wallpapers-2-610x381.jpg")
-		center/cover;
+	url("../images/login_back.gif");
+		
 	height: 100vh;
 	position: relative;
 }
