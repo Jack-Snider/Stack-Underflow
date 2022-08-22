@@ -29,11 +29,8 @@
 		      $(document).on('click', '.prev', function() {
 		         //alert($('.plist a').first().text());
 		         currentPage = parseInt($('.plist a').first().text().trim()) - 1;
-		         if(currentPage == 0){
-		        	 $(this).prop("disabled", true);
-		         }else{
-		        	 listPagerServer(currentPage, column, condition);
-		         }
+		         listPagerServer(currentPage, column, condition);
+		         
 		      });
 		      
 		      //다음버튼 이벤트
@@ -314,6 +311,12 @@ a:hover {
 					<li class="page-item"><a class="page-link prev" href="#" style=" width: 141%; margin-left: -44%;" >이전</a></li>
 				</ul>
 			<%	
+				}else{
+			%>
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#" style=" width: 141%; margin-left: -44%;">이전</a></li>
+				</ul>
+			<%		
 				}
 			%>
 			
@@ -339,6 +342,12 @@ a:hover {
 					<li class="page-item"><a class="page-link next click" href="#" style=" width: 70%;">다음</a></li>
 				</ul>
 			<%	
+				}else{
+			%>
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#" style=" width: 70%;">다음</a></li>
+				</ul>
+			<% 
 				}
 			%>
 			
