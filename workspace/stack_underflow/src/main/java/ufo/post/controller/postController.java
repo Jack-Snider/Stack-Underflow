@@ -76,7 +76,13 @@ public class postController extends HttpServlet {
 
 		System.out.println("파일번호 : " + request.getParameter( "fileNo" ));
 		//String mem_id = request.getParameter( "memVoServlet" );
-		String mem_id = memVo.getMem_id();
+		String mem_id = "";
+		if( memVo == null ) {
+			System.out.println( "memVo가 null이라서 default아이디로 asd로 합니다." );
+			mem_id = "asd";
+		}else {
+			mem_id = memVo.getMem_id();
+		}
 		String post_board_type = request.getParameter( "boardKind" );
 
 		String post_title = request.getParameter("title");
@@ -210,7 +216,9 @@ public class postController extends HttpServlet {
 			request.setAttribute("pageVo", vo);
 			request.setAttribute("currentPage", currentPage);
 			
-			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);		
+			//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);		
+			 
+			  request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}

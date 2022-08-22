@@ -263,6 +263,7 @@ a:hover {
                          
 		
 				<button type="button" class="btn mb-2 btn-outline-dark" style=" width: 7%;  height: 39px; float: right;">
+				<!-- <a href = "pages/writePost.jsp">글쓰기</a> -->
 				<a href = "write/writePost.jsp">글쓰기</a>
 				</button>
 									
