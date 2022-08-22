@@ -21,6 +21,15 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+
+<style>
+fieldset{
+   width: 60%;
+   margin: 20px auto;
+   padding: 20px;
+   border-color: black;
+   border: 1px solid black; /*중간에 있는 solid가 필수다*/
+}
 </style>
 </head>
 <body>
@@ -30,11 +39,15 @@
 		</div>
 	<div class="container">
 		<form class="findIdinput" method="post" action="<%=request.getContextPath()%>/findId.do">
+		<fieldset>
+		 <legend>&nbsp;아이디 찾기</legend>
 					<label class="labelPlace" >이름</label> <br>
 					<input class="inputPlace" type="text" name="InputNameText" placeholder="이름을 입력하세요."><br>
 					<label class="labelPlace">주민번호</label><br>
 					<input class="inputPlace" type="text" name="InputregNoText" placeholder="ex)123456-7891234('-'포함)."><br>
-					<input  type="submit" value="아이디찾기" class="findBtn"></form>
+					<input  type="submit" value="아이디찾기" class="findBtn">
+					</fieldset>
+					</form>
 				</div>
 </body>
 <!-- 강명범 끝 --> 

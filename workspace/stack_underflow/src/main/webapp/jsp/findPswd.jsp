@@ -18,6 +18,16 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<style>
+fieldset{
+   width: 60%;
+   margin: 20px auto;
+   padding: 20px;
+   border-color: black;
+   border: 1px solid black; /*중간에 있는 solid가 필수다*/
+}
+</style>
+
 
 </head>
 <body>
@@ -29,7 +39,8 @@
 	<div class="findpasCommon">
 	<form class="findPassQstn" method="post" action="<%=request.getContextPath()%>/findPassQstn.do">
 		<div class="form-group">
-		<p>방법 1)</p>
+		<fieldset>
+		 <legend>&nbsp;방법 1)&nbsp;</legend>
 			<label  class="labelPlace"> - 필수입력) ID를 입력하세요</label><br><br>
 			<input  class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
 			<label  class="labelPlace" for="mem_qstn"> - 회원가입시 입력했던 질문과 답변으로 찾기</label><br><br>
@@ -38,24 +49,25 @@
 			<option value="What is Your Mother Name ?">What is Your Mother Name ?</option>
 			<option value="What is Your Favorite Color ?">What is Your Favorite Color ?</option>
 			<option value="What is Your Favorite Food ?">What is Your Favorite Food ?</option>
-			</select>
-		</div>
-		<div class="form-group">
+			</select><br>
+	
 			<label  class="labelPlace" for="mem_ans">답변을 입력하세요</label> <br> <br>
 			<input  class="inputPlace" type="text" class="form-control" id="find-pass_ans" placeholder="Enter Answer" name="find-pass_ans">
 			<button class="findBtn" type="submit" name="change-passBtn" id="change-passBtn">비밀번호 변경하기</button>
 			<br><br>
-		</div>
+
+		</fieldset>
 	</form>
-	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
 	
-	<p>방법 2)</p>
+	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
+	<fieldset>
+	<legend>&nbsp;방법 2)&nbsp;</legend>
 		<label    class="labelPlace" class="labelPlace" for="findpass_EmailLabel"> - 필수입력) ID를 입력하세요</label><br><br> 
 		<input   class="inputPlace" type="text" class="form-control" id="find-passInputId" placeholder="Enter Your Id" name="find-passInputId" required><br><br> 
 	    <label   class="labelPlace"  class="labelPlace" for="mem_passEmail"> - 이메일을 입력하여 비밀번호 변경하기</label><br><br>
 		<input   class="inputPlace" type="text" id="findpass_input_email" placeholder="Enter your email" name="findpass_input_email">
 		<button class="findBtn" id="submitbtn" type="submit">인증메일 보내기</button><br>
-
+		</fieldset>
 	</form>
 	</div>
 	
