@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/find.css"/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300&amp;display=swap'>
+<link rel="stylesheet" type="text/css" href="../css/find.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/BasicStructor.css"/>
 <!DOCTYPE html>
 <!-- 강명범 시작 -->
 <html>
@@ -74,18 +79,19 @@ function submitChk(){
 
 	<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>
 		Stack Underflow 비밀번호 변경하기</h1>
-
+<div class="findpasCommon">
 		<form class="changePassForm" method="post" onsubmit="return submitChk();" action="<%=request.getContextPath()%>/updatePassword.do">
 		    <p1>※ 비밀번호는 8 ~20자 사이 영어 대,소문자 및 숫자 특수기호 필수 포함</p1><br><br>
 			<label class="change_pass">변경하실 패스워드</label><br>
-			<input type="text" class="form-control" id="mem_pass" name="mem_pass" required><br>
+			<input type="text" class="inputPlace" id="mem_pass" name="mem_pass" required><br>
 			<div id="passres"></div>
 			
 			<label class="change_pass">변경하실 패스워드 확인</label><br>
-			<input type="text" class="form-control" id="mem_pass_check" name="mem_pass_check" required><br>
+			<input type="text" class="inputPlace" id="mem_pass_check" name="mem_pass_check" required><br>
 			<div id="passchkres"></div>
 			<button type="submit" class="findBtn" name="changePassBtn" id="changePassBtn">변경하기</button>
 	</form>
+	</div>
 </body>
 <!-- 강명범 끝 -->
 </html>
