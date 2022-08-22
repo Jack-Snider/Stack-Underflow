@@ -26,6 +26,7 @@
 <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
 	<!-- 아이디 체크값을 기억하는 기능  -->
 	<%
+	
 		String identify = ""; // 쿠키값이 저장될 변수
 		String chk = ""; // 체크박스 체크용 변수
 		
