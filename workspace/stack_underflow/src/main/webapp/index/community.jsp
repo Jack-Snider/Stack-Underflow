@@ -27,6 +27,15 @@
 	<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 	<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	
+	<script>
+   	$(function(){
+   		$('#logout').on('click', function(){
+   			alert("로그아웃 되었습니다.");
+   		});
+   	});
+   </script>
+	
 	<style>
 	.common {
  	 	font-family: 'Stick No Bills', sans-serif;
@@ -55,7 +64,7 @@
           <li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
-          <a href="../jsp/logout.jsp" style="text-decoration : none;">Logout</a>
+          <a href="../jsp/logout.jsp" style="text-decoration : none;" id="logout">Logout</a>
           <span>
           </span>
         </button>

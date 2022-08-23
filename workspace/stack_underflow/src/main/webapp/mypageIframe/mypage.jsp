@@ -212,8 +212,8 @@
                     	<input type="text" class="form-control" id="mem_addr2" name="mem_addr2">
                   </div>
                   <hr class="my-4">
-                  <button type="button" class="btn btn-outline-success" id="main-btn1">수정</button>
-                  <button type="button" class="btn btn-outline-success" id="main-btn2">저장</button>
+                  <button type="button" class="btn btn-outline-success" id="main-btn1" style="color: darkviolet;   border-color: darkviolet;">수정</button>
+                  <button type="button" class="btn btn-outline-success" id="main-btn2" style="color: darkviolet;   border-color: darkviolet;">저장</button>
                   <input type="text" id="hidden_mem_pass" value="<%= mem_pass %>" style="display:none;">
                 <!-- 호겸 끝 -->
                 </form>  
@@ -233,13 +233,13 @@
 		      	<h5>아래에 비밀번호를 입력해주세요</h5>
 		      	<h6><label for="modal_mem_pass">비밀번호</label></h6>
 	                <input type="password" class="form-control" id="modal_mem_pass" name="modal_mem_pass">
-	                <button type="button" class="btn btn-outline-success" id="modal_passchk_btn">확인</button>
+	                <button type="button" class="btn btn-outline-success" id="modal_passchk_btn" style="color: darkviolet; border-color: darkviolet;">확인</button>
 		      </div>
 		      <div class="modal-footer">
 				<div id="modal-footer-alert"></div>
-		        <button type="button" class="btn btn-outline-success" id="modal-cancel-btn" data-bs-dismiss="modal">취소</button>
+		        <button type="button" class="btn btn-outline-success" id="modal-cancel-btn" data-bs-dismiss="modal" style="color: darkviolet; border-color: darkviolet;">취소</button>
 		        <div id="modal-footer-btn"></div>
-		        <button type="button" id="mem-delete-btn" class="btn btn-outline-success">탈퇴</button>
+		        <button type="button" id="mem-delete-btn" class="btn btn-outline-success" style="color: darkviolet; border-color: darkviolet;">탈퇴</button>
 		      </div>
 		    </div>
 		  </div>
