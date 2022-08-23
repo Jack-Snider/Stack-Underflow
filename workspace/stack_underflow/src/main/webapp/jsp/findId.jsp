@@ -28,7 +28,18 @@ fieldset{
    margin: 20px auto;
    padding: 20px;
    border-color: black;
-   border: 1px solid black; /*중간에 있는 solid가 필수다*/
+   border: 1px solid black;
+}
+legend {
+    display: block;
+    width: 33%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
 }
 </style>
 </head>
@@ -39,6 +50,7 @@ fieldset{
 		</div>
 	<div class="container">
 		<form class="findIdinput" method="post" action="<%=request.getContextPath()%>/findId.do">
+		<div class="form-group">
 		<fieldset>
 		 <legend>&nbsp;아이디 찾기</legend>
 					<label class="labelPlace" >이름</label> <br>
@@ -47,6 +59,7 @@ fieldset{
 					<input class="inputPlace" type="text" name="InputregNoText" placeholder="ex)123456-7891234('-'포함)."><br>
 					<input  type="submit" value="아이디찾기" class="findBtn">
 					</fieldset>
+					</div>
 					</form>
 				</div>
 </body>
