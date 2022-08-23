@@ -57,6 +57,7 @@ fieldset{
 			<br><br>
 
 		</fieldset>
+		</div>
 	</form>
 	
 	<form class="findPassEmail" method="post" action="<%=request.getContextPath()%>/findPassMail.do">
