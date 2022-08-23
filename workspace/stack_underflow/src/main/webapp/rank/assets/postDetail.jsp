@@ -213,7 +213,7 @@
 									value += "<hr>";
 									value += v.mem_id + " " + v.cmnt_date + "<br>";
 									//style="width: 90%; height: 100px" autofocus="autofocus"
-									value += "< id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</>"
+									value += "<textarea id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</textarea>"
 									value += "<br>";
 									value += "<br>";
 									value += "<button id = \"cmntConfirm\">확인</button> <button>삭제</button>";
