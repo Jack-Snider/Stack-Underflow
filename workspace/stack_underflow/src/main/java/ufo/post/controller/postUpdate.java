@@ -118,7 +118,8 @@ public class postUpdate extends HttpServlet {
 			request.setAttribute("pageVo", vo);
 			request.setAttribute("currentPage", currentPage);
 			
-			request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);			
+			//request.getRequestDispatcher("/pages/postList.jsp").forward(request, response);			
+			request.getRequestDispatcher("/communityList/commuindex.jsp").forward(request, response);
 		}else {
 			response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");
 		}
