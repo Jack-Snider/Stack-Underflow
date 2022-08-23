@@ -138,6 +138,10 @@ width: 100px;
      90%{
       top : -55.1rem;
      }
+     100%{
+      top : -61.1rem;
+     
+     }
 }
 
 @media screen and (max-width: 600px){
@@ -272,7 +276,8 @@ animation: slide-mob 5s infinite;
     ORACLE<br/>
     HTML<br/>
     JS<br/>
-    PYTHON<br/> 
+    PYTHON<br/>
+    ANTON<bt/> 
     </div>
     궁금할 땐 
     지금 당장 <br/>
