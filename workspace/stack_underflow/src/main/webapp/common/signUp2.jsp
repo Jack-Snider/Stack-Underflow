@@ -19,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/ded2fba49a.js"></script>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	$(function(){
 		$('#loginbackBtn').on('click', function(){
@@ -189,13 +189,13 @@
 <section class="card">
 		<form method="post" enctype="multipart/form-data" onsubmit="return submitChk();"action="<%=request.getContextPath()%>/InsertMember.do">
 		<div>
-		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>
-		Stack Underflow - Sign Up</h1>
-        <button id="loginbackBtn" type="button" name="loginbackBtn">로그인 페이지로</button>
+		<h1 class ="common"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow - Sign Up</h1>
+		<br>
+        <button id="loginbackBtn" type="button" name="loginbackBtn">로그인 페이지</button>
 		</div>		
 			<div class="form-group">
 			   <label class="inputlabel" for="mem_id">ID&nbsp;&nbsp;</label> 
-			   <input type="button" id="idcheck" value="아이디 중복체크" class="btnCheck"><br>
+			   <input type="button" id="idcheck" value="중복 검사" class="btnCheck"><br>
 			   <input type="text" class="inputPlace" id="mem_id" placeholder="아이디를 입력하세요" name="mem_id" required><br>
 			   <p class="instructor">※ ID는 영어로 시작하고 영문 또는 숫자를 4~12자 사이로 입력하세요.</p><!-- 고쳐야됨 -->
 			   <div id="idres"></div>
@@ -217,7 +217,7 @@
 			
 			<div class="form-group">
 			    <label class="inputlabel" for="mem_nknm">닉네임&nbsp;&nbsp;</label>
-				<input type="button" id="dncheck" value="닉네임 중복확인" class="btnCheck"><br>
+				<input type="button" id="dncheck" value="중복 검사" class="btnCheck"><br>
 				<input type="text" class="inputPlace" id="mem_nknm" placeholder="닉네임을 입력하세요" name="mem_nknm" required>
 				<p class="instructor">※ 영어 또는 한글로 시작하고 영어, 한글, 숫자를 4~8자 사이로 입력하세요.</p>
 				<div id="dnres"></div>
@@ -242,7 +242,8 @@
 			</div>
 			
 			<div class="form-group">
-			    <label class="inputlabel" for="mem_addr1">집 주소</label> <br>
+			    <label class="inputlabel" for="mem_addr1">주소</label>
+			    <input type="button" id="addr1search" value="주소 검색" class="btnCheck"> <br>
 				<input type="text" class="inputPlace" id="mem_addr1" placeholder="주소를 입력하세요" name="mem_addr1" required>
 			</div>
 			

@@ -181,10 +181,11 @@
                       			style="float: right;   margin-top: -9%; margin-right: 14%;"
                       			accept="image/*"  >
                        -->
+                     <div>  
                      <label for="editPhoto">프로필 사진 수정</label>
                      <input type="file" id="editPhoto" class="form-control-file" style="float: right;   margin-top: -9%; margin-right: -52%;"
                       			accept="image/*" >
-                         
+                     </div>    
                       <!-- Jack Snider 끝 -->
                       <button type="button" class="btn mb-2 btn-outline-info" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >회원탈퇴</button> <!-- 호겸 수정 -->
 

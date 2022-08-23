@@ -65,7 +65,7 @@
 				justify-content: space-between;
 				width: 200px;
 			}
-			.pl{
+	.pl{
     width: 103px;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
@@ -75,11 +75,11 @@
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 16px;
-    margin-top: -7px;
-    margin-bottom: 4%;
-    margin-left: 991px;
-    height: 43px;
+  
+    margin-top: -11px;
+    margin-bottom: 5%;
+    margin-left: 69%;
+    height: 44px;
 }
 }
 
