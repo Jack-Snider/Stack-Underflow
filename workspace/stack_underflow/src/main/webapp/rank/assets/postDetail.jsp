@@ -103,7 +103,8 @@
 								// 여기서 조건 달기
 								if( v.mem_id == mem_id ){
 									value += "<br>";
-									value += "<button class = \"updateCmnt btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
+									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 									value += "<hr>";									
 								}
 							});
@@ -161,7 +162,7 @@
 								
 								value += "<br>";
 								value += "<br>";
-								value += "<button class = \"updateCmnt btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+								value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 								value += "<hr>";									
 								
 							});
@@ -216,7 +217,9 @@
 									value += "<textarea id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</textarea>"
 									value += "<br>";
 									value += "<br>";
-									value += "<button class = \"btn-outline-info\" id = \"cmntConfirm\">확인</button> <button class = \"btn-outline-info\">삭제</button>";
+
+									value += "<button class = \"btn mb-2 btn-outline-info\" id = \"cmntConfirm\">확인</button> <button class = \"btn mb-2 btn-outline-info\">삭제</button>";
+
 									value += "<hr>";
 								}else{
 									
@@ -226,7 +229,9 @@
 									
 									value += "<br>";
 									value += "<br>";
-									value += "<button class = \"updateCmnt btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
+									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
 									value += "<hr>";
 																		
 								}
@@ -272,7 +277,9 @@
 								// 여기서 조건 달기
 								if( v.mem_id == mem_id ){
 									value += "<br>";
-									value += "<button class = \"updateCmnt btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
+									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
 									value += "<hr>";									
 								}
 								
@@ -399,6 +406,13 @@ a:hover{
     border-color: #7e309f;
 
 }
+
+td{
+
+    border-left: 6px solid darkviolet;
+    background: #fcfbff;
+}
+
 		</style>
 
 		
@@ -477,12 +491,10 @@ a:hover{
 									
 		%>
 		
-	        <div style="margin-left: 1380px;margin-top: 8px;margin-bottom: -8px; margin-left: 1251px;
-    margin-top: -12px;
-    margin-bottom: 1px;">
-						<button type = "button" onclick = "getToPostUpdate()" class="btn-outline-info">수정</button>
-						<button type = "button" onclick = "getToPostDelete()" class="btn-outline-info">삭제</button>
-						<button type = "button" onclick = "toList()" class="btn-outline-info">
+	        <div style="margin-left:  margin-bottom: -8px; margin-left: 87%;">
+						<button type = "button" onclick = "getToPostUpdate()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">수정</button>
+						<button type = "button" onclick = "getToPostDelete()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">삭제</button>
+						<button type = "button" onclick = "toList()" class="btn-outline-info" style=" border-radius: 13%;">
 						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록</a>
 			 </button>
 		   </div>
