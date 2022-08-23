@@ -48,7 +48,6 @@
 			url : '/stack_underflow/getMemberInfo.do',
 			type : 'post',
 			success : function(res){
-				alert($('#mem_nm'));
 				$('#mem_nm').attr("readonly", true).val(res.mem_nm);
 				$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
 				$('#mem_email').attr("readonly", true).val(res.mem_email);
