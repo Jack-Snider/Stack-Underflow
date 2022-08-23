@@ -399,6 +399,13 @@ a:hover{
     border-color: #7e309f;
 
 }
+
+td{
+
+    border-left: 6px solid darkviolet;
+    background: #fcfbff;
+}
+
 		</style>
 
 		
@@ -477,9 +484,9 @@ a:hover{
 									
 		%>
 		
-	        <div style="margin-left:  margin-bottom: -8px; margin-left: 89%;">
-						<button type = "button" onclick = "getToPostUpdate()" class="btn-outline-info" style=" border-radius: 13%;">수정</button>
-						<button type = "button" onclick = "getToPostDelete()" class="btn-outline-info" style=" border-radius: 13%;">삭제</button>
+	        <div style="margin-left:  margin-bottom: -8px; margin-left: 87%;">
+						<button type = "button" onclick = "getToPostUpdate()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">수정</button>
+						<button type = "button" onclick = "getToPostDelete()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">삭제</button>
 						<button type = "button" onclick = "toList()" class="btn-outline-info" style=" border-radius: 13%;">
 						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록</a>
 			 </button>
