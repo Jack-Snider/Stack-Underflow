@@ -54,24 +54,8 @@ public class InsertMember extends HttpServlet {
 		memVo.setMem_score(0);
 		memVo.setMem_rank("Unranked");
 		memVo.setMem_stat(0);
+		memVo.setMem_postcode(Integer.parseInt(request.getParameter("mem_postcode")));
 		
-		System.out.println(memVo.getMem_id());
-		System.out.println(memVo.getMem_pass());
-		System.out.println(memVo.getMem_nknm());
-		System.out.println(memVo.getMem_nm());
-		System.out.println(memVo.getMem_regno());
-		System.out.println(memVo.getMem_email());
-		System.out.println(memVo.getMem_addr1());
-		System.out.println(memVo.getMem_addr2());
-		System.out.println(memVo.getMem_qstn());
-		System.out.println(memVo.getMem_ans());
-		System.out.println(memVo.getMem_score());
-		System.out.println(memVo.getMem_rank());
-		System.out.println(memVo.getMem_stat());
-	
-		
-		
-
 		IMemberService service1 = MemberServiceImpl.getInstance();
 		int cnt1 = service1.insertMember(memVo);
 
@@ -106,7 +90,7 @@ public class InsertMember extends HttpServlet {
 				if (cnt2 != 0) {
 					out.print("<html>");
 					out.print("<body>");
-					out.print("<script>alert('로그인페이지로 돌아갑니다');location.href='./common/login.jsp';</script>");
+					out.print("<script>alert('회원가입에 성공했습니다. 로그인 페이지로 돌아갑니다.');location.href='./common/login.jsp';</script>");
 					out.print("</body>");
 					out.print("</html>");
 					//response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
@@ -146,7 +130,7 @@ public class InsertMember extends HttpServlet {
 				if (cnt2 != 0) {
 					out.print("<html>");
 					out.print("<body>");
-					out.print("<script>alert('로그인페이지로 돌아갑니다');location.href='./common/login.jsp';</script>");
+					out.print("<script>alert('회원가입에 성공했습니다. 로그인 페이지로 돌아갑니다.');location.href='./common/login.jsp';</script>");
 					out.print("</body>");
 					out.print("</html>");
 					//response.sendRedirect(request.getContextPath() + "/jsp/signUpSuccess.jsp");
@@ -163,7 +147,7 @@ public class InsertMember extends HttpServlet {
 		}else {
 			out.print("<html>");
 			out.print("<body>");
-			out.print("<script>alert('회원가입에 실패하셨습니다.');</script>");
+			out.print("<script>alert('회원가입에 실패했습니다.');</script>");
 			out.print("</body>");
 			out.print("</html>");
 			//response.sendRedirect(request.getContextPath() + "/jsp/signUpFail.jsp");

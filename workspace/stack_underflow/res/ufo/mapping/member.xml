@@ -10,9 +10,9 @@
 	  <!-- 호겸 시작 -->
 	  <insert id="insertMember" parameterClass="memberVo">
 	  	insert into member (mem_id, mem_pass, mem_nknm, mem_nm, mem_regno, mem_email, mem_addr1, mem_addr2,
-							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat)
+							mem_qstn, mem_ans, mem_snu_date, mem_score, mem_rank, mem_stat, mem_postcode)
 	  	values(#mem_id#, #mem_pass#, #mem_nknm#, #mem_nm#, #mem_regno#, #mem_email#, #mem_addr1#, #mem_addr2#,
-							#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#)
+							#mem_qstn#, #mem_ans#, sysdate, #mem_score#, #mem_rank#, #mem_stat#, #mem_postcode#)
 	  </insert>
 	  
 	  <select id="checkById" parameterClass="String" resultClass="int">
