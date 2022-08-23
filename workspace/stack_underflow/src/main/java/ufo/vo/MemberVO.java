@@ -19,6 +19,7 @@ public class MemberVO {
 	/* 호겸 수정 시작 */
 	private int mem_like_sum;
 	private int mem_dislike_sum;
+	private int mem_postcode; // 우편 번호
 	/* 호겸 수정 끝 */
 	public String getMem_id() {
 		return mem_id;
@@ -117,6 +118,13 @@ public class MemberVO {
 	public void setMem_dislike_sum(int mem_dislike_sum) {
 		this.mem_dislike_sum = mem_dislike_sum;
 	}
+	public int getMem_postcode() {
+		return mem_postcode;
+	}
+	public void setMem_postcode(int mem_postcode) {
+		this.mem_postcode = mem_postcode;
+	}
+	
 	/* 호겸 수정 끝 */
 	
 }

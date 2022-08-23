@@ -35,6 +35,15 @@
 	let dupChk = false;
 	
 	$(function(){
+		// 주소 검색
+		$('#postcodesearch').on('click', function(){
+			new daum.Postcode({
+				oncomplete : function(data){
+					$('#mem_addr1').val(data.address);
+					$('#mem_postcode').val(data.zonecode);
+				}
+			}).open();
+		});
 		
 		// 비밀번호 재확인 검사
 		$('#mem_pass_check').on('keyup', function(){
@@ -125,23 +134,23 @@
 					if(res.hasOwnProperty('idres')){
 						if(res.idres == 1){
 							$('#idres')
-							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>중복되는 아이디입니다.</strong> 중복되지 않는 아이디를 입력해주세요</div>');
+							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>이미 존재하는 아이디입니다.</strong></div>');
 							$('#mem_id').val('');
 							dupChk = false;
 						}else{
 							$('#idres')
-							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>아이디 중복검사 통과</strong> 아이디가 중복되지 않습니다.</div>');
+							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>사용할 수 있는 아이디입니다.</strong></div>');
 							dupChk = true;
 						}
 					}else if(res.hasOwnProperty('dnres')){
 						if(res.dnres == 1){
 							$('#dnres')
-							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>중복되는 닉네임입니다.</strong>다른 닉네임을 입력해주세요</div>');
+							.html('<div class="alert alert-danger" style="margin-top : 5px;"><strong>이미 존재하는 닉네임입니다.</strong></div>');
 							$('#mem_nknm').val('');
 							dupChk = false;
 						}else{
 							$('#dnres')
-							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>닉네임 중복검사 통과</strong> 닉네임이 중복되지 않습니다.</div>');
+							.html('<div class="alert alert-success" style="margin-top : 5px;"><strong>사용할 수 있는 닉네임입니다.</strong></div>');
 							dupChk = true;
 						}
 					}
@@ -159,7 +168,6 @@
 	// submit - "자바스크립트 선언은 jQuery 안에서 사용할 수 없다."
 	function submitChk(){
 		if(passChk && ruleChk && dupChk){
-			alert("환영합니다. 회원가입에 성공했습니다.");
 			return true;
 		}else{
 			alert("회원가입에 실패했습니다. 중복 검사와 올바른 형식을 지켜주세요.");
@@ -211,7 +219,7 @@
 			
 			<div class="form-group">
 			    <label class="inputlabel" for="mem_pass_check">비밀번호 확인</label><br> 
-			    <input type="password" class="inputPlace" id="mem_pass_check" placeholder="동일한 비밀번호를 입력하세요" name="mem_pass_check" required>
+			    <input type="password" class="inputPlace" id="mem_pass_check" placeholder="위와 동일한 비밀번호를 입력하세요" name="mem_pass_check" required>
 			    <div id="passchkres"></div>
 			</div>
 			
@@ -242,14 +250,19 @@
 			</div>
 			
 			<div class="form-group">
-			    <label class="inputlabel" for="mem_addr1">주소</label>
-			    <input type="button" id="addr1search" value="주소 검색" class="btnCheck"> <br>
+			    <label class="inputlabel" for="mem_postcode">우편번호</label>
+			    <input type="button" id="postcodesearch" value="검색" class="btnCheck"> <br>
+				<input type="text" class="inputPlace" id="mem_postcode" placeholder="우편번호를 입력하세요" name="mem_postcode" required>
+			</div>
+			
+			<div class="form-group">
+			    <label class="inputlabel" for="mem_addr1">주소</label> <br>
 				<input type="text" class="inputPlace" id="mem_addr1" placeholder="주소를 입력하세요" name="mem_addr1" required>
 			</div>
 			
 			<div class="form-group">
 		        <label class="inputlabel" for="mem_addr2">상세 주소</label> <br>
-				<input type="text" class="inputPlace" id="mem_addr2" placeholder="상세주소를 입력하세요" name="mem_addr2" required>
+				<input type="text" class="inputPlace" id="mem_addr2" placeholder="상세 주소를 입력하세요" name="mem_addr2" required>
 			</div>
 			
 			<div class="form-group">
@@ -272,7 +285,7 @@
       		     <input type="file" id="fileInput" name="pfImg">
 			</div>
 			
-			<button type="submit" id="submitBtn">회원가입하기</button>
+			<button type="submit" id="submitBtn">회원가입</button>
 
 		</form>
 		</section>
