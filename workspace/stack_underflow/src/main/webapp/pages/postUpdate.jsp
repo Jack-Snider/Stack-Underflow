@@ -138,7 +138,7 @@ body {
 					<button type="submit" class="btn mb-2 btn-outline-info">수정완료</button>
 					<button type = "reset" class="btn mb-2 btn-outline-info">reset</button>
 					<button type = "button" class="btn mb-2 btn-outline-info">
-						<a href = "<%= request.getContextPath()%>/postList.do">목록 바로가기</a>
+						<a href = "<%= request.getContextPath() %>/postList.do?currentPage=1">목록 바로가기</a>
 					</button>
 					
 		     </div>

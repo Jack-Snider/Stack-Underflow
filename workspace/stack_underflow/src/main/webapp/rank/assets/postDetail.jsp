@@ -621,13 +621,12 @@ th{
 		<script type="text/javascript">
 		
 			function getToPostUpdate(){
-				
 				//  페이지뷰로 이동한다.
 				location.href = "pages/postUpdate.jsp"
 			}
 			
 			function getToPostDelete(){
-				
+				alert("게시글이 삭제되었습니다.");
 				//삭제는 뷰가 필요 없어서 바로 서블릿으로 넘어간다.
 				location.href = "<%= request.getContextPath() %>/postDelete.do?currentPage=1"
 			}
