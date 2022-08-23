@@ -407,7 +407,7 @@ a:hover{
 
 }
 
-td{
+th{
 
     border-left: 6px solid darkviolet;
     background: #fcfbff;
@@ -491,7 +491,9 @@ td{
 									
 		%>
 		
-	        <div style="margin-left:  margin-bottom: -8px; margin-left: 87%;">
+	        <div style="    float: right;
+						    width: 14%;
+						    margin-top: -2%;">
 						<button type = "button" onclick = "getToPostUpdate()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">수정</button>
 						<button type = "button" onclick = "getToPostDelete()" class="btn-outline-info" style=" border-radius: 13%; margin-right: 5%;">삭제</button>
 						<button type = "button" onclick = "toList()" class="btn-outline-info" style=" border-radius: 13%;">
