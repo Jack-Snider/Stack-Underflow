@@ -148,6 +148,22 @@
     background-color: darkviolet;
     border-color: darkviolet;
 }
+
+
+.avatar avatar-xl{
+
+    width: 203px;
+    height: 198px;
+    border-radius: 49%;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+    
+
 	</style>
 	<!-- 호겸 끝 -->
   </head>
@@ -170,7 +186,9 @@
                       <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
                       <div id = "image_preview" class="avatar avatar-xl">
                       	<!-- 프사 -->
-                        <img id = "profilePhoto" src="./assets/avatars/face-6.jpg" alt="..." class="avatar-img rounded-circle">
+                      	
+                         <img id = "profilePhoto" src="./assets/avatars/face-6.jpg" alt="..." class="avatar-img rounded-circle" 
+                         style=" width: 203px; height: 184px;">
                         
                       </div>
                     </div>
@@ -186,22 +204,32 @@
                       			style="float: right;   margin-top: -9%; margin-right: 14%;"
                       			accept="image/*"  >
                        -->
-                     <div>  
-                     <label for="editPhoto">프로필 사진 수정</label>
-                     <input type="file" id="editPhoto" class="form-control-file" style="float: right;   margin-top: -9%; margin-right: -52%;"
+                    <div style="    float: right;
+								    margin-top: -14.45%;
+								    margin-right: 5%;
+								    color: darkviolet;
+								    font-size: 15px;">  
+                   <!--   <label for="editPhoto" >프로필 사진 수정</label> -->
+                     <input type="file" id="editPhoto" class="form-control-file" style="margin-top: -12%;"
+                     
                       			accept="image/*" >
                      </div>    
                       <!-- Jack Snider 끝 -->
-                      <button type="button" class="btn mb-2 btn-outline-info" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >회원탈퇴</button> <!-- 호겸 수정 -->
+                      <button type="button" class="btn mb-2 btn-outline-info" id="main-btn3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+                      style="       margin-top: -18.5%;
+    float: right;" >회원탈퇴</button> <!-- 호겸 수정 -->
 
-                    
+                    <!-- tyle="float: right;   margin-top: -9%; margin-right: -52%; -->
                       
 
                       <div class="row align-items-center">
                         <div class="col-md-7">
                           <!-- 닉네임 -->
-                          <h4 id = "nickname" class="mb-1">ㅇㅇ</h4>
-                        </div>
+                          <h4 id = "nickname" style="    font-size: 4.5rem;
+							    font-weight: 700;
+							    text-decoration-line: underline;
+							    margin-top: -21%;"class="mb-1">ㅇㅇ</h4>
+                          </div>
                       </div>
                       <div class="row mb-4">
                         <div class="col-md-7">
@@ -242,7 +270,6 @@
                 <!-- 호겸 끝 -->
                 </form>  
               </div> <!-- /.card-body -->
-            </div> <!-- /.col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
       </main> <!-- main -->

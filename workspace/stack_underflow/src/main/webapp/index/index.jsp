@@ -204,9 +204,6 @@ animation: slide-mob 5s infinite;
   90%{
    top : -58.1rem;
   }
-  
-}
-}
 
 
 .rollh1{

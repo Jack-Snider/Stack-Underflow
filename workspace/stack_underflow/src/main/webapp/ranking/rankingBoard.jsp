@@ -519,10 +519,10 @@ margin-top: 70px;
 </aside>
 <section id="ranking-header">
 <h1>랭킹보드</h1>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: gold;">Gold&nbsp;&nbsp;</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: silver;">Silver&nbsp;&nbsp;</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: brown;">Bronze&nbsp;&nbsp;</i>
-<i class="bi bi-trophy-fill" style="font-size: 2rem; color: black;">Unranked&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: gold;   font-weight: 700;">Gold&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: silver; font-weight: 700;">Silver&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: brown;  font-weight: 700;">Bronze&nbsp;&nbsp;</i>
+<i class="bi bi-trophy-fill" style="font-size: 2rem; color: black;  font-weight: 700;">Unranked&nbsp;&nbsp;</i>
 </section>
 <div id="board-container">
 </div>
