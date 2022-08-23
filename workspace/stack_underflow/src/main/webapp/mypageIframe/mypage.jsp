@@ -27,14 +27,15 @@
   	<script>
   	// 호겸 시작
 	$(function(){
-		
+
+/*		
 		var form = $('#uploadForm')[0];
 		var formData = new FormData(form);
 		
 		
 		$.ajax({
-			url : '/stack_underflow/profileUpload.do',
-			type : 'post',
+			url : '/stack_underflow/profileUpload.do?files',
+			type : 'post', 'files',
 			data : formData,
 			        contentType : false,
 			        processData : false,   
@@ -43,13 +44,16 @@
 			}
 		});
 		
-			
+*/			
 		$.ajax({
 			url : '/stack_underflow/getMemberInfo.do',
 			type : 'post',
 			success : function(res){
 				$('#mem_nm').attr("readonly", true).val(res.mem_nm);
+				
 				$('#mem_nknm').attr("readonly", true).val(res.mem_nknm);
+				//$( '#nickname' ).attr( "readonly" , true ).val( res.mem_nknm );
+				$( '#nickname' ).text( res.mem_nknm );
 				$('#mem_email').attr("readonly", true).val(res.mem_email);
 				$('#mem_addr1').attr("readonly", true).val(res.mem_addr1);
 				$('#mem_addr2').attr("readonly", true).val(res.mem_addr2);
@@ -166,7 +170,8 @@
                       <!-- Jack Snider 시작 ( 난이도 : ★★★★★ ) -->
                       <div id = "image_preview" class="avatar avatar-xl">
                       	<!-- 프사 -->
-                        <img id = "profilePhoto" src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                        <img id = "profilePhoto" src="./assets/avatars/face-6.jpg" alt="..." class="avatar-img rounded-circle">
+                        
                       </div>
                     </div>
 
@@ -193,7 +198,8 @@
 
                       <div class="row align-items-center">
                         <div class="col-md-7">
-                          <h4 class="mb-1">닉네임</h4>
+                          <!-- 닉네임 -->
+                          <h4 id = "nickname" class="mb-1">ㅇㅇ</h4>
                         </div>
                       </div>
                       <div class="row mb-4">

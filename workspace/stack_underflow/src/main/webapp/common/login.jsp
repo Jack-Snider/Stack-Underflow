@@ -89,6 +89,7 @@ if (session.getAttribute("Mem_vo") == null) {
 <section class="card">
 
 	<form onsubmit="return validateForm(this)" method="post" id="loginForm"
+	
 		name="loginForm" action="<%=request.getContextPath()%>/login.do">
 		
 
@@ -131,6 +132,6 @@ location.href="../index/index.jsp";
 }
 %>
 
-	<!-- 명범   끝 -->
+	<!-- 명범 끝 -->
 </body>
 </html>
