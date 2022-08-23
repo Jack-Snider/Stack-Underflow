@@ -103,6 +103,7 @@
 								// 여기서 조건 달기
 								if( v.mem_id == mem_id ){
 									value += "<br>";
+
 									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
 									value += "<hr>";									
 								}
@@ -216,7 +217,9 @@
 									value += "<textarea id = \"updateComment\" style = \"width : 90%; height : 100px; autofocus = \"autofocus\">" + v.cmnt_cont + "</textarea>"
 									value += "<br>";
 									value += "<br>";
+
 									value += "<button class = \"btn mb-2 btn-outline-info\" id = \"cmntConfirm\">확인</button> <button class = \"btn mb-2 btn-outline-info\">삭제</button>";
+
 									value += "<hr>";
 								}else{
 									
@@ -226,7 +229,9 @@
 									
 									value += "<br>";
 									value += "<br>";
+
 									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
 									value += "<hr>";
 																		
 								}
@@ -272,7 +277,9 @@
 								// 여기서 조건 달기
 								if( v.mem_id == mem_id ){
 									value += "<br>";
+
 									value += "<button class = \"updateCmnt btn mb-2 btn-outline-info\" type = \"button\" value = " + v.cmnt_num + ">수정</button> <button class = \"deleteCmnt btn mb-2 btn-outline-info\" type = \"button\" value = "+ v.cmnt_num + ">삭제</button>";
+
 									value += "<hr>";									
 								}
 								

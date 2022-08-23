@@ -81,7 +81,7 @@ function submitChk(){
 		Stack Underflow 비밀번호 변경하기</h1>
 <div class="findpasCommon">
 		<form class="changePassForm" method="post" onsubmit="return submitChk();" action="<%=request.getContextPath()%>/updatePassword.do">
-		    <p1>※ 비밀번호는 8 ~20자 사이 영어 대,소문자 및 숫자 특수기호 필수 포함</p1><br><br>
+		    <p1>※ 8~20자 사이의 영어, 숫자, 특수 기호를 1개 이상 포함해주세요.</p1><br><br>
 			<label class="change_pass">변경하실 패스워드</label><br>
 			<input type="text" class="inputPlace" id="mem_pass" name="mem_pass" required><br>
 			<div id="passres"></div>
