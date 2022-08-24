@@ -15,34 +15,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
-	<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-	<script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	
-	<script>
-   	$(function(){
-   		$('#logout').on('click', function(){
-   			alert("로그아웃 되었습니다.");
-   		});
-   	});
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap">
+   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+   <script src="https://kit.fontawesome.com/ded2fba49a.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+   
+   <script>
+      $(function(){
+         $('#logout').on('click', function(){
+            alert("로그아웃 되었습니다.");
+         });
+      });
    </script>
-	
-	<style>
-	.common {
- 	 	font-family: 'Stick No Bills', sans-serif;
-  		font-size: 1.3em;
-  		color: white;
-	}
-	
-	.aa{
-	
-	  background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
-	
-	}
-	</style>
+   
+   <style>
+   .common {
+        font-family: 'Stick No Bills', sans-serif;
+        font-size: 1.3em;
+        color: white;
+   }
+   
+   .aa{
+   
+     background: linear-gradient(to right, rgb(69 255 238 / 95%), rgba(209, 34, 227, 0.95));
+   
+   }
+   
+     
+
+
+
+
+   
+   </style>
 
 </head>
 <body>
@@ -51,7 +58,7 @@
     <div class="container">
       <div>
 
-      	<a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
+         <a class ="common" href="index.jsp"><i class="fa-brands fa-stack-exchange"></i>Stack Underflow</a>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav" style="margin-right: 430px;">
